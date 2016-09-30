@@ -1,0 +1,54 @@
+﻿@model GeoMapxBusiness.Gente
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div  ng-app="myApp" data-ng-controller="mainCtrl">
+    <fieldset>
+        {{5-5}}
+        <input type="text" name="name" value=" " data-ng-model="Nombre" />
+        <span>{{ Nombre }}</span>
+        <ul>
+            <li data-ng-repeat="g in gentes">{{g.Nombre}}</li>
+        </ul>
+        <legend>Gente</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Apellido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/angular")
+}
+
+<script src="~/Scripts/app/App.js"></script>
