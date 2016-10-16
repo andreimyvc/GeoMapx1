@@ -28,6 +28,47 @@ namespace GeoMapx.Web.Controllers.Api
         }
 
         #region Actividades
+        public Actividade _InsertActividad(Actividade entity)
+        {
+            db.Actividades.InsertOnSubmit(entity);
+            db.SubmitChanges();
+            return entity;
+            //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
+        }
+        public Actividade _UpdateActividad(Actividade entity)
+        {
+            var old = db.Actividades.Single(p => p.ActividadID == entity.ActividadID);
+            old.ProyectoID = entity.ProyectoID;
+            old.UniCons = entity.UniCons;
+            old.ActividadPrimaria = entity.ActividadPrimaria;
+            old.ActividadSecundaria = entity.ActividadSecundaria;
+            old.Cantidad = entity.Cantidad;
+            old.ActividadSGT = entity.ActividadSGT;
+            old.DescripcionActividad = entity.DescripcionActividad;
+            db.SubmitChanges();
+            return entity;
+        }
+        public bool _DeleteActividad(int actividadID)
+        {
+
+            try
+            {
+                var old = db.Actividades.Single(p => p.ActividadID == actividadID);
+                var totPla = db.Actividades.Count(p => p.Cantidad == actividadID);
+                var totPre = db.Precios.Count(p => p.ActividadID == actividadID);
+                if ((totPla + totPre) == 0)
+                {
+                    db.Actividades.DeleteOnSubmit(old);
+                    db.SubmitChanges();
+                    return true;
+                }
+                throw new Exception("No se puede eliminar esta actividad, algunos registros podrían quedar huérfanos.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public IQueryable<VW_ActividadesPoste> _GetActividadesByProyecto(int proyectoid)
         {
             var data = from p in db.VW_ActividadesPostes
@@ -46,7 +87,6 @@ namespace GeoMapx.Web.Controllers.Api
             db.Planillas.InsertOnSubmit(entity);
             db.SubmitChanges();
             return entity;
-            //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
         }
         public VW_Planilla _GetPlanillaByID(int planillaid)
         {

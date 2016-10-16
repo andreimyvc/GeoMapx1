@@ -169,7 +169,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Mvc\AccountController.cs" />
     <Compile Include="Controllers\Api\ActividadesApiController.cs" />
     <Compile Include="Controllers\Api\ActividadesController.cs" />
     <Compile Include="Controllers\Api\BaseRepositoryController.cs" />
@@ -178,13 +178,14 @@
     <Compile Include="Controllers\Api\PlanillasController.cs" />
     <Compile Include="Controllers\Api\ProyectosController.cs" />
     <Compile Include="Controllers\Api\PostesController.cs" />
-    <Compile Include="Controllers\BaseRepositoryController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\DiariasController.cs" />
-    <Compile Include="Controllers\GenteApiController.cs" />
-    <Compile Include="Controllers\GenteController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PostesController.cs" />
+    <Compile Include="Controllers\Mvc\ActividadesController.cs" />
+    <Compile Include="Controllers\Old\BaseRepositoryController.cs" />
+    <Compile Include="Controllers\Old\DashboardController.cs" />
+    <Compile Include="Controllers\Mvc\DiariasController.cs" />
+    <Compile Include="Controllers\Old\GenteApiController.cs" />
+    <Compile Include="Controllers\Old\GenteController.cs" />
+    <Compile Include="Controllers\Mvc\HomeController.cs" />
+    <Compile Include="Controllers\Mvc\PostesController.cs" />
     <Compile Include="Filters\AllowCrossSiteJsonAttribute.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -202,6 +203,8 @@
   <ItemGroup>
     <Content Include="Angular\controllers\App.js" />
     <Content Include="Angular\controllers\appMap.js" />
+    <Content Include="Angular\controllers\Copia de uniconsApp.js" />
+    <Content Include="Angular\controllers\uniconsApp.js" />
     <Content Include="Angular\controllers\geoMapx.js" />
     <Content Include="Angular\controllers\repositoryBase.js" />
     <Content Include="Angular\controllers\diariasApp.js" />
@@ -211,6 +214,7 @@
     <Content Include="Content\fontmaps.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\grid.locale-en.js" />
+    <Content Include="Js\jqgrid\jqgridActividadesConfig.js" />
     <Content Include="Js\jqgrid\images\ui-icons_0078ae_256x240.png" />
     <Content Include="Js\jqgrid\images\ui-icons_e0fdff_256x240.png" />
     <Content Include="Content\jquery-ui.css" />
@@ -1517,6 +1521,9 @@
     <Content Include="Views\Shared\_MetronicLayout6.cshtml" />
     <Content Include="metronic.html" />
     <Content Include="Views\Postes\Index.cshtml" />
+    <Content Include="Views\Actividades\Index.cshtml" />
+    <Content Include="Views\Actividades\ActividadesVista1.cshtml" />
+    <Content Include="Views\Actividades\ActividadesVista2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Angular\apps\" />

@@ -5,6 +5,7 @@
     vmc.factory('geoDataFactory', ['$http','$q', GeoMapxDataFactory]);
     function GeoMapxDataFactory(http, q) {
         var interfaz = {};
+        //#region Planilla
         interfaz.insertPlanilla = function (entity) {
             var defer = q.defer();
             http({ method:'POST', url:'/api/planillas/post', data: entity }).then(function (response) {
@@ -35,6 +36,35 @@
         interfaz.getPlanillasOfDay = function () {
             var defer = q.defer();  
             http.get('/api/planillas/getPlanillasOfDay').then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        //#endregion Planilla
+        //#region Unicons
+        interfaz.insertUnicons = function (entity) {
+            var defer = q.defer();
+            http({ method: 'POST', url: '/api/actividades/post', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.updateUnicons = function (entity) {
+            var defer = q.defer();
+            http({ method: 'PUT', url: '/api/actividades/put', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.deleteUnicons = function (id) {
+            var defer = q.defer();
+            http.delete('/api/actividades/delete', { params: { actividadid: id } }).then(function (response) {
                 defer.resolve(response.data);
             }, function (response) {
                 defer.reject(response);
@@ -86,6 +116,8 @@
             });
             return defer.promise;
         };
+        //#endregion Unicons
+        //#region Proyectos
         interfaz.getProyectosByEmpresas = function () {
             var defer = q.defer();
             http.get('/api/proyectos/GetProyectosByEmpresas').then(function (response) {
@@ -94,7 +126,9 @@
                 defer.reject(response);
             });
             return defer.promise;
-        }; 
+        };
+        //#endregion Proyectos
+        //#region Postes
         interfaz.getPostes = function () {
             var defer = q.defer();  
             http.get('/api/postes/get').then(function (response) {
@@ -103,7 +137,7 @@
                 defer.reject(response);
             });
             return defer.promise;
-        }; 
+        };
         interfaz.getPostesByProyecto = function (id) {
             var defer = q.defer();  
             http.get('/api/postes/getPostesByProyecto', { params: { proyectoid: id } }).then(function (response) {
@@ -122,6 +156,8 @@
             });
             return defer.promise;
         };
+        //#endregion Postes
+        //#region Contratistas
         interfaz.getContratistasByProyecto = function (id) {
             var defer = q.defer();
             http.get('/api/contratistas/getContratistasByProyecto', { params: { proyectoid: id } }).then(function (response) {
@@ -131,6 +167,8 @@
             });
             return defer.promise;
         };
+        //#endregion Contratistas
+        //#region Fichas
         interfaz.getFichasByContratista = function (id) {
             var defer = q.defer();
             http.get('/api/fichas/getFichasByContratista', { params: { contratistaid: id } }).then(function (response) {
@@ -140,6 +178,7 @@
             });
             return defer.promise;
         };
+        //#endregion Fichas
         return interfaz;
     }
 })();

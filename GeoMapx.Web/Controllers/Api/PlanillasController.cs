@@ -134,7 +134,7 @@ namespace GeoMapx.Web.Controllers.Api
                 var old = this._GetPlanilla(entity.PlanillaID).SingleOrDefault();
                 if (old != null && !old.Verificado)
                 {
-                    old.ActividadID = old.ActividadID;
+                    old.ActividadID = entity.ActividadID;
                     old.Cantidad = entity.Cantidad;
                     old.Fecha = entity.Fecha;
                     old.FechaModificacion = DateTime.Now;
