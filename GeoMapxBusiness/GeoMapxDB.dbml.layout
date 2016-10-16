@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.75, 21.5" name="GeoMapxDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 27.625, 21.5" name="GeoMapxDB">
   <DataContextMoniker Name="/GeoMapxDBDataContext" />
   <nestedChildShapes>
     <classShape Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" absoluteBounds="6.25, 12.875, 2, 2.7324039713541666">
@@ -154,7 +154,7 @@
         <classShapeMoniker Id="78bb39e6-c5fa-487a-96d0-f2b6789cfaa1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10 : 12.1554996744792); (10 : 13.2612125651042); (11.5416666666667 : 13.2612125651042 : JumpStart); (11.7083333333333 : 13.2612125651042 : JumpEnd); (11.7916666666667 : 13.2612125651042 : JumpStart); (11.9583333333333 : 13.2612125651042 : JumpEnd); (14.375 : 13.2612125651042); (14.375 : 11.1354484049479); (14.75 : 11.1354484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10 : 12.1554996744792); (10 : 13.2612125651042); (14.375 : 13.2612125651042); (14.375 : 11.1354484049479); (14.75 : 11.1354484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Contratista/Contratista_Ficha" />
       <nodes>
         <classShapeMoniker Id="78bb39e6-c5fa-487a-96d0-f2b6789cfaa1" />
@@ -175,7 +175,7 @@
         <classShapeMoniker Id="11defcf0-1243-40d3-ab17-9cb5f11c60a9" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 14.6162019856771); (8.54166666666667 : 14.6162019856771 : JumpStart); (8.70833333333333 : 14.6162019856771 : JumpEnd); (9 : 14.6162019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 14.6162019856771); (9 : 14.6162019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Actividade/Actividade_Materiale" />
       <nodes>
         <classShapeMoniker Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" />
@@ -210,14 +210,14 @@
         <classShapeMoniker Id="6a6ee7b2-adf9-4108-bf69-3a07b0b14bbb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 9.84375); (9.91666666666667 : 9.84375 : JumpStart); (10.0833333333333 : 9.84375 : JumpEnd); (12 : 9.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 9.84375); (12 : 9.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Poste" />
       <nodes>
         <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
         <classShapeMoniker Id="9b5cd9fd-e4a8-4918-8f1f-50ae4fe61b9c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 10.8247712715345); (8.65884715384615 : 12.7228011067708); (8.66666666666667 : 12.7228011067708 : JumpStart); (8.83333333333333 : 12.7228011067708 : JumpEnd); (9.91666666666667 : 12.7228011067708 : JumpStart); (10.0833333333333 : 12.7228011067708 : JumpEnd); (11.625 : 12.7228011067708); (11.625 : 14.25); (11.8160744349011 : 14.4410744349011 : JumpStart); (11.9339255650989 : 14.5589255650989 : JumpEnd); (12 : 14.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 10.8247712715345); (8.65884715384615 : 12.7228011067708); (9.91666666666667 : 12.7228011067708 : JumpStart); (10.0833333333333 : 12.7228011067708 : JumpEnd); (11.625 : 12.7228011067708); (11.625 : 14.25); (12 : 14.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Precio" />
       <nodes>
         <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
@@ -279,38 +279,38 @@
         <elementListCompartment Id="5124baa0-4a83-475f-be28-fc67d0ca182d" absoluteBounds="17.265, 14.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.25 : 12.875); (7.25 : 12.625); (8.54166666666667 : 12.625 : JumpStart); (8.83333333333333 : 12.625 : JumpEnd); (9.91666666666667 : 12.625 : JumpStart); (10.0833333333333 : 12.625 : JumpEnd); (11.6666666666667 : 12.625 : JumpStart); (11.8333333333333 : 12.625 : JumpEnd); (11.875 : 12.625); (11.875 : 17.0304996744792); (16.875 : 17.0304996744792); (16.875 : 15.8181062825521); (17.25 : 15.8181062825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.25 : 12.875); (7.25 : 12.625); (8.54166666666667 : 12.625 : JumpStart); (8.72111353480396 : 12.625 : JumpEnd); (9.91666666666667 : 12.625 : JumpStart); (10.0833333333333 : 12.625 : JumpEnd); (11.875 : 12.625); (11.875 : 17.0304996744792); (16.875 : 17.0304996744792); (16.875 : 15.8181062825521); (17.25 : 15.8181062825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Actividade/Actividade_Planilla" />
       <nodes>
         <classShapeMoniker Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" />
         <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 11.675901344401); (5.75 : 11.675901344401); (5.75 : 12.2804996744792); (6.04166666666667 : 12.2804996744792 : JumpStart); (6.20833333333333 : 12.2804996744792 : JumpEnd); (7.11926082051282 : 12.2804996744792 : JumpStart); (7.28592748717948 : 12.2804996744792 : JumpEnd); (8.31705754206734 : 12.2804996744792 : JumpStart); (8.6469060724272 : 12.2804996744792 : JumpEnd); (8.66666666666667 : 12.2804996744792 : JumpStart); (8.83333333333333 : 12.2804996744792 : JumpEnd); (9.91666666666667 : 12.2804996744792 : JumpStart); (10.0833333333333 : 12.2804996744792 : JumpEnd); (11.75 : 12.2804996744792); (11.75 : 13.1362125651042); (11.7916666666667 : 13.1362125651042 : JumpStart); (11.9583333333333 : 13.1362125651042 : JumpEnd); (14.1032061282051 : 13.1362125651042 : JumpStart); (14.2698727948718 : 13.1362125651042 : JumpEnd); (14.2916666666667 : 13.1362125651042 : JumpStart); (14.4583333333333 : 13.1362125651042 : JumpEnd); (17.718748 : 13.1362125651042); (17.718748 : 13.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 11.675901344401); (5.75 : 11.675901344401); (5.75 : 12.2804996744792); (8.31705754206737 : 12.2804996744792 : JumpStart); (8.64690607242721 : 12.2804996744792 : JumpEnd); (9.91666666666667 : 12.2804996744792 : JumpStart); (10.0833333333333 : 12.2804996744792 : JumpEnd); (11.75 : 12.2804996744792); (11.75 : 13.1362125651042); (11.7916666666667 : 13.1362125651042 : JumpStart); (11.9583333333333 : 13.1362125651042 : JumpEnd); (14.1032061282052 : 13.1362125651042 : JumpStart); (14.2698727948718 : 13.1362125651042 : JumpEnd); (14.2916666666667 : 13.1362125651042 : JumpStart); (14.4583333333333 : 13.1362125651042 : JumpEnd); (17.718748 : 13.1362125651042); (17.718748 : 13.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Planilla" />
       <nodes>
         <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
         <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14 : 12.9496731035657); (14.6875 : 13.6371731035657); (14.6875 : 14.815301141276); (17.25 : 14.815301141276)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14 : 12.9496731035657); (14.6875 : 13.6371731035657); (14.6875 : 14.815301141276); (17.25 : 14.815301141276)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Poste/Poste_Planilla" />
       <nodes>
         <classShapeMoniker Id="9b5cd9fd-e4a8-4918-8f1f-50ae4fe61b9c" />
         <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 10.9239005533854); (8.75 : 10.9239005533854); (8.75 : 13.3237125651042); (11.5416666666667 : 13.3237125651042 : JumpStart); (11.7083333333333 : 13.3237125651042 : JumpEnd); (11.7916666666667 : 13.3237125651042 : JumpStart); (11.9583333333333 : 13.3237125651042 : JumpEnd); (14.2907061282051 : 13.3237125651042 : JumpStart); (14.4573727948718 : 13.3237125651042 : JumpEnd); (17.453122 : 13.3237125651042); (17.453122 : 13.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 10.9239005533854); (8.75 : 10.9239005533854); (8.75 : 13.3237125651042); (11.5416666666667 : 13.3237125651042 : JumpStart); (11.7083333333333 : 13.3237125651042 : JumpEnd); (11.7916666666667 : 13.3237125651042 : JumpStart); (11.9583333333333 : 13.3237125651042 : JumpEnd); (14.2907061282052 : 13.3237125651042 : JumpStart); (14.4573727948718 : 13.3237125651042 : JumpEnd); (17.453122 : 13.3237125651042); (17.453122 : 13.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Planilla" />
       <nodes>
         <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
         <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
-    <classShape Id="2f68193b-0e2b-4c0f-ac89-bc32e0f64053" absoluteBounds="18.5, 9.125, 2, 6.3861311848958326">
+    <classShape Id="0cda02cb-2018-4e66-8063-55b06f5d93ec" absoluteBounds="25.375, 11.125, 2, 6.5784326171875">
       <DataClassMoniker Name="/GeoMapxDBDataContext/VW_Planilla" />
       <nestedChildShapes>
-        <elementListCompartment Id="6498ea28-a56e-447f-86bf-3948bbb14ebd" absoluteBounds="18.515, 9.585, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="63f19ac3-08b0-4338-a370-29a50430d3ee" absoluteBounds="25.39, 11.585, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

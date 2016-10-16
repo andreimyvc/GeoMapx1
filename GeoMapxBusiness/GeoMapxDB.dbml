@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GeoMapxDB" Class="GeoMapxDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ELEXAPC\SQLEXPRESS;Initial Catalog=GeoMapxDB;Persist Security Info=True;User ID=GeoMapx" SettingsObjectName="GeoMapxBusiness.Properties.Settings" SettingsPropertyName="GeoMapxDBConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=GeoMapxDB;Persist Security Info=True;User ID=GeoMapx" SettingsObjectName="GeoMapxBusiness.Properties.Settings" SettingsPropertyName="GeoMapxDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Actividades" Member="Actividades">
     <Type Name="Actividade">
       <Column Name="ActividadID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -355,6 +355,7 @@
       <Column Name="UserCode" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
       <Column Name="CodigoEmpresa" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="CodigoPoste" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPosteHasta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="DescripcionFinanciera" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
       <Column Name="CodioFinanciera" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DescripcionContratista" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />

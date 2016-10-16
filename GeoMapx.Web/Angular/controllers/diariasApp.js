@@ -5,14 +5,15 @@ var diariasController = function (scope, http, geoDataFactory) {
     var d = scope;
     d.diarias =
         {
-            fieldsReadOnly:false,
+            fieldsReadOnly: true,
+            state: 'view',
             btns:
                 {
                     Nuevo: { show: true },
-                    Editar: { show: true },
+                    Editar: { show: false },
                     Eliminar: { show: false },  
-                    Cancelar: { show: true },
-                    Guardar: { show: true }
+                    Cancelar: { show: false },
+                    Guardar: { show: false }
                 }
         };
     //#region SetVariables
@@ -45,9 +46,10 @@ var diariasController = function (scope, http, geoDataFactory) {
         d.fichasData = undefined;
         d.postesHastaData = undefined;
         d.selectedProyect = undefined;
-        d.selectedProyect = undefined;
         d.selectedPoste = undefined;
         d.selectedFicha = undefined;
+        d.selectedContratista = undefined;
+        d.selectedPosteHasta = undefined;
         d.selectedPosteHasta = undefined;
         d.cantidad = undefined;
         d.fecha = undefined;
@@ -55,24 +57,43 @@ var diariasController = function (scope, http, geoDataFactory) {
         d.observacion = undefined;
     };
     d.newEntrada = function () {
-        //d.diarias.fieldsReadOnly = false;
-        //d.diarias.btns.Nuevo.show = false;
-        //d.diarias.btns.Cancelar.show = true;  
+        d.selectedPlanilla = null;
+        d.diarias.fieldsReadOnly = false;
+        d.diarias.btns.Nuevo.show = false;
+        d.diarias.btns.Editar.show = false;
+        d.diarias.btns.Guardar.show = true;
+        d.diarias.btns.Cancelar.show = true; 
+        d.diarias.state = 'add';
         d.selectedProyect = undefined;
         d.actividadesByproyectosData = undefined;
         d.clearFields();
         d.postesData = undefined;
     };
     d.cancelEntrada = function () {
-        //d.diarias.fieldsReadOnly = true;
-        //d.diarias.btns.Nuevo.show = true;
-        //d.diarias.btns.Cancelar.show = false;
+        d.diarias.state = 'view'
+        d.diarias.fieldsReadOnly = true;
+        d.diarias.btns.Nuevo.show = true;
+        d.diarias.btns.Cancelar.show = false;
+        d.diarias.btns.Guardar.show = false;
+        d.clearFields();
+        if (d.selectedPlanilla) {
+            d.setSelectedPlanilla(d.selectedPlanilla.PlanillaID);
+        }
+
         //d.postesData = undefined;
     };
+    d.editarEntrada = function () {
+        d.diarias.state = 'edit'
+        d.diarias.fieldsReadOnly = false;
+        d.diarias.btns.Nuevo.show = false;
+        d.diarias.btns.Cancelar.show = true;
+        d.diarias.btns.Editar.show = false;
+        d.diarias.btns.Guardar.show = true;
+    };
     d.guardarEntrada = function () {
-        //d.diarias.fieldsReadOnly = true;
-        //d.diarias.btns.Nuevo.show = true;
-        //d.diarias.btns.Cancelar.show = false;
+        d.diarias.fieldsReadOnly = true;
+        d.diarias.btns.Nuevo.show = true;
+        d.diarias.btns.Cancelar.show = false;
         //d.postesData = undefined;
         var aplanilla = {
             ProyectoID: d.selectedProyect ?  d.selectedProyect.ProyectoID : undefined,
@@ -85,15 +106,32 @@ var diariasController = function (scope, http, geoDataFactory) {
             FichaID: d.selectedFicha ? d.selectedFicha.FichaID : undefined,
             ContratistaID: d.selectedContratista ? d.selectedContratista.ContratistaID : undefined
         };
-        postPlanilla(aplanilla)
-        .then(function (data) {
-            getPlanillasOfDay();
-            alert("OK");
-            d.clearFields();
-        },function (error) {
-            scope.error = error.data.Message;
-            alert(scope.error);
-        });
+        if (d.diarias.state === 'add') {
+            postPlanilla(aplanilla)
+            .then(function (data) {
+                getPlanillasOfDay();
+                d.diarias.state = 'view'
+                alert("OK");
+                d.clearFields();
+            }, function (error) {
+                d.diarias.fieldsReadOnly = false;
+                d.diarias.btns.Nuevo.show = false;
+                d.diarias.btns.Cancelar.show = true;
+                scope.error = error.data.Message;
+                alert(scope.error);
+            });
+        }
+        else {
+            aplanilla.PlanillaID = d.selectedPlanilla.PlanillaID;
+            putPlanilla(aplanilla).then(function (data) {
+                d.diarias.btns.Editar.show = true;
+                getPlanillasOfDay();
+            }, function (error) {
+                d.error = error.data.Message;
+                alert(d.error)
+            });
+        }
+        d.diarias.btns.Guardar.show = false;
     };
 
     d.eliminarEntrada = function () {
@@ -149,34 +187,35 @@ var diariasController = function (scope, http, geoDataFactory) {
         }
     });
     d.$watch('selectedProyect', function () {
-        if (d.isWatching) {
+        if (d.diarias.state === 'add') {
             getPostesByProyecto();
             getUniconsByProyecto();
             getContratistasByProyecto();
             getActividadesByProyecto();
         }
-        d.isWatching = true;
     });
     d.$watch('selectedUnicons', function () {
-        getPostesByProyectoDiferenteDe();
+        if (d.diarias.state === 'add') {
+            getPostesByProyectoDiferenteDe();
+        }
     });
     d.$watch('selectedContratista', function () {
-        if (d.isWatching){
+        if (d.diarias.state === 'add') {
             getFichasByContratista();
         }
         //d.isWatching = true;
     });
     d.$watch('selectedPoste', function () {
-        if (d.selectedPoste) {
-            d.initMapAndMarker(d.selectedPoste);
-            d.initGridActividadesByPoste(d.selectedPoste.PosteID);
-        }
-        else if (!d.selectedPoste2)
-        {
-            d.setGrid("#jqGridPostes", []);
-        }
+        //if (d.diarias.state === 'add') {
+            if (d.selectedPoste) {
+                d.initMapAndMarker(d.selectedPoste);
+                d.initGridActividadesByPoste(d.selectedPoste.PosteID);
+            }
+            else if (!d.selectedPoste2) {
+                d.setGrid("#jqGridPostes", []);
+            }
+        //}
     });
-
     d.$watch('selectedPoste2', function () {
         if (d.selectedPoste2) {
             d.initMapAndMarker(d.selectedPoste2);
@@ -187,7 +226,6 @@ var diariasController = function (scope, http, geoDataFactory) {
             d.setGrid("#jqGridPostes", []);
         }
     });
-
     d.$watch('planillasOfDayData', function () {
         if (d.planillasOfDayData)
         {
@@ -208,8 +246,12 @@ var diariasController = function (scope, http, geoDataFactory) {
 /*********************BEGIN CRUD*************************************/
     var postPlanilla = function (aplanilla) {
         return geoDataFactory.insertPlanilla(aplanilla);
-    };     
-/*********************END CRUD*************************************/
+    };
+    var putPlanilla = function (aplanilla) {
+        return geoDataFactory.updatePlanilla(aplanilla);
+    };
+    /*********************END CRUD*************************************/
+   //#region GETs
     var getPoryectos = function () {
         geoDataFactory.getProyectosByEmpresas().then(function (data) {
             scope.proyectosData = data;
@@ -272,7 +314,6 @@ var diariasController = function (scope, http, geoDataFactory) {
             scope.postesData = undefined;
         }
     };
-
     var getPostesByProyectoID = function (proyectoid) {
         geoDataFactory.getPostesByProyecto(proyectoid).then(
                 function (data) {
@@ -281,7 +322,6 @@ var diariasController = function (scope, http, geoDataFactory) {
                     scope.error = error.data.Message;
                 });
     };
-
     var getPostesByProyectoDiferenteDe = function () {
         if (d.selectedProyect && d.selectedProyect.ProyectoID > 0
             && d.selectedPoste) {
@@ -289,7 +329,9 @@ var diariasController = function (scope, http, geoDataFactory) {
                 d.selectedPoste.PosteID).then(
                 function (data) {
                     d.postesHastaData = data;
-                    d.selectedPosteHasta = d.postesHastaData.filter(function (elemento) { return elemento.PosteID == d.selectedPosteHasta.PosteID; })[0];6
+                    if (d.selectedPosteHasta) {
+                        d.selectedPosteHasta = d.postesHastaData.filter(function (elemento) { return elemento.PosteID == d.selectedPosteHasta.PosteID; })[0];
+                    }
             },function (error) {
                 d.error = error.data.Message;
             });
@@ -343,20 +385,28 @@ var diariasController = function (scope, http, geoDataFactory) {
             scope.fichasData = undefined;
         }
     };
+    //#endregion Gets
     d.changeGuiPlanilla = function (planilla) {
+        d.selectedPlanilla = planilla;
         if (planilla) {
+            d.setSelectedPoste2(planilla.ProyectoID, planilla.PosteID);
             d.isWatching = false;
-            d.setSelectedProyect(planilla.ProyectoID);
-            //d.LoadselectedProyect = true;
+            d.setSelectedProyect(planilla.ProyectoID)
             d.setSelectedPoste(planilla.ProyectoID, planilla.PosteID);
-            d.setSelectedUnicons(planilla.UniCons);
-            d.setSelectedPosteHasta(planilla.ProyectoID,planilla.PosteID, planilla.PosteIDHasta);
-            d.setSelectedContratista(planilla.ContratistaID || 0);
-            d.setSelectedFicha(planilla.FichaID || 0);
-            d.cantidad = planilla.Cantidad,
-            d.fecha = new Date(planilla.Fecha);//moment().format(planilla.Fecha);// Date.parse(planilla.Fecha);
+            d.setSelectedPoste(planilla.ProyectoID, planilla.PosteID);
+            //d.setSelectedPoste2(planilla.ProyectoID, planilla.PosteID);
+            d.setSelectedUnicons(planilla.ProyectoID, planilla.UniCons);
+            d.setSelectedPosteHasta(planilla.ProyectoID,planilla.PosteID, planilla.PosteIDHasta);;
+            d.setSelectedContratista(planilla.ProyectoID, planilla.ContratistaID);
+            d.setSelectedFicha(planilla.ContratistaID, planilla.FichaID);
+            d.cantidad = planilla.Cantidad;
             d.observacion = planilla.Observacion;
+            var strDate = planilla.Fecha.substring(3, 5) + "/" + planilla.Fecha.substring(0, 2) + "/" + planilla.Fecha.substring(6, 10);
+            d.fecha = new Date(strDate);//moment().format(planilla.Fecha);// Date.parse(planilla.Fecha);
             //d.isWatching = true;
+
+            d.diarias.btns.Guardar.show = false;
+            d.diarias.btns.Editar.show = true;
         };
     };
 
@@ -367,44 +417,46 @@ var diariasController = function (scope, http, geoDataFactory) {
         $(idGrid).jqGrid("setFrozenColumns");
     };
 
+    //#region SetSelected
     d.setSelectedPlanilla = function (id) {
+        d.clearFields();
         if (d.planillasOfDayData) {
             d.selectedPlanilla = d.planillasOfDayData.filter(function (elemento) { return elemento.PlanillaID == id; })[0];
             if (d.selectedPlanilla) {
-                //d.cantidad = d.selectedPlanilla.Cantidad,
-                //d.fecha = d.selectedPlanilla.Fecha;
-                //d.observacion = d.selectedPlanilla.Observacion;
-                //d.setSelectedProyect(d.selectedPlanilla.ProyectoID);
-                //d.setSelectedPoste(d.selectedPlanilla.PosteID);
-                //d.setSelectedPosteHasta(d.selectedPlanilla.PosteIDHasta);
-                //d.setSelectedUnicons(d.selectedPlanilla.UniCons);
-                //d.setSelectedContratista(d.selectedPlanilla.ContratistaID);
-                //d.setSelectedFicha(d.selectedPlanilla.FichaID);
                 d.changeGuiPlanilla(d.selectedPlanilla);
             } else {
                 getPlanillaByIDWithCallback(id, d.changeGuiPlanilla, function (error) { d.error = error.data.Message;});
             }
         }
     };
-    d.setSelectedProyect = function (id) {
+    d.setSelectedProyect = function (proyectid) {
+        d.selectedProyect = null;
         if (d.proyectosData) {
-            d.selectedProyect = d.proyectosData.filter(function (elemento) { return elemento.ProyectoID == id; })[0];
+            d.selectedProyect = d.proyectosData.filter(function (elemento) { return elemento.ProyectoID == proyectid; })[0];
+            getProyect(proyectid);
+        } else {
+            getProyect(proyectid);
+        }
+        function getProyect(proyectid) {
+            geoDataFactory.getProyectosByEmpresas().then(function (data) {
+                d.proyectosData = data;
+                d.selectedProyect = d.proyectosData.filter(function (elemento) { return elemento.ProyectoID == proyectid; })[0];
+            }, function (error) {
+                d.error = error.data.Message;
+            });
         }
     };
-
     d.setSelectedPoste = function (proyectoid, posteid) {
+        d.selectedPoste = null;
         if (d.postesData) {
             d.selectedPoste = d.postesData.filter(function (elemento) { return elemento.PosteID == posteid; })[0];
             if (!d.selectedPoste) {
-                geoDataFactory.getPostesByProyecto(proyectoid).then(
-                    function (data) {
-                        d.postesData = data;
-                        d.selectedPoste = d.postesData.filter(function (elemento) { return elemento.PosteID == posteid; })[0];
-                    }, function (error) {
-                        scope.error = error.data.Message;
-                    });
-            };
+                getPostesByProyecto(proyectoid, posteid);
+            }
         } else {
+            getPostesByProyecto(proyectoid, posteid);
+        }
+        function getPostesByProyecto(proyectoid, posteid) {
             geoDataFactory.getPostesByProyecto(proyectoid).then(
                 function (data) {
                     d.postesData = data;
@@ -414,91 +466,110 @@ var diariasController = function (scope, http, geoDataFactory) {
                 });
         }
     }
-
-
     d.setSelectedPoste2 = function (proyectoid, posteid) {
-        d.clearFields();
+        d.selectedPoste2 = null;
+        //d.clearFields();
         if (d.postesData) {
             d.selectedPoste2 = d.postesData.filter(function (elemento) { return elemento.PosteID == posteid; })[0];
             if (!d.selectedPoste2) {
-                geoDataFactory.getPostesByProyecto(proyectoid).then(
+                getPostesData(proyectoid, posteid);
+            };
+        } else {
+            getPostesData(proyectoid, posteid);
+        }
+        function getPostesData(proyectoid, posteid) {
+            geoDataFactory.getPostesByProyecto(proyectoid).then(
                     function (data) {
                         d.postesData = data;
                         d.selectedPoste2 = d.postesData.filter(function (elemento) { return elemento.PosteID == posteid; })[0];
                     }, function (error) {
                         scope.error = error.data.Message;
                     });
-            };
-        } else {
-            geoDataFactory.getPostesByProyecto(proyectoid).then(
-                function (data) {
-                    d.postesData = data;
-                    d.selectedPoste2 = d.postesData.filter(function (elemento) { return elemento.PosteID == posteid; })[0];
-                }, function (error) {
-                    scope.error = error.data.Message;
-                });
         }
     };
-
     d.setSelectedPosteHasta = function (proyectoid, posteid, posteidHasta) {
+        d.selectedPosteHasta = null;
         if (d.postesHastaData) {
             d.selectedPosteHasta = d.postesHastaData.filter(function (elemento) { return elemento.PosteID == posteidHasta; })[0];
+            if (!d.selectedPosteHasta) { getPosteHasta(proyectoid, posteid); }
         } else {
-            geoDataFactory.getPostesByProyectoDiferenteDe(proyectoid, posteid).then(
-                function (data) {
-                    d.postesHastaData = data;
-                    d.selectedPosteHasta = d.postesHastaData.filter(function (elemento) { return elemento.PosteID == posteidHasta; })[0];
-                }, function (error) {
-                    scope.error = error.data.Message;
-                });
+            getPosteHasta(proyectoid, posteid);
         }
-    };
+        function getPosteHasta(proyectoid, posteid) {
+            geoDataFactory.getPostesByProyectoDiferenteDe(proyectoid, posteid).then(
+                    function (data) {
+                        d.postesHastaData = data;
+                        d.selectedPosteHasta = d.postesHastaData.filter(function (elemento) { return elemento.PosteID == posteidHasta; })[0];
+                    }, function (error) {
+                        scope.error = error.data.Message;
+                    });
 
-    d.setSelectedUnicons = function (id) {
+        };
+    };
+    d.setSelectedUnicons = function (proyectoid, unicons) {
+        d.selectedUnicons = null;
         if (d.uniconsData) {
-            d.selectedUnicons = d.uniconsData.filter(function (elemento) { return elemento.UniCons == id; })[0];
+            d.selectedUnicons = d.uniconsData.filter(function (elemento) { return elemento.UniCons == unicons; })[0];
+            if (!d.selectedUnicons) {
+                getUnicons(proyectoid, unicons);
+            }
         }
         else {
-            geoDataFactory.getUniconsByProyecto(scope.selectedProyect.ProyectoID).then(
+            getUnicons(proyectoid, unicons);
+        }
+        function getUnicons(proyectoid, unicons) {
+            geoDataFactory.getUniconsByProyecto(proyectoid).then(
              function (data) {
                  d.uniconsData = data;
-                 d.selectedUnicons = d.uniconsData.filter(function (elemento) { return elemento.UniCons == id; })[0];
+                 d.selectedUnicons = d.uniconsData.filter(function (elemento) { return elemento.UniCons == unicons; })[0];
              }, function (error) {
                  d.error = error.data.Message;
              });
         }
     };
-
-    d.setSelectedContratista = function (id) {
+    d.setSelectedContratista = function (proyectoid, contratistaid) {
+        d.selectedContratista = null;
         if (d.contratistasData) {
-            d.selectedContratista = d.contratistasData.filter(function (elemento) { return elemento.ContratistaID == id; })[0];
-        } else {
-            geoDataFactory.getContratistasByProyecto(id).then(
+            d.selectedContratista = d.contratistasData.filter(function (elemento) { return elemento.ContratistaID == contratistaid; })[0];
+            if (!d.selectedContratista) {
+                getContratistas(proyectoid, contratistaid);
+            }
+        } else if (contratistaid && contratistaid > 0) {
+            getContratistas(proyectoid, contratistaid);
+        }
+        function getContratistas() {
+            geoDataFactory.getContratistasByProyecto(proyectoid).then(
               function (data) {
                   d.contratistasData = data;
-                  d.selectedContratista = d.contratistasData.filter(function (elemento) { return elemento.ContratistaID == id; })[0];
+                  d.selectedContratista = d.contratistasData.filter(function (elemento) { return elemento.ContratistaID == contratistaid; })[0];
               }, function (error) {
                   d.error = error.data.Message;
               });
         }
     };
-
-    d.setSelectedFicha = function (id) {
-        if (d.fichasData) {
-            d.selectedFicha = d.fichasData.filter(function (elemento) { return elemento.FichaID == id; })[0];
-        } else {
-            geoDataFactory.getFichasByContratista(id).then(
-                function (data) {
-                    d.fichasData = data;
-                    d.selectedFicha = d.fichasData.filter(function (elemento) { return elemento.FichaID == id; })[0];
-                }, function (error) {
-                    d.error = error.data.Message;
-                });
+    d.setSelectedFicha = function (contratistaid, fichaid) {
+        d.selectedFicha = null;
+        if (contratistaid && contratistaid > 0) {
+            if (d.fichasData) {
+                d.selectedFicha = d.fichasData.filter(function (elemento) { return elemento.FichaID == fichaid; })[0];
+                if (!d.selectedFicha) { getFichas(contratistaid, fichaid); }
+            } else {
+                getFichas(contratistaid, fichaid);
+            }
+            function getFichas(contratistaid, fichaid) {
+                geoDataFactory.getFichasByContratista(contratistaid).then(
+                    function (data) {
+                        d.fichasData = data;
+                        d.selectedFicha = d.fichasData.filter(function (elemento) { return elemento.FichaID == fichaid; })[0];
+                    }, function (error) {
+                        d.error = error.data.Message;
+                    });
+            };
         }
     };
+    //#endregion SetSelected
 
-
-    scope.FiltroN = function (car) {
+    d.FiltroN = function (car) {
         if (car.PosteID > 0) { return true; }
         return false;
     };

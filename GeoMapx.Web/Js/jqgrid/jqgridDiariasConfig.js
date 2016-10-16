@@ -57,7 +57,7 @@ function initGridActividadUsuario() {
                 { label: 'Cantidad', name: 'Cantidad', width: 90 },
                 { label: 'Ficha', name: 'CodigoFicha', width: 80 },
                 { label: 'Contratista', name: 'CodigoContratista', width: 100 },
-                { label: 'Hasta', name: 'PosteIDHasta', width: 80 },
+                { label: 'Hasta', name: 'CodigoPosteHasta', width: 80 },
                 { label: 'Fecha', name: 'Fecha', width: 100 },
                 { label: 'Descripcion Actividad', name: 'DescripcionActividad', width: 100 }
             ],

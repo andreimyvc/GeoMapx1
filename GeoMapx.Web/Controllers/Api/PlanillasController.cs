@@ -32,6 +32,7 @@ namespace GeoMapx.Web.Controllers.Api
                                        Fecha = p.Fecha.ToString("dd/MM/yyyy"),
                                        p.CodigoContratista,
                                        p.CodigoPoste,
+                                       p.CodigoPosteHasta,
                                        p.CodigoProyecto,
                                        p.CodioFinanciera,
                                        p.CodigoFicha,
@@ -74,6 +75,7 @@ namespace GeoMapx.Web.Controllers.Api
                                        Fecha = p.Fecha.ToString("dd/MM/yyyy"),
                                        p.CodigoContratista,
                                        p.CodigoPoste,
+                                       p.CodigoPosteHasta,
                                        p.CodigoProyecto,
                                        p.CodioFinanciera,
                                        p.CodigoFicha,
@@ -81,7 +83,7 @@ namespace GeoMapx.Web.Controllers.Api
                                        p.UniCons,
                                        p.Cantidad,
                                        p.PosteIDHasta,
-                                       p.Observacion
+                                       p.Observacion,
                                    };
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
                 }
@@ -143,7 +145,8 @@ namespace GeoMapx.Web.Controllers.Api
                     old.FichaID = entity.FichaID;
                     //old.UserID = entity.UserID;
                     old.UserIDModifica = usuario.UsuarioID;
-                    old.UserIDModifica = entity.UserIDModifica;
+                    old.Observacion = entity.Observacion;
+                    old.ContratistaID = entity.ContratistaID;
                     var data = this._UpdatePlanilla(old);
                     return Request.CreateResponse<Planilla>(HttpStatusCode.OK, data);  
                 }

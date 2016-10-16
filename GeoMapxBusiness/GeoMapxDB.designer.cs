@@ -6886,6 +6886,8 @@ namespace GeoMapxBusiness
 		
 		private string _CodigoPoste;
 		
+		private string _CodigoPosteHasta;
+		
 		private string _DescripcionFinanciera;
 		
 		private string _CodioFinanciera;
@@ -7182,6 +7184,22 @@ namespace GeoMapxBusiness
 				if ((this._CodigoPoste != value))
 				{
 					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPosteHasta", DbType="VarChar(15)")]
+		public string CodigoPosteHasta
+		{
+			get
+			{
+				return this._CodigoPosteHasta;
+			}
+			set
+			{
+				if ((this._CodigoPosteHasta != value))
+				{
+					this._CodigoPosteHasta = value;
 				}
 			}
 		}
