@@ -35,7 +35,8 @@ var uniconsController = function (scope, http, geoDataFactory) {
         d.control.btns.Nuevo.show = false;
         d.control.btns.Editar.show = false;
         d.control.btns.Guardar.show = true;
-        d.control.btns.Cancelar.show = true; 
+        d.control.btns.Cancelar.show = true;
+        d.control.btns.Eliminar.show = false; 
         d.control.state = 'add';
         d.selectedUnicons = undefined;
         d.clearFields();
@@ -46,8 +47,12 @@ var uniconsController = function (scope, http, geoDataFactory) {
         d.control.btns.Nuevo.show = true;
         d.control.btns.Cancelar.show = false;
         d.control.btns.Guardar.show = false;
+        d.control.btns.Eliminar.show = false;
         d.clearFields();
         d.selectedProyect = null;
+        if (d.selectedUnicons) {
+            d.setSelectedUnicons(d.selectedUnicons.ActividadID);
+        }
     };
     d.editarEntrada = function () {
         d.control.state = 'edit'
@@ -62,8 +67,19 @@ var uniconsController = function (scope, http, geoDataFactory) {
         d.control.fieldsReadOnly = true;
         d.control.btns.Nuevo.show = true;
         d.control.btns.Cancelar.show = false;
+        d.control.btns.Eliminar.show = false;
         //d.postesData = undefined;
-        var aactividad = d.newUnicons;
+        var aactividad = {};
+        aactividad.ActividadID = d.newUnicons.ActividadID;
+        aactividad.UniCons = d.newUnicons.UniCons;
+        aactividad.Cantidad = d.newUnicons.Cantidad;
+        aactividad.DescripcionActividad = d.newUnicons.DescripcionActividad;
+        aactividad.ActividadPrimaria = d.newUnicons.ActividadPrimaria;
+        aactividad.ActividadSecundaria = d.newUnicons.ActividadSecundaria;
+        aactividad.ActividadSGT = d.newUnicons.ActividadSGT;
+        aactividad.Fecha = d.newUnicons.Fecha;
+        aactividad.PrecioUnitario = d.newUnicons.PrecioUnitario;
+        
         aactividad.ProyectoID = d.selectedProyect.ProyectoID;
         
         if (d.control.state === 'add') {
@@ -73,6 +89,7 @@ var uniconsController = function (scope, http, geoDataFactory) {
                 d.control.state = 'view';
                 alert("OK");
                 d.clearFields();
+                d.selectedProyect = null;
             }, function (error) {
                 d.control.fieldsReadOnly = false;
                 d.control.btns.Nuevo.show = false;
@@ -102,6 +119,8 @@ var uniconsController = function (scope, http, geoDataFactory) {
         d.control.btns.Nuevo.show = true;
         d.control.btns.Cancelar.show = false;
         d.control.btns.Guardar.show = false;
+        d.control.btns.Eliminar.show = false;
+        d.control.btns.Editar.show = false;
         deleteUnicons(d.newUnicons.ActividadID).then(
             function (result) {
                 getUnicons();
@@ -149,8 +168,8 @@ var uniconsController = function (scope, http, geoDataFactory) {
     };
     //#endregion GETs
     d.setSelectedUnicons = function (actividadID) {
-        var tempUnicons = d.uniconsData.filter(function (item) { return item.ActividadID == actividadID; })[0];
-        var tempProyect = d.proyectosData.filter(function (item) { return item.ProyectoID == tempUnicons.ProyectoID; })[0];
+        var tempUnicons = Object.create(d.uniconsData.filter(function (item) { return item.ActividadID == actividadID; })[0]);
+        var tempProyect = Object.create(d.proyectosData.filter(function (item) { return item.ProyectoID == tempUnicons.ProyectoID; })[0]);
         d.selectedUnicons = tempUnicons;
         d.selectedProyect = tempProyect;
         d.newUnicons = tempUnicons;
