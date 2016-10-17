@@ -87,7 +87,7 @@ namespace GeoMapxBusiness.DAL
                 var old = db.Planillas.Single(p => p.PlanillaID == entity.PlanillaID);
                 old.ActividadID = old.ActividadID;
                 old.Cantidad = entity.Cantidad;
-                old.Hasta = entity.Hasta;
+                old.PosteIDHasta = entity.PosteIDHasta;
                 old.Fecha = entity.Fecha;
                 old.FechaModificacion = entity.FechaModificacion;
                 old.PosteID = entity.PosteID;

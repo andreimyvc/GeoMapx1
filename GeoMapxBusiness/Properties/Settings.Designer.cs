@@ -33,16 +33,5 @@ namespace GeoMapxBusiness.Properties {
                 return ((string)(this["GeoMapxDBConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress;Initial Catalog=GeoMapxDB;Persist Security Info=True;Use" +
-            "r ID=GeoMapx;Password=GeoMapx123")]
-        public string GeoMapxDBConnectionString1 {
-            get {
-                return ((string)(this["GeoMapxDBConnectionString1"]));
-            }
-        }
     }
 }

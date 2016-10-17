@@ -10,6 +10,8 @@ using System.Web;
 using System.Web.Http;
 using GeoMapxBusiness;
 using GeoMapx.Web.Models.GeoMapx;
+using Newtonsoft.Json;
+using GeoMapx.Web.Filters;
 
 namespace GeoMapx.Web.Controllers
 {
@@ -19,11 +21,17 @@ namespace GeoMapx.Web.Controllers
         private GeoMapxBusiness.GeoMapxDBDataContext db = new GeoMapxBusiness.GeoMapxDBDataContext();
 
         // GET api/GenteApi
-        [Authorize]
+        //[Authorize]
         public IEnumerable<Gente> GetGentes()
         {
             return db.Gentes.AsEnumerable();
         }
+        [AllowCrossSiteJsonAttribute]
+        //public string GetGentes()
+        //{
+        //    var data = db.Gentes.AsEnumerable();
+        //    return JsonConvert.SerializeObject(data);
+        //}
 
         // GET api/GenteApi/5
         public Gente GetGente(int id)

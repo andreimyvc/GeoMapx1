@@ -33,18 +33,27 @@ namespace GeoMapxBusiness
     partial void InsertActividade(Actividade instance);
     partial void UpdateActividade(Actividade instance);
     partial void DeleteActividade(Actividade instance);
+    partial void Insertwebpages_UsersInRole(webpages_UsersInRole instance);
+    partial void Updatewebpages_UsersInRole(webpages_UsersInRole instance);
+    partial void Deletewebpages_UsersInRole(webpages_UsersInRole instance);
     partial void InsertContratista(Contratista instance);
     partial void UpdateContratista(Contratista instance);
     partial void DeleteContratista(Contratista instance);
     partial void InsertEmpresa(Empresa instance);
     partial void UpdateEmpresa(Empresa instance);
     partial void DeleteEmpresa(Empresa instance);
+    partial void InsertFicha(Ficha instance);
+    partial void UpdateFicha(Ficha instance);
+    partial void DeleteFicha(Ficha instance);
     partial void InsertFinanciera(Financiera instance);
     partial void UpdateFinanciera(Financiera instance);
     partial void DeleteFinanciera(Financiera instance);
     partial void InsertMateriale(Materiale instance);
     partial void UpdateMateriale(Materiale instance);
     partial void DeleteMateriale(Materiale instance);
+    partial void InsertPoligono(Poligono instance);
+    partial void UpdatePoligono(Poligono instance);
+    partial void DeletePoligono(Poligono instance);
     partial void InsertPoste(Poste instance);
     partial void UpdatePoste(Poste instance);
     partial void DeletePoste(Poste instance);
@@ -57,9 +66,21 @@ namespace GeoMapxBusiness
     partial void InsertTiposPoste(TiposPoste instance);
     partial void UpdateTiposPoste(TiposPoste instance);
     partial void DeleteTiposPoste(TiposPoste instance);
+    partial void InsertUserProfile(UserProfile instance);
+    partial void UpdateUserProfile(UserProfile instance);
+    partial void DeleteUserProfile(UserProfile instance);
     partial void InsertUsuario(Usuario instance);
     partial void UpdateUsuario(Usuario instance);
     partial void DeleteUsuario(Usuario instance);
+    partial void Insertwebpages_Membership(webpages_Membership instance);
+    partial void Updatewebpages_Membership(webpages_Membership instance);
+    partial void Deletewebpages_Membership(webpages_Membership instance);
+    partial void Insertwebpages_OAuthMembership(webpages_OAuthMembership instance);
+    partial void Updatewebpages_OAuthMembership(webpages_OAuthMembership instance);
+    partial void Deletewebpages_OAuthMembership(webpages_OAuthMembership instance);
+    partial void Insertwebpages_Role(webpages_Role instance);
+    partial void Updatewebpages_Role(webpages_Role instance);
+    partial void Deletewebpages_Role(webpages_Role instance);
     partial void InsertPlanilla(Planilla instance);
     partial void UpdatePlanilla(Planilla instance);
     partial void DeletePlanilla(Planilla instance);
@@ -103,6 +124,14 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<webpages_UsersInRole> webpages_UsersInRoles
+		{
+			get
+			{
+				return this.GetTable<webpages_UsersInRole>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Contratista> Contratistas
 		{
 			get
@@ -119,6 +148,14 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<Ficha> Fichas
+		{
+			get
+			{
+				return this.GetTable<Ficha>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Financiera> Financieras
 		{
 			get
@@ -127,11 +164,27 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<Gente> Gentes
+		{
+			get
+			{
+				return this.GetTable<Gente>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Materiale> Materiales
 		{
 			get
 			{
 				return this.GetTable<Materiale>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Poligono> Poligonos
+		{
+			get
+			{
+				return this.GetTable<Poligono>();
 			}
 		}
 		
@@ -167,6 +220,14 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<UserProfile> UserProfiles
+		{
+			get
+			{
+				return this.GetTable<UserProfile>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Usuario> Usuarios
 		{
 			get
@@ -175,19 +236,67 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		public System.Data.Linq.Table<VW_Planilla> VW_Planillas
+		public System.Data.Linq.Table<webpages_Membership> webpages_Memberships
 		{
 			get
 			{
-				return this.GetTable<VW_Planilla>();
+				return this.GetTable<webpages_Membership>();
 			}
 		}
 		
-		public System.Data.Linq.Table<Gente> Gentes
+		public System.Data.Linq.Table<webpages_OAuthMembership> webpages_OAuthMemberships
 		{
 			get
 			{
-				return this.GetTable<Gente>();
+				return this.GetTable<webpages_OAuthMembership>();
+			}
+		}
+		
+		public System.Data.Linq.Table<webpages_Role> webpages_Roles
+		{
+			get
+			{
+				return this.GetTable<webpages_Role>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Actividade> VW_Actividades
+		{
+			get
+			{
+				return this.GetTable<VW_Actividade>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_ActividadesPoste> VW_ActividadesPostes
+		{
+			get
+			{
+				return this.GetTable<VW_ActividadesPoste>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_LicitacionesEjecutada> VW_LicitacionesEjecutadas
+		{
+			get
+			{
+				return this.GetTable<VW_LicitacionesEjecutada>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Materiale> VW_Materiales
+		{
+			get
+			{
+				return this.GetTable<VW_Materiale>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Poste> VW_Postes
+		{
+			get
+			{
+				return this.GetTable<VW_Poste>();
 			}
 		}
 		
@@ -196,6 +305,14 @@ namespace GeoMapxBusiness
 			get
 			{
 				return this.GetTable<Planilla>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Planilla> VW_Planillas
+		{
+			get
+			{
+				return this.GetTable<VW_Planilla>();
 			}
 		}
 	}
@@ -223,6 +340,8 @@ namespace GeoMapxBusiness
 		private System.DateTime _Fecha;
 		
 		private int _UserID;
+		
+		private System.Nullable<int> _ProyectoID;
 		
 		private EntitySet<Materiale> _Materiales;
 		
@@ -256,6 +375,8 @@ namespace GeoMapxBusiness
     partial void OnFechaChanged();
     partial void OnUserIDChanging(int value);
     partial void OnUserIDChanged();
+    partial void OnProyectoIDChanging(System.Nullable<int> value);
+    partial void OnProyectoIDChanged();
     #endregion
 		
 		public Actividade()
@@ -456,6 +577,26 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
+		public System.Nullable<int> ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this.OnProyectoIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProyectoID = value;
+					this.SendPropertyChanged("ProyectoID");
+					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Actividade_Materiale", Storage="_Materiales", ThisKey="ActividadID", OtherKey="ActividadID")]
 		public EntitySet<Materiale> Materiales
 		{
@@ -620,6 +761,174 @@ namespace GeoMapxBusiness
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.webpages_UsersInRoles")]
+	public partial class webpages_UsersInRole : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserId;
+		
+		private int _RoleId;
+		
+		private EntityRef<UserProfile> _UserProfile;
+		
+		private EntityRef<webpages_Role> _webpages_Role;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnRoleIdChanging(int value);
+    partial void OnRoleIdChanged();
+    #endregion
+		
+		public webpages_UsersInRole()
+		{
+			this._UserProfile = default(EntityRef<UserProfile>);
+			this._webpages_Role = default(EntityRef<webpages_Role>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					if (this._UserProfile.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int RoleId
+		{
+			get
+			{
+				return this._RoleId;
+			}
+			set
+			{
+				if ((this._RoleId != value))
+				{
+					if (this._webpages_Role.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRoleIdChanging(value);
+					this.SendPropertyChanging();
+					this._RoleId = value;
+					this.SendPropertyChanged("RoleId");
+					this.OnRoleIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserProfile_webpages_UsersInRole", Storage="_UserProfile", ThisKey="UserId", OtherKey="UserId", IsForeignKey=true)]
+		public UserProfile UserProfile
+		{
+			get
+			{
+				return this._UserProfile.Entity;
+			}
+			set
+			{
+				UserProfile previousValue = this._UserProfile.Entity;
+				if (((previousValue != value) 
+							|| (this._UserProfile.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserProfile.Entity = null;
+						previousValue.webpages_UsersInRoles.Remove(this);
+					}
+					this._UserProfile.Entity = value;
+					if ((value != null))
+					{
+						value.webpages_UsersInRoles.Add(this);
+						this._UserId = value.UserId;
+					}
+					else
+					{
+						this._UserId = default(int);
+					}
+					this.SendPropertyChanged("UserProfile");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="webpages_Role_webpages_UsersInRole", Storage="_webpages_Role", ThisKey="RoleId", OtherKey="RoleId", IsForeignKey=true)]
+		public webpages_Role webpages_Role
+		{
+			get
+			{
+				return this._webpages_Role.Entity;
+			}
+			set
+			{
+				webpages_Role previousValue = this._webpages_Role.Entity;
+				if (((previousValue != value) 
+							|| (this._webpages_Role.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._webpages_Role.Entity = null;
+						previousValue.webpages_UsersInRoles.Remove(this);
+					}
+					this._webpages_Role.Entity = value;
+					if ((value != null))
+					{
+						value.webpages_UsersInRoles.Add(this);
+						this._RoleId = value.RoleId;
+					}
+					else
+					{
+						this._RoleId = default(int);
+					}
+					this.SendPropertyChanged("webpages_Role");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Contratistas")]
 	public partial class Contratista : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -638,7 +947,13 @@ namespace GeoMapxBusiness
 		
 		private char _Estatus;
 		
+		private System.Nullable<int> _ProyectoID;
+		
+		private EntitySet<Ficha> _Fichas;
+		
 		private EntityRef<Empresa> _Empresa;
+		
+		private EntityRef<Proyecto> _Proyecto;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -656,11 +971,15 @@ namespace GeoMapxBusiness
     partial void OnFechaChanged();
     partial void OnEstatusChanging(char value);
     partial void OnEstatusChanged();
+    partial void OnProyectoIDChanging(System.Nullable<int> value);
+    partial void OnProyectoIDChanged();
     #endregion
 		
 		public Contratista()
 		{
+			this._Fichas = new EntitySet<Ficha>(new Action<Ficha>(this.attach_Fichas), new Action<Ficha>(this.detach_Fichas));
 			this._Empresa = default(EntityRef<Empresa>);
+			this._Proyecto = default(EntityRef<Proyecto>);
 			OnCreated();
 		}
 		
@@ -788,6 +1107,43 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
+		public System.Nullable<int> ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					if (this._Proyecto.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProyectoIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProyectoID = value;
+					this.SendPropertyChanged("ProyectoID");
+					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contratista_Ficha", Storage="_Fichas", ThisKey="ContratistaID", OtherKey="ContratistaID")]
+		public EntitySet<Ficha> Fichas
+		{
+			get
+			{
+				return this._Fichas;
+			}
+			set
+			{
+				this._Fichas.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Contratista", Storage="_Empresa", ThisKey="EmpresaID", OtherKey="EmpresaID", IsForeignKey=true)]
 		public Empresa Empresa
 		{
@@ -822,6 +1178,40 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_Contratista", Storage="_Proyecto", ThisKey="ProyectoID", OtherKey="ProyectoID", IsForeignKey=true)]
+		public Proyecto Proyecto
+		{
+			get
+			{
+				return this._Proyecto.Entity;
+			}
+			set
+			{
+				Proyecto previousValue = this._Proyecto.Entity;
+				if (((previousValue != value) 
+							|| (this._Proyecto.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Proyecto.Entity = null;
+						previousValue.Contratistas.Remove(this);
+					}
+					this._Proyecto.Entity = value;
+					if ((value != null))
+					{
+						value.Contratistas.Add(this);
+						this._ProyectoID = value.ProyectoID;
+					}
+					else
+					{
+						this._ProyectoID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Proyecto");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -840,6 +1230,18 @@ namespace GeoMapxBusiness
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Fichas(Ficha entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contratista = this;
+		}
+		
+		private void detach_Fichas(Ficha entity)
+		{
+			this.SendPropertyChanging();
+			entity.Contratista = null;
 		}
 	}
 	
@@ -860,6 +1262,8 @@ namespace GeoMapxBusiness
 		private EntitySet<Actividade> _Actividades;
 		
 		private EntitySet<Contratista> _Contratistas;
+		
+		private EntitySet<Ficha> _Fichas;
 		
 		private EntitySet<Financiera> _Financieras;
 		
@@ -889,6 +1293,7 @@ namespace GeoMapxBusiness
 		{
 			this._Actividades = new EntitySet<Actividade>(new Action<Actividade>(this.attach_Actividades), new Action<Actividade>(this.detach_Actividades));
 			this._Contratistas = new EntitySet<Contratista>(new Action<Contratista>(this.attach_Contratistas), new Action<Contratista>(this.detach_Contratistas));
+			this._Fichas = new EntitySet<Ficha>(new Action<Ficha>(this.attach_Fichas), new Action<Ficha>(this.detach_Fichas));
 			this._Financieras = new EntitySet<Financiera>(new Action<Financiera>(this.attach_Financieras), new Action<Financiera>(this.detach_Financieras));
 			this._Postes = new EntitySet<Poste>(new Action<Poste>(this.attach_Postes), new Action<Poste>(this.detach_Postes));
 			this._Proyectos = new EntitySet<Proyecto>(new Action<Proyecto>(this.attach_Proyectos), new Action<Proyecto>(this.detach_Proyectos));
@@ -1003,6 +1408,19 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Ficha", Storage="_Fichas", ThisKey="EmpresaID", OtherKey="EmpresaID")]
+		public EntitySet<Ficha> Fichas
+		{
+			get
+			{
+				return this._Fichas;
+			}
+			set
+			{
+				this._Fichas.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Financiera", Storage="_Financieras", ThisKey="EmpresaID", OtherKey="EmpresaID")]
 		public EntitySet<Financiera> Financieras
 		{
@@ -1112,6 +1530,18 @@ namespace GeoMapxBusiness
 			entity.Empresa = null;
 		}
 		
+		private void attach_Fichas(Ficha entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = this;
+		}
+		
+		private void detach_Fichas(Ficha entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = null;
+		}
+		
 		private void attach_Financieras(Financiera entity)
 		{
 			this.SendPropertyChanging();
@@ -1170,6 +1600,246 @@ namespace GeoMapxBusiness
 		{
 			this.SendPropertyChanging();
 			entity.Empresa = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fichas")]
+	public partial class Ficha : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FichaID;
+		
+		private int _EmpresaID;
+		
+		private int _ContratistaID;
+		
+		private string _CodigoFicha;
+		
+		private char _Estatus;
+		
+		private EntityRef<Contratista> _Contratista;
+		
+		private EntityRef<Empresa> _Empresa;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFichaIDChanging(int value);
+    partial void OnFichaIDChanged();
+    partial void OnEmpresaIDChanging(int value);
+    partial void OnEmpresaIDChanged();
+    partial void OnContratistaIDChanging(int value);
+    partial void OnContratistaIDChanged();
+    partial void OnCodigoFichaChanging(string value);
+    partial void OnCodigoFichaChanged();
+    partial void OnEstatusChanging(char value);
+    partial void OnEstatusChanged();
+    #endregion
+		
+		public Ficha()
+		{
+			this._Contratista = default(EntityRef<Contratista>);
+			this._Empresa = default(EntityRef<Empresa>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FichaID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int FichaID
+		{
+			get
+			{
+				return this._FichaID;
+			}
+			set
+			{
+				if ((this._FichaID != value))
+				{
+					this.OnFichaIDChanging(value);
+					this.SendPropertyChanging();
+					this._FichaID = value;
+					this.SendPropertyChanged("FichaID");
+					this.OnFichaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					if (this._Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContratistaID", DbType="Int NOT NULL")]
+		public int ContratistaID
+		{
+			get
+			{
+				return this._ContratistaID;
+			}
+			set
+			{
+				if ((this._ContratistaID != value))
+				{
+					if (this._Contratista.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnContratistaIDChanging(value);
+					this.SendPropertyChanging();
+					this._ContratistaID = value;
+					this.SendPropertyChanged("ContratistaID");
+					this.OnContratistaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoFicha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CodigoFicha
+		{
+			get
+			{
+				return this._CodigoFicha;
+			}
+			set
+			{
+				if ((this._CodigoFicha != value))
+				{
+					this.OnCodigoFichaChanging(value);
+					this.SendPropertyChanging();
+					this._CodigoFicha = value;
+					this.SendPropertyChanged("CodigoFicha");
+					this.OnCodigoFichaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estatus", DbType="Char(1) NOT NULL")]
+		public char Estatus
+		{
+			get
+			{
+				return this._Estatus;
+			}
+			set
+			{
+				if ((this._Estatus != value))
+				{
+					this.OnEstatusChanging(value);
+					this.SendPropertyChanging();
+					this._Estatus = value;
+					this.SendPropertyChanged("Estatus");
+					this.OnEstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contratista_Ficha", Storage="_Contratista", ThisKey="ContratistaID", OtherKey="ContratistaID", IsForeignKey=true)]
+		public Contratista Contratista
+		{
+			get
+			{
+				return this._Contratista.Entity;
+			}
+			set
+			{
+				Contratista previousValue = this._Contratista.Entity;
+				if (((previousValue != value) 
+							|| (this._Contratista.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Contratista.Entity = null;
+						previousValue.Fichas.Remove(this);
+					}
+					this._Contratista.Entity = value;
+					if ((value != null))
+					{
+						value.Fichas.Add(this);
+						this._ContratistaID = value.ContratistaID;
+					}
+					else
+					{
+						this._ContratistaID = default(int);
+					}
+					this.SendPropertyChanged("Contratista");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Ficha", Storage="_Empresa", ThisKey="EmpresaID", OtherKey="EmpresaID", IsForeignKey=true)]
+		public Empresa Empresa
+		{
+			get
+			{
+				return this._Empresa.Entity;
+			}
+			set
+			{
+				Empresa previousValue = this._Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Empresa.Entity = null;
+						previousValue.Fichas.Remove(this);
+					}
+					this._Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Fichas.Add(this);
+						this._EmpresaID = value.EmpresaID;
+					}
+					else
+					{
+						this._EmpresaID = default(int);
+					}
+					this.SendPropertyChanged("Empresa");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1373,6 +2043,69 @@ namespace GeoMapxBusiness
 		{
 			this.SendPropertyChanging();
 			entity.Financiera = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Gentes")]
+	public partial class Gente
+	{
+		
+		private int _ID;
+		
+		private string _Nombre;
+		
+		private string _Apellido;
+		
+		public Gente()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apellido", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Apellido
+		{
+			get
+			{
+				return this._Apellido;
+			}
+			set
+			{
+				if ((this._Apellido != value))
+				{
+					this._Apellido = value;
+				}
+			}
 		}
 	}
 	
@@ -1664,6 +2397,236 @@ namespace GeoMapxBusiness
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Poligonos")]
+	public partial class Poligono : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PoligonoID;
+		
+		private int _EmpresaID;
+		
+		private int _CodigoPoligono;
+		
+		private int _ProyectoID;
+		
+		private int _UserID;
+		
+		private System.DateTime _Fecha;
+		
+		private System.Nullable<int> _UserIDModifica;
+		
+		private System.Nullable<System.DateTime> _FechaModificacion;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPoligonoIDChanging(int value);
+    partial void OnPoligonoIDChanged();
+    partial void OnEmpresaIDChanging(int value);
+    partial void OnEmpresaIDChanged();
+    partial void OnCodigoPoligonoChanging(int value);
+    partial void OnCodigoPoligonoChanged();
+    partial void OnProyectoIDChanging(int value);
+    partial void OnProyectoIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnFechaChanging(System.DateTime value);
+    partial void OnFechaChanged();
+    partial void OnUserIDModificaChanging(System.Nullable<int> value);
+    partial void OnUserIDModificaChanged();
+    partial void OnFechaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaModificacionChanged();
+    #endregion
+		
+		public Poligono()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this.OnPoligonoIDChanging(value);
+					this.SendPropertyChanging();
+					this._PoligonoID = value;
+					this.SendPropertyChanged("PoligonoID");
+					this.OnPoligonoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoligono", DbType="Int NOT NULL")]
+		public int CodigoPoligono
+		{
+			get
+			{
+				return this._CodigoPoligono;
+			}
+			set
+			{
+				if ((this._CodigoPoligono != value))
+				{
+					this.OnCodigoPoligonoChanging(value);
+					this.SendPropertyChanging();
+					this._CodigoPoligono = value;
+					this.SendPropertyChanged("CodigoPoligono");
+					this.OnCodigoPoligonoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this.OnProyectoIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProyectoID = value;
+					this.SendPropertyChanged("ProyectoID");
+					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
+		public System.Nullable<int> UserIDModifica
+		{
+			get
+			{
+				return this._UserIDModifica;
+			}
+			set
+			{
+				if ((this._UserIDModifica != value))
+				{
+					this.OnUserIDModificaChanging(value);
+					this.SendPropertyChanging();
+					this._UserIDModifica = value;
+					this.SendPropertyChanged("UserIDModifica");
+					this.OnUserIDModificaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaModificacion
+		{
+			get
+			{
+				return this._FechaModificacion;
+			}
+			set
+			{
+				if ((this._FechaModificacion != value))
+				{
+					this.OnFechaModificacionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaModificacion = value;
+					this.SendPropertyChanged("FechaModificacion");
+					this.OnFechaModificacionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Postes")]
 	public partial class Poste : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1695,6 +2658,12 @@ namespace GeoMapxBusiness
 		private System.Nullable<int> _UserIDModifica;
 		
 		private System.Nullable<System.DateTime> _FechaModificacion;
+		
+		private System.Nullable<int> _PoligonoID;
+		
+		private System.Nullable<decimal> _Lat;
+		
+		private System.Nullable<decimal> _Lon;
 		
 		private EntitySet<Planilla> _Planillas;
 		
@@ -1734,6 +2703,12 @@ namespace GeoMapxBusiness
     partial void OnUserIDModificaChanged();
     partial void OnFechaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void OnFechaModificacionChanged();
+    partial void OnPoligonoIDChanging(System.Nullable<int> value);
+    partial void OnPoligonoIDChanged();
+    partial void OnLatChanging(System.Nullable<decimal> value);
+    partial void OnLatChanged();
+    partial void OnLonChanging(System.Nullable<decimal> value);
+    partial void OnLonChanged();
     #endregion
 		
 		public Poste()
@@ -2013,6 +2988,66 @@ namespace GeoMapxBusiness
 					this._FechaModificacion = value;
 					this.SendPropertyChanged("FechaModificacion");
 					this.OnFechaModificacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
+		public System.Nullable<int> PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this.OnPoligonoIDChanging(value);
+					this.SendPropertyChanging();
+					this._PoligonoID = value;
+					this.SendPropertyChanged("PoligonoID");
+					this.OnPoligonoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this.OnLatChanging(value);
+					this.SendPropertyChanging();
+					this._Lat = value;
+					this.SendPropertyChanged("Lat");
+					this.OnLatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lon", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Lon
+		{
+			get
+			{
+				return this._Lon;
+			}
+			set
+			{
+				if ((this._Lon != value))
+				{
+					this.OnLonChanging(value);
+					this.SendPropertyChanging();
+					this._Lon = value;
+					this.SendPropertyChanged("Lon");
+					this.OnLonChanged();
 				}
 			}
 		}
@@ -2471,6 +3506,12 @@ namespace GeoMapxBusiness
 		
 		private System.DateTime _Fecha;
 		
+		private System.Nullable<char> _Estatus;
+		
+		private System.Nullable<bool> _Visible;
+		
+		private EntitySet<Contratista> _Contratistas;
+		
 		private EntitySet<Materiale> _Materiales;
 		
 		private EntitySet<Poste> _Postes;
@@ -2499,10 +3540,15 @@ namespace GeoMapxBusiness
     partial void OnEmpresaIDChanged();
     partial void OnFechaChanging(System.DateTime value);
     partial void OnFechaChanged();
+    partial void OnEstatusChanging(System.Nullable<char> value);
+    partial void OnEstatusChanged();
+    partial void OnVisibleChanging(System.Nullable<bool> value);
+    partial void OnVisibleChanged();
     #endregion
 		
 		public Proyecto()
 		{
+			this._Contratistas = new EntitySet<Contratista>(new Action<Contratista>(this.attach_Contratistas), new Action<Contratista>(this.detach_Contratistas));
 			this._Materiales = new EntitySet<Materiale>(new Action<Materiale>(this.attach_Materiales), new Action<Materiale>(this.detach_Materiales));
 			this._Postes = new EntitySet<Poste>(new Action<Poste>(this.attach_Postes), new Action<Poste>(this.detach_Postes));
 			this._Precios = new EntitySet<Precio>(new Action<Precio>(this.attach_Precios), new Action<Precio>(this.detach_Precios));
@@ -2637,6 +3683,59 @@ namespace GeoMapxBusiness
 					this.SendPropertyChanged("Fecha");
 					this.OnFechaChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estatus", DbType="Char(1)")]
+		public System.Nullable<char> Estatus
+		{
+			get
+			{
+				return this._Estatus;
+			}
+			set
+			{
+				if ((this._Estatus != value))
+				{
+					this.OnEstatusChanging(value);
+					this.SendPropertyChanging();
+					this._Estatus = value;
+					this.SendPropertyChanged("Estatus");
+					this.OnEstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Visible", DbType="Bit")]
+		public System.Nullable<bool> Visible
+		{
+			get
+			{
+				return this._Visible;
+			}
+			set
+			{
+				if ((this._Visible != value))
+				{
+					this.OnVisibleChanging(value);
+					this.SendPropertyChanging();
+					this._Visible = value;
+					this.SendPropertyChanged("Visible");
+					this.OnVisibleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_Contratista", Storage="_Contratistas", ThisKey="ProyectoID", OtherKey="ProyectoID")]
+		public EntitySet<Contratista> Contratistas
+		{
+			get
+			{
+				return this._Contratistas;
+			}
+			set
+			{
+				this._Contratistas.Assign(value);
 			}
 		}
 		
@@ -2778,6 +3877,18 @@ namespace GeoMapxBusiness
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Contratistas(Contratista entity)
+		{
+			this.SendPropertyChanging();
+			entity.Proyecto = this;
+		}
+		
+		private void detach_Contratistas(Contratista entity)
+		{
+			this.SendPropertyChanging();
+			entity.Proyecto = null;
 		}
 		
 		private void attach_Materiales(Materiale entity)
@@ -2940,6 +4051,120 @@ namespace GeoMapxBusiness
 		{
 			this.SendPropertyChanging();
 			entity.TiposPoste = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserProfile")]
+	public partial class UserProfile : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private EntitySet<webpages_UsersInRole> _webpages_UsersInRoles;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    #endregion
+		
+		public UserProfile()
+		{
+			this._webpages_UsersInRoles = new EntitySet<webpages_UsersInRole>(new Action<webpages_UsersInRole>(this.attach_webpages_UsersInRoles), new Action<webpages_UsersInRole>(this.detach_webpages_UsersInRoles));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(56) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserProfile_webpages_UsersInRole", Storage="_webpages_UsersInRoles", ThisKey="UserId", OtherKey="UserId")]
+		public EntitySet<webpages_UsersInRole> webpages_UsersInRoles
+		{
+			get
+			{
+				return this._webpages_UsersInRoles;
+			}
+			set
+			{
+				this._webpages_UsersInRoles.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_webpages_UsersInRoles(webpages_UsersInRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserProfile = this;
+		}
+		
+		private void detach_webpages_UsersInRoles(webpages_UsersInRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserProfile = null;
 		}
 	}
 	
@@ -3170,76 +4395,1296 @@ namespace GeoMapxBusiness
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Planilla")]
-	public partial class VW_Planilla
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.webpages_Membership")]
+	public partial class webpages_Membership : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private string _NombreEmpresa;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserId;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		private string _ConfirmationToken;
+		
+		private System.Nullable<bool> _IsConfirmed;
+		
+		private System.Nullable<System.DateTime> _LastPasswordFailureDate;
+		
+		private int _PasswordFailuresSinceLastSuccess;
+		
+		private string _Password;
+		
+		private System.Nullable<System.DateTime> _PasswordChangedDate;
+		
+		private string _PasswordSalt;
+		
+		private string _PasswordVerificationToken;
+		
+		private System.Nullable<System.DateTime> _PasswordVerificationTokenExpirationDate;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreateDateChanged();
+    partial void OnConfirmationTokenChanging(string value);
+    partial void OnConfirmationTokenChanged();
+    partial void OnIsConfirmedChanging(System.Nullable<bool> value);
+    partial void OnIsConfirmedChanged();
+    partial void OnLastPasswordFailureDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastPasswordFailureDateChanged();
+    partial void OnPasswordFailuresSinceLastSuccessChanging(int value);
+    partial void OnPasswordFailuresSinceLastSuccessChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnPasswordChangedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnPasswordChangedDateChanged();
+    partial void OnPasswordSaltChanging(string value);
+    partial void OnPasswordSaltChanged();
+    partial void OnPasswordVerificationTokenChanging(string value);
+    partial void OnPasswordVerificationTokenChanged();
+    partial void OnPasswordVerificationTokenExpirationDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnPasswordVerificationTokenExpirationDateChanged();
+    #endregion
+		
+		public webpages_Membership()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConfirmationToken", DbType="NVarChar(128)")]
+		public string ConfirmationToken
+		{
+			get
+			{
+				return this._ConfirmationToken;
+			}
+			set
+			{
+				if ((this._ConfirmationToken != value))
+				{
+					this.OnConfirmationTokenChanging(value);
+					this.SendPropertyChanging();
+					this._ConfirmationToken = value;
+					this.SendPropertyChanged("ConfirmationToken");
+					this.OnConfirmationTokenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsConfirmed", DbType="Bit")]
+		public System.Nullable<bool> IsConfirmed
+		{
+			get
+			{
+				return this._IsConfirmed;
+			}
+			set
+			{
+				if ((this._IsConfirmed != value))
+				{
+					this.OnIsConfirmedChanging(value);
+					this.SendPropertyChanging();
+					this._IsConfirmed = value;
+					this.SendPropertyChanged("IsConfirmed");
+					this.OnIsConfirmedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastPasswordFailureDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastPasswordFailureDate
+		{
+			get
+			{
+				return this._LastPasswordFailureDate;
+			}
+			set
+			{
+				if ((this._LastPasswordFailureDate != value))
+				{
+					this.OnLastPasswordFailureDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastPasswordFailureDate = value;
+					this.SendPropertyChanged("LastPasswordFailureDate");
+					this.OnLastPasswordFailureDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PasswordFailuresSinceLastSuccess", DbType="Int NOT NULL")]
+		public int PasswordFailuresSinceLastSuccess
+		{
+			get
+			{
+				return this._PasswordFailuresSinceLastSuccess;
+			}
+			set
+			{
+				if ((this._PasswordFailuresSinceLastSuccess != value))
+				{
+					this.OnPasswordFailuresSinceLastSuccessChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordFailuresSinceLastSuccess = value;
+					this.SendPropertyChanged("PasswordFailuresSinceLastSuccess");
+					this.OnPasswordFailuresSinceLastSuccessChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PasswordChangedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PasswordChangedDate
+		{
+			get
+			{
+				return this._PasswordChangedDate;
+			}
+			set
+			{
+				if ((this._PasswordChangedDate != value))
+				{
+					this.OnPasswordChangedDateChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordChangedDate = value;
+					this.SendPropertyChanged("PasswordChangedDate");
+					this.OnPasswordChangedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PasswordSalt", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string PasswordSalt
+		{
+			get
+			{
+				return this._PasswordSalt;
+			}
+			set
+			{
+				if ((this._PasswordSalt != value))
+				{
+					this.OnPasswordSaltChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordSalt = value;
+					this.SendPropertyChanged("PasswordSalt");
+					this.OnPasswordSaltChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PasswordVerificationToken", DbType="NVarChar(128)")]
+		public string PasswordVerificationToken
+		{
+			get
+			{
+				return this._PasswordVerificationToken;
+			}
+			set
+			{
+				if ((this._PasswordVerificationToken != value))
+				{
+					this.OnPasswordVerificationTokenChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordVerificationToken = value;
+					this.SendPropertyChanged("PasswordVerificationToken");
+					this.OnPasswordVerificationTokenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PasswordVerificationTokenExpirationDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PasswordVerificationTokenExpirationDate
+		{
+			get
+			{
+				return this._PasswordVerificationTokenExpirationDate;
+			}
+			set
+			{
+				if ((this._PasswordVerificationTokenExpirationDate != value))
+				{
+					this.OnPasswordVerificationTokenExpirationDateChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordVerificationTokenExpirationDate = value;
+					this.SendPropertyChanged("PasswordVerificationTokenExpirationDate");
+					this.OnPasswordVerificationTokenExpirationDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.webpages_OAuthMembership")]
+	public partial class webpages_OAuthMembership : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Provider;
+		
+		private string _ProviderUserId;
+		
+		private int _UserId;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProviderChanging(string value);
+    partial void OnProviderChanged();
+    partial void OnProviderUserIdChanging(string value);
+    partial void OnProviderUserIdChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    #endregion
+		
+		public webpages_OAuthMembership()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Provider", DbType="NVarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Provider
+		{
+			get
+			{
+				return this._Provider;
+			}
+			set
+			{
+				if ((this._Provider != value))
+				{
+					this.OnProviderChanging(value);
+					this.SendPropertyChanging();
+					this._Provider = value;
+					this.SendPropertyChanged("Provider");
+					this.OnProviderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProviderUserId", DbType="NVarChar(100) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ProviderUserId
+		{
+			get
+			{
+				return this._ProviderUserId;
+			}
+			set
+			{
+				if ((this._ProviderUserId != value))
+				{
+					this.OnProviderUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProviderUserId = value;
+					this.SendPropertyChanged("ProviderUserId");
+					this.OnProviderUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.webpages_Roles")]
+	public partial class webpages_Role : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RoleId;
+		
+		private string _RoleName;
+		
+		private EntitySet<webpages_UsersInRole> _webpages_UsersInRoles;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRoleIdChanging(int value);
+    partial void OnRoleIdChanged();
+    partial void OnRoleNameChanging(string value);
+    partial void OnRoleNameChanged();
+    #endregion
+		
+		public webpages_Role()
+		{
+			this._webpages_UsersInRoles = new EntitySet<webpages_UsersInRole>(new Action<webpages_UsersInRole>(this.attach_webpages_UsersInRoles), new Action<webpages_UsersInRole>(this.detach_webpages_UsersInRoles));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RoleId
+		{
+			get
+			{
+				return this._RoleId;
+			}
+			set
+			{
+				if ((this._RoleId != value))
+				{
+					this.OnRoleIdChanging(value);
+					this.SendPropertyChanging();
+					this._RoleId = value;
+					this.SendPropertyChanged("RoleId");
+					this.OnRoleIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoleName", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string RoleName
+		{
+			get
+			{
+				return this._RoleName;
+			}
+			set
+			{
+				if ((this._RoleName != value))
+				{
+					this.OnRoleNameChanging(value);
+					this.SendPropertyChanging();
+					this._RoleName = value;
+					this.SendPropertyChanged("RoleName");
+					this.OnRoleNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="webpages_Role_webpages_UsersInRole", Storage="_webpages_UsersInRoles", ThisKey="RoleId", OtherKey="RoleId")]
+		public EntitySet<webpages_UsersInRole> webpages_UsersInRoles
+		{
+			get
+			{
+				return this._webpages_UsersInRoles;
+			}
+			set
+			{
+				this._webpages_UsersInRoles.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_webpages_UsersInRoles(webpages_UsersInRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.webpages_Role = this;
+		}
+		
+		private void detach_webpages_UsersInRoles(webpages_UsersInRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.webpages_Role = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Actividades")]
+	public partial class VW_Actividade
+	{
+		
+		private int _ActividadID;
+		
+		private int _EmpresaID;
+		
+		private string _UniCons;
+		
+		private string _DescripcionActividad;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private string _ActividadSGT;
+		
+		private System.DateTime _Fecha;
+		
+		private int _UserID;
+		
+		private System.Nullable<int> _ProyectoID;
+		
+		private string _CodigoProyecto;
+		
+		public VW_Actividade()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
+		public string ActividadSGT
+		{
+			get
+			{
+				return this._ActividadSGT;
+			}
+			set
+			{
+				if ((this._ActividadSGT != value))
+				{
+					this._ActividadSGT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
+		public System.Nullable<int> ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesPostes")]
+	public partial class VW_ActividadesPoste
+	{
+		
+		private int _ActividadID;
+		
+		private string _CodigoPoste;
+		
+		private string _UniCons;
+		
+		private string _DescripcionActividad;
+		
+		private int _Cantidad;
+		
+		private string _Hasta;
+		
+		private int _ProyectoID;
+		
+		private int _EmpresaID;
+		
+		private int _PosteID;
+		
+		private System.DateTime _Fecha;
+		
+		private int _PlanillaID;
+		
+		private int _UserID;
+		
+		private bool _Verificado;
+		
+		private System.Nullable<int> _UserIDModifica;
+		
+		private string _CodigoProyecto;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private string _ActividadSGT;
+		
+		private System.Nullable<int> _PosteIDHasta;
+		
+		private string _CodigoContratista;
+		
+		private string _CodigoFicha;
+		
+		public VW_ActividadesPoste()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
+		{
+			get
+			{
+				return this._CodigoPoste;
+			}
+			set
+			{
+				if ((this._CodigoPoste != value))
+				{
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
+		public int Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="VarChar(15)")]
+		public string Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this._Hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Int NOT NULL")]
+		public int PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Verificado", DbType="Bit NOT NULL")]
+		public bool Verificado
+		{
+			get
+			{
+				return this._Verificado;
+			}
+			set
+			{
+				if ((this._Verificado != value))
+				{
+					this._Verificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
+		public System.Nullable<int> UserIDModifica
+		{
+			get
+			{
+				return this._UserIDModifica;
+			}
+			set
+			{
+				if ((this._UserIDModifica != value))
+				{
+					this._UserIDModifica = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
+		public string ActividadSGT
+		{
+			get
+			{
+				return this._ActividadSGT;
+			}
+			set
+			{
+				if ((this._ActividadSGT != value))
+				{
+					this._ActividadSGT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
+		public System.Nullable<int> PosteIDHasta
+		{
+			get
+			{
+				return this._PosteIDHasta;
+			}
+			set
+			{
+				if ((this._PosteIDHasta != value))
+				{
+					this._PosteIDHasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
+		public string CodigoContratista
+		{
+			get
+			{
+				return this._CodigoContratista;
+			}
+			set
+			{
+				if ((this._CodigoContratista != value))
+				{
+					this._CodigoContratista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoFicha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CodigoFicha
+		{
+			get
+			{
+				return this._CodigoFicha;
+			}
+			set
+			{
+				if ((this._CodigoFicha != value))
+				{
+					this._CodigoFicha = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_LicitacionesEjecutadas")]
+	public partial class VW_LicitacionesEjecutada
+	{
+		
+		private int _CantidadEjecutadas;
+		
+		private System.Nullable<int> _CantidadFaltantes;
+		
+		private int _PrecioID;
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<int> _ActividadID;
+		
+		private string _Descripcion;
+		
+		private int _Cantidad;
+		
+		private decimal _PrecioUnitario;
+		
+		private System.Nullable<System.DateTime> _Fecha;
 		
 		private string _CodigoProyecto;
 		
 		private string _UniCons;
 		
-		private int _PlanillaID;
-		
-		private int _EmpresaID;
-		
-		private int _ActividadID;
-		
-		private int _ProyectoID;
-		
-		private int _PosteID;
-		
-		private string _Unidad;
-		
-		private int _Cantidad;
-		
-		private System.DateTime _FechaInicio;
-		
-		private System.Nullable<System.DateTime> _FechaFin;
-		
-		private int _UserID;
-		
-		private System.Nullable<int> _UserIDModifica;
-		
-		private System.Nullable<System.DateTime> _FechaModificacion;
-		
-		private string _UserName;
-		
-		private string _UserCode;
-		
-		private string _CodigoEmpresa;
-		
-		private string _CodigoPoste;
-		
-		private string _DescripcionFinanciera;
-		
-		private string _CodioFinanciera;
-		
-		private string _DescripcionContratista;
-		
-		private string _DescripcionActividad;
-		
-		private string _DescripcionProyecto;
-		
-		private string _CodigoContratista;
-		
-		public VW_Planilla()
+		public VW_LicitacionesEjecutada()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreEmpresa", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string NombreEmpresa
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutadas", DbType="Int NOT NULL")]
+		public int CantidadEjecutadas
 		{
 			get
 			{
-				return this._NombreEmpresa;
+				return this._CantidadEjecutadas;
 			}
 			set
 			{
-				if ((this._NombreEmpresa != value))
+				if ((this._CantidadEjecutadas != value))
 				{
-					this._NombreEmpresa = value;
+					this._CantidadEjecutadas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadFaltantes", DbType="Int")]
+		public System.Nullable<int> CantidadFaltantes
+		{
+			get
+			{
+				return this._CantidadFaltantes;
+			}
+			set
+			{
+				if ((this._CantidadFaltantes != value))
+				{
+					this._CantidadFaltantes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioID", DbType="Int NOT NULL")]
+		public int PrecioID
+		{
+			get
+			{
+				return this._PrecioID;
+			}
+			set
+			{
+				if ((this._PrecioID != value))
+				{
+					this._PrecioID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
+		public System.Nullable<int> ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
+		public int Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(18,2) NOT NULL")]
+		public decimal PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
 				}
 			}
 		}
@@ -3275,41 +5720,102 @@ namespace GeoMapxBusiness
 				}
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Materiales")]
+	public partial class VW_Materiale
+	{
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Int NOT NULL")]
-		public int PlanillaID
+		private string _CodigoProyecto;
+		
+		private string _UniCons;
+		
+		private string _DescripcionActividad;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<int> _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private string _CodigoMaterial;
+		
+		private string _Descricion;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+		public VW_Materiale()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
 		{
 			get
 			{
-				return this._PlanillaID;
+				return this._CodigoProyecto;
 			}
 			set
 			{
-				if ((this._PlanillaID != value))
+				if ((this._CodigoProyecto != value))
 				{
-					this._PlanillaID = value;
+					this._CodigoProyecto = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
 		{
 			get
 			{
-				return this._EmpresaID;
+				return this._UniCons;
 			}
 			set
 			{
-				if ((this._EmpresaID != value))
+				if ((this._UniCons != value))
 				{
-					this._EmpresaID = value;
+					this._UniCons = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
+		public System.Nullable<int> ActividadID
 		{
 			get
 			{
@@ -3340,6 +5846,117 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoMaterial", DbType="VarChar(10)")]
+		public string CodigoMaterial
+		{
+			get
+			{
+				return this._CodigoMaterial;
+			}
+			set
+			{
+				if ((this._CodigoMaterial != value))
+				{
+					this._CodigoMaterial = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricion", DbType="VarChar(500)")]
+		public string Descricion
+		{
+			get
+			{
+				return this._Descricion;
+			}
+			set
+			{
+				if ((this._Descricion != value))
+				{
+					this._Descricion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Postes")]
+	public partial class VW_Poste
+	{
+		
+		private int _PosteID;
+		
+		private int _EmpresaID;
+		
+		private int _TipoPosteID;
+		
+		private int _ProyectoID;
+		
+		private string _CodigoPoste;
+		
+		private decimal _X;
+		
+		private decimal _Y;
+		
+		private System.Nullable<decimal> _Z;
+		
+		private string _ObservacionPoste;
+		
+		private int _UserID;
+		
+		private System.DateTime _Fecha;
+		
+		private System.Nullable<int> _UserIDModifica;
+		
+		private System.Nullable<System.DateTime> _FechaModificacion;
+		
+		private System.Nullable<int> _PoligonoID;
+		
+		private System.Nullable<decimal> _Lat;
+		
+		private System.Nullable<decimal> _Lon;
+		
+		private string _CodigoProyecto;
+		
+		private string _TipoPosteDescripcion;
+		
+		private int _CodigoPoligono;
+		
+		public VW_Poste()
+		{
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
 		public int PosteID
 		{
@@ -3356,66 +5973,130 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unidad", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Unidad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
 		{
 			get
 			{
-				return this._Unidad;
+				return this._EmpresaID;
 			}
 			set
 			{
-				if ((this._Unidad != value))
+				if ((this._EmpresaID != value))
 				{
-					this._Unidad = value;
+					this._EmpresaID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
-		public int Cantidad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPosteID", DbType="Int NOT NULL")]
+		public int TipoPosteID
 		{
 			get
 			{
-				return this._Cantidad;
+				return this._TipoPosteID;
 			}
 			set
 			{
-				if ((this._Cantidad != value))
+				if ((this._TipoPosteID != value))
 				{
-					this._Cantidad = value;
+					this._TipoPosteID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaInicio", DbType="DateTime NOT NULL")]
-		public System.DateTime FechaInicio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
 		{
 			get
 			{
-				return this._FechaInicio;
+				return this._ProyectoID;
 			}
 			set
 			{
-				if ((this._FechaInicio != value))
+				if ((this._ProyectoID != value))
 				{
-					this._FechaInicio = value;
+					this._ProyectoID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaFin", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaFin
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
 		{
 			get
 			{
-				return this._FechaFin;
+				return this._CodigoPoste;
 			}
 			set
 			{
-				if ((this._FechaFin != value))
+				if ((this._CodigoPoste != value))
 				{
-					this._FechaFin = value;
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_X", DbType="Decimal(18,10) NOT NULL")]
+		public decimal X
+		{
+			get
+			{
+				return this._X;
+			}
+			set
+			{
+				if ((this._X != value))
+				{
+					this._X = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Y", DbType="Decimal(18,10) NOT NULL")]
+		public decimal Y
+		{
+			get
+			{
+				return this._Y;
+			}
+			set
+			{
+				if ((this._Y != value))
+				{
+					this._Y = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Z", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Z
+		{
+			get
+			{
+				return this._Z;
+			}
+			set
+			{
+				if ((this._Z != value))
+				{
+					this._Z = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ObservacionPoste", DbType="VarChar(200)")]
+		public string ObservacionPoste
+		{
+			get
+			{
+				return this._ObservacionPoste;
+			}
+			set
+			{
+				if ((this._ObservacionPoste != value))
+				{
+					this._ObservacionPoste = value;
 				}
 			}
 		}
@@ -3432,6 +6113,22 @@ namespace GeoMapxBusiness
 				if ((this._UserID != value))
 				{
 					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
 				}
 			}
 		}
@@ -3468,225 +6165,98 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string UserName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
+		public System.Nullable<int> PoligonoID
 		{
 			get
 			{
-				return this._UserName;
+				return this._PoligonoID;
 			}
 			set
 			{
-				if ((this._UserName != value))
+				if ((this._PoligonoID != value))
 				{
-					this._UserName = value;
+					this._PoligonoID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string UserCode
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Lat
 		{
 			get
 			{
-				return this._UserCode;
+				return this._Lat;
 			}
 			set
 			{
-				if ((this._UserCode != value))
+				if ((this._Lat != value))
 				{
-					this._UserCode = value;
+					this._Lat = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEmpresa", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoEmpresa
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lon", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Lon
 		{
 			get
 			{
-				return this._CodigoEmpresa;
+				return this._Lon;
 			}
 			set
 			{
-				if ((this._CodigoEmpresa != value))
+				if ((this._Lon != value))
 				{
-					this._CodigoEmpresa = value;
+					this._Lon = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string CodigoPoste
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
 		{
 			get
 			{
-				return this._CodigoPoste;
+				return this._CodigoProyecto;
 			}
 			set
 			{
-				if ((this._CodigoPoste != value))
+				if ((this._CodigoProyecto != value))
 				{
-					this._CodigoPoste = value;
+					this._CodigoProyecto = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionFinanciera", DbType="VarChar(300) NOT NULL", CanBeNull=false)]
-		public string DescripcionFinanciera
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPosteDescripcion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string TipoPosteDescripcion
 		{
 			get
 			{
-				return this._DescripcionFinanciera;
+				return this._TipoPosteDescripcion;
 			}
 			set
 			{
-				if ((this._DescripcionFinanciera != value))
+				if ((this._TipoPosteDescripcion != value))
 				{
-					this._DescripcionFinanciera = value;
+					this._TipoPosteDescripcion = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodioFinanciera", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CodioFinanciera
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoligono", DbType="Int NOT NULL")]
+		public int CodigoPoligono
 		{
 			get
 			{
-				return this._CodioFinanciera;
+				return this._CodigoPoligono;
 			}
 			set
 			{
-				if ((this._CodioFinanciera != value))
+				if ((this._CodigoPoligono != value))
 				{
-					this._CodioFinanciera = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionContratista", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string DescripcionContratista
-		{
-			get
-			{
-				return this._DescripcionContratista;
-			}
-			set
-			{
-				if ((this._DescripcionContratista != value))
-				{
-					this._DescripcionContratista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string DescripcionActividad
-		{
-			get
-			{
-				return this._DescripcionActividad;
-			}
-			set
-			{
-				if ((this._DescripcionActividad != value))
-				{
-					this._DescripcionActividad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionProyecto", DbType="VarChar(300)")]
-		public string DescripcionProyecto
-		{
-			get
-			{
-				return this._DescripcionProyecto;
-			}
-			set
-			{
-				if ((this._DescripcionProyecto != value))
-				{
-					this._DescripcionProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
-		public string CodigoContratista
-		{
-			get
-			{
-				return this._CodigoContratista;
-			}
-			set
-			{
-				if ((this._CodigoContratista != value))
-				{
-					this._CodigoContratista = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Gentes")]
-	public partial class Gente
-	{
-		
-		private int _ID;
-		
-		private string _Nombre;
-		
-		private string _Apellido;
-		
-		public Gente()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apellido", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Apellido
-		{
-			get
-			{
-				return this._Apellido;
-			}
-			set
-			{
-				if ((this._Apellido != value))
-				{
-					this._Apellido = value;
+					this._CodigoPoligono = value;
 				}
 			}
 		}
@@ -3710,11 +6280,7 @@ namespace GeoMapxBusiness
 		
 		private int _ContratistaID;
 		
-		private string _Unidad;
-		
 		private int _Cantidad;
-		
-		private string _Hasta;
 		
 		private System.DateTime _Fecha;
 		
@@ -3725,6 +6291,14 @@ namespace GeoMapxBusiness
 		private System.Nullable<System.DateTime> _FechaModificacion;
 		
 		private bool _Verificado;
+		
+		private System.Nullable<System.DateTime> _FechaIngreso;
+		
+		private System.Nullable<int> _FichaID;
+		
+		private System.Nullable<int> _PosteIDHasta;
+		
+		private string _Observacion;
 		
 		private EntityRef<Actividade> _Actividade;
 		
@@ -3750,12 +6324,8 @@ namespace GeoMapxBusiness
     partial void OnPosteIDChanged();
     partial void OnContratistaIDChanging(int value);
     partial void OnContratistaIDChanged();
-    partial void OnUnidadChanging(string value);
-    partial void OnUnidadChanged();
     partial void OnCantidadChanging(int value);
     partial void OnCantidadChanged();
-    partial void OnHastaChanging(string value);
-    partial void OnHastaChanged();
     partial void OnFechaChanging(System.DateTime value);
     partial void OnFechaChanged();
     partial void OnUserIDChanging(int value);
@@ -3766,6 +6336,14 @@ namespace GeoMapxBusiness
     partial void OnFechaModificacionChanged();
     partial void OnVerificadoChanging(bool value);
     partial void OnVerificadoChanged();
+    partial void OnFechaIngresoChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaIngresoChanged();
+    partial void OnFichaIDChanging(System.Nullable<int> value);
+    partial void OnFichaIDChanged();
+    partial void OnPosteIDHastaChanging(System.Nullable<int> value);
+    partial void OnPosteIDHastaChanged();
+    partial void OnObservacionChanging(string value);
+    partial void OnObservacionChanged();
     #endregion
 		
 		public Planilla()
@@ -3913,26 +6491,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unidad", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Unidad
-		{
-			get
-			{
-				return this._Unidad;
-			}
-			set
-			{
-				if ((this._Unidad != value))
-				{
-					this.OnUnidadChanging(value);
-					this.SendPropertyChanging();
-					this._Unidad = value;
-					this.SendPropertyChanged("Unidad");
-					this.OnUnidadChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
 		public int Cantidad
 		{
@@ -3949,26 +6507,6 @@ namespace GeoMapxBusiness
 					this._Cantidad = value;
 					this.SendPropertyChanged("Cantidad");
 					this.OnCantidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Hasta
-		{
-			get
-			{
-				return this._Hasta;
-			}
-			set
-			{
-				if ((this._Hasta != value))
-				{
-					this.OnHastaChanging(value);
-					this.SendPropertyChanging();
-					this._Hasta = value;
-					this.SendPropertyChanged("Hasta");
-					this.OnHastaChanged();
 				}
 			}
 		}
@@ -4069,6 +6607,86 @@ namespace GeoMapxBusiness
 					this._Verificado = value;
 					this.SendPropertyChanged("Verificado");
 					this.OnVerificadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaIngreso", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaIngreso
+		{
+			get
+			{
+				return this._FechaIngreso;
+			}
+			set
+			{
+				if ((this._FechaIngreso != value))
+				{
+					this.OnFechaIngresoChanging(value);
+					this.SendPropertyChanging();
+					this._FechaIngreso = value;
+					this.SendPropertyChanged("FechaIngreso");
+					this.OnFechaIngresoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FichaID", DbType="Int")]
+		public System.Nullable<int> FichaID
+		{
+			get
+			{
+				return this._FichaID;
+			}
+			set
+			{
+				if ((this._FichaID != value))
+				{
+					this.OnFichaIDChanging(value);
+					this.SendPropertyChanging();
+					this._FichaID = value;
+					this.SendPropertyChanged("FichaID");
+					this.OnFichaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
+		public System.Nullable<int> PosteIDHasta
+		{
+			get
+			{
+				return this._PosteIDHasta;
+			}
+			set
+			{
+				if ((this._PosteIDHasta != value))
+				{
+					this.OnPosteIDHastaChanging(value);
+					this.SendPropertyChanging();
+					this._PosteIDHasta = value;
+					this.SendPropertyChanged("PosteIDHasta");
+					this.OnPosteIDHastaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(500)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this.OnObservacionChanging(value);
+					this.SendPropertyChanging();
+					this._Observacion = value;
+					this.SendPropertyChanged("Observacion");
+					this.OnObservacionChanged();
 				}
 			}
 		}
@@ -4226,6 +6844,537 @@ namespace GeoMapxBusiness
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Planilla")]
+	public partial class VW_Planilla
+	{
+		
+		private string _NombreEmpresa;
+		
+		private string _CodigoProyecto;
+		
+		private string _UniCons;
+		
+		private int _PlanillaID;
+		
+		private int _EmpresaID;
+		
+		private int _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private int _PosteID;
+		
+		private int _Cantidad;
+		
+		private System.DateTime _Fecha;
+		
+		private int _UserID;
+		
+		private System.Nullable<int> _UserIDModifica;
+		
+		private System.Nullable<System.DateTime> _FechaModificacion;
+		
+		private string _UserName;
+		
+		private string _UserCode;
+		
+		private string _CodigoEmpresa;
+		
+		private string _CodigoPoste;
+		
+		private string _DescripcionFinanciera;
+		
+		private string _CodioFinanciera;
+		
+		private string _DescripcionContratista;
+		
+		private string _DescripcionActividad;
+		
+		private string _DescripcionProyecto;
+		
+		private string _CodigoContratista;
+		
+		private System.Nullable<int> _ContratistaID;
+		
+		private string _CodigoFicha;
+		
+		private System.Nullable<int> _PosteIDHasta;
+		
+		private System.Nullable<System.DateTime> _FechaIngreso;
+		
+		private System.Nullable<int> _FichaID;
+		
+		private string _Observacion;
+		
+		public VW_Planilla()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreEmpresa", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string NombreEmpresa
+		{
+			get
+			{
+				return this._NombreEmpresa;
+			}
+			set
+			{
+				if ((this._NombreEmpresa != value))
+				{
+					this._NombreEmpresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Int NOT NULL")]
+		public int PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
+		public int Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
+		public System.Nullable<int> UserIDModifica
+		{
+			get
+			{
+				return this._UserIDModifica;
+			}
+			set
+			{
+				if ((this._UserIDModifica != value))
+				{
+					this._UserIDModifica = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaModificacion
+		{
+			get
+			{
+				return this._FechaModificacion;
+			}
+			set
+			{
+				if ((this._FechaModificacion != value))
+				{
+					this._FechaModificacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string UserCode
+		{
+			get
+			{
+				return this._UserCode;
+			}
+			set
+			{
+				if ((this._UserCode != value))
+				{
+					this._UserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEmpresa", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoEmpresa
+		{
+			get
+			{
+				return this._CodigoEmpresa;
+			}
+			set
+			{
+				if ((this._CodigoEmpresa != value))
+				{
+					this._CodigoEmpresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
+		{
+			get
+			{
+				return this._CodigoPoste;
+			}
+			set
+			{
+				if ((this._CodigoPoste != value))
+				{
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionFinanciera", DbType="VarChar(300) NOT NULL", CanBeNull=false)]
+		public string DescripcionFinanciera
+		{
+			get
+			{
+				return this._DescripcionFinanciera;
+			}
+			set
+			{
+				if ((this._DescripcionFinanciera != value))
+				{
+					this._DescripcionFinanciera = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodioFinanciera", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CodioFinanciera
+		{
+			get
+			{
+				return this._CodioFinanciera;
+			}
+			set
+			{
+				if ((this._CodioFinanciera != value))
+				{
+					this._CodioFinanciera = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionContratista", DbType="VarChar(50)")]
+		public string DescripcionContratista
+		{
+			get
+			{
+				return this._DescripcionContratista;
+			}
+			set
+			{
+				if ((this._DescripcionContratista != value))
+				{
+					this._DescripcionContratista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionProyecto", DbType="VarChar(300)")]
+		public string DescripcionProyecto
+		{
+			get
+			{
+				return this._DescripcionProyecto;
+			}
+			set
+			{
+				if ((this._DescripcionProyecto != value))
+				{
+					this._DescripcionProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
+		public string CodigoContratista
+		{
+			get
+			{
+				return this._CodigoContratista;
+			}
+			set
+			{
+				if ((this._CodigoContratista != value))
+				{
+					this._CodigoContratista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContratistaID", DbType="Int")]
+		public System.Nullable<int> ContratistaID
+		{
+			get
+			{
+				return this._ContratistaID;
+			}
+			set
+			{
+				if ((this._ContratistaID != value))
+				{
+					this._ContratistaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoFicha", DbType="VarChar(50)")]
+		public string CodigoFicha
+		{
+			get
+			{
+				return this._CodigoFicha;
+			}
+			set
+			{
+				if ((this._CodigoFicha != value))
+				{
+					this._CodigoFicha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
+		public System.Nullable<int> PosteIDHasta
+		{
+			get
+			{
+				return this._PosteIDHasta;
+			}
+			set
+			{
+				if ((this._PosteIDHasta != value))
+				{
+					this._PosteIDHasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaIngreso", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaIngreso
+		{
+			get
+			{
+				return this._FechaIngreso;
+			}
+			set
+			{
+				if ((this._FechaIngreso != value))
+				{
+					this._FechaIngreso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FichaID", DbType="Int")]
+		public System.Nullable<int> FichaID
+		{
+			get
+			{
+				return this._FichaID;
+			}
+			set
+			{
+				if ((this._FichaID != value))
+				{
+					this._FichaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(500)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
+				}
 			}
 		}
 	}

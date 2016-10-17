@@ -8,7 +8,7 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <div  ng-app="myApp" data-ng-controller="mainCtrl">
+    <div  @*ng-app="myApp" data-ng-controller="mainCtrl"*@>
     <fieldset>
         {{5-5}}
         <input type="text" name="name" value=" " data-ng-model="Nombre" />
@@ -51,4 +51,4 @@
     @Scripts.Render("~/bundles/angular")
 }
 
-<script src="~/Scripts/app/App.js"></script>
+@*<script src="~/Scripts/app/App.js"></script>*@

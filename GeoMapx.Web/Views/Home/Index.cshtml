@@ -1,5 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Página principal";
+    ViewBag.Title = "Home Page";
 }
 @section featured {
-}
+}        
+<script src="scripts/angular.min.js"></script>
+<script src="scripts/angular-route.min.js"></script>
+<script src="Angular/controllers/rutas.js"></script>
+<ul>
+    <li><a href="#/ima/imagen1">Imagen1</a></li>
+    <li><a href="#/ima/imagen2">Imagen2</a></li>
+    <li><a href="#/home/about">about</a></li>
+</ul>
+<div data-ng-app="">
+    {{40+5}}
+    <div data-ng-view></div>
+    <div data-ng-show="false">Texto no Showed.</div>
+</div>
+<div data-ng-app="rutasApp">
+        {{40+5}}
+        <div data-ng-view></div>
+        <div data-ng-show="false">Texto no Showed.</div>
+</div>

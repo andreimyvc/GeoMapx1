@@ -1,0 +1,45 @@
+﻿.page-header {
+    /*opacity: 1;
+    filter: alpha(opacity=100);
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;*/
+    height: 25px !important;
+    /*background-image: none;*/
+}
+.portlet.box>.portlet-body {
+    background-color: #fff;
+    padding: 4px;
+}
+
+.portlet {
+    /* margin-top: 0; */
+    margin-bottom: 4px;
+}
+.portlet.light {
+     padding: unset;
+    background-color: #fff;
+}
+.portlet:not(.light) .tabbable-line {
+    padding-top: unset;
+}
+.heigth380 {
+    /*height:382px;*/
+}
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+     width: unset; 
+    height: 100%;
+}
+.tabbable-line>.tab-content {
+    padding: unset;
+}
+.jqgfirstrow {
+    visibility:hidden !important;
+    display:grid;
+    height:0px;
+    /*display:none  !important;*/
+}

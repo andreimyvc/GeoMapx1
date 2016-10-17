@@ -1,210 +1,317 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.5, 20.875" name="GeoMapxDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.75, 21.5" name="GeoMapxDB">
   <DataContextMoniker Name="/GeoMapxDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="7a87f3a5-5541-4c6d-980d-8a94accee6f4" absoluteBounds="6.25, 11.5, 2, 2.5401025390625005">
+    <classShape Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" absoluteBounds="6.25, 12.875, 2, 2.7324039713541666">
       <DataClassMoniker Name="/GeoMapxDBDataContext/Actividade" />
       <nestedChildShapes>
-        <elementListCompartment Id="4ed8d9a6-0fc3-4baa-8073-6d5a4dcf7670" absoluteBounds="6.265, 11.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d58738ff-8d48-4282-bfac-f76d4649eb61" absoluteBounds="6.265, 13.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bf36ab79-114a-43fc-9307-5b634ce6a5a0" absoluteBounds="3.5, 12.375, 2, 1.9631982421875005">
+    <classShape Id="b3e5f67e-0189-4df5-8ede-a7771d26f281" absoluteBounds="3.5, 0.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/webpages_UsersInRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2426fae8-8dfa-4d82-a6bd-8289edfd2622" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="78bb39e6-c5fa-487a-96d0-f2b6789cfaa1" absoluteBounds="9, 10, 2, 2.1554996744791666">
       <DataClassMoniker Name="/GeoMapxDBDataContext/Contratista" />
       <nestedChildShapes>
-        <elementListCompartment Id="2ce42043-6082-48fb-9e57-de3d775c6727" absoluteBounds="3.515, 12.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0bc3726e-1f7c-4888-a8a2-6bf88246a826" absoluteBounds="9.015, 10.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e18235c2-99d3-4aad-9b1c-07246d502760" absoluteBounds="0.75, 10.125, 2, 1.5785953776041666">
+    <classShape Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" absoluteBounds="0.75, 10.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/GeoMapxDBDataContext/Empresa" />
       <nestedChildShapes>
-        <elementListCompartment Id="e7c544eb-1ae3-4a79-855d-48a6198948a5" absoluteBounds="0.765, 10.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ccddd00d-c8ff-4499-b1b7-b87393fabc5a" absoluteBounds="0.765, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="69a435d1-e792-47f6-9474-9144676bacf8" absoluteBounds="3.5, 7.5, 2, 1.5785953776041666">
+    <classShape Id="55683186-b2bb-4b94-b8f4-c5087e3037fb" absoluteBounds="14.75, 10.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/Ficha" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0245f215-6195-4133-abab-e6f6b13ea29b" absoluteBounds="14.765, 10.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11defcf0-1243-40d3-ab17-9cb5f11c60a9" absoluteBounds="3.5, 9.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/GeoMapxDBDataContext/Financiera" />
       <nestedChildShapes>
-        <elementListCompartment Id="6828a1d7-9614-46fe-bc60-1dd2bc03b57d" absoluteBounds="3.515, 7.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0da7808c-4f81-4473-8352-34a02808869f" absoluteBounds="3.515, 9.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="05956010-18f9-41ac-808a-68014dfeaa02" absoluteBounds="9, 13.25, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/GeoMapxDBDataContext/Materiale" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fb7cfee4-3969-434e-bb57-4f6450f71078" absoluteBounds="9.015, 13.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="3acc9d03-5654-4174-8160-4d36a71fe1c7" absoluteBounds="9, 8.5, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/GeoMapxDBDataContext/Poste" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0ae5728f-a4e3-40ea-bb6f-18af0c79f248" absoluteBounds="9.015, 8.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e6aa9d50-b850-472e-8b6d-f63bcf12ad04" absoluteBounds="12, 10.25, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/GeoMapxDBDataContext/Precio" />
-      <nestedChildShapes>
-        <elementListCompartment Id="04186f52-3f2c-4871-8b95-ee283eb12788" absoluteBounds="12.015, 10.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="cadd49d7-64c4-4c8d-90d9-2b54ca6c6551" absoluteBounds="6.25, 8.625, 2, 1.9631982421875005">
-      <DataClassMoniker Name="/GeoMapxDBDataContext/Proyecto" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b277e982-60f3-4c12-90c0-5f4c85688c90" absoluteBounds="6.265, 9.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1e42c7f0-a25f-4982-856f-867478f91d49" absoluteBounds="6.25, 6.625, 2, 1.1939925130208327">
-      <DataClassMoniker Name="/GeoMapxDBDataContext/TiposPoste" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7b9f76ab-64f2-46c9-9d7a-25eae7016fe8" absoluteBounds="6.265, 7.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1427e4f1-6b8b-4a83-9e9f-31dd5d4cdf51" absoluteBounds="3.5, 9.875, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/GeoMapxDBDataContext/Usuario" />
-      <nestedChildShapes>
-        <elementListCompartment Id="89809177-11a4-48c0-a58b-180fc97e1797" absoluteBounds="3.515, 10.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.281252 : 11.5498478190104); (2.281252 : 12.0080481888021); (6.25 : 12.0080481888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Actividade" />
-      <nodes>
-        <classShapeMoniker Id="e18235c2-99d3-4aad-9b1c-07246d502760" />
-        <classShapeMoniker Id="7a87f3a5-5541-4c6d-980d-8a94accee6f4" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 11.5498478190104); (1.75 : 13.3565991210937); (3.5 : 13.3565991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Contratista" />
-      <nodes>
-        <classShapeMoniker Id="e18235c2-99d3-4aad-9b1c-07246d502760" />
-        <classShapeMoniker Id="bf36ab79-114a-43fc-9307-5b634ce6a5a0" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 10.125); (1.75 : 8.28929768880208); (2.46354516666667 : 8.28929768880208 : JumpStart); (2.63021183333333 : 8.28929768880208 : JumpEnd); (3.5 : 8.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Financiera" />
-      <nodes>
-        <classShapeMoniker Id="e18235c2-99d3-4aad-9b1c-07246d502760" />
-        <classShapeMoniker Id="69a435d1-e792-47f6-9474-9144676bacf8" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 13.6450512695312); (8.72916666666667 : 13.6450512695312 : JumpStart); (8.89583333333333 : 13.6450512695312 : JumpEnd); (9 : 13.6450512695312)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Actividade/Actividade_Materiale" />
-      <nodes>
-        <classShapeMoniker Id="7a87f3a5-5541-4c6d-980d-8a94accee6f4" />
-        <classShapeMoniker Id="05956010-18f9-41ac-808a-68014dfeaa02" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.281252 : 10.125); (2.281252 : 9.375); (2.46354516666667 : 9.375 : JumpStart); (2.63021183333333 : 9.375 : JumpEnd); (5.75 : 9.375); (5.75 : 10.8381982421875); (7.16666666666667 : 10.8381982421875 : JumpStart); (7.33333333333333 : 10.8381982421875 : JumpEnd); (8.625 : 10.8381982421875); (8.625 : 10.1546541341146); (9 : 10.1546541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Poste" />
-      <nodes>
-        <classShapeMoniker Id="e18235c2-99d3-4aad-9b1c-07246d502760" />
-        <classShapeMoniker Id="3acc9d03-5654-4174-8160-4d36a71fe1c7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 12.1386539713542); (8.72916666666667 : 12.1386539713542 : JumpStart); (8.89583333333333 : 12.1386539713542 : JumpEnd); (12 : 12.1386539713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Actividade/Actividade_Precio" />
-      <nodes>
-        <classShapeMoniker Id="7a87f3a5-5541-4c6d-980d-8a94accee6f4" />
-        <classShapeMoniker Id="e6aa9d50-b850-472e-8b6d-f63bcf12ad04" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 10.5262809899339); (8.8125 : 11.0887809899339); (8.8125 : 14.5565274720052); (9 : 14.5565274720052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Materiale" />
-      <nodes>
-        <classShapeMoniker Id="cadd49d7-64c4-4c8d-90d9-2b54ca6c6551" />
-        <classShapeMoniker Id="05956010-18f9-41ac-808a-68014dfeaa02" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 8.94491378352865); (9 : 8.94491378352865)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Poste" />
-      <nodes>
-        <classShapeMoniker Id="cadd49d7-64c4-4c8d-90d9-2b54ca6c6551" />
-        <classShapeMoniker Id="3acc9d03-5654-4174-8160-4d36a71fe1c7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7.25 : 10.5881982421875); (7.25 : 11.3277498372396); (8.5 : 11.3277498372396); (8.5 : 11.9343082682292); (8.72916666666667 : 11.9343082682292 : JumpStart); (8.89583333333333 : 11.9343082682292 : JumpEnd); (11.625 : 11.9343082682292); (11.625 : 11.1630749856771); (12 : 11.1630749856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Precio" />
-      <nodes>
-        <classShapeMoniker Id="cadd49d7-64c4-4c8d-90d9-2b54ca6c6551" />
-        <classShapeMoniker Id="e6aa9d50-b850-472e-8b6d-f63bcf12ad04" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(1.2187475 : 10.125); (1.2187475 : 9.5); (1.66666666666667 : 9.5 : JumpStart); (1.83333333333333 : 9.5 : JumpEnd); (2.19791866666667 : 9.5 : JumpStart); (2.36458533333333 : 9.5 : JumpEnd); (2.46354516666667 : 9.5 : JumpStart); (2.63021183333333 : 9.5 : JumpEnd); (5.66666666666667 : 9.5 : JumpStart); (5.83333333333333 : 9.5 : JumpEnd); (6.25 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Proyecto" />
-      <nodes>
-        <classShapeMoniker Id="e18235c2-99d3-4aad-9b1c-07246d502760" />
-        <classShapeMoniker Id="cadd49d7-64c4-4c8d-90d9-2b54ca6c6551" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.85179768880208); (6.25 : 8.85179768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Financiera/Financiera_Proyecto" />
-      <nodes>
-        <classShapeMoniker Id="69a435d1-e792-47f6-9474-9144676bacf8" />
-        <classShapeMoniker Id="cadd49d7-64c4-4c8d-90d9-2b54ca6c6551" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 7.22199625651042); (8.54166666666667 : 7.22199625651042 : JumpStart); (8.70833333333333 : 7.22199625651042 : JumpEnd); (10 : 7.22199625651042); (10 : 8.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/TiposPoste/TiposPoste_Poste" />
-      <nodes>
-        <classShapeMoniker Id="1e42c7f0-a25f-4982-856f-867478f91d49" />
-        <classShapeMoniker Id="3acc9d03-5654-4174-8160-4d36a71fe1c7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.6458968098958); (5.875 : 12.0208968098958); (5.875 : 11.125); (6.25 : 11.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Usuario/Usuario_Actividade" />
-      <nodes>
-        <classShapeMoniker Id="1427e4f1-6b8b-4a83-9e9f-31dd5d4cdf51" />
-        <classShapeMoniker Id="7a87f3a5-5541-4c6d-980d-8a94accee6f4" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 10.457148844401); (3.5 : 10.457148844401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Usuario" />
-      <nodes>
-        <classShapeMoniker Id="e18235c2-99d3-4aad-9b1c-07246d502760" />
-        <classShapeMoniker Id="1427e4f1-6b8b-4a83-9e9f-31dd5d4cdf51" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="fb4c8fa1-5572-462e-8f0f-375008cc8a84" absoluteBounds="1.625, 15, 2, 5.6169254557291666">
-      <DataClassMoniker Name="/GeoMapxDBDataContext/VW_Planilla" />
-      <nestedChildShapes>
-        <elementListCompartment Id="58292601-42ed-4600-a7e4-211bd7a09bd3" absoluteBounds="1.6400000000000001, 15.46, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a7be42e0-8adb-466c-b7d3-7110a32be9f6" absoluteBounds="1.625, 3.75, 2, 1.3862939453125">
+    <classShape Id="7d831f23-d0f8-4466-8eb2-715a8a63e36c" absoluteBounds="3.75, 3.75, 2, 1.3862939453125005">
       <DataClassMoniker Name="/GeoMapxDBDataContext/Gente" />
       <nestedChildShapes>
-        <elementListCompartment Id="9d46819c-fadb-4a94-a3e4-49d594f78b91" absoluteBounds="1.6400000000000001, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7a010639-b6e6-4509-a91d-a578ed3f5246" absoluteBounds="3.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7efceb08-cc7c-438d-ad0a-04f4f4d03104" absoluteBounds="13.25, 5.625, 2, 3.5016097005208326">
+    <classShape Id="6a6ee7b2-adf9-4108-bf69-3a07b0b14bbb" absoluteBounds="9, 13.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/Materiale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9351e7cc-5ed7-4407-b2e1-7f768f14ae2c" absoluteBounds="9.015, 14.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0d8ea6e1-6eb7-4242-90d1-4e0198a37d17" absoluteBounds="6.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/Poligono" />
+      <nestedChildShapes>
+        <elementListCompartment Id="317ac328-e106-4c7c-93a8-e396070f7fa2" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b5cd9fd-e4a8-4918-8f1f-50ae4fe61b9c" absoluteBounds="12, 9.125, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/Poste" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8086934-0aae-4b5e-84c0-5e2cd795420b" absoluteBounds="12.015, 9.585, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f5c382f-3f27-4489-a6dd-f642b3bf91eb" absoluteBounds="12, 14.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/Precio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7fd4456-0a8d-4a36-8272-6c397c6a0b3a" absoluteBounds="12.015, 15.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60f8b491-0714-4105-be29-98dab4cde3a8" absoluteBounds="6.25, 9.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/Proyecto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="440aafc2-d35b-4c18-8fe7-7666ae590d4d" absoluteBounds="6.265, 10.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c14b7514-10af-4dbd-9fda-8a484fb51f80" absoluteBounds="9.25, 7.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/TiposPoste" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3b7fb83-5c43-42ef-a41c-e2aefd0ba73b" absoluteBounds="9.265, 7.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37372035-0d78-48f5-9a83-f4a8fab8335d" absoluteBounds="0.75, 0.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/UserProfile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df47e1f5-84f5-4bd7-b1c3-4b9132d4c12e" absoluteBounds="0.765, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1d4dad5-97bc-488e-9ba7-6ec0b893fff3" absoluteBounds="3.5, 11.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25c6a7ac-72c3-4a41-b9a3-8debfafa46e7" absoluteBounds="3.515, 12.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba2f6dd9-101d-4251-b291-e3b29310f12a" absoluteBounds="9.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/webpages_Membership" />
+      <nestedChildShapes>
+        <elementListCompartment Id="436cf0d1-99a9-4c29-ae2f-4c4a4c947fa2" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd084264-c8f4-43f9-bf34-818913401357" absoluteBounds="0.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/webpages_OAuthMembership" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e4c1545-361a-4e88-a11d-d57247e6cf5a" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="339301bb-64d5-4ce1-bc0b-5056e1a1c796" absoluteBounds="0.75, 3.875, 2, 1.193992513020834">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/webpages_Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e4157b4-5eb3-4578-a05a-a36a7ad80841" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6ff32203-81a1-4510-9383-5b257f59575b" absoluteBounds="11.75, 4.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/VW_Actividade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7eb438aa-1c71-4e84-8c45-76a8007f8d52" absoluteBounds="11.765, 5.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b98028a-536b-472f-8c6b-e9613fbdd924" absoluteBounds="14.75, 0.75, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/VW_ActividadesPoste" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edc6eb22-70e4-4f89-b803-ffc2f49e7389" absoluteBounds="14.765, 1.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a443cc3-d561-4b3b-9b80-d74ebaf15ce3" absoluteBounds="0.75, 14.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/VW_LicitacionesEjecutada" />
+      <nestedChildShapes>
+        <elementListCompartment Id="693930ed-3c60-49ed-bbed-6eb6557e883f" absoluteBounds="0.765, 15.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cce9c76f-96ec-49f9-bcba-8da61f6c8ced" absoluteBounds="14.75, 6.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/VW_Materiale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c81b634-e77e-472d-a018-901cb213d7aa" absoluteBounds="14.765, 7.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5697704c-7be1-4f9d-a364-6713e14be3b5" absoluteBounds="6.75, 16.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/VW_Poste" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ff9e02e-f43e-486a-89f7-42b6c8162151" absoluteBounds="6.765, 17.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 12.3285953776042); (1.75 : 14.2291974049479); (6.25 : 14.2291974049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Actividade" />
+      <nodes>
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.675901344401); (6 : 11.675901344401); (6 : 9.5); (10 : 9.5); (10 : 10)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Contratista" />
+      <nodes>
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="78bb39e6-c5fa-487a-96d0-f2b6789cfaa1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10 : 12.1554996744792); (10 : 13.2612125651042); (11.5416666666667 : 13.2612125651042 : JumpStart); (11.7083333333333 : 13.2612125651042 : JumpEnd); (11.7916666666667 : 13.2612125651042 : JumpStart); (11.9583333333333 : 13.2612125651042 : JumpEnd); (14.375 : 13.2612125651042); (14.375 : 11.1354484049479); (14.75 : 11.1354484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Contratista/Contratista_Ficha" />
+      <nodes>
+        <classShapeMoniker Id="78bb39e6-c5fa-487a-96d0-f2b6789cfaa1" />
+        <classShapeMoniker Id="55683186-b2bb-4b94-b8f4-c5087e3037fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.2776940332031); (5.75 : 11.2776940332031); (5.75 : 8.875); (13.8229166666667 : 8.875 : JumpStart); (13.9895833333333 : 8.875 : JumpEnd); (14.5 : 8.875); (14.5 : 9.73240397135417); (15.75 : 9.73240397135417); (15.75 : 10.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Ficha" />
+      <nodes>
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="55683186-b2bb-4b94-b8f4-c5087e3037fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.9142976888021); (3.5 : 10.9142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Financiera" />
+      <nodes>
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="11defcf0-1243-40d3-ab17-9cb5f11c60a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 14.6162019856771); (8.54166666666667 : 14.6162019856771 : JumpStart); (8.70833333333333 : 14.6162019856771 : JumpEnd); (9 : 14.6162019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Actividade/Actividade_Materiale" />
+      <nodes>
+        <classShapeMoniker Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" />
+        <classShapeMoniker Id="6a6ee7b2-adf9-4108-bf69-3a07b0b14bbb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 10.75); (1.75 : 9.28125); (5.66666666666667 : 9.28125 : JumpStart); (5.83333333333333 : 9.28125 : JumpEnd); (12 : 9.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Poste" />
+      <nodes>
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="9b5cd9fd-e4a8-4918-8f1f-50ae4fe61b9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.46875 : 15.6074039713542); (6.46875 : 16.2652498372396); (11.7916666666667 : 16.2652498372396 : JumpStart); (11.9583333333333 : 16.2652498372396 : JumpEnd); (12 : 16.2652498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Actividade/Actividade_Precio" />
+      <nodes>
+        <classShapeMoniker Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" />
+        <classShapeMoniker Id="9f5c382f-3f27-4489-a6dd-f642b3bf91eb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 11.0489005533854); (8.66666666666667 : 11.0489005533854 : JumpStart); (8.83333333333333 : 11.0489005533854 : JumpEnd); (9 : 11.0489005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Contratista" />
+      <nodes>
+        <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
+        <classShapeMoniker Id="78bb39e6-c5fa-487a-96d0-f2b6789cfaa1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.21769230769231 : 12.0978011067708); (8.625 : 12.5051087990785); (8.625 : 15.2296028300781); (9 : 15.2296028300781)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Materiale" />
+      <nodes>
+        <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
+        <classShapeMoniker Id="6a6ee7b2-adf9-4108-bf69-3a07b0b14bbb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 9.84375); (9.91666666666667 : 9.84375 : JumpStart); (10.0833333333333 : 9.84375 : JumpEnd); (12 : 9.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Poste" />
+      <nodes>
+        <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
+        <classShapeMoniker Id="9b5cd9fd-e4a8-4918-8f1f-50ae4fe61b9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.8247712715345); (8.65884715384615 : 12.7228011067708); (8.66666666666667 : 12.7228011067708 : JumpStart); (8.83333333333333 : 12.7228011067708 : JumpEnd); (9.91666666666667 : 12.7228011067708 : JumpStart); (10.0833333333333 : 12.7228011067708 : JumpEnd); (11.625 : 12.7228011067708); (11.625 : 14.25); (11.8160744349011 : 14.4410744349011 : JumpStart); (11.9339255650989 : 14.5589255650989 : JumpEnd); (12 : 14.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Precio" />
+      <nodes>
+        <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
+        <classShapeMoniker Id="9f5c382f-3f27-4489-a6dd-f642b3bf91eb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.4767976888021); (5.91666666666667 : 11.4767976888021 : JumpStart); (6.08333333333333 : 11.4767976888021 : JumpEnd); (6.125 : 11.4767976888021); (6.125 : 12.4728011067708); (7.20259415384615 : 12.4728011067708); (7.20259415384615 : 12.0978011067708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Proyecto" />
+      <nodes>
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.4142976888021); (5.66666666666667 : 10.4142976888021 : JumpStart); (5.83333333333333 : 10.4142976888021 : JumpEnd); (5.91666666666667 : 10.4142976888021 : JumpStart); (6.08333333333333 : 10.4142976888021 : JumpEnd); (6.25 : 10.4142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Financiera/Financiera_Proyecto" />
+      <nodes>
+        <classShapeMoniker Id="11defcf0-1243-40d3-ab17-9cb5f11c60a9" />
+        <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 8.21559895833333); (13.90625 : 8.21559895833333); (13.90625 : 9.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/TiposPoste/TiposPoste_Poste" />
+      <nodes>
+        <classShapeMoniker Id="c14b7514-10af-4dbd-9fda-8a484fb51f80" />
+        <classShapeMoniker Id="9b5cd9fd-e4a8-4918-8f1f-50ae4fe61b9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.47199625651042); (3.5 : 1.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/UserProfile/UserProfile_webpages_UsersInRole" />
+      <nodes>
+        <classShapeMoniker Id="37372035-0d78-48f5-9a83-f4a8fab8335d" />
+        <classShapeMoniker Id="b3e5f67e-0189-4df5-8ede-a7771d26f281" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 13.2604484049479); (6.25 : 13.2604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Usuario/Usuario_Actividade" />
+      <nodes>
+        <classShapeMoniker Id="d1d4dad5-97bc-488e-9ba7-6ec0b893fff3" />
+        <classShapeMoniker Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.1017976888021); (3.5 : 12.1017976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Usuario" />
+      <nodes>
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="d1d4dad5-97bc-488e-9ba7-6ec0b893fff3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.875); (3.125 : 3.5); (3.125 : 2.44399251302083); (3.5 : 2.06899251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/GeoMapxDBDataContext/webpages_Role/webpages_Role_webpages_UsersInRole" />
+      <nodes>
+        <classShapeMoniker Id="339301bb-64d5-4ce1-bc0b-5056e1a1c796" />
+        <classShapeMoniker Id="b3e5f67e-0189-4df5-8ede-a7771d26f281" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" absoluteBounds="17.25, 13.875, 2, 3.8862125651041666">
       <DataClassMoniker Name="/GeoMapxDBDataContext/Planilla" />
       <nestedChildShapes>
-        <elementListCompartment Id="c27da047-d659-47fe-9086-24c051be98c3" absoluteBounds="13.265, 6.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5124baa0-4a83-475f-be28-fc67d0ca182d" absoluteBounds="17.265, 14.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 12.8277498372396); (8.72916666666667 : 12.8277498372396 : JumpStart); (8.89583333333333 : 12.8277498372396 : JumpEnd); (14.65625 : 12.8277498372396); (14.65625 : 9.12660970052083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.25 : 12.875); (7.25 : 12.625); (8.54166666666667 : 12.625 : JumpStart); (8.83333333333333 : 12.625 : JumpEnd); (9.91666666666667 : 12.625 : JumpStart); (10.0833333333333 : 12.625 : JumpEnd); (11.6666666666667 : 12.625 : JumpStart); (11.8333333333333 : 12.625 : JumpEnd); (11.875 : 12.625); (11.875 : 17.0304996744792); (16.875 : 17.0304996744792); (16.875 : 15.8181062825521); (17.25 : 15.8181062825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Actividade/Actividade_Planilla" />
       <nodes>
-        <classShapeMoniker Id="7a87f3a5-5541-4c6d-980d-8a94accee6f4" />
-        <classShapeMoniker Id="7efceb08-cc7c-438d-ad0a-04f4f4d03104" />
+        <classShapeMoniker Id="eefc9eb3-d64c-4b3e-8d98-1896441ee4cc" />
+        <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.5468785 : 10.125); (2.5468785 : 6.09375); (8.54166666666667 : 6.09375 : JumpStart); (8.70833333333333 : 6.09375 : JumpEnd); (13.25 : 6.09375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 11.675901344401); (5.75 : 11.675901344401); (5.75 : 12.2804996744792); (6.04166666666667 : 12.2804996744792 : JumpStart); (6.20833333333333 : 12.2804996744792 : JumpEnd); (7.11926082051282 : 12.2804996744792 : JumpStart); (7.28592748717948 : 12.2804996744792 : JumpEnd); (8.31705754206734 : 12.2804996744792 : JumpStart); (8.6469060724272 : 12.2804996744792 : JumpEnd); (8.66666666666667 : 12.2804996744792 : JumpStart); (8.83333333333333 : 12.2804996744792 : JumpEnd); (9.91666666666667 : 12.2804996744792 : JumpStart); (10.0833333333333 : 12.2804996744792 : JumpEnd); (11.75 : 12.2804996744792); (11.75 : 13.1362125651042); (11.7916666666667 : 13.1362125651042 : JumpStart); (11.9583333333333 : 13.1362125651042 : JumpEnd); (14.1032061282051 : 13.1362125651042 : JumpStart); (14.2698727948718 : 13.1362125651042 : JumpEnd); (14.2916666666667 : 13.1362125651042 : JumpStart); (14.4583333333333 : 13.1362125651042 : JumpEnd); (17.718748 : 13.1362125651042); (17.718748 : 13.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Empresa/Empresa_Planilla" />
       <nodes>
-        <classShapeMoniker Id="e18235c2-99d3-4aad-9b1c-07246d502760" />
-        <classShapeMoniker Id="7efceb08-cc7c-438d-ad0a-04f4f4d03104" />
+        <classShapeMoniker Id="9d9837d7-8444-47d4-92c1-8ff26f68445a" />
+        <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 8.81330485026042); (13.25 : 8.81330485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14 : 12.9496731035657); (14.6875 : 13.6371731035657); (14.6875 : 14.815301141276); (17.25 : 14.815301141276)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Poste/Poste_Planilla" />
       <nodes>
-        <classShapeMoniker Id="3acc9d03-5654-4174-8160-4d36a71fe1c7" />
-        <classShapeMoniker Id="7efceb08-cc7c-438d-ad0a-04f4f4d03104" />
+        <classShapeMoniker Id="9b5cd9fd-e4a8-4918-8f1f-50ae4fe61b9c" />
+        <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 8.625); (8.625 : 8.25); (8.625 : 5.25); (12.875 : 5.25); (13.25 : 5.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 10.9239005533854); (8.75 : 10.9239005533854); (8.75 : 13.3237125651042); (11.5416666666667 : 13.3237125651042 : JumpStart); (11.7083333333333 : 13.3237125651042 : JumpEnd); (11.7916666666667 : 13.3237125651042 : JumpStart); (11.9583333333333 : 13.3237125651042 : JumpEnd); (14.2907061282051 : 13.3237125651042 : JumpStart); (14.4573727948718 : 13.3237125651042 : JumpEnd); (17.453122 : 13.3237125651042); (17.453122 : 13.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/GeoMapxDBDataContext/Proyecto/Proyecto_Planilla" />
       <nodes>
-        <classShapeMoniker Id="cadd49d7-64c4-4c8d-90d9-2b54ca6c6551" />
-        <classShapeMoniker Id="7efceb08-cc7c-438d-ad0a-04f4f4d03104" />
+        <classShapeMoniker Id="60f8b491-0714-4105-be29-98dab4cde3a8" />
+        <classShapeMoniker Id="013cdcd7-a0ac-469d-83af-4d971afc64e4" />
       </nodes>
     </associationConnector>
+    <classShape Id="2f68193b-0e2b-4c0f-ac89-bc32e0f64053" absoluteBounds="18.5, 9.125, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/GeoMapxDBDataContext/VW_Planilla" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6498ea28-a56e-447f-86bf-3948bbb14ebd" absoluteBounds="18.515, 9.585, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

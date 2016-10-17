@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- The jQuery library is a prerequisite for all jqSuite products -->
+
+    <script src="http://www.guriddo.net/demo/js/jquery.min.js"></script>
+    <script src="http://www.guriddo.net/demo/js/trirand/i18n/grid.locale-en.js"></script>
+    <!-- This is the Javascript file of jqGrid -->   
+    <script src="http://www.guriddo.net/demo/js/trirand/jquery.jqGrid.min.js"></script>
+    <!-- This is the localization file of the grid controlling messages, labels, etc.
+    <!-- A link to a jQuery UI ThemeRoller theme, more than 22 built-in and many more custom -->
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.1/themes/start/jquery-ui.css" media="screen" />
+    <!-- The link to the CSS that the grid needs -->
+    <link href="Content/ui.jqgrid.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>jqGrid Loading Data - Million Rows from a REST service</title>
+</head>
+<body>
+    <label for="search_cells">
+		Search Grid: 
+	</label>
+	<input id="search_cells" type="search"/>
+    <table id="jqGrid"></table>
+    <div id="jqGridPager"></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#jqGrid").jqGrid({
+                url: '/home/getactividades',
+                mtype: "GET",
+                datatype: "json",
+                colModel: [
+                    {
+                        label: "CodigoProyecto",
+                        //sorttype: 'integer',
+                        name: 'CodigoProyecto',
+                        key: true,
+                        width: 75,
+                        colmenu: true,
+                        searchoptions: {
+                            searchOperMenu: false,
+                            sopt: ['eq', 'gt', 'lt', 'ge', 'le']
+                        }
+                    },
+                    {
+                        label: 'CodigoPoste', name: 'CodigoPoste', width: 150,
+                        colmenu: true
+                    },
+                    { label: 'UniCons', name: 'UniCons', width: 150 },
+                    { label: 'Cantidad', name: 'Cantidad', width: 150 },
+                    { label: 'Hasta', name: 'Hasta', width: 150 },
+                    { label: 'Fecha', name: 'Fecha', width: 150 }
+                ],
+                loadonce: true,
+                colMenu: true,
+                width: 780,
+                height: 200,
+                rowNum: 20,
+                viewrecords: true,
+                pager: "#jqGridPager",
+                caption: "Actividades diarias"
+            });
+        });
+        var timer;
+        $("#search_cells").on("keyup", function () {
+            var self = this;
+            if (timer) { clearTimeout(timer); }
+            timer = setTimeout(function () {
+                //timer = null;
+                $("#jqGrid").jqGrid('filterInput', self.value);
+            }, 2);
+        });
+   </script>    
+</body>
+</html>
