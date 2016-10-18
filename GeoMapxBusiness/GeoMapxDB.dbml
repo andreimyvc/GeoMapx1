@@ -97,7 +97,7 @@
       <Column Name="ProyectoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CodigoMaterial" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Descricion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
       <Column Name="PrecioUnitario" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
       <Association Name="Actividade_Materiale" Member="Actividade" ThisKey="ActividadID" OtherKey="ActividadID" Type="Actividade" IsForeignKey="true" />
       <Association Name="Proyecto_Materiale" Member="Proyecto" ThisKey="ProyectoID" OtherKey="ProyectoID" Type="Proyecto" IsForeignKey="true" />
@@ -222,7 +222,7 @@
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ProyectoID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PrecioUnitario" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="CodigoProyecto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProyecto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.VW_Postes" Member="VW_Postes">
@@ -248,6 +248,14 @@
       <Column Name="CodigoPoligono" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.VW_ActividadesEjcutadas" Member="VW_ActividadesEjcutadas">
+    <Type Name="VW_ActividadesEjcutada">
+      <Column Name="Actividadid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProyectoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mes" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CantidadEjecutada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.VW_ActividadesPostes" Member="VW_ActividadesPostes">
     <Type Name="VW_ActividadesPoste">
       <Column Name="ActividadID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -271,6 +279,15 @@
       <Column Name="PosteIDHasta" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CodigoContratista" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CodigoFicha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_AvanceProyectoByMes" Member="VW_AvanceProyectoByMes">
+    <Type Name="VW_AvanceProyectoByMe">
+      <Column Name="Porcentaje" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="ProyectoID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mes" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MontoEjecutado" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="CodigoProyecto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.VW_LicitacionesEjecutadas" Member="VW_LicitacionesEjecutadas">
@@ -300,6 +317,30 @@
       <Column Name="Descricion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
       <Column Name="PrecioUnitario" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MontosByActividad" Member="VW_MontosByActividads">
+    <Type Name="VW_MontosByActividad">
+      <Column Name="CodigoProyecto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UniCons" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoLicitadoMO" Type="System.Decimal" DbType="Decimal(21,2)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActividadID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProyectoID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="actividadprimaria" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ActividadSecundaria" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoLicitadoMA" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="MontoLicitadoTotal" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MontosEjecutados" Member="VW_MontosEjecutados">
+    <Type Name="VW_MontosEjecutado">
+      <Column Name="MontoEjecutado" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="Actividadid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProyectoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mes" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ActividadSecundaria" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ActividadPrimaria" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.VW_Planilla" Member="VW_Planillas">
