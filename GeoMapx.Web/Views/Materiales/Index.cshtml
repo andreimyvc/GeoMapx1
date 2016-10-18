@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Módulo Materiales";
+    //Layout = "~/Views/Shared/_MetronicLayout.cshtml";
+}
+
+
+@*<link href="~/Content/themes/start/jquery-ui.start.min.css" rel="stylesheet" />
+    <link href="~/Content/ui.jqgrid.css" rel="stylesheet" />
+
+    <link href="~/Content/home.css" rel="stylesheet" />
+    <link href="~/Content/fontmaps.css" rel="stylesheet" /> *@
+<link href="~/Content/mapas.css" rel="stylesheet" />
+<link href="~/Content/home.css" rel="stylesheet" />
+@section scripts {  
+    <script src="../assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.jqGrid.min.js"></script>
+    <script src="~/Scripts/grid.locale-en.js"></script>*
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    @*<link href="~/Content/themes/start/jquery-ui.start.min.css" rel="stylesheet" />*@
+    <link href="~/Content/ui.jqgrid.css" rel="stylesheet" />
+
+    <script src="~/Js/jqgrid/jqgridMaterialesConfig.js"></script>
+    <script src="~/Angular/Services/GeoMapxWebApi.js"></script>
+    <script src="~/Angular/controllers/materialesApp.js"></script>
+<script>
+    function initialize() {
+        angular.element(document.getElementById('materialesApp')).scope().startApp();
+        initGridCodigoActividades();
+    }
+    //$(function () { initialize();});
+    //initGridActividadUsuario();
+    //initGridCodigoPostesPager();
+    //initGridCodigoActividades();
+</script>
+
+}
+<div id="materialesApp" data-ng-app="materialesApp" data-ng-controller="materialesController">
+    <div class="page-content-inner">
+        <div class="row">
+            @Html.Partial("~/views/materiales/materialesvista1.cshtml")
+        </div>
+        <div class="row">
+            @Html.Partial("~/views/materiales/materialesvista2.cshtml")
+        </div>
+    </div>
+    @*{{ startAppDiarias(); }}*@
+</div>
+
+       

@@ -179,6 +179,53 @@
             return defer.promise;
         };
         //#endregion Fichas
+        //#region Unicons
+        interfaz.insertMaterial = function (entity) {
+            var defer = q.defer();
+            http({ method: 'POST', url: '/api/materiales/post', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.updateMaterial = function (entity) {
+            var defer = q.defer();
+            http({ method: 'PUT', url: '/api/materiales/put', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.deleteMaterial = function (id) {
+            var defer = q.defer();
+            http.delete('/api/materiales/delete', { params: { actividadid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getMateriales = function () {
+            var defer = q.defer();
+            http.get('/api/materiales/get').then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getMaterialesByProyecto = function (id) {
+            var defer = q.defer();
+            http.get('/api/materiales/getMaterialesByProyecto', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        //#endregion Materiales
         return interfaz;
     }
 })();

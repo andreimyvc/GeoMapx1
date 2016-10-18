@@ -198,5 +198,53 @@ namespace GeoMapx.Web.Controllers.Api
                        select p;
             return data;
         }
+
+        internal IQueryable<VW_Materiale> _GetMateriales()
+        {
+            var data = from p in db.VW_Materiales
+                       select p;
+            return data;
+        } 
+        public Materiale _InsertMaterial(Materiale entity)
+        {
+            db.Materiales.InsertOnSubmit(entity);
+            db.SubmitChanges();
+            return entity;
+            //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
+        }
+        public Materiale _UpdateMaterial(Materiale entity)
+        {
+            var old = db.Materiales.Single(p => p.MaterialID == entity.MaterialID); 
+            old.ProyectoID = entity.ProyectoID;
+            old.ActividadID = entity.ActividadID; 
+            old.CodigoMaterial = entity.CodigoMaterial; 
+            old.Descricion = entity.Descricion;
+            old.Cantidad = entity.Cantidad;
+            old.PrecioUnitario = entity.PrecioUnitario;
+            db.SubmitChanges();
+            return entity;
+        }
+        public bool _DeleteMaterial(int ActividadID)
+        {
+
+            try
+            {
+                var old = db.Materiales.Single(p => p.MaterialID == ActividadID);
+                db.Materiales.DeleteOnSubmit(old);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public IQueryable<VW_Materiale> _GetMaterialesByProyecto(int proyectoid)
+        {
+            var data = from p in db.VW_Materiales 
+                       where p.ProyectoID == proyectoid
+                       select p;
+            return data;
+        }
     }
 }
