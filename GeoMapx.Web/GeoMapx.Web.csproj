@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{8E4264B7-F9B7-4525-9CA4-7BB88AD3437E}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GeoMapx.Web</RootNamespace>
@@ -169,6 +169,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\ReportesController.cs" />
     <Compile Include="Controllers\Api\MaterialesController.cs" />
     <Compile Include="Controllers\Mvc\AccountController.cs" />
     <Compile Include="Controllers\Api\ActividadesApiController.cs" />
@@ -206,6 +207,7 @@
     <Content Include="Angular\controllers\App.js" />
     <Content Include="Angular\controllers\appMap.js" />
     <Content Include="Angular\controllers\Copia de uniconsApp.js" />
+    <Content Include="Angular\controllers\homeApp.js" />
     <Content Include="Angular\controllers\materialesApp.js" />
     <Content Include="Angular\controllers\uniconsApp.js" />
     <Content Include="Angular\controllers\geoMapx.js" />

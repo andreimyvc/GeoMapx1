@@ -225,6 +225,36 @@
             });
             return defer.promise;
         };
+        //#region Reporte
+        interfaz.getAvanceByProyecto = function (id) {
+            var defer = q.defer();
+            http.get('/api/reportes/getAvanceByProyecto', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getMontosEAPByProyecto = function (proyectoid, mes) {
+            var defer = q.defer();
+            http.get('/api/reportes/getMontosEAP', { params: { proyectoid: proyectoid, mes: mes } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getMontosCantidadEAS = function (proyectoid, mes, actividadPrimaria) {
+            var defer = q.defer();
+            http.get('/api/reportes/getMontosCantidadEAS', { params: { proyectoid: proyectoid, mes: mes, actividadPrimaria: actividadPrimaria } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+
+        //#endregion
         //#endregion Materiales
         return interfaz;
     }

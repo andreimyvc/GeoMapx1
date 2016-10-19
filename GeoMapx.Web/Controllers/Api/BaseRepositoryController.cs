@@ -246,5 +246,29 @@ namespace GeoMapx.Web.Controllers.Api
                        select p;
             return data;
         }
+
+        public IQueryable<VW_AvanceProyectoByMe> _GetAvanceByProyecto(int proyectoid)
+        {
+            var data = from p in db.VW_AvanceProyectoByMes
+                       where p.ProyectoID == proyectoid
+                       orderby p.Mes ascending
+                       select p;
+            return data;
+        }
+
+        public IQueryable<VW_MontoEAP> _GetMontosEAP(int proyectoid, string mes)
+        {
+            var data = from p in db.VW_MontoEAPs
+                       where p.ProyectoID == proyectoid && p.Mes == mes
+                       select p;
+            return data;
+        }
+        public IQueryable<VW_MontoCantidadEA> _GetMontosCantidadEAS(int proyectoid, string mes, string actividadPrimaria)
+        {
+            var data = from p in db.VW_MontoCantidadEAs
+                       where p.ProyectoID == proyectoid && p.Mes == mes && p.ActividadPrimaria == actividadPrimaria
+                       select p;
+            return data;
+        }
     }
 }

@@ -1,5 +1,5 @@
-﻿var initChartSample2 = function () {
-    var chart = AmCharts.makeChart("chart_2", {
+﻿var initChartAvanceProyecto0 = function (data) {
+    var chart = AmCharts.makeChart("chartAvanceProyecto", {
         "type": "serial",
         "theme": "light",
 
@@ -12,144 +12,40 @@
             "valueAlign": "left",
             "valueWidth": 120
         },
-        "dataProvider": [{
-            "date": "2012-01-01",
-            "distance": 227,
-            "townName": "New York",
-            "townName2": "New York",
-            "townSize": 25,
-            "latitude": 40.71,
-            "duration": 408
-        }, {
-            "date": "2012-01-02",
-            "distance": 371,
-            "townName": "Washington",
-            "townSize": 14,
-            "latitude": 38.89,
-            "duration": 482
-        }, {
-            "date": "2012-01-03",
-            "distance": 433,
-            "townName": "Wilmington",
-            "townSize": 6,
-            "latitude": 34.22,
-            "duration": 562
-        }, {
-            "date": "2012-01-04",
-            "distance": 345,
-            "townName": "Jacksonville",
-            "townSize": 7,
-            "latitude": 30.35,
-            "duration": 379
-        }, {
-            "date": "2012-01-05",
-            "distance": 480,
-            "townName": "Miami",
-            "townName2": "Miami",
-            "townSize": 10,
-            "latitude": 25.83,
-            "duration": 501
-        }, {
-            "date": "2012-01-06",
-            "distance": 386,
-            "townName": "Tallahassee",
-            "townSize": 7,
-            "latitude": 30.46,
-            "duration": 443
-        }, {
-            "date": "2012-01-07",
-            "distance": 348,
-            "townName": "New Orleans",
-            "townSize": 10,
-            "latitude": 29.94,
-            "duration": 405
-        }, {
-            "date": "2012-01-08",
-            "distance": 238,
-            "townName": "Houston",
-            "townName2": "Houston",
-            "townSize": 16,
-            "latitude": 29.76,
-            "duration": 309
-        }, {
-            "date": "2012-01-09",
-            "distance": 218,
-            "townName": "Dalas",
-            "townSize": 17,
-            "latitude": 32.8,
-            "duration": 287
-        }, {
-            "date": "2012-01-10",
-            "distance": 349,
-            "townName": "Oklahoma City",
-            "townSize": 11,
-            "latitude": 35.49,
-            "duration": 485
-        }, {
-            "date": "2012-01-11",
-            "distance": 603,
-            "townName": "Kansas City",
-            "townSize": 10,
-            "latitude": 39.1,
-            "duration": 890
-        }, {
-            "date": "2012-01-12",
-            "distance": 534,
-            "townName": "Denver",
-            "townName2": "Denver",
-            "townSize": 18,
-            "latitude": 39.74,
-            "duration": 810
-        }, {
-            "date": "2012-01-13",
-            "townName": "Salt Lake City",
-            "townSize": 12,
-            "distance": 425,
-            "duration": 670,
-            "latitude": 40.75,
-            "dashLength": 8,
-            "alpha": 0.4
-        }, {
-            "date": "2012-01-14",
-            "latitude": 36.1,
-            "duration": 470,
-            "townName": "Las Vegas",
-            "townName2": "Las Vegas"
-        }, {
-            "date": "2012-01-15"
-        }, {
-            "date": "2012-01-16"
-        }, {
-            "date": "2012-01-17"
-        }, {
-            "date": "2012-01-18"
-        }, {
-            "date": "2012-01-19"
-        }],
+        "dataProvider": 
+            //[{
+            //"date": "2012-01-01",
+            //"distance": 227,
+            //"townName": "New York",
+            //"townName2": "New York",
+            //"townSize": 25,
+            //"latitude": 40.71,
+            //"duration": 408  }]
+        data,
         "valueAxes": [{
-            "id": "distanceAxis",
+            "id": "montoAxis",
             "axisAlpha": 0,
             "gridAlpha": 0,
             "position": "left",
-            "title": "distance"
+            "title": "Monto"
         }, {
-            "id": "latitudeAxis",
+            "id": "latitude",
             "axisAlpha": 0,
             "gridAlpha": 0,
             "labelsEnabled": false,
             "position": "right"
         }, {
-            "id": "durationAxis",
+            "id": "porcentajesAxis",
             "duration": "mm",
             "durationUnits": {
                 "hh": "h ",
-                "mm": "min"
+                "mm": "%"
             },
             "axisAlpha": 0,
             "gridAlpha": 0,
             "inside": true,
             "position": "right",
-            "title": "duration"
+            "title": "porcentaje"
         }],
         "graphs": [{
             "alphaField": "alpha",
@@ -160,15 +56,15 @@
             "legendValueText": "[[value]] mi",
             "title": "distance",
             "type": "column",
-            "valueField": "distance",
-            "valueAxis": "distanceAxis"
+            "valueField": "MontoEjecutado",
+            "valueAxis": "montoAxis"
         }, {
             "balloonText": "latitude:[[value]]",
             "bullet": "round",
             "bulletBorderAlpha": 1,
             "useLineColorForBulletBorder": true,
             "bulletColor": "#FFFFFF",
-            "bulletSizeField": "townSize",
+            "bulletSizeField": "MontoEjecutado",
             "dashLengthField": "dashLength",
             "descriptionField": "townName",
             "labelPosition": "right",
@@ -186,11 +82,11 @@
             "legendValueText": "[[value]]",
             "title": "duration",
             "fillAlphas": 0,
-            "valueField": "duration",
-            "valueAxis": "durationAxis"
+            "valueField": "Porcentaje",
+            "valueAxis": "porcentajesAxis"
         }],
         "chartCursor": {
-            "categoryBalloonDateFormat": "DD",
+            "categoryBalloonDateFormat": "MMYY",
             "cursorAlpha": 0.1,
             "cursorColor": "#000000",
             "fullWidth": true,
@@ -198,7 +94,7 @@
             "zoomable": false
         },
         "dataDateFormat": "YYYY-MM-DD",
-        "categoryField": "date",
+        "categoryField": "Mes",
         "categoryAxis": {
             "dateFormats": [{
                 "period": "DD",
@@ -212,6 +108,9 @@
             }, {
                 "period": "YYYY",
                 "format": "YYYY"
+            }, {
+                "period": "MMYY",
+                "format": "MMM YY"
             }],
             "parseDates": true,
             "autoGridCount": false,
@@ -219,20 +118,385 @@
             "gridAlpha": 0.1,
             "gridColor": "#FFFFFF",
             "gridCount": 50
+        }, 
+        "export": {
+            "enabled": true
+
         },
-        "exportConfig": {
-            "menuBottom": "20px",
-            "menuRight": "22px",
-            "menuItems": [{
-                "icon": 'http://localhost:50511/assets/global/plugins/amcharts/amcharts/images/export.png',
-                "format": 'png'
-            }]
-        }
+        //"exportConfig": {
+        //    "menuBottom": "20px",
+        //    "menuRight": "22px",
+        //    "menuItems": [{
+        //        "icon": 'http://localhost:50511/assets/global/plugins/amcharts/amcharts/images/export.png',
+        //        "format": 'png'
+        //    }]
+        //}
     });
     function getIconExport() {
         return App.getGlobalPluginsPath() + "amcharts/amcharts/images/export.png";
-    }
-    $('#chart_2').closest('.portlet').find('.fullscreen').click(function () {
-        chart.invalidateSize();
+    }         
+}
+
+var initChartAvanceProyecto = function (data) {
+    var chart = AmCharts.makeChart("chartAvanceProyecto", {
+        "type": "serial",
+        "theme": "light",
+        "dataDateFormat": "YYYY-MM-DD",
+        "precision": 2,
+        "valueAxes": [{
+            "id": "v1",
+            "title": "Montos",
+            "position": "left",
+            "autoGridCount": true,
+            "labelFunction": function (value) {
+                return "$" + Math.round(value) + "M";
+            }
+        }, {
+            "id": "v2",
+            "title": "Porcentajes",
+            "gridAlpha": 0,
+            "position": "right",
+            "autoGridCount": true
+        }],
+        "graphs": [{
+            "id": "g3",
+            "valueAxis": "v1",
+            "lineColor": "#e1ede9",
+            "fillColors": "#e1ede9",
+            "fillAlphas": 1,
+            "type": "column",
+            "title": "Monto",//Actual Sales
+            "valueField": "MontoEjecutado",//sales2
+            "clustered": true,
+            "columnWidth": 20
+            , "legendValueText": "$[[value]]M",
+            "balloonText": "[[title]]<br /><b style='font-size: 130%'>$[[value]]M</b>"
+        }
+        , {
+            "id": "g4",
+            "valueAxis": "v1",
+            "lineColor": "#62cf73",
+            "fillColors": "#62cf73",
+            "fillAlphas": 1,
+            "type": "column",
+            "title": "",
+            "valueField": "MontoEjecutado",     //sales1
+            "clustered": false,
+            "columnWidth": 20,
+            "showBalloon": false,
+            //"legendValueText": "$[[value]]M",
+            //"balloonText": "[[title]]<br /><b style='font-size: 130%'>$[[value]]M</b>"
+        }
+        , {
+            "id": "g1",
+            "valueAxis": "v2",
+            "bullet": "round",
+            "bulletBorderAlpha": 1,
+            "bulletColor": "#FFFFFF",
+            "bulletSize": 5,
+            "hideBulletsCount": 50,
+            "lineThickness": 2,
+            "lineColor": "#20acd4",
+            "type": "smoothedLine",
+            "title": "",
+            "useLineColorForBulletBorder": true,
+            "showBalloon": false,
+            //"valueField": "Porcentaje"//market1
+            //,"balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>"
+        }
+        , {
+            "id": "g2",
+            "valueAxis": "v2",
+            "bullet": "round",
+            "bulletBorderAlpha": 1,
+            "bulletColor": "#FFFFFF",
+            "bulletSize": 5,
+            "hideBulletsCount": 50,
+            "lineThickness": 2,
+            "lineColor": "#e1ede9",
+            "type": "smoothedLine",
+            "dashLength": 5,
+            "title": "Porcentaje",
+            "useLineColorForBulletBorder": true,
+            "valueField": "Porcentaje",  //market2
+            "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]%</b>"
+        }],
+        "chartScrollbar": {
+            "graph": "g1",
+            "oppositeAxis": false,
+            "offset": 30,
+            "scrollbarHeight": 50,
+            "backgroundAlpha": 0,
+            "selectedBackgroundAlpha": 0.1,
+            "selectedBackgroundColor": "#888888",
+            "graphFillAlpha": 0,
+            "graphLineAlpha": 0.5,
+            "selectedGraphFillAlpha": 0,
+            "selectedGraphLineAlpha": 1,
+            "autoGridCount": true,
+            "color": "#AAAAAA"
+        },
+        "chartCursor": {
+            "pan": true,
+            "valueLineEnabled": true,
+            "valueLineBalloonEnabled": true,
+            "cursorAlpha": 0,
+            "valueLineAlpha": 0.2
+        },
+        "categoryField": "Mes",
+        "categoryAxis": {
+            "parseDates": true,
+            "dashLength": 1,
+            "minorGridEnabled": true
+        },
+        "legend": {
+            "useGraphSettings": true,
+            "position": "top"
+        },
+        "balloon": {
+            "borderThickness": 1,
+            "shadowAlpha": 0
+        },
+        "export": {
+            "enabled": true
+        },
+        "dataProvider": data,
+        "listeners": [{
+            "event": "clickGraphItem",
+            "method": function (event) {
+                var scope = angular.element(document.getElementById('homeApp')).scope();
+                scope.getMontosEAPByProyecto(event.item.dataContext.ProyectoID, event.item.dataContext.Mes);
+                scope.$apply();
+            }
+        }]
     });
 }
+
+var initChartCantidadesByActividad = function (data) {
+    var chart = AmCharts.makeChart("chartCantidadesByActividad", {
+        "type": "serial",
+        "theme": "light",
+        "dataDateFormat": "YYYY-MM-DD",
+        "precision": 2,
+        "valueAxes": [{
+            "id": "v1",
+            "title": "Montos",
+            "position": "left",
+            "autoGridCount": false,
+            "labelFunction": function (value) {
+                return "$" + Math.round(value) + "M";
+            }
+        }, {
+            "id": "v2",
+            "title": "Porcentajes",
+            "gridAlpha": 0,
+            "position": "right",
+            "autoGridCount": false
+        }],
+        "graphs": [{
+            "id": "g3",
+            "valueAxis": "v1",
+            "lineColor": "#e1ede9",
+            "fillColors": "#e1ede9",
+            "fillAlphas": 1,
+            "type": "column",
+            "title": "Monto",
+            "valueField": "MontoEAP",//sales2
+            "clustered": false,
+            "columnWidth": 0.5,
+            "legendValueText": "$[[value]]M",
+            "balloonText": "[[title]]<br /><b style='font-size: 130%'>$[[value]]M</b>"
+        }, {
+            "id": "g4",
+            "valueAxis": "v1",
+            "lineColor": "#62cf73",
+            "fillColors": "#62cf73",
+            "fillAlphas": 1,
+            "type": "column",
+            "title": "CantidadEjecutada",//Target Sales
+            "valueField": "CantidadEjecutada",//sales1
+            "clustered": false,
+            "columnWidth": 0.3,
+            "legendValueText": "$[[value]]M",
+            "balloonText": "[[title]]<br /><b style='font-size: 130%'>$[[value]]M</b>"
+        }, {
+            "id": "g1",
+            "valueAxis": "v2",
+            "bullet": "round",
+            "bulletBorderAlpha": 1,
+            "bulletColor": "#FFFFFF",
+            "bulletSize": 5,
+            "hideBulletsCount": 50,
+            "lineThickness": 2,
+            "lineColor": "#20acd4",
+            "type": "smoothedLine",
+            "title": "Porcentaje",
+            "useLineColorForBulletBorder": true,
+            "valueField": "CantidadLicitada",//market1
+            "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>"
+        }, {
+            "id": "g2",
+            "valueAxis": "v2",
+            "bullet": "round",
+            "bulletBorderAlpha": 1,
+            "bulletColor": "#FFFFFF",
+            "bulletSize": 5,
+            "hideBulletsCount": 50,
+            "lineThickness": 2,
+            "lineColor": "#e1ede9",
+            "type": "smoothedLine",
+            "dashLength": 5,
+            "title": "Porcentajes ALL",//Market Days ALL
+            "useLineColorForBulletBorder": true,
+            "valueField": "PorcentajeEjecutado",//market2
+            "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>"
+        }],
+        "chartScrollbar": {
+            "graph": "g1",
+            "oppositeAxis": false,
+            "offset": 30,
+            "scrollbarHeight": 50,
+            "backgroundAlpha": 0,
+            "selectedBackgroundAlpha": 0.1,
+            "selectedBackgroundColor": "#888888",
+            "graphFillAlpha": 0,
+            "graphLineAlpha": 0.5,
+            "selectedGraphFillAlpha": 0,
+            "selectedGraphLineAlpha": 1,
+            "autoGridCount": true,
+            "color": "#AAAAAA"
+        },
+        "chartCursor": {
+            "pan": true,
+            "valueLineEnabled": true,
+            "valueLineBalloonEnabled": true,
+            "cursorAlpha": 0,
+            "valueLineAlpha": 0.2
+        },
+        "categoryField": "Mes",
+        "categoryAxis": {
+            "parseDates": true,
+            "dashLength": 1,
+            "minorGridEnabled": true
+        },
+        "legend": {
+            "useGraphSettings": true,
+            "position": "top"
+        },
+        "balloon": {
+            "borderThickness": 1,
+            "shadowAlpha": 0
+        },
+        "export": {
+            "enabled": true
+        },
+        "dataProvider": data
+    });
+}
+
+//[{
+//    "date": "2013-01-16",
+//    "market1": 71,
+//    "market2": 4,
+//    "sales1": 5,
+//    "sales2": 8
+//}, {
+//    "date": "2013-01-17",
+//    "market1": 74,
+//    "market2": 78,
+//    "sales1": 4,
+//    "sales2": 6
+//}]
+
+
+//[{
+//    "date": "2013-01-16",
+//    "market1": 71,
+//    "market2": 4,
+//    "sales1": 5,
+//    "sales2": 8
+//}, {
+//    "date": "2013-01-17",
+//    "market1": 74,
+//    "market2": 78,
+//    "sales1": 4,
+//    "sales2": 6
+//}, {
+//    "date": "2013-01-18",
+//    "market1": 78,
+//    "market2": 88,
+//    "sales1": 5,
+//    "sales2": 2
+//}, {
+//    "date": "2013-01-19",
+//    "market1": 85,
+//    "market2": 89,
+//    "sales1": 8,
+//    "sales2": 9
+//}, {
+//    "date": "2013-01-20",
+//    "market1": 82,
+//    "market2": 89,
+//    "sales1": 9,
+//    "sales2": 6
+//}, {
+//    "date": "2013-01-21",
+//    "market1": 83,
+//    "market2": 85,
+//    "sales1": 3,
+//    "sales2": 5
+//}, {
+//    "date": "2013-01-22",
+//    "market1": 88,
+//    "market2": 92,
+//    "sales1": 5,
+//    "sales2": 7
+//}, {
+//    "date": "2013-01-23",
+//    "market1": 85,
+//    "market2": 90,
+//    "sales1": 7,
+//    "sales2": 6
+//}, {
+//    "date": "2013-01-24",
+//    "market1": 85,
+//    "market2": 91,
+//    "sales1": 9,
+//    "sales2": 5
+//}, {
+//    "date": "2013-01-25",
+//    "market1": 80,
+//    "market2": 84,
+//    "sales1": 5,
+//    "sales2": 8
+//}, {
+//    "date": "2013-01-26",
+//    "market1": 87,
+//    "market2": 92,
+//    "sales1": 4,
+//    "sales2": 8
+//}, {
+//    "date": "2013-01-27",
+//    "market1": 84,
+//    "market2": 87,
+//    "sales1": 3,
+//    "sales2": 4
+//}, {
+//    "date": "2013-01-28",
+//    "market1": 83,
+//    "market2": 88,
+//    "sales1": 5,
+//    "sales2": 7
+//}, {
+//    "date": "2013-01-29",
+//    "market1": 84,
+//    "market2": 87,
+//    "sales1": 5,
+//    "sales2": 8
+//}, {
+//    "date": "2013-01-30",
+//    "market1": 81,
+//    "market2": 85,
+//    "sales1": 4,
+//    "sales2": 7
+//}]

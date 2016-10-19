@@ -240,11 +240,11 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		public System.Data.Linq.Table<VW_ActividadesEjcutada> VW_ActividadesEjcutadas
+		public System.Data.Linq.Table<VW_ActividadesEjecutada> VW_ActividadesEjecutadas
 		{
 			get
 			{
-				return this.GetTable<VW_ActividadesEjcutada>();
+				return this.GetTable<VW_ActividadesEjecutada>();
 			}
 		}
 		
@@ -280,6 +280,14 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<VW_MontoEAP> VW_MontoEAPs
+		{
+			get
+			{
+				return this.GetTable<VW_MontoEAP>();
+			}
+		}
+		
 		public System.Data.Linq.Table<VW_MontosByActividad> VW_MontosByActividads
 		{
 			get
@@ -301,6 +309,14 @@ namespace GeoMapxBusiness
 			get
 			{
 				return this.GetTable<VW_Planilla>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_MontoCantidadEA> VW_MontoCantidadEAs
+		{
+			get
+			{
+				return this.GetTable<VW_MontoCantidadEA>();
 			}
 		}
 	}
@@ -2363,7 +2379,7 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,3)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,5)")]
 		public System.Nullable<decimal> Cantidad
 		{
 			get
@@ -5047,7 +5063,7 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
 		public string CodigoProyecto
 		{
 			get
@@ -5415,8 +5431,8 @@ namespace GeoMapxBusiness
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesEjcutadas")]
-	public partial class VW_ActividadesEjcutada
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesEjecutadas")]
+	public partial class VW_ActividadesEjecutada
 	{
 		
 		private int _Actividadid;
@@ -5427,7 +5443,7 @@ namespace GeoMapxBusiness
 		
 		private System.Nullable<int> _CantidadEjecutada;
 		
-		public VW_ActividadesEjcutada()
+		public VW_ActividadesEjecutada()
 		{
 		}
 		
@@ -6378,6 +6394,87 @@ namespace GeoMapxBusiness
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoEAP")]
+	public partial class VW_MontoEAP
+	{
+		
+		private int _ProyectoID;
+		
+		private string _Mes;
+		
+		private string _ActividadPrimaria;
+		
+		private System.Nullable<decimal> _MontoEAP;
+		
+		public VW_MontoEAP()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoEAP
+		{
+			get
+			{
+				return this._MontoEAP;
+			}
+			set
+			{
+				if ((this._MontoEAP != value))
+				{
+					this._MontoEAP = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontosByActividad")]
 	public partial class VW_MontosByActividad
 	{
@@ -6394,7 +6491,7 @@ namespace GeoMapxBusiness
 		
 		private System.Nullable<int> _ProyectoID;
 		
-		private string _actividadprimaria;
+		private string _ActividadPrimaria;
 		
 		private string _ActividadSecundaria;
 		
@@ -6502,18 +6599,18 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_actividadprimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string actividadprimaria
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
 		{
 			get
 			{
-				return this._actividadprimaria;
+				return this._ActividadPrimaria;
 			}
 			set
 			{
-				if ((this._actividadprimaria != value))
+				if ((this._ActividadPrimaria != value))
 				{
-					this._actividadprimaria = value;
+					this._ActividadPrimaria = value;
 				}
 			}
 		}
@@ -6573,7 +6670,7 @@ namespace GeoMapxBusiness
 		
 		private System.Nullable<decimal> _MontoEjecutado;
 		
-		private int _Actividadid;
+		private int _ActividadID;
 		
 		private int _ProyectoID;
 		
@@ -6603,18 +6700,18 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Actividadid", DbType="Int NOT NULL")]
-		public int Actividadid
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
 		{
 			get
 			{
-				return this._Actividadid;
+				return this._ActividadID;
 			}
 			set
 			{
-				if ((this._Actividadid != value))
+				if ((this._ActividadID != value))
 				{
-					this._Actividadid = value;
+					this._ActividadID = value;
 				}
 			}
 		}
@@ -7228,6 +7325,177 @@ namespace GeoMapxBusiness
 				if ((this._Observacion != value))
 				{
 					this._Observacion = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoCantidadEAS")]
+	public partial class VW_MontoCantidadEA
+	{
+		
+		private int _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private string _Mes;
+		
+		private System.Nullable<int> _CantidadEjecutada;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<int> _CantidadLicitada;
+		
+		private System.Nullable<double> _PorcentajeEjecutado;
+		
+		private System.Nullable<decimal> _MontoEAP;
+		
+		public VW_MontoCantidadEA()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
+		public System.Nullable<int> CantidadEjecutada
+		{
+			get
+			{
+				return this._CantidadEjecutada;
+			}
+			set
+			{
+				if ((this._CantidadEjecutada != value))
+				{
+					this._CantidadEjecutada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadLicitada", DbType="Int")]
+		public System.Nullable<int> CantidadLicitada
+		{
+			get
+			{
+				return this._CantidadLicitada;
+			}
+			set
+			{
+				if ((this._CantidadLicitada != value))
+				{
+					this._CantidadLicitada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PorcentajeEjecutado", DbType="Float")]
+		public System.Nullable<double> PorcentajeEjecutado
+		{
+			get
+			{
+				return this._PorcentajeEjecutado;
+			}
+			set
+			{
+				if ((this._PorcentajeEjecutado != value))
+				{
+					this._PorcentajeEjecutado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoEAP
+		{
+			get
+			{
+				return this._MontoEAP;
+			}
+			set
+			{
+				if ((this._MontoEAP != value))
+				{
+					this._MontoEAP = value;
 				}
 			}
 		}
