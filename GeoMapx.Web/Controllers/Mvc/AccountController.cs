@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 //using DotNetOpenAuth.AspNet;
-using Microsoft.Web.WebPages.OAuth;
+//using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using GeoMapx.Web.Filters;
 using GeoMapx.Web.Models;
@@ -97,109 +97,109 @@ namespace GeoMapx.Web.Controllers
         //
         // POST: /Account/Disassociate
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Disassociate(string provider, string providerUserId)
-        {
-            string ownerAccount = OAuthWebSecurity.GetUserName(provider, providerUserId);
-            ManageMessageId? message = null;
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Disassociate(string provider, string providerUserId)
+        //{
+        //    string ownerAccount = OAuthWebSecurity.GetUserName(provider, providerUserId);
+        //    ManageMessageId? message = null;
 
-            // Desasociar la cuenta solo si el usuario que ha iniciado sesión es el propietario
-            if (ownerAccount == User.Identity.Name)
-            {
-                // Usar una transacción para evitar que el usuario elimine su última credencial de inicio de sesión
-                using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
-                {
-                    bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-                    if (hasLocalAccount || OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name).Count > 1)
-                    {
-                        OAuthWebSecurity.DeleteAccount(provider, providerUserId);
-                        scope.Complete();
-                        message = ManageMessageId.RemoveLoginSuccess;
-                    }
-                }
-            }
+        //    // Desasociar la cuenta solo si el usuario que ha iniciado sesión es el propietario
+        //    if (ownerAccount == User.Identity.Name)
+        //    {
+        //        // Usar una transacción para evitar que el usuario elimine su última credencial de inicio de sesión
+        //        using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.Serializable }))
+        //        {
+        //            bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+        //            if (hasLocalAccount || OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name).Count > 1)
+        //            {
+        //                OAuthWebSecurity.DeleteAccount(provider, providerUserId);
+        //                scope.Complete();
+        //                message = ManageMessageId.RemoveLoginSuccess;
+        //            }
+        //        }
+        //    }
 
-            return RedirectToAction("Manage", new { Message = message });
-        }
+        //    return RedirectToAction("Manage", new { Message = message });
+        //}
 
-        //
-        // GET: /Account/Manage
+        ////
+        //// GET: /Account/Manage
 
-        public ActionResult Manage(ManageMessageId? message)
-        {
-            ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "La contraseña se ha cambiado."
-                : message == ManageMessageId.SetPasswordSuccess ? "Su contraseña se ha establecido."
-                : message == ManageMessageId.RemoveLoginSuccess ? "El inicio de sesión externo se ha quitado."
-                : "";
-            ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-            ViewBag.ReturnUrl = Url.Action("Manage");
-            return View();
-        }
+        //public ActionResult Manage(ManageMessageId? message)
+        //{
+        //    ViewBag.StatusMessage =
+        //        message == ManageMessageId.ChangePasswordSuccess ? "La contraseña se ha cambiado."
+        //        : message == ManageMessageId.SetPasswordSuccess ? "Su contraseña se ha establecido."
+        //        : message == ManageMessageId.RemoveLoginSuccess ? "El inicio de sesión externo se ha quitado."
+        //        : "";
+        //    ViewBag.HasLocalPassword = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+        //    ViewBag.ReturnUrl = Url.Action("Manage");
+        //    return View();
+        //}
 
-        //
-        // POST: /Account/Manage
+        ////
+        //// POST: /Account/Manage
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Manage(LocalPasswordModel model)
-        {
-            bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-            ViewBag.HasLocalPassword = hasLocalAccount;
-            ViewBag.ReturnUrl = Url.Action("Manage");
-            if (hasLocalAccount)
-            {
-                if (ModelState.IsValid)
-                {
-                    // ChangePassword iniciará una excepción en lugar de devolver false en determinados escenarios de error.
-                    bool changePasswordSucceeded;
-                    try
-                    {
-                        changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
-                    }
-                    catch (Exception)
-                    {
-                        changePasswordSucceeded = false;
-                    }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Manage(LocalPasswordModel model)
+        //{
+        //    bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+        //    ViewBag.HasLocalPassword = hasLocalAccount;
+        //    ViewBag.ReturnUrl = Url.Action("Manage");
+        //    if (hasLocalAccount)
+        //    {
+        //        if (ModelState.IsValid)
+        //        {
+        //            // ChangePassword iniciará una excepción en lugar de devolver false en determinados escenarios de error.
+        //            bool changePasswordSucceeded;
+        //            try
+        //            {
+        //                changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
+        //            }
+        //            catch (Exception)
+        //            {
+        //                changePasswordSucceeded = false;
+        //            }
 
-                    if (changePasswordSucceeded)
-                    {
-                        return RedirectToAction("Manage", new { Message = ManageMessageId.ChangePasswordSuccess });
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "La contraseña actual es incorrecta o la nueva contraseña no es válida.");
-                    }
-                }
-            }
-            else
-            {
-                // El usuario no dispone de contraseña local, por lo que debe quitar todos los errores de validación generados por un
-                // campo OldPassword vacío
-                ModelState state = ModelState["OldPassword"];
-                if (state != null)
-                {
-                    state.Errors.Clear();
-                }
+        //            if (changePasswordSucceeded)
+        //            {
+        //                return RedirectToAction("Manage", new { Message = ManageMessageId.ChangePasswordSuccess });
+        //            }
+        //            else
+        //            {
+        //                ModelState.AddModelError("", "La contraseña actual es incorrecta o la nueva contraseña no es válida.");
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        // El usuario no dispone de contraseña local, por lo que debe quitar todos los errores de validación generados por un
+        //        // campo OldPassword vacío
+        //        ModelState state = ModelState["OldPassword"];
+        //        if (state != null)
+        //        {
+        //            state.Errors.Clear();
+        //        }
 
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-                        WebSecurity.CreateAccount(User.Identity.Name, model.NewPassword);
-                        return RedirectToAction("Manage", new { Message = ManageMessageId.SetPasswordSuccess });
-                    }
-                    catch (Exception e)
-                    {
-                        ModelState.AddModelError("", e);
-                    }
-                }
-            }
+        //        if (ModelState.IsValid)
+        //        {
+        //            try
+        //            {
+        //                WebSecurity.CreateAccount(User.Identity.Name, model.NewPassword);
+        //                return RedirectToAction("Manage", new { Message = ManageMessageId.SetPasswordSuccess });
+        //            }
+        //            catch (Exception e)
+        //            {
+        //                ModelState.AddModelError("", e);
+        //            }
+        //        }
+        //    }
 
-            // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
-            return View(model);
-        }
+        //    // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
+        //    return View(model);
+        //}
 
         //
         //// POST: /Account/ExternalLogin
@@ -349,22 +349,22 @@ namespace GeoMapx.Web.Controllers
             RemoveLoginSuccess,
         }
 
-        internal class ExternalLoginResult : ActionResult
-        {
-            public ExternalLoginResult(string provider, string returnUrl)
-            {
-                Provider = provider;
-                ReturnUrl = returnUrl;
-            }
+        //internal class ExternalLoginResult : ActionResult
+        //{
+        //    public ExternalLoginResult(string provider, string returnUrl)
+        //    {
+        //        Provider = provider;
+        //        ReturnUrl = returnUrl;
+        //    }
 
-            public string Provider { get; private set; }
-            public string ReturnUrl { get; private set; }
+        //    public string Provider { get; private set; }
+        //    public string ReturnUrl { get; private set; }
 
-            public override void ExecuteResult(ControllerContext context)
-            {
-                OAuthWebSecurity.RequestAuthentication(Provider, ReturnUrl);
-            }
-        }
+        //    public override void ExecuteResult(ControllerContext context)
+        //    {
+        //        OAuthWebSecurity.RequestAuthentication(Provider, ReturnUrl);
+        //    }
+        //}
 
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
