@@ -1,0 +1,50 @@
+﻿<!-- Begin: life time stats -->
+<div class="col-md-6 heigth380">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Detalles del Poste: {{ selectedPoste.CodigoPoste || selectedPoste2.CodigoPoste }}
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+                <a href="javascript:;" class="fullscreen"></a>
+                <a href="#portlet-config" data-toggle="modal" class="config"></a>
+                <a href="javascript:;" class="reload"></a>
+                <a href="javascript:;" class="remove"></a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="portlet light ">
+                <div class="portlet-body">
+                    <div class="tabbable-line">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#overview_1" data-ng-click="initMapAndMarker();initMapAndMarker();initMapAndMarker();" data-toggle="tab">Mapa </a>
+                            </li>
+                          @*  <li>
+                                <a href="#overview_2" data-toggle="tab">Actividades del Poste </a>
+                            </li>*@
+                        </ul>
+                        <div class="tab-content ">
+                            <div class="tab-pane active" id="overview_1">
+                                <div class="table-responsive">
+                                    <div @*data-ng-app="appMap" data-ng-controller="mainCtrl"*@>
+                                        <div id="map" class="mapa4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="tab-pane" id="overview_2">
+                                <div class="table-responsive" id="jqGridPostesDiv">
+                                    <table id="jqGridPostes" class="heigth380" style="width: 300px"></table>
+                                    <div id="jqGridPager"></div>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End: life time stats -->

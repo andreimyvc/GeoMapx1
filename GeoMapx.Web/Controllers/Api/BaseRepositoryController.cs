@@ -226,7 +226,6 @@ namespace GeoMapx.Web.Controllers.Api
         }
         public bool _DeleteMaterial(int ActividadID)
         {
-
             try
             {
                 var old = db.Materiales.Single(p => p.MaterialID == ActividadID);
@@ -269,6 +268,64 @@ namespace GeoMapx.Web.Controllers.Api
                        where p.ProyectoID == proyectoid && p.Mes == mes && p.ActividadPrimaria == actividadPrimaria
                        select p;
             return data;
+        }
+
+        public IQueryable<TiposPoste> _GetTiposPoste()
+        {
+            var data = from p in db.TiposPostes
+                       select p;
+            return data;
+        }
+        public Poste _InsertPoste(Poste entity)
+        {
+            db.Postes.InsertOnSubmit(entity);
+            db.SubmitChanges();
+            return entity;
+            //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
+        }
+        public Poste _UpdatePoste(Poste entity)
+        {
+            var old = db.Postes.Single(p => p.PosteID == entity.PosteID);
+            old.Lat = entity.Lat;
+            old.Lon = entity.Lat;
+            old.ObservacionPoste = entity.ObservacionPoste;
+            old.PoligonoID = entity.PoligonoID;
+            old.ProyectoID = entity.ProyectoID;
+            old.TipoPosteID = entity.TipoPosteID;
+            old.UserIDModifica = entity.UserIDModifica;
+            old.X = entity.X;
+            old.Y = entity.Y;
+            old.Z = entity.Z;
+            db.SubmitChanges();
+            return entity;
+        }
+        public bool _DeletePoste(int posteid)
+        {
+            try
+            {
+                var old = db.Postes.Single(p => p.PosteID == p.PosteID);
+                db.Postes.DeleteOnSubmit(old);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public IQueryable<Poligono> _GetTPoligonosByProyecto(int proyectoid)
+        {
+            var data = from p in db.Poligonos
+                       where p.ProyectoID == proyectoid
+                       select p;
+            return data;
+        }
+        public Poligono _GetTPoligonosByID(int poligonoid)
+        {
+            var data = from p in db.Poligonos
+                       where p.PoligonoID == poligonoid
+                       select p;
+            return data.FirstOrDefault();
         }
     }
 }

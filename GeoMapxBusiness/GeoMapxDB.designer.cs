@@ -6345,8 +6345,8 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricion", DbType="VarChar(500)")]
-		public string Descricion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Descricion", Storage="_Descricion", DbType="VarChar(500)")]
+		public string Descripcion
 		{
 			get
 			{

@@ -314,7 +314,7 @@
       <Column Name="ActividadID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ProyectoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CodigoMaterial" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Descricion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Descricion" Member="Descripcion" Storage="_Descricion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
       <Column Name="PrecioUnitario" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
     </Type>

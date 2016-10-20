@@ -5,7 +5,7 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using DotNetOpenAuth.AspNet;
+//using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using GeoMapx.Web.Filters;
@@ -48,8 +48,8 @@ namespace GeoMapx.Web.Controllers
         //
         // POST: /Account/LogOff
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
@@ -70,8 +70,9 @@ namespace GeoMapx.Web.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Register(RegisterModel model)
         {
             if (ModelState.IsValid)
@@ -201,132 +202,132 @@ namespace GeoMapx.Web.Controllers
         }
 
         //
-        // POST: /Account/ExternalLogin
+        //// POST: /Account/ExternalLogin
 
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult ExternalLogin(string provider, string returnUrl)
-        {
-            return new ExternalLoginResult(provider, Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
-        }
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult ExternalLogin(string provider, string returnUrl)
+        //{
+        //    return new ExternalLoginResult(provider, Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
+        //}
 
-        //
-        // GET: /Account/ExternalLoginCallback
+        ////
+        //// GET: /Account/ExternalLoginCallback
 
-        [AllowAnonymous]
-        public ActionResult ExternalLoginCallback(string returnUrl)
-        {
-            AuthenticationResult result = OAuthWebSecurity.VerifyAuthentication(Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
-            if (!result.IsSuccessful)
-            {
-                return RedirectToAction("ExternalLoginFailure");
-            }
+        //[AllowAnonymous]
+        //public ActionResult ExternalLoginCallback(string returnUrl)
+        //{
+        //    AuthenticationResult result = OAuthWebSecurity.VerifyAuthentication(Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
+        //    if (!result.IsSuccessful)
+        //    {
+        //        return RedirectToAction("ExternalLoginFailure");
+        //    }
 
-            if (OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, createPersistentCookie: false))
-            {
-                return RedirectToLocal(returnUrl);
-            }
+        //    if (OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, createPersistentCookie: false))
+        //    {
+        //        return RedirectToLocal(returnUrl);
+        //    }
 
-            if (User.Identity.IsAuthenticated)
-            {
-                // Si el usuario actual ha iniciado sesión, agregue la cuenta nueva
-                OAuthWebSecurity.CreateOrUpdateAccount(result.Provider, result.ProviderUserId, User.Identity.Name);
-                return RedirectToLocal(returnUrl);
-            }
-            else
-            {
-                // El usuario es nuevo, solicitar nombres de pertenencia deseados
-                string loginData = OAuthWebSecurity.SerializeProviderUserId(result.Provider, result.ProviderUserId);
-                ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(result.Provider).DisplayName;
-                ViewBag.ReturnUrl = returnUrl;
-                return View("ExternalLoginConfirmation", new RegisterExternalLoginModel { UserName = result.UserName, ExternalLoginData = loginData });
-            }
-        }
+        //    if (User.Identity.IsAuthenticated)
+        //    {
+        //        // Si el usuario actual ha iniciado sesión, agregue la cuenta nueva
+        //        OAuthWebSecurity.CreateOrUpdateAccount(result.Provider, result.ProviderUserId, User.Identity.Name);
+        //        return RedirectToLocal(returnUrl);
+        //    }
+        //    else
+        //    {
+        //        // El usuario es nuevo, solicitar nombres de pertenencia deseados
+        //        string loginData = OAuthWebSecurity.SerializeProviderUserId(result.Provider, result.ProviderUserId);
+        //        ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(result.Provider).DisplayName;
+        //        ViewBag.ReturnUrl = returnUrl;
+        //        return View("ExternalLoginConfirmation", new RegisterExternalLoginModel { UserName = result.UserName, ExternalLoginData = loginData });
+        //    }
+        //}
 
-        //
-        // POST: /Account/ExternalLoginConfirmation
+        ////
+        //// POST: /Account/ExternalLoginConfirmation
 
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)
-        {
-            string provider = null;
-            string providerUserId = null;
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)
+        //{
+        //    string provider = null;
+        //    string providerUserId = null;
 
-            if (User.Identity.IsAuthenticated || !OAuthWebSecurity.TryDeserializeProviderUserId(model.ExternalLoginData, out provider, out providerUserId))
-            {
-                return RedirectToAction("Manage");
-            }
+        //    if (User.Identity.IsAuthenticated || !OAuthWebSecurity.TryDeserializeProviderUserId(model.ExternalLoginData, out provider, out providerUserId))
+        //    {
+        //        return RedirectToAction("Manage");
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                // Insertar un nuevo usuario en la base de datos
-                using (UsersContext db = new UsersContext())
-                {
-                    UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
-                    // Comprobar si el usuario ya existe
-                    if (user == null)
-                    {
-                        // Insertar el nombre en la tabla de perfiles
-                        db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
-                        db.SaveChanges();
+        //    if (ModelState.IsValid)
+        //    {
+        //        // Insertar un nuevo usuario en la base de datos
+        //        using (UsersContext db = new UsersContext())
+        //        {
+        //            UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
+        //            // Comprobar si el usuario ya existe
+        //            if (user == null)
+        //            {
+        //                // Insertar el nombre en la tabla de perfiles
+        //                db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
+        //                db.SaveChanges();
 
-                        OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);
-                        OAuthWebSecurity.Login(provider, providerUserId, createPersistentCookie: false);
+        //                OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);
+        //                OAuthWebSecurity.Login(provider, providerUserId, createPersistentCookie: false);
 
-                        return RedirectToLocal(returnUrl);
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("UserName", "El nombre de usuario ya existe. Escriba un nombre de usuario diferente.");
-                    }
-                }
-            }
+        //                return RedirectToLocal(returnUrl);
+        //            }
+        //            else
+        //            {
+        //                ModelState.AddModelError("UserName", "El nombre de usuario ya existe. Escriba un nombre de usuario diferente.");
+        //            }
+        //        }
+        //    }
 
-            ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(provider).DisplayName;
-            ViewBag.ReturnUrl = returnUrl;
-            return View(model);
-        }
+        //    ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(provider).DisplayName;
+        //    ViewBag.ReturnUrl = returnUrl;
+        //    return View(model);
+        //}
 
-        //
-        // GET: /Account/ExternalLoginFailure
+        ////
+        //// GET: /Account/ExternalLoginFailure
 
-        [AllowAnonymous]
-        public ActionResult ExternalLoginFailure()
-        {
-            return View();
-        }
+        //[AllowAnonymous]
+        //public ActionResult ExternalLoginFailure()
+        //{
+        //    return View();
+        //}
 
-        [AllowAnonymous]
-        [ChildActionOnly]
-        public ActionResult ExternalLoginsList(string returnUrl)
-        {
-            ViewBag.ReturnUrl = returnUrl;
-            return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
-        }
+        //[AllowAnonymous]
+        //[ChildActionOnly]
+        //public ActionResult ExternalLoginsList(string returnUrl)
+        //{
+        //    ViewBag.ReturnUrl = returnUrl;
+        //    return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
+        //}
 
-        [ChildActionOnly]
-        public ActionResult RemoveExternalLogins()
-        {
-            ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
-            List<ExternalLogin> externalLogins = new List<ExternalLogin>();
-            foreach (OAuthAccount account in accounts)
-            {
-                AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
+        //[ChildActionOnly]
+        //public ActionResult RemoveExternalLogins()
+        //{
+        //    ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
+        //    List<ExternalLogin> externalLogins = new List<ExternalLogin>();
+        //    foreach (OAuthAccount account in accounts)
+        //    {
+        //        AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
 
-                externalLogins.Add(new ExternalLogin
-                {
-                    Provider = account.Provider,
-                    ProviderDisplayName = clientData.DisplayName,
-                    ProviderUserId = account.ProviderUserId,
-                });
-            }
+        //        externalLogins.Add(new ExternalLogin
+        //        {
+        //            Provider = account.Provider,
+        //            ProviderDisplayName = clientData.DisplayName,
+        //            ProviderUserId = account.ProviderUserId,
+        //        });
+        //    }
 
-            ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
-            return PartialView("_RemoveExternalLoginsPartial", externalLogins);
-        }
+        //    ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
+        //    return PartialView("_RemoveExternalLoginsPartial", externalLogins);
+        //}
 
         #region Aplicaciones auxiliares
         private ActionResult RedirectToLocal(string returnUrl)

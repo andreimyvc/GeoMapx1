@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using GeoMapxBusiness;
-using GeoMapx.Web.Models.GeoMapx;
+//using GeoMapx.Web.Models.GeoMapx;
 using Newtonsoft.Json;
 using GeoMapx.Web.Filters;
 

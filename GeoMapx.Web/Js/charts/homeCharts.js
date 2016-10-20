@@ -280,7 +280,7 @@ var initChartCantidadesByActividad = function (data) {
         "precision": 2,
         "valueAxes": [{
             "id": "v1",
-            "title": "Montos",
+            "title": "Montos",//Sales
             "position": "left",
             "autoGridCount": false,
             "labelFunction": function (value) {
@@ -288,7 +288,7 @@ var initChartCantidadesByActividad = function (data) {
             }
         }, {
             "id": "v2",
-            "title": "Porcentajes",
+            "title": "Cantidad",//Market Days
             "gridAlpha": 0,
             "position": "right",
             "autoGridCount": false
@@ -330,9 +330,9 @@ var initChartCantidadesByActividad = function (data) {
             "lineThickness": 2,
             "lineColor": "#20acd4",
             "type": "smoothedLine",
-            "title": "Porcentaje",
+            "title": "Cantidad",//Market Days
             "useLineColorForBulletBorder": true,
-            "valueField": "CantidadLicitada",//market1
+            "valueField": "CantidadEjecutada",//market1
             "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>"
         }, {
             "id": "g2",
@@ -346,7 +346,7 @@ var initChartCantidadesByActividad = function (data) {
             "lineColor": "#e1ede9",
             "type": "smoothedLine",
             "dashLength": 5,
-            "title": "Porcentajes ALL",//Market Days ALL
+            "title": "% Ejecutados",//Market Days ALL
             "useLineColorForBulletBorder": true,
             "valueField": "PorcentajeEjecutado",//market2
             "balloonText": "[[title]]<br /><b style='font-size: 130%'>[[value]]</b>"
@@ -373,9 +373,9 @@ var initChartCantidadesByActividad = function (data) {
             "cursorAlpha": 0,
             "valueLineAlpha": 0.2
         },
-        "categoryField": "Mes",
+        "categoryField": "ActividadSecundaria",
         "categoryAxis": {
-            "parseDates": true,
+            //"parseDates": true,
             "dashLength": 1,
             "minorGridEnabled": true
         },

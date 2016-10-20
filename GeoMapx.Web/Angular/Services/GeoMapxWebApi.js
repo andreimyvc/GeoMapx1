@@ -146,7 +146,25 @@
                 defer.reject(response);
             });
             return defer.promise;
-        };    
+        };   
+        interfaz.getPostesByProyectoALlField = function (id) {
+            var defer = q.defer();  
+            http.get('/api/postes/GetPostesByProyectoALlField', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };  
+        interfaz.getPosteByID = function (id) {
+            var defer = q.defer();  
+            http.get('/api/postes/getPosteByID', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        }; 
         interfaz.getPostesByProyectoDiferenteDe = function (proyectoid,posteid) {
             var defer = q.defer();  
             http.get('/api/postes/getPostesByProyectoDiferenteDe', { params: { proyectoid: proyectoid, diferenteDe: posteid } }).then(function (response) {
@@ -219,6 +237,69 @@
         interfaz.getMaterialesByProyecto = function (id) {
             var defer = q.defer();
             http.get('/api/materiales/getMaterialesByProyecto', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getPoligonosByProyecto = function (id) {
+            var defer = q.defer();
+            http.get('/api/poligonos/get', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getPoligonoByID = function (id) {
+            var defer = q.defer();
+            http.get('/api/poligonos/getByID', { params: { poligonoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getTiposPosteID = function (id) {
+            var defer = q.defer();
+            http.get('/api/postes/GetTiposPosteID', { params: { tipoPosteID: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getTiposPoste = function () {
+            var defer = q.defer();
+            http.get('/api/postes/getTiposPoste').then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.insertPoste = function (entity) {
+            var defer = q.defer();
+            http({ method: 'POST', url: '/api/postes/post', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.updatePoste = function (entity) {
+            var defer = q.defer();
+            http({ method: 'PUT', url: '/api/postes/put', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.deletePoste = function (id) {
+            var defer = q.defer();
+            http.delete('/api/postes/delete', { params: { posteid: id } }).then(function (response) {
                 defer.resolve(response.data);
             }, function (response) {
                 defer.reject(response);

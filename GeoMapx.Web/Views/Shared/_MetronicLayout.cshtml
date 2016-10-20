@@ -54,25 +54,16 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END HEAD -->
 
 <body class="page-container-bg-solid" onload="initialize()">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
     <div class="page-wrapper">
         <div class="page-wrapper-row">
             <div class="page-wrapper-top">
                 <!-- BEGIN HEADER -->
-                <div class="page-header">
+                <div class="page-header" style="height: 25px !important;     margin: 0 0 0;">
                     <!-- BEGIN HEADER MENU -->
                     <div class="page-header-menu">
                         <div class="container">
-                            <!-- BEGIN HEADER SEARCH BOX -->
-                            <form class="search-form" action="page_general_search.html" method="GET">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="query">
-                                    <span class="input-group-btn">
-                                        <a href="javascript:;" class="btn submit">
-                                            <i class="icon-magnifier"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </form>
                             <!-- END HEADER SEARCH BOX -->
                             <!-- BEGIN MEGA MENU -->
                             <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
@@ -85,30 +76,50 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <span class="arrow"></span>
                                         </a>
                                     </li>
-                                    <li class=" ">
-                                        <a href="/diarias">
-                                            Actividades Diarias
-                                            <span class="arrow"></span>
-                                        </a>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="/postes">
-                                            Postes
-                                            <span class="arrow"></span>
-                                        </a>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="/actividades">
-                                            Unidades constructivas
-                                            <span class="arrow"></span>
-                                        </a>
-                                    </li>
-                                    <li class=" ">
-                                        <a href="/materiales">
-                                            Materiales
-                                            <span class="arrow"></span>
-                                        </a>
-                                    </li>
+                                    @if(User.Identity.IsAuthenticated)
+                                    {
+                                        <li class=" ">
+                                            <a href="/diarias">
+                                                Actividades Diarias
+                                                <span class="arrow"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="/postes">
+                                                Postes
+                                                <span class="arrow"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="/actividades">
+                                                Unidades constructivas
+                                                <span class="arrow"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="/materiales">
+                                                Materiales
+                                                <span class="arrow"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="/account/logoff">
+                                                Cerrar sesión
+                                                <span class="arrow"></span>
+                                            </a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class=" ">
+                                            <a href="/account/login">
+                                                Iniciar sesión
+                                                <span class="arrow"></span>
+                                            </a>
+                                        </li>
+                                        
+                                    }
+
                                 </ul>
                             </div>
                             <!-- END MEGA MENU -->
@@ -147,10 +158,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN INNER FOOTER -->
                 <div class="page-footer">
                     <div class="container">
-                        2016 &copy; VV Solutions
-                        <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
-                        <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
-                    </div>
+                        2016 &copy; SV Solutions Software Dominicana</div>
                 </div>
                 <div class="scroll-to-top">
                     <i class="icon-arrow-up"></i>

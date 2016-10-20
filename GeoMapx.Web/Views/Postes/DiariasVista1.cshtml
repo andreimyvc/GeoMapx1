@@ -33,77 +33,70 @@
             <div class="form-group">
                 <label class="col-md-3 control-label">Proyecto</label>
                 <div class="col-md-9">
-                    <select class="form-control" @*data-ng-change="getPostesByProyecto()"*@
+                    <select class="form-control" 
                             data-ng-disabled="diarias.fieldsReadOnly"
-                            @*data-ng-readonly="diarias.fieldsReadOnly"*@ data-ng-model="selectedProyect"
+                            data-ng-model="selectedProyect"
                             data-ng-options="proyecto.CodigoProyecto for proyecto in proyectosData"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Polígono</label>
+                <div class="col-md-9">
+                    <select class="form-control" 
+                            data-ng-disabled="diarias.fieldsReadOnly"
+                            data-ng-model="selectedPoligono"
+                            data-ng-options="proyecto.CodigoPoligono for proyecto in poligonosData"></select>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Codigo Poste</label>
                 <div class="col-md-9">
-                    <select class="form-control"
-                            data-ng-disabled="diarias.fieldsReadOnly"
-                         data-ng-options="postes.CodigoPoste for postes in postesData" data-ng-model="selectedPoste">
-                    </select>
+                    <input type="text" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="model.CodigoPoste" />
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-3 control-label">Unidad C.</label>
+                <label class="col-md-3 control-label">Tipo Poste</label>
                 <div class="col-md-9">
-                    
-                    <select class="form-control" data-ng-model="selectedUnicons"
+                    <select class="form-control" 
                             data-ng-disabled="diarias.fieldsReadOnly"
-                         data-ng-options="unicons.UniCons for unicons in uniconsData">
-                    </select>
-                </div>
-                <span class="help-block">&nbsp;&nbsp;&nbsp;&nbsp;
-                    {{ selectedUnicons.DescripcionActividad }}</span>
-            </div>
-            <div class="form-group" data-ng-show="selectedUnicons.ActividadSecundaria.indexOf('TENDIDO')>=0">
-                <label class="col-md-3 control-label">Hasta</label>                
-                <div class="col-md-9">                        
-                    <select class="form-control"
-                            data-ng-disabled="diarias.fieldsReadOnly"
-                         data-ng-options="postes.CodigoPoste for postes in postesHastaData " data-ng-model="selectedPosteHasta">
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">Cantidad</label>
-                <div class="col-md-9">
-                    <input type="number" class="form-control" data-ng-model="cantidad"
-                            data-ng-disabled="diarias.fieldsReadOnly"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">Fecha</label>
-                <div class="col-md-9">
-                    <input type="date"  class="form-control" data-ng-model="fecha" data-ng-readonly="diarias.fieldsReadOnly" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">Contratista</label>
-                <div class="col-md-9">
-                     <select class="form-control"
-                            data-ng-disabled="diarias.fieldsReadOnly"
-                         data-ng-options="lista.CodigoContratista for lista in contratistasData" data-ng-model="selectedContratista">
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">Ficha</label>
-                <div class="col-md-9">
-                     <select class="form-control" data-ng-readonly="diarias.fieldsReadOnly"
-                            data-ng-disabled="diarias.fieldsReadOnly"
-                         data-ng-options="lista.CodigoFicha for lista in fichasData" data-ng-model="selectedFicha">
-                    </select>
+                            data-ng-model="selectedTipoPoste"
+                            data-ng-options="proyecto.TipoPosteDescripcion for proyecto in tiposPostesData"></select>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label">Observación</label>
                 <div class="col-md-9">
-                    <input type="text" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="observacion" />
+                    <input type="text" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="model.ObservacionPoste" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">X</label>
+                <div class="col-md-9">
+                    <input type="number" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="model.X" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Y</label>
+                <div class="col-md-9">
+                    <input type="number" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="model.Y" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Z</label>
+                <div class="col-md-9">
+                    <input type="number" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="model.Z" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Longitud</label>
+                <div class="col-md-9">
+                    <input type="number" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="model.Lon" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Latitud</label>
+                <div class="col-md-9">
+                    <input type="number" data-ng-readonly="diarias.fieldsReadOnly" class="form-control" data-ng-model="model.Lat" />
                 </div>
             </div>
 
