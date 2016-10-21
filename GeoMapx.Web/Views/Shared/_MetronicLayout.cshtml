@@ -102,14 +102,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <span class="arrow"></span>
                                             </a>
                                         </li>
-                                        <li class=" ">
+                                        @*<li class=" ">
                                             <a href="/account/logoff">
                                                 Cerrar sesión
                                                 <span class="arrow"></span>
                                             </a>
-                                        </li>
+                                        </li>*@
                                     }
-                                    else
+                                    @*else
                                     {
                                         <li class=" ">
                                             <a href="/account/login">
@@ -118,8 +118,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </a>
                                         </li>
                                         
-                                    }
-
+                                    }*@
+                                    @Html.Partial("_LoginPartial")
                                 </ul>
                             </div>
                             <!-- END MEGA MENU -->

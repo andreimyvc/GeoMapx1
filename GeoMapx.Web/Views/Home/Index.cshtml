@@ -57,7 +57,7 @@
 <link href="~/Content/home.css" rel="stylesheet" />
 <div id="homeApp" data-ng-app="homeApp" data-ng-controller="homeController">
     <!-- BEGIN ROW -->
-        <div class="btn-group open">
+        <div class="btn-group">
             <button type="button" class="btn green dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                 <i class="fa"></i>&nbsp;
                 <span class="hidden-sm hidden-xs">Proyectos</span>
@@ -65,8 +65,9 @@
             </button>
             <ul class="dropdown-menu" role="menu">
                 <li data-ng-repeat="p in proyectosData">
-                    <a data-ng-click="setSelectedProyect(p.ProyectoID)">
-                        <i class="icon-bar-chart font-green-haze"></i> {{p.CodigoProyecto}} </a>
+                    <a ng-cloak data-ng-click="setSelectedProyect(p.ProyectoID)">
+                        <i class="icon-bar-chart font-green-haze"></i> <span ng-cloak data-ng-bind="p.CodigoProyecto"></span>
+                    </a>
                 </li>
             </ul>
     </div>
@@ -79,7 +80,7 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-bar-chart font-green-haze"></i>
-                        <span class="caption-subject bold uppercase font-green-haze"> Avance Ejecucion Proyecto: {{ selectedProyect.CodigoProyecto }}</span>
+                        <span class="caption-subject bold uppercase font-green-haze"> Avance Ejecucion Proyecto:</span><span ng-cloak data-ng-bind="selectedProyect.CodigoProyecto"></span>
                         <span class="caption-helper">(Organizados por mes)</span>
                     </div>
                     <div class="tools">
@@ -92,45 +93,47 @@
                 </div>
                 <div class="portlet-body">                   
                     <div id="chartAvanceProyecto"        class="chart" style="height: 400px;"></div>
-                    <div class="row" >
-                            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12" >
-                                <a class="dashboard-stat dashboard-stat-v2 blue" data-ng-click="sendActividadPrimaria(model.MontonEAP.Instalacion.label)">
-                                    <div class="visual">
-                                        <i class="fa fa-comments"></i>
+                    <div class="row" ng-cloak>
+                        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                            <a class="dashboard-stat dashboard-stat-v2 blue" data-ng-click="sendActividadPrimaria(model.MontonEAP.Instalacion.label)">
+                                <div class="visual">
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <span ng-cloak ng-bind="model.MontonEAP.Instalacion.monto"></span>$
                                     </div>
-                                    <div class="details">
-                                        <div class="number">
-                                            <span>{{ model.MontonEAP.Instalacion.monto }}$ </span>
-                                        </div>
-                                        <div class="desc"> {{ model.MontonEAP.Instalacion.label }} </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                                <a class="dashboard-stat dashboard-stat-v2 red"  data-ng-click="sendActividadPrimaria(model.MontonEAP.Remocion.label)">
-                                    <div class="visual">
-                                        <i class="fa fa-bar-chart-o"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="number">
-                                            <span>{{ model.MontonEAP.Remocion.monto }}</span>$ </div>
-                                        <div class="desc">{{ model.MontonEAP.Remocion.label }}</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
-                                <a class="dashboard-stat dashboard-stat-v2 green"  data-ng-click="sendActividadPrimaria(model.MontonEAP.Tranferencia.label)">
-                                    <div class="visual">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </div>
-                                    <div class="details">
-                                        <div class="number">
-                                            <span>{{ model.MontonEAP.Tranferencia.monto }}</span>$ </div>
-                                        <div class="desc">{{ model.MontonEAP.Tranferencia.label}} </div>
-                                    </div>
-                                </a>
-                            </div>                            
+                                    <div class="desc"> <span ng-cloak ng-bind="model.MontonEAP.Instalacion.label"></span> </div>
+                                </div>
+                            </a>
                         </div>
+                        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                            <a class="dashboard-stat dashboard-stat-v2 red" data-ng-click="sendActividadPrimaria(model.MontonEAP.Remocion.label)">
+                                <div class="visual">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <span ng-cloak ng-bind="model.MontonEAP.Remocion.monto"></span>$
+                                    </div>
+                                    <div class="desc"><span ng-cloak ng-bind="model.MontonEAP.Remocion.label"></span></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                            <a class="dashboard-stat dashboard-stat-v2 green" data-ng-click="sendActividadPrimaria(model.MontonEAP.Tranferencia.label)">
+                                <div class="visual">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <span ng-cloak ng-bind="model.MontonEAP.Tranferencia.monto"></span>$
+                                    </div>
+                                    <div class="desc" ng-cloak><span ng-cloak ng-bind="model.MontonEAP.Tranferencia.label"></span> </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <div id="chartCantidadesByActividad" class="chart" style="height: 400px;"></div>
                 </div>
             </div>

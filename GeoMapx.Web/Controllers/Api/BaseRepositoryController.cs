@@ -194,7 +194,7 @@ namespace GeoMapx.Web.Controllers.Api
         {
             var data = from p in db.Fichas
                        where p.ContratistaID == contratistaid
-                       && p.Estatus == 'A'
+                       && p.Estatus == "A"
                        select p;
             return data;
         }
@@ -218,7 +218,7 @@ namespace GeoMapx.Web.Controllers.Api
             old.ProyectoID = entity.ProyectoID;
             old.ActividadID = entity.ActividadID; 
             old.CodigoMaterial = entity.CodigoMaterial; 
-            old.Descricion = entity.Descricion;
+            old.Descripcion = entity.Descripcion;
             old.Cantidad = entity.Cantidad;
             old.PrecioUnitario = entity.PrecioUnitario;
             db.SubmitChanges();
@@ -264,7 +264,7 @@ namespace GeoMapx.Web.Controllers.Api
         }
         public IQueryable<VW_MontoCantidadEA> _GetMontosCantidadEAS(int proyectoid, string mes, string actividadPrimaria)
         {
-            var data = from p in db.VW_MontoCantidadEAs
+            var data = from p in db.VW_MontoCantidadEAS
                        where p.ProyectoID == proyectoid && p.Mes == mes && p.ActividadPrimaria == actividadPrimaria
                        select p;
             return data;

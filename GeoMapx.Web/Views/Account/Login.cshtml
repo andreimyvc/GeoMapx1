@@ -1,9 +1,10 @@
 ﻿
 
-@model GeoMapx.Web.Models.LoginModel
+@model GeoMapx.Web.Models.LoginViewModel
 
 @{
-    ViewBag.Title = "Iniciar sesión"; 
+    ViewBag.Title = "Iniciar sesión";
+    //Layout = "~/Views/Shared/_MetronicLayout.cshtml";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -62,14 +63,14 @@
                 <div class="form-group">
                     <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
                     <label class="control-label visible-ie8 visible-ie9">Usuario</label>
-                    <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" /> </div>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Usuario" name="email" /> </div>
                 <div class="form-group">
                     <label class="control-label visible-ie8 visible-ie9">Contraseña</label>
-                    <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Contraseña" name="password" /> </div>
                 <div class="form-actions">
                     <button type="submit" class="btn green uppercase">Login</button>
                     <label class="rememberme check mt-checkbox mt-checkbox-outline">
-                        <input type="checkbox" name="remember" value="1" />Recordar 
+                        <input type="checkbox" name="rememberMe" value="1" />Recordar 
                         <span></span>
                     </label>
                     <a href="javascript:;" id="forget-password" class="forget-password">¿Olvido su contraseña?</a>
@@ -165,4 +166,8 @@
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <!-- END THEME LAYOUT SCRIPTS -->
+        <script>
+            function initialize() {
+            }
+        </script>
     </body>
