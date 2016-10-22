@@ -67,6 +67,8 @@ namespace GeoMapx.Web.Controllers.Api
             }
         }
         [HttpPut]
+        [RouteAttribute("PUT")]
+        [AcceptVerbs("PUT")]
         public HttpResponseMessage Put(Materiale entity)
         {
             try
@@ -81,6 +83,8 @@ namespace GeoMapx.Web.Controllers.Api
             }
         }
         [HttpDelete]
+        [RouteAttribute("DELETE")]
+        [AcceptVerbs("DELETE")]
         public HttpResponseMessage Delete(int materialID)
         {
             try

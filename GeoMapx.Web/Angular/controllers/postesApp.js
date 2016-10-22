@@ -70,6 +70,7 @@ var postesController = function (scope, http, geoDataFactory) {
         d.diarias.btns.Guardar.show = true;
     };
     d.guardarEntrada = function () {
+        var btnvisible = false;
         d.diarias.fieldsReadOnly = true;
         d.diarias.btns.Nuevo.show = true;
         d.diarias.btns.Cancelar.show = false;
@@ -95,12 +96,14 @@ var postesController = function (scope, http, geoDataFactory) {
                 setGritPostes1();
                 alert("OK");
                 d.clearFields();
+                btnvisible = false;
             }, function (error) {
                 d.diarias.fieldsReadOnly = false;
                 d.diarias.btns.Nuevo.show = false;
                 d.diarias.btns.Cancelar.show = true;
                 scope.error = error.data.Message;
                 alert(scope.error);
+                btnvisible = true;
             });
         }
         else {
@@ -108,12 +111,16 @@ var postesController = function (scope, http, geoDataFactory) {
             putPoste(aposte).then(function (data) {
                 d.diarias.btns.Editar.show = true;
                 setGritPostes1();
+                alert("OK");
+                btnvisible = false;
             }, function (error) {
                 d.error = error.data.Message;
-                alert(d.error)
+                alert(d.error);
+                btnvisible = true;
             });
         }
-        d.diarias.btns.Guardar.show = false;
+        d.diarias.btns.Guardar.show = btnvisible;
+        d.diarias.btns.Eliminar.show = !btnvisible;
     };
 
     d.eliminarEntrada = function () {

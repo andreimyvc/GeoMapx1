@@ -182,6 +182,8 @@ namespace GeoMapx.Web.Controllers.Api
             }
         }
         [HttpPut]
+        [RouteAttribute("PUT")]
+        [AcceptVerbs("PUT")]
         public HttpResponseMessage Put(Actividade entity)
         {
             try

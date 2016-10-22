@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Módulo Materiales";
+    Layout = "~/Views/Shared/_MetronicWtableLayout.cshtml";
+}
+<link href="~/Content/mapas.css" rel="stylesheet" />
+@section scripts {  
+    <script src="../assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/ui.jqgrid.css" rel="stylesheet" />
+<script src="~/Js/datatables/verificaciones_table_managed.js"></script>
+    <script src="~/Angular/Services/GeoMapxWebApi.js"></script>
+    <script src="~/Angular/controllers/certificacionesApp.js"></script>
+<script>
+    function initialize() {
+        angular.element(document.getElementById('certificacionesApp')).scope().startApp();
+        TableDatatablesManaged.init();
+    }
+</script>
+
+}
+<div id="certificacionesApp" data-ng-app="certificacionesApp" data-ng-controller="certificacionesController">
+    <div class="page-content-inner">
+        <div class="row">
+            @Html.Partial("~/views/certificaciones/VerificacionesVista1.cshtml")           
+        </div>
+        <div class="row">
+            @Html.Partial("~/views/certificaciones/VerificacionesVista2.cshtml")
+        </div>
+    </div>
+</div>
+
+       

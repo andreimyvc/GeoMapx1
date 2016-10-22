@@ -64,6 +64,7 @@ var uniconsController = function (scope, http, geoDataFactory) {
         d.control.btns.Eliminar.show = false;
     };
     d.guardarEntrada = function () {
+        var btnvisible = false;
         d.control.fieldsReadOnly = true;
         d.control.btns.Nuevo.show = true;
         d.control.btns.Cancelar.show = false;
@@ -90,27 +91,32 @@ var uniconsController = function (scope, http, geoDataFactory) {
                 alert("OK");
                 d.clearFields();
                 d.selectedProyect = null;
+                btnvisible = false;
             }, function (error) {
                 d.control.fieldsReadOnly = false;
                 d.control.btns.Nuevo.show = false;
                 d.control.btns.Cancelar.show = true;
                 scope.error = error.data.Message;
                 alert(scope.error);
+                btnvisible = true;
             });
         }
         else {
             putUnicons(aactividad).then(function (data) {
                 d.control.btns.Editar.show = true;
                 getUnicons();
+                btnvisible = false;
             }, function (error) {
                 d.control.fieldsReadOnly = false;
                 d.control.btns.Nuevo.show = false;
                 d.control.btns.Cancelar.show = true;
                 d.error = error.data.Message;
                 alert(d.error)
+                btnvisible = true;
             });
         }
-        d.control.btns.Guardar.show = false;
+        d.control.btns.Guardar.show = btnvisible;
+        d.control.btns.Eliminar.show = !btnvisible;
     };
 
     d.deleteEntrada = function () {

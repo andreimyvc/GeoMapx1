@@ -42,6 +42,15 @@
             });
             return defer.promise;
         };
+        interfaz.getPlanillaToCertByProyecto = function (id) {
+            var defer = q.defer();  
+            http.get('/api/planillas/GetPlanillaToCertByProyecto', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
         //#endregion Planilla
         //#region Unicons
         interfaz.insertUnicons = function (entity) {

@@ -159,7 +159,7 @@ namespace GeoMapx.Web.Controllers.Api
             return data;
         }
         #endregion
-
+        #region Postes
         public IQueryable<VW_Poste> _GetPostes()
         {
             var data = from p in db.VW_Postes
@@ -182,23 +182,52 @@ namespace GeoMapx.Web.Controllers.Api
                        select p;
             return data;
         }
-
-        public IQueryable<Contratista> _GetContratistasByProyecto(int proyectoid)
+        public IQueryable<TiposPoste> _GetTiposPoste()
         {
-            var data = from p in db.Contratistas
-                       where p.ProyectoID == proyectoid
+            var data = from p in db.TiposPostes
                        select p;
             return data;
         }
-        public IQueryable<Ficha> _GetFichasByContratista(int contratistaid)
+        public Poste _InsertPoste(Poste entity)
         {
-            var data = from p in db.Fichas
-                       where p.ContratistaID == contratistaid
-                       && p.Estatus == "A"
-                       select p;
-            return data;
+            db.Postes.InsertOnSubmit(entity);
+            db.SubmitChanges();
+            return entity;
+            //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
         }
-
+        public Poste _UpdatePoste(Poste entity)
+        {
+            var old = db.Postes.Single(p => p.PosteID == entity.PosteID);
+            old.Lat = entity.Lat;
+            old.Lon = entity.Lat;
+            old.ObservacionPoste = entity.ObservacionPoste;
+            old.PoligonoID = entity.PoligonoID;
+            old.ProyectoID = entity.ProyectoID;
+            old.TipoPosteID = entity.TipoPosteID;
+            old.UserIDModifica = entity.UserIDModifica;
+            old.X = entity.X;
+            old.Y = entity.Y;
+            old.Z = entity.Z;
+            db.SubmitChanges();
+            return entity;
+        }
+        public bool _DeletePoste(int posteid)
+        {
+            try
+            {
+                var old = db.Postes.Single(p => p.PosteID == p.PosteID);
+                db.Postes.DeleteOnSubmit(old);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion Postes
+        
+        #region Materiales
         internal IQueryable<VW_Materiale> _GetMateriales()
         {
             var data = from p in db.VW_Materiales
@@ -245,7 +274,22 @@ namespace GeoMapx.Web.Controllers.Api
                        select p;
             return data;
         }
-
+        #endregion Materiales
+        public IQueryable<Ficha> _GetFichasByContratista(int contratistaid)
+        {
+            var data = from p in db.Fichas
+                       where p.ContratistaID == contratistaid
+                       && p.Estatus == 'A'
+                       select p;
+            return data;
+        }
+        public IQueryable<Contratista> _GetContratistasByProyecto(int proyectoid)
+        {
+            var data = from p in db.Contratistas
+                       where p.ProyectoID == proyectoid
+                       select p;
+            return data;
+        }
         public IQueryable<VW_AvanceProyectoByMe> _GetAvanceByProyecto(int proyectoid)
         {
             var data = from p in db.VW_AvanceProyectoByMes
@@ -264,54 +308,10 @@ namespace GeoMapx.Web.Controllers.Api
         }
         public IQueryable<VW_MontoCantidadEA> _GetMontosCantidadEAS(int proyectoid, string mes, string actividadPrimaria)
         {
-            var data = from p in db.VW_MontoCantidadEAS
+            var data = from p in db.VW_MontoCantidadEAs
                        where p.ProyectoID == proyectoid && p.Mes == mes && p.ActividadPrimaria == actividadPrimaria
                        select p;
             return data;
-        }
-
-        public IQueryable<TiposPoste> _GetTiposPoste()
-        {
-            var data = from p in db.TiposPostes
-                       select p;
-            return data;
-        }
-        public Poste _InsertPoste(Poste entity)
-        {
-            db.Postes.InsertOnSubmit(entity);
-            db.SubmitChanges();
-            return entity;
-            //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
-        }
-        public Poste _UpdatePoste(Poste entity)
-        {
-            var old = db.Postes.Single(p => p.PosteID == entity.PosteID);
-            old.Lat = entity.Lat;
-            old.Lon = entity.Lat;
-            old.ObservacionPoste = entity.ObservacionPoste;
-            old.PoligonoID = entity.PoligonoID;
-            old.ProyectoID = entity.ProyectoID;
-            old.TipoPosteID = entity.TipoPosteID;
-            old.UserIDModifica = entity.UserIDModifica;
-            old.X = entity.X;
-            old.Y = entity.Y;
-            old.Z = entity.Z;
-            db.SubmitChanges();
-            return entity;
-        }
-        public bool _DeletePoste(int posteid)
-        {
-            try
-            {
-                var old = db.Postes.Single(p => p.PosteID == p.PosteID);
-                db.Postes.DeleteOnSubmit(old);
-                db.SubmitChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
         public IQueryable<Poligono> _GetTPoligonosByProyecto(int proyectoid)
         {
@@ -326,6 +326,18 @@ namespace GeoMapx.Web.Controllers.Api
                        where p.PoligonoID == poligonoid
                        select p;
             return data.FirstOrDefault();
+        }
+
+
+        public IQueryable<VW_Planilla> _GetPlanillaToCertificarByProyecto(int proyectoid, int usuarioid)
+        {
+            var data = from p in db.VW_Planillas
+                       where p.ProyectoID == proyectoid
+                       && (p.Verificado != true || 
+                       (p.UserIDVerificador == usuarioid 
+                       && p.FechaVerificado.Value.Date == DateTime.Now.Date))
+                       select p;
+            return data;
         }
     }
 }

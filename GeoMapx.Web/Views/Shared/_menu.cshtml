@@ -1,0 +1,60 @@
+﻿<div class="hor-menu  ">
+<ul class="nav navbar-nav">
+    <li class=" ">
+        <a href="/home">
+            Home
+            <span class="arrow"></span>
+        </a>
+    </li>
+    @*@if(User.Identity.IsAuthenticated)*@
+    @*{*@
+        <li class=" ">
+            <a href="/diarias">
+                Actividades Diarias
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class=" ">
+            <a href="/postes">
+                Postes
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class=" ">
+            <a href="/actividades">
+                Unidades constructivas
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class=" ">
+            <a href="/materiales">
+                Materiales
+                <span class="arrow"></span>
+            </a>
+        </li>
+        <li class=" ">
+            <a href="/certificaciones/verificaciones">
+                Verificar
+                <span class="arrow"></span>
+            </a>
+        </li>
+        @*<li class=" ">
+            <a href="/account/logoff">
+                Cerrar sesión
+                <span class="arrow"></span>
+            </a>
+        </li>*@
+    @*}*@
+    @*else
+    {
+        <li class=" ">
+            <a href="/account/login">
+                Iniciar sesión
+                <span class="arrow"></span>
+            </a>
+        </li>
+                                        
+    }*@
+    @Html.Partial("_LoginPartial")
+</ul>
+</div>

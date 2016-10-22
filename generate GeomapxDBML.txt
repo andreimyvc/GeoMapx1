@@ -1,0 +1,1 @@
+SqlMetal /server:.\SQLEXPRESS /user:GeoMapx /password:GeoMapx123 /database:GeoMapxDB /dbml:GeoMapxDB.dbml  /pluralize  /views /functions /sprocs /context:GeoMapxDBDataContext

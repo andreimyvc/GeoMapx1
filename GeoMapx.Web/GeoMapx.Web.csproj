@@ -173,6 +173,7 @@
     <Compile Include="Controllers\Api\ActividadesController.cs" />
     <Compile Include="Controllers\Api\BaseRepositoryController.cs" />
     <Compile Include="Controllers\Api\ContratistasController.cs" />
+    <Compile Include="Controllers\Api\CertificacionController.cs" />
     <Compile Include="Controllers\Api\FichasController.cs" />
     <Compile Include="Controllers\Api\MaterialesController.cs" />
     <Compile Include="Controllers\Api\PlanillasController.cs" />
@@ -182,6 +183,8 @@
     <Compile Include="Controllers\Api\ReportesController.cs" />
     <Compile Include="Controllers\Mvc\AccountController.cs" />
     <Compile Include="Controllers\Mvc\ActividadesController.cs" />
+    <Compile Include="Controllers\Mvc\CertificacionesController.cs" />
+    <Compile Include="Controllers\Mvc\Copia de MaterialesController.cs" />
     <Compile Include="Controllers\Mvc\DiariasController.cs" />
     <Compile Include="Controllers\Mvc\HomeController.cs" />
     <Compile Include="Controllers\Mvc\ManageController.cs" />
@@ -203,6 +206,7 @@
   <ItemGroup>
     <Content Include="Angular\Controllers\App.js" />
     <Content Include="Angular\Controllers\appMap.js" />
+    <Content Include="Angular\Controllers\certificacionesApp.js" />
     <Content Include="Angular\Controllers\Copia de uniconsApp.js" />
     <Content Include="Angular\Controllers\diariasApp.js" />
     <Content Include="Angular\Controllers\geoMapx.js" />
@@ -263,15 +267,23 @@
     <Content Include="Js\jqgrid\jqgridPostesConfig.js" />
     <Content Include="Js\mapas\googlemaps.js" />
     <Content Include="Js\mapas\mapas.js" />
+    <Content Include="Js\datatables\verificaciones_table_managed.js" />
     <Content Include="Scripts\jqgrid\images\ui-icons_0078ae_256x240.png" />
     <Content Include="Scripts\jqgrid\images\ui-icons_e0fdff_256x240.png" />
     <Content Include="Scripts\lib\angular.js" />
     <Content Include="Scripts\mapas\googlemaps.js" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\Server.pubxml" />
+    <None Include="Properties\PublishProfiles\ServerTest.pubxml" />
     <None Include="Properties\PublishProfiles\Server1.pubxml" />
+    <None Include="Properties\PublishProfiles\ServerFTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ServerFTPtest.pubxml" />
     <None Include="Properties\PublishProfiles\Ver1.pubxml" />
     <None Include="Properties\PublishProfiles\x.pubxml" />
     <None Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -305,6 +317,15 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.Original.cshtml" />
+    <Content Include="Views\Certificaciones\Index.cshtml" />
+    <Content Include="Views\Certificaciones\VerificacionesVista1.cshtml" />
+    <Content Include="Views\Certificaciones\VerificacionesVista2.cshtml" />
+    <Content Include="Views\Certificaciones\Verificaciones0.cshtml" />
+    <Content Include="Views\Certificaciones\test.cshtml" />
+    <Content Include="Views\Shared\_menu.cshtml" />
+    <Content Include="Views\Shared\Copia de _menu.cshtml" />
+    <Content Include="Views\Shared\_MetronicWtableLayout.cshtml" />
+    <Content Include="Views\Certificaciones\Verificaciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Angular\apps\" />

@@ -433,7 +433,9 @@ var diariasController = function (scope, http, geoDataFactory) {
         d.selectedProyect = null;
         if (d.proyectosData) {
             d.selectedProyect = d.proyectosData.filter(function (elemento) { return elemento.ProyectoID == proyectid; })[0];
-            getProyect(proyectid);
+            if (!d.selectedProyect) {
+                getProyect(proyectid);
+            }
         } else {
             getProyect(proyectid);
         }

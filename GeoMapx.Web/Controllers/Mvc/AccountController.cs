@@ -54,7 +54,7 @@ namespace GeoMapx.Web.Controllers
 
         //
         // GET: /Account/Login
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -148,6 +148,7 @@ namespace GeoMapx.Web.Controllers
         // POST: /Account/Register
         [HttpPost]
         [Authorize]
+        //[AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {

@@ -94,6 +94,44 @@ namespace GeoMapx.Web.Controllers.Api
                 return Request.CreateResponse(HttpStatusCode.Conflict, err);
             }
         }
+        public HttpResponseMessage GetPlanillaToCertByProyecto(int proyectoid, bool allField = false)
+        {
+            try
+            {
+                var lista = this._GetPlanillaToCertificarByProyecto(proyectoid, usuario.UsuarioID);
+                if (allField)
+                {
+                    return Request.CreateResponse<IEnumerable<VW_Planilla>>(HttpStatusCode.OK, lista);
+                }
+                else
+                {
+                    var data = (from p in lista
+                               select new
+                                   {
+                                       p.PlanillaID,
+                                       p.ProyectoID,
+                                       p.PosteID,
+                                       Fecha = string.Format("{0:dd/MM/yyyy}", p.Fecha),
+                                       p.CodigoPoste,
+                                       p.CodigoPosteHasta,
+                                       p.CodigoProyecto,
+                                       p.DescripcionActividad,
+                                       p.UniCons,
+                                       p.Cantidad,
+                                       p.PosteIDHasta,
+                                       p.Observacion,
+                                       p.Verificado,
+                                       p.ObservacionVerificador
+                                   }).ToList();
+                    return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpError err = new HttpError(ex.Message);
+                return Request.CreateResponse(HttpStatusCode.Conflict, err);
+            }
+        }
 
         [HttpPost]
         public HttpResponseMessage Post(Planilla entity)
@@ -126,6 +164,8 @@ namespace GeoMapx.Web.Controllers.Api
             }
         }
         [HttpPut]
+        [RouteAttribute("PUT")]
+        [AcceptVerbs("PUT")]
         public HttpResponseMessage Put(Planilla entity)
         { 
             try
