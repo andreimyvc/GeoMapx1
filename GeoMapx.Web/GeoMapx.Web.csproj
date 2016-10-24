@@ -230,6 +230,7 @@
     <Content Include="Content\home.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\jquery-ui.1.8.16.css" />
     <Content Include="Content\jquery-ui.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -242,6 +243,7 @@
     <Content Include="Content\Site.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\ui.jqgrid.4.3.0.css" />
     <Content Include="Content\ui.jqgrid.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -265,6 +267,7 @@
     <Content Include="Js\charts\homeCharts.js" />
     <Content Include="Js\datatables\prebuild_table_managed.js" />
     <Content Include="Js\helpers\actividadesprebuild.js" />
+    <Content Include="Js\jqgrid\jqgridCertiConfig.js" />
     <Content Include="Js\jqgrid\jqgridDiariasPrebuildConfig.js" />
     <Content Include="Js\jqgrid\images\ui-icons_0078ae_256x240.png" />
     <Content Include="Js\jqgrid\images\ui-icons_e0fdff_256x240.png" />
@@ -275,8 +278,13 @@
     <Content Include="Js\mapas\googlemaps.js" />
     <Content Include="Js\mapas\mapas.js" />
     <Content Include="Js\datatables\verificaciones_table_managed.js" />
+    <Content Include="Scripts\grid.locale-en-4.3.0.js" />
+    <Content Include="Scripts\grid.locale-es-4.3.0.js" />
     <Content Include="Scripts\jqgrid\images\ui-icons_0078ae_256x240.png" />
     <Content Include="Scripts\jqgrid\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Scripts\jquery-1.7.1-.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.src-4.3.0.js" />
     <Content Include="Scripts\lib\angular.js" />
     <Content Include="Scripts\mapas\googlemaps.js" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
@@ -287,6 +295,7 @@
     <None Include="Properties\PublishProfiles\ServerFTPtest.pubxml" />
     <None Include="Properties\PublishProfiles\Ver1.pubxml" />
     <None Include="Properties\PublishProfiles\x.pubxml" />
+    <Content Include="Scripts\jquery.jqGrid-4.3.0.src" />
     <None Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

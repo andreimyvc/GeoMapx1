@@ -7,19 +7,22 @@
 <link href="~/Content/mapas.css" rel="stylesheet" />
 <link href="~/Content/home.css" rel="stylesheet" />
 @section scripts {  
- <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/redmond/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.ok-soft-gmbh.com/jqGrid/jquery.jqGrid-4.3.0/css/ui.jqgrid.css" />
-    <script src="../assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link href="~/Content/jquery-ui.1.8.16.css" rel="stylesheet" />
+<link href="~/Content/ui.jqgrid.4.3.0.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui-1.8.16.min.js"></script>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/grid.locale-es-4.3.0.js"></script>
+<script src="~/Scripts/jquery.jqGrid.src-4.3.0.js"></script>
+<script src="../assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
 
-
-    @*<script src="~/Scripts/grid.locale-en.js"></script>*@
-    <script type="text/javascript" src="http://www.ok-soft-gmbh.com/jqGrid/jquery.jqGrid-4.3.0/js/i18n/grid.locale-en.js"></script>
-  @*  <script src="~/Scripts/jquery.jqGrid.min.js"></script>*@
-  <script type="text/javascript" src="http://www.ok-soft-gmbh.com/jqGrid/jquery.jqGrid-4.3.0/js/jquery.jqGrid.src.js"></script>
-@*    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
-    <link href="~/Content/ui.jqgrid.css" rel="stylesheet" />*@
+@*<script src="~/Scripts/grid.locale-en.js"></script>*@
+  @* 
+<script src="~/Scripts/jquery.jqGrid.min.js"></script>
+*@
+@*   
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/ui.jqgrid.css" rel="stylesheet" />
+*@
 
 
 
@@ -28,11 +31,11 @@
 @*<script src="~/Scripts/mapas/googlemaps.js"></script>*@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXIfqI0uB8etsuthpP2ZOKidDodYShFt8"
         async defer></script>
-    <script src="~/Js/mapas/mapas.js"></script>
-    <script src="~/Js/jqgrid/jqgridDiariasPrebuildConfig.js"></script>
-    <script src="~/Angular/Services/GeoMapxWebApi.js"></script>
-    <script src="~/Js/helpers/actividadesprebuild.js"></script>
-    <script src="~/Angular/controllers/diariasprebuildApp.js"></script>
+<script src="~/Js/mapas/mapas.js"></script>
+<script src="~/Js/jqgrid/jqgridDiariasPrebuildConfig.js"></script>
+<script src="~/Angular/Services/GeoMapxWebApi.js"></script>
+<script src="~/Js/helpers/actividadesprebuild.js"></script>
+<script src="~/Angular/controllers/diariasprebuildApp.js"></script>
 <script>
     function initialize() {
         initMap();

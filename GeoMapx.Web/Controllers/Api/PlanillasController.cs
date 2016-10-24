@@ -16,34 +16,37 @@ namespace GeoMapx.Web.Controllers.Api
             try
             {
                 var p = this._GetPlanillaByID(planillaID);
-                if (allField)
+                //if (allField)
                 {
                     return Request.CreateResponse<VW_Planilla>(HttpStatusCode.OK, p);
                 }
-                else
-                {
-                    var data =  new
-                                   {
-                                       p.PlanillaID,
-                                       p.ProyectoID,
-                                       p.PosteID,
-                                       p.FichaID,
-                                       p.ContratistaID,
-                                       Fecha = p.Fecha.ToString("dd/MM/yyyy"),
-                                       p.CodigoContratista,
-                                       p.CodigoPoste,
-                                       p.CodigoPosteHasta,
-                                       p.CodigoProyecto,
-                                       p.CodioFinanciera,
-                                       p.CodigoFicha,
-                                       p.DescripcionActividad,
-                                       p.UniCons,
-                                       p.Cantidad,
-                                       p.PosteIDHasta,
-                                       p.Observacion
-                                   };
-                    return Request.CreateResponse<object>(HttpStatusCode.OK, data);
-                }
+                //else
+                //{
+                //    var data =  new
+                //                   {
+                //                       p.PlanillaID,
+                //                       p.ProyectoID,
+                //                       p.PosteID,
+                //                       p.FichaID,
+                //                       p.ContratistaID,
+                //                       Fecha = p.Fecha.ToString("dd/MM/yyyy"),
+                //                       p.CodigoContratista,
+                //                       p.CodigoPoste,
+                //                       p.CodigoPosteHasta,
+                //                       p.CodigoProyecto,
+                //                       p.CodioFinanciera,
+                //                       p.CodigoFicha,
+                //                       p.DescripcionActividad,
+                //                       p.UniCons,
+                //                       p.Cantidad,
+                //                       p.PosteIDHasta,
+                //                       p.Observacion,
+                //                       p.NombreCompletoSupervisor,
+                //                       p.SerialTransformador,
+                //                       p.ObservacionVerificador
+                //                   };
+                //    return Request.CreateResponse<object>(HttpStatusCode.OK, data);
+                //}
             }
             catch (Exception ex)
             {
@@ -70,9 +73,10 @@ namespace GeoMapx.Web.Controllers.Api
                                        p.PlanillaID,
                                        p.ProyectoID,
                                        p.PosteID,
+                                       p.ActividadID,
                                        p.FichaID,
                                        p.ContratistaID,
-                                       Fecha = p.Fecha.ToString("dd/MM/yyyy"),
+                                       Fecha = string.Format("{0:dd/MM/yyyy}", p.Fecha),
                                        p.CodigoContratista,
                                        p.CodigoPoste,
                                        p.CodigoPosteHasta,
@@ -84,6 +88,12 @@ namespace GeoMapx.Web.Controllers.Api
                                        p.Cantidad,
                                        p.PosteIDHasta,
                                        p.Observacion,
+                                       p.NombreCompletoSupervisor,
+                                       p.SerialTransformador,
+                                       p.ObservacionVerificador,
+                                       p.CodigoPoligono,
+                                       p.PoligonoID,
+                                       p.SupervisorID
                                    };
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
                 }
@@ -110,18 +120,28 @@ namespace GeoMapx.Web.Controllers.Api
                                    {
                                        p.PlanillaID,
                                        p.ProyectoID,
+                                       p.ActividadID,
                                        p.PosteID,
+                                       p.FichaID,
+                                       p.ContratistaID,
                                        Fecha = string.Format("{0:dd/MM/yyyy}", p.Fecha),
+                                       p.CodigoContratista,
                                        p.CodigoPoste,
                                        p.CodigoPosteHasta,
                                        p.CodigoProyecto,
+                                       p.CodioFinanciera,
+                                       p.CodigoFicha,
                                        p.DescripcionActividad,
                                        p.UniCons,
                                        p.Cantidad,
                                        p.PosteIDHasta,
                                        p.Observacion,
-                                       p.Verificado,
-                                       p.ObservacionVerificador
+                                       p.NombreCompletoSupervisor,
+                                       p.SerialTransformador,
+                                       p.ObservacionVerificador,
+                                       p.CodigoPoligono,
+                                       p.PoligonoID,
+                                       p.SupervisorID
                                    }).ToList();
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
                 }
@@ -187,6 +207,10 @@ namespace GeoMapx.Web.Controllers.Api
                     old.UserIDModifica = usuario.UsuarioID;
                     old.Observacion = entity.Observacion;
                     old.ContratistaID = entity.ContratistaID;
+                    old.Observacion = entity.Observacion;
+                    old.SupervisorID = entity.SupervisorID;
+                    old.SerialTransformador = entity.SerialTransformador;
+                    old.UserIDVerificador = entity.UserIDVerificador;
                     var data = this._UpdatePlanilla(old);
                     return Request.CreateResponse<Planilla>(HttpStatusCode.OK, data);  
                 }

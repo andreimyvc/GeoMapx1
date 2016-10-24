@@ -90,7 +90,8 @@ var certificacionesController = function (scope, http, geoDataFactory) {
         geoDataFactory.getPlanillaToCertByProyecto(proyectoid).then(
             function (data) {
                 d.planillasData = data;
-                d.setDataTableData('#tblplanilla', d.planillasData);
+                d.setGrid("#jqGridActividadUsuario", data);
+                //d.setDataTableData('#tblplanilla', d.planillasData);
             }, function (error) {
                 scope.error = error.data.Message;
             });
@@ -137,6 +138,12 @@ var certificacionesController = function (scope, http, geoDataFactory) {
             data: data
         });
     }
+    d.setGrid = function (idGrid, xdata) {
+        $(idGrid).jqGrid('clearGridData')
+            .jqGrid('setGridParam', { data: xdata }).trigger('reloadGrid');
+
+        $(idGrid).jqGrid("setFrozenColumns");
+    };
     d.startApp = function () {
         getPoryectos();
         getPlanillasOfDay();

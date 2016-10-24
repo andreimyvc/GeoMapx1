@@ -99,7 +99,6 @@ function initGridActividadUsuario() {
             { label: 'PosteID', name: 'PosteID', key: true, hidden: true },
             { label: 'PosteIDHasta', name: 'PosteIDHasta', key: true, hidden: true },
             { label: 'ActividadID', name: 'ActividadID', key: true, hidden: true },
-            { label: 'Proyecto', name: 'CodigoProyecto', width: 60 },
             { label: 'UniCons', name: 'UniCons', width: 75 },
             { label: 'Descripcion Actividad', name: 'DescripcionActividad', width: 175 },
             { label: 'Poligono', name: 'CodigoPoligono', width: 70 },
@@ -107,15 +106,30 @@ function initGridActividadUsuario() {
             { label: 'Hasta', name: 'CodigoPosteHasta', width: 70 },
             { label: 'Transformador', name: 'SerialTransformador', width: 90 },
             { label: 'Cantidad', name: 'Cantidad', width: 60 },
-            { label: 'Supervisor', name: 'NombreCompletoSupervisor', width: 95 },
-            { label: 'Contratista', name: 'CodigoContratista', width: 100 },
-            { label: 'Ficha', name: 'CodigoFicha', width: 80 },
-            { label: 'Fecha', name: 'Fecha', width: 80 },
+            { label: 'Fecha', name: 'Fecha', width: 80 }, {
+                label: 'Ejecutada', name: 'Ejecutada', search: false, sortable: true, width: 65,
+                align: 'center', formatter: function (cellValue, option, xdata) {
+                    var callback = function (data) {
+                        alert(data);
+                    };
+                    return '<button onclick="jqgridDeleteRow(' + option.gid + ',' + option.rowId + ',' + xdata.PlanillaID + ',' + callback
+                            + ')"><i class="fa fa-certificate" aria-hidden="true"></i>Verifiar</button>';
+                }
+            }
+            //, {
+            //    label: ' ', search: false, sortable: false, width: 30,
+            //    align: 'center', formatter: function (cellValue, option, xdata) {
+            //        if (xdata.Ejecutado) {
+            //            return '<button onclick="prebuildUndo(' + xdata.PreBuildID + ')"><i class="fa fa-undo" aria-hidden="true"></i></button>';
+            //        }
+            //        return '';
+            //    }
+            //}
         ],
         colMenu: true,
         gridview: true,
         rowNum: 6,
-        width: 1107,
+        width: 1100,
         //autowidth: true,
         shrinkToFit: true,
         autoheight: true,
@@ -145,6 +159,76 @@ function initGridActividadUsuario() {
     });
 }
 
+function initGridConfirmadas() {
+    var tableid = "#jqGridConfirmadas";
+    $(tableid).jqGrid({
+        datatype: "local",
+        colModel: [
+            { label: 'PlanillaID', name: 'PlanillaID', key: true, hidden: true },
+            { label: 'ProyectoID', name: 'ProyectoID', key: true, hidden: true },
+            { label: 'PoligonoID', name: 'PoligonoID', key: true, hidden: true },
+            { label: 'PosteID', name: 'PosteID', key: true, hidden: true },
+            { label: 'PosteIDHasta', name: 'PosteIDHasta', key: true, hidden: true },
+            { label: 'ActividadID', name: 'ActividadID', key: true, hidden: true },
+            { label: 'UniCons', name: 'UniCons', width: 75 },
+            { label: 'Descripcion Actividad', name: 'DescripcionActividad', width: 175 },
+            { label: 'Poligono', name: 'CodigoPoligono', width: 70 },
+            { label: 'Poste', name: 'CodigoPoste', width: 70 },
+            { label: 'Hasta', name: 'CodigoPosteHasta', width: 70 },
+            { label: 'Transformador', name: 'SerialTransformador', width: 90 },
+            { label: 'Cantidad', name: 'Cantidad', width: 60 },
+            { label: 'Fecha', name: 'Fecha', width: 80 }, {
+                label: 'Ejecutada', name: 'Ejecutada', search: false, sortable: true, width: 65,
+                align: 'center', formatter: function (cellValue, option, xdata) {
+                    var callback = function (data) {
+                        alert(data);
+                    };
+                    return '<button onclick="jqgridDeleteRow(' + option.gid + ',' + option.rowId + ',' + xdata.PlanillaID + ',' + callback
+                            + ')"><i class="fa fa-certificate" aria-hidden="true"></i>Remover</button>';
+                }
+            }
+            //, {
+            //    label: ' ', search: false, sortable: false, width: 30,
+            //    align: 'center', formatter: function (cellValue, option, xdata) {
+            //        if (xdata.Ejecutado) {
+            //            return '<button onclick="prebuildUndo(' + xdata.PreBuildID + ')"><i class="fa fa-undo" aria-hidden="true"></i></button>';
+            //        }
+            //        return '';
+            //    }
+            //}
+        ],
+        colMenu: true,
+        gridview: true,
+        rowNum: 6,
+        width: 1100,
+        //autowidth: true,
+        shrinkToFit: true,
+        autoheight: true,
+        rowList: [10, 20, 30],
+        pager: '#jqGridConfirmadasPager',
+        sortname: 'invdate',
+        viewrecords: true,
+        sortorder: "desc",
+        onSelectRow: function () {
+            var rowId = $(tableid).jqGrid('getGridParam', 'selrow');
+            var rowData = $(tableid).getRowData(rowId);
+            var planilla =
+                {
+                    PlanillaID: rowData['PlanillaID'],
+                    ProyectoID: rowData['ProyectoID'],
+                    PosteID: rowData['PosteID'],
+                    ActividadID: rowData['PosteID'],
+                    PosteIDHasta: rowData['PosteIDHasta'],
+                    PoligonoID: rowData['PoligonoID']
+                };
+            var proyectoid = rowData['ProyectoID'];
+            var posteid = rowData['PosteID'];
+            var scope = angular.element(document.getElementById('diariasprebuildApp')).scope();
+            scope.setSelectedPlanilla(planilla);
+            scope.$apply();
+        }
+    });
+}
 
 
 

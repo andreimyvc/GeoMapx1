@@ -5,7 +5,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     var d = scope;
     d.control =
         {
-            fieldsReadOnly: false,
+            fieldsReadOnly: true,
             state: 'add',
             btns:
                 {
@@ -31,6 +31,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
             Fecha: null,
             Observacion: null,
             SerialTransformador: null,
+            PreBuildID: null,
         };
     //#region SetVariables
     d.config = undefined;
@@ -72,7 +73,14 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         d.selectedFicha = undefined;
         d.selectedContratista = undefined;
         d.selectedSupervisor = undefined;
-        d.cantidad = undefined;
+        //d.model.PreBuildID = undefined;
+        d.model =
+        {
+            //Fecha: null,
+            Observacion: null,
+            SerialTransformador: null,
+            PreBuildID: null,
+        };
         //d.model.Fecha = Date();
 
         d.setGrid("#tblPrebuild", []);
@@ -85,6 +93,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         d.control.btns.Guardar.show = true;
         d.control.btns.Cancelar.show = true; 
         d.control.state = 'add';
+        d.model.PreBuildID = undefined;
         d.clearFields();
         d.restoreState();
     };
@@ -107,50 +116,75 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         d.control.btns.Guardar.show = true;
     };
     d.guardarEntrada = function () {
-        d.diarias.fieldsReadOnly = true;
-        d.diarias.btns.Nuevo.show = true;
-        d.diarias.btns.Cancelar.show = false;
+        d.control.fieldsReadOnly = false;
+        d.control.btns.Nuevo.show = true;
+        d.control.btns.Cancelar.show = false;
+        d.control.btns.Guardar.show = true;
         //d.postesData = undefined;
-        var aplanilla = {
-            ProyectoID: d.selectedProyect ? d.selectedProyect.ProyectoID : undefined,
-            PoligonoID: d.selectedPoligono ? d.selectedPoligono.PoligonoID : undefined,
-            PosteID: d.selectedPoste ? d.selectedPoste.PosteID : undefined,
-            ActividadID: d.selectedUnicons ? d.selectedUnicons.ActividadID : undefined,
-            Cantidad: d.cantidad || undefined,
-            Fecha: d.fecha || undefined,
-            Observacion: d.observacion || undefined,
-            PosteIDHasta: d.selectedPosteHasta ? d.selectedPosteHasta.PosteID : undefined,
-            FichaID: d.selectedFicha ? d.selectedFicha.FichaID : undefined,
-            ContratistaID: d.selectedContratista ? d.selectedContratista.ContratistaID : undefined,
-            SupervisorID: d.selectedSupervisor ? d.selectedSupervisor.SupervisorID : undefined,
-            SerialTransformador: d.model.SerialTransformador || undefined
-        };
-        if (d.diarias.state === 'add') {
-            postPlanilla(aplanilla)
-            .then(function (data) {
-                getPlanillasOfDay();
-                d.diarias.state = 'view'
-                alert("OK");
-                d.clearFields();
-            }, function (error) {
-                d.diarias.fieldsReadOnly = false;
-                d.diarias.btns.Nuevo.show = false;
-                d.diarias.btns.Cancelar.show = true;
-                scope.error = error.data.Message;
-                alert(scope.error);
-            });
+        if (d.model.PreBuildID) {
+        var tempPrebuild = Object.create(d.actividadesPrebuildsData.filter(function (element) { return element.PreBuildID == d.model.PreBuildID; })[0]);
+            var aplanilla = {
+                ProyectoID: d.selectedProyect ? d.selectedProyect.ProyectoID : undefined,
+                PoligonoID: d.selectedPoligono ? d.selectedPoligono.PoligonoID : undefined,
+                PosteID: d.selectedPoste ? d.selectedPoste.PosteID : undefined,
+                ActividadID: tempPrebuild.ActividadID,
+                Cantidad: tempPrebuild.Cantidad,
+                Fecha: d.model.Fecha || undefined,
+                Observacion: d.model.Observacion || undefined,
+                PosteIDHasta: tempPrebuild.PosteIDHasta,
+                FichaID: d.selectedFicha ? d.selectedFicha.FichaID : undefined,
+                ContratistaID: d.selectedContratista ? d.selectedContratista.ContratistaID : undefined,
+                SupervisorID: d.selectedSupervisor ? d.selectedSupervisor.SupervisorID : undefined,
+                SerialTransformador: d.model.SerialTransformador || undefined
+            };
+            if (d.control.state === 'add') {
+                postPlanilla(aplanilla)
+                .then(function (data) {
+                    var prebuild = { PreBuildID: tempPrebuild.PreBuildID, Ejecutado: true };
+                    geoDataFactory.updateActividadPrebuild(prebuild).then(
+                        function (data) {
+                            getActividadesPrebuildsByPoste();
+                            getPlanillasOfDay();
+                            d.control.state = 'view';
+                            d.control.btns.Guardar.show = false;
+                            d.control.fieldsReadOnly = true;
+                            alert("OK");
+                            d.clearFields();
+                        }, function (error) {
+                            d.error = error.data.Message;
+                            alert(d.error);
+                        })
+                }, function (error) {
+                    d.control.fieldsReadOnly = false;
+                    d.control.btns.Nuevo.show = false;
+                    d.control.btns.Cancelar.show = true;
+                    scope.error = error.data.Message;
+                    alert(scope.error);
+                });
+            }
+            else {
+                aplanilla.PlanillaID = d.selectedPlanilla.PlanillaID;
+                putPlanilla(aplanilla).then(function (data) {
+                    d.control.btns.Editar.show = true;
+                    d.control.fieldsReadOnly = true;
+                    d.control.btns.Guardar.show = false;
+                    d.control.state = 'view';
+                    alert("OK");
+                    getPlanillasOfDay();
+                }, function (error) {
+                    d.control.fieldsReadOnly = false;
+                    d.control.btns.Nuevo.show = false;
+                    d.control.btns.Cancelar.show = true;
+                    d.control.btns.Guardar.show = true;
+                    d.error = error.data.Message;
+                    alert(d.error)
+                });
+            }
+        } else {
+            alert("!Debe elegir una unidad constructiva¡");
+            d.control.btns.Nuevo.show = false;
+            d.control.btns.Cancelar.show = true;
         }
-        else {
-            aplanilla.PlanillaID = d.selectedPlanilla.PlanillaID;
-            putPlanilla(aplanilla).then(function (data) {
-                d.diarias.btns.Editar.show = true;
-                getPlanillasOfDay();
-            }, function (error) {
-                d.error = error.data.Message;
-                alert(d.error)
-            });
-        }
-        d.diarias.btns.Guardar.show = false;
     };
 
     d.eliminarEntrada = function () {
@@ -161,8 +195,8 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     };
     //#endregion Botones
     //#region watches
-    d.$watch('selectedProyect', function () {
-    });
+    //d.$watch('selectedProyect', function () {
+    //});
     d.$watch('selectedPoste2', function () {
         if (d.selectedPoste2) {
             d.initMapAndMarker(d.selectedPoste2);
@@ -211,10 +245,10 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     }
 /*********************BEGIN CRUD*************************************/
     var postPlanilla = function (aplanilla) {
-        //return geoDataFactory.insertPlanilla(aplanilla);
+        return geoDataFactory.insertPlanilla(aplanilla);
     };
     var putPlanilla = function (aplanilla) {
-        //return geoDataFactory.updatePlanilla(aplanilla);
+        return geoDataFactory.updatePlanilla(aplanilla);
     };
     /*********************END CRUD*************************************/
    //#region GETs
@@ -273,6 +307,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         geoDataFactory.getPlanillasOfDay().then(
             function (data) {
                 d.planillasOfDayData = data;
+                d.setGrid('#jqGridActividadUsuario', data);
             }, function (error) {
                 scope.error = error.data.Message;
             });
@@ -385,6 +420,41 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     };
 
     //#region SetSelected
+    d.setSelectedPlanilla = function (planilla) {//555
+        //alert(objToString(planilla));
+        if (planilla) {
+            d.selectedPlanilla = d.planillasOfDayData.filter(function (element) { return element.PlanillaID == planilla.PlanillaID })[0];
+            var tempPlanilla = Object.create(d.selectedPlanilla);
+            geoDataFactory.getActividadesPrebuildsByPoste(tempPlanilla.PosteID).then(
+                function (data) {
+                    d.actividadesPrebuildsData = data;
+                    d.model.PreBuildID = d.actividadesPrebuildsData.filter(function (element) { return element.ActividadID == tempPlanilla.ActividadID; })[0].PreBuildID;
+                    //d.setGrid("#tblPrebuild", data);
+                }, function (error) {
+                    d.error = error.data.Message;
+                });
+            
+            if (planilla.ProyectoID) {
+                d.setSelectedProyect(planilla.ProyectoID);
+                if (planilla.PoligonoID) {
+                    d.setSelectedPoligono(planilla);
+                    d.setSelectedPoste(planilla);
+                    d.initGridActividadesByPoste(planilla.PosteID);
+                }
+                d.setSelectedContratista(tempPlanilla);
+                d.setSelectedFicha(tempPlanilla);
+                d.setSelectedSupervisor(tempPlanilla);
+                d.model.Observacion = tempPlanilla.Observacion;
+                d.model.SerialTransformador = tempPlanilla.SerialTransformador;
+                var strDate = tempPlanilla.Fecha.substring(3, 5) + "/" + tempPlanilla.Fecha.substring(0, 2) + "/" + tempPlanilla.Fecha.substring(6, 10);
+                d.model.Fecha = new Date(strDate);
+                d.control.state = 'view';
+                d.control.btns.Editar.show = true;
+                d.control.fieldsReadOnly = true;
+                //d.$apply();
+            }
+        }
+    };
     d.setSelectedProyect = function (proyectid) {
         d.selectedProyect = null;
         if (d.proyectosData) {
@@ -392,7 +462,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
             if (!d.selectedProyect) {
                 getProyect(proyectid);
             } else {
-                getContratistasByProyecto();
+               //- getContratistasByProyecto();
             }
         } else {
             getProyect(proyectid);
@@ -401,7 +471,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
             geoDataFactory.getProyectosByEmpresas().then(function (data) {
                 d.proyectosData = data;
                 d.selectedProyect = d.proyectosData.filter(function (elemento) { return elemento.ProyectoID == proyectid; })[0];
-                getContratistasByProyecto();
+                //-getContratistasByProyecto();
             }, function (error) {
                 d.error = error.data.Message;
             });
@@ -472,7 +542,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     };
     d.setSelectedFicha = function (ficha) {
         d.selectedFicha = null;
-        if (d.fichasData && fichas) {
+        if (d.fichasData && ficha) {
             d.selectedFicha = d.fichasData.filter(function (elemento) { return elemento.FichaID == ficha.FichaID; })[0];
             if (!d.selectedFicha) { geInternal(); }
         } else if (ficha) {
@@ -588,7 +658,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         sessionStorage.config = angular.toJson(obj);
     }
 
-    d.restoreState = function () {//777
+    d.restoreState = function () {
         d.config = angular.fromJson(sessionStorage.config);
         var config = d.config;
         if (config && config.lesstype) {
