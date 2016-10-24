@@ -48,6 +48,112 @@ namespace GeoMapx.Web.Controllers.Api
                 return Request.CreateResponse(HttpStatusCode.Conflict, err);
             }
         }
+        public HttpResponseMessage GetPrebuilds(bool allField = false)
+        {
+            try
+            {
+                var lista = base._GetActividadesPrebuild();
+                if (allField)
+                {
+                    return Request.CreateResponse<IEnumerable<VW_ActividadesPreBuild>>(HttpStatusCode.OK, lista);
+                }
+                else
+                {
+                    var data = from p in lista
+                               select new
+                               {
+                                   p.PreBuildID,
+                                   p.PosteID,
+                                   p.PosteIDHasta,
+                                   p.ActividadID,
+                                   p.ProyectoID,
+                                   p.CodigoProyecto,
+                                   p.UniCons,
+                                   p.DescripcionActividad,
+                                   p.Cantidad,
+                                   p.CodigoPosteHasta
+                               };
+                    //var x = lista.ToList();
+                    return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpError err = new HttpError(ex.Message);
+                return Request.CreateResponse(HttpStatusCode.Conflict, err);
+            }
+        }
+        public HttpResponseMessage GetPrebuildsByProyecto(int proyectoid, bool allField = false)
+        {
+            try
+            {
+                var lista = base._GetActividadesPrebuildByProyecto(proyectoid);
+                if (allField)
+                {
+                    return Request.CreateResponse<IEnumerable<VW_ActividadesPreBuild>>(HttpStatusCode.OK, lista);
+                }
+                else
+                {
+                    var data = from p in lista
+                               select new
+                               {
+                                   p.PreBuildID,
+                                   p.PosteID,
+                                   p.PosteIDHasta,
+                                   p.ActividadID,
+                                   p.ProyectoID,
+                                   p.CodigoProyecto,
+                                   p.UniCons,
+                                   p.DescripcionActividad,
+                                   p.Cantidad,
+                                   p.CodigoPosteHasta
+                               };
+                    //var x = lista.ToList();
+                    return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpError err = new HttpError(ex.Message);
+                return Request.CreateResponse(HttpStatusCode.Conflict, err);
+            }
+        }
+        public HttpResponseMessage GetPrebuildsByPoste(int posteid, bool allField = false)
+        {
+            try
+            {
+                var lista = base._GetActividadesPrebuildByPoste(posteid);
+                if (allField)
+                {
+                    return Request.CreateResponse<IEnumerable<VW_ActividadesPreBuild>>(HttpStatusCode.OK, lista);
+                }
+                else
+                {
+                    var data = from p in lista
+                               select new
+                               {
+                                   p.PreBuildID,
+                                   p.PosteID,
+                                   p.PosteIDHasta,
+                                   p.ActividadID,
+                                   p.ProyectoID,
+                                   p.CodigoProyecto,
+                                   p.UniCons,
+                                   p.DescripcionActividad,
+                                   p.Cantidad,
+                                   p.CodigoPosteHasta,
+                                   p.Ejecutado
+                               };
+                    //var x = lista.ToList();
+                    return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
+                }
+            }
+            catch (Exception ex)
+            {
+                HttpError err = new HttpError(ex.Message);
+                return Request.CreateResponse(HttpStatusCode.Conflict, err);
+            }
+        }
         public HttpResponseMessage GetActividadesByProyecto(int proyectoID, bool allField = false)
         {
             try

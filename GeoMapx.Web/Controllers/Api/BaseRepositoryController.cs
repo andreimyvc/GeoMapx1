@@ -48,6 +48,22 @@ namespace GeoMapx.Web.Controllers.Api
             db.SubmitChanges();
             return entity;
         }
+        public ActividadesPreBuild _UpdateActividadPrebuild(ActividadesPreBuild entity)
+        {
+            var old = db.ActividadesPreBuilds.Single(p => p.PreBuildID == entity.PreBuildID);
+            if (entity.Ejecutado.Value)
+            { 
+                old.Ejecutado = true;
+                old.FechaEjecutado = DateTime.Now;
+            }
+            else 
+            {
+                old.Ejecutado = false;
+                old.FechaEjecutado = null;
+            }
+            db.SubmitChanges();
+            return old;
+        }
         public bool _DeleteActividad(int actividadID)
         {
 
@@ -79,6 +95,26 @@ namespace GeoMapx.Web.Controllers.Api
         public IQueryable<VW_Actividade> _GetActividades()
         {
             var data = from p in db.VW_Actividades
+                       select p;
+            return data;
+        }
+        public IQueryable<VW_ActividadesPreBuild> _GetActividadesPrebuild()
+        {
+            var data = from p in db.VW_ActividadesPreBuilds
+                       select p;
+            return data;
+        }
+        public IQueryable<VW_ActividadesPreBuild> _GetActividadesPrebuildByProyecto(int proyectoid)
+        {
+            var data = from p in db.VW_ActividadesPreBuilds
+                       where p.ProyectoID == proyectoid
+                       select p;
+            return data;
+        }
+        public IQueryable<VW_ActividadesPreBuild> _GetActividadesPrebuildByPoste(int posteid)
+        {
+            var data = from p in db.VW_ActividadesPreBuilds
+                       where p.PosteID == posteid
                        select p;
             return data;
         }
@@ -175,6 +211,14 @@ namespace GeoMapx.Web.Controllers.Api
             return data;
         }
 
+        public IQueryable<Poste> _GetPostesByPoligono(int poligonoid)
+        {
+            var data = from p in db.Postes
+                       where p.PoligonoID == poligonoid
+                       select p;
+            return data;
+        }
+
         public IQueryable<Poste> _GetPostesByProyecto(int proyectoid, int posteidDiferente)
         {
             var data = from p in db.Postes
@@ -199,7 +243,7 @@ namespace GeoMapx.Web.Controllers.Api
         {
             var old = db.Postes.Single(p => p.PosteID == entity.PosteID);
             old.Lat = entity.Lat;
-            old.Lon = entity.Lat;
+            old.Lon = entity.Lon;
             old.ObservacionPoste = entity.ObservacionPoste;
             old.PoligonoID = entity.PoligonoID;
             old.ProyectoID = entity.ProyectoID;
@@ -320,6 +364,20 @@ namespace GeoMapx.Web.Controllers.Api
                        select p;
             return data;
         }
+        public Supervisore _GetSupervisoresByID(int supervisorid)
+        {
+            var data = (from p in db.Supervisores
+                       where p.SupervisorID == supervisorid
+                       select p).SingleOrDefault();
+            return data;
+        }
+        public IQueryable<Supervisore> _GetSupervisoresByProyecto(int proyectoid)
+        {
+            var data = from p in db.Supervisores
+                       where p.ProyectoID == proyectoid
+                       select p;
+            return data;
+        }
         public Poligono _GetTPoligonosByID(int poligonoid)
         {
             var data = from p in db.Poligonos
@@ -327,7 +385,6 @@ namespace GeoMapx.Web.Controllers.Api
                        select p;
             return data.FirstOrDefault();
         }
-
 
         public IQueryable<VW_Planilla> _GetPlanillaToCertificarByProyecto(int proyectoid, int usuarioid)
         {

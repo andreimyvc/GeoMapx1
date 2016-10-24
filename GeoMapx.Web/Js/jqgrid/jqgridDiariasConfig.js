@@ -20,6 +20,7 @@ function initGridActividadesByPoste(aurl) {
             height: 200,
             rowNum: 100,
             viewrecords: true,
+            rowList:[7,10],
             pager: "#jqGridPager",
             onSelectRow: function (planillaid) {
                 var scope = angular.element(document.getElementById('diariasApp')).scope();

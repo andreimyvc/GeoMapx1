@@ -1,0 +1,122 @@
+﻿<div class="col-md-6 heigth380">
+    <div class="portlet box blue">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Planilla
+           
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+                <a href="javascript:;" class="fullscreen" data-original-title="" title=""></a>               
+                <a href="javascript:;" class="reload"></a>
+                <a href="javascript:;" class="remove"></a>
+            </div>
+            <div class="actions">
+                <a data-ng-click="newEntrada()" data-ng-show="diarias.btns.Nuevo.show" class="btn default btn-sm">
+                    <i class="fa fa-plus"></i>Nuevo
+                </a>
+                <a data-ng-click="cancelEntrada()" data-ng-show="diarias.btns.Cancelar.show" class="btn default btn-sm">
+                    <i class="fa fa-undo"></i>Cancelar
+                </a>
+                <a data-ng-click="editarEntrada()" data-ng-show="diarias.btns.Editar.show" class="btn default btn-sm">
+                    <i class="fa fa-pencil"></i>Editar
+                </a>
+                <a data-ng-show="diarias.btns.Eliminar.show" class="btn red btn-sm">
+                    <i class="fa fa-eraser"></i>Eliminar
+</a>
+                <a data-ng-show="diarias.btns.Guardar.show" data-ng-click="guardarEntrada()" class="btn blue btn-sm">
+                    <i class="fa fa-plus"></i>Guardar
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="control-label">Proyecto</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="diarias.fieldsReadOnly" 
+                            data-ng-model="selectedProyect"
+                            data-ng-options="proyecto.CodigoProyecto for proyecto in proyectosData" 
+                            data-ng-change="OnProyectChange(selectedProyect)" >
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Polígono</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="diarias.fieldsReadOnly"
+                            data-ng-options="p.CodigoPoligono for p in poligonosData" data-ng-model="selectedPoligono" 
+                            data-ng-change="OnPoligonoChange(selectedPoligono)" >
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Poste</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="diarias.fieldsReadOnly"
+                            data-ng-options="postes.CodigoPoste for postes in postesData" data-ng-model="selectedPoste"
+                            data-ng-change="OnPosteChange(selectedPoste)" > 
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <table class="col-md-12 table table-striped table-bordered table-hover table-checkable order-column footer" id="tblPrebuild">
+                    <thead>
+                        <tr>
+                            <th class="table-checkbox">
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="group-checkable" data-set="#tblplanilla .checkboxes" />
+                                    <span></span>
+                                </label>
+                            </th>
+                            <th>Unidad Cons. </th>
+                            <th>Cantidad</th>
+                            <th>Hasta </th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                     @*<tbody>
+                       <tr ng-repeat="p in actividadesPrebuildsData" >
+                            <td>
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="checkboxes" value="1" />
+                                    <span></span>
+                                </label>
+                            </td>
+                            <td>{{ p.UniCons }}</td>
+                            <td>{{ p.Cantidad }}</td>
+                            <td>{{ p.CodigoPosteHasta }}</td>
+                            <td>{{ p.Descripcion }}</td>
+                        </tr>
+                    </tbody>*@
+                </table>
+            </div>
+
+            <select style="visibility: hidden">
+                <optgroup label="Group 1" class="group-1">
+                    <option value="1-1">Option 1.1</option>
+                    <option value="1-2" selected="selected">Option 1.2</option>
+                    <option value="1-3" selected="selected">Option 1.3</option>
+                </optgroup>
+                <optgroup label="Group 2" class="group-2">
+                    <option value="2-1">Option 2.1</option>
+                    <option value="2-2">Option 2.2</option>
+                    <option value="2-3">Option 2.3</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+</div>

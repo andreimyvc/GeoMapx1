@@ -1,0 +1,159 @@
+﻿<div class="col-md-6 heigth380">
+    <div class="portlet box blue">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Planilla
+           
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+                <a href="javascript:;" class="fullscreen" data-original-title="" title=""></a>
+                <a href="javascript:;" class="reload"></a>
+                <a href="javascript:;" class="remove"></a>
+            </div>
+            <div class="actions" data-ng-cloak>
+                <a data-ng-click="newEntrada()" data-ng-show="control.btns.Nuevo.show" class="btn default btn-sm">
+                    <i class="fa fa-plus"></i>Nuevo
+                </a>
+                <a data-ng-click="cancelEntrada()" data-ng-show="control.btns.Cancelar.show" class="btn default btn-sm">
+                    <i class="fa fa-times"></i>Cancelar
+                </a>
+                <a data-ng-click="editarEntrada()" data-ng-show="control.btns.Editar.show" class="btn default btn-sm">
+                    <i class="fa fa-pencil"></i>Editar
+                </a>
+                <a data-ng-show="control.btns.Eliminar.show" class="btn red btn-sm">
+                    <i class="fa fa-trash-o"></i>Eliminar
+</a>
+                <a data-ng-show="control.btns.Guardar.show" data-ng-click="guardarEntrada()" class="btn blue btn-sm">
+                    <i class="fa fa-save"></i>Guardar
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="control-label">Proyecto</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.proyecto"
+                            data-ng-model="selectedProyect"
+                            data-ng-options="proyecto.CodigoProyecto for proyecto in proyectosData"
+                            data-ng-change="onProyectChange(selectedProyect)">
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-ng-model="control.lesstype.proyecto" data-ng-click="saveState()">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Polígono</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.poligono"
+                            data-ng-options="p.CodigoPoligono for p in poligonosData" data-ng-model="selectedPoligono"
+                            data-ng-change="onPoligonoChange(selectedPoligono)">
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-ng-model="control.lesstype.poligono" data-ng-click="saveState()">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Poste</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.poste"
+                            data-ng-options="postes.CodigoPoste for postes in postesData" data-ng-model="selectedPoste"
+                            data-ng-change="onPosteChange(selectedPoste)">
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-ng-model="control.lesstype.poste" data-ng-click="saveState()">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <table id="tblPrebuild" class="col-md-12"></table>
+                <div id="tblPrebuildPager"></div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label class="control-label">Serial Transformador</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly"
+                            data-ng-model="model.SerialTransformador">
+                        </input>
+                        <span class="input-group-addon">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Contratista</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.contratista"
+                            data-ng-options="p.CodigoContratista for p in contratistasData" data-ng-model="selectedContratista"
+                            data-ng-change="onContratistaChange(selectedContratista)">
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-ng-model="control.lesstype.contratista" data-ng-click="saveState()">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="control-label">Ficha</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.ficha"
+                            data-ng-options="p.CodigoFicha for p in fichasData" data-ng-model="selectedFicha">
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-ng-model="control.lesstype.ficha" data-ng-click="saveState()">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Fecha</label>
+                    <div class="input-group">
+                        <input type="date" class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.fecha"
+                            data-ng-model="model.Fecha">
+                        </input>
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-ng-model="control.lesstype.fecha" data-ng-click="saveState()">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label">Supervisor</label>
+                    <div class="input-group">
+                        <select class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.supervisor"
+                            data-ng-options="p.NombreCompleto for p in supervisoresData" data-ng-model="selectedSupervisor"
+                            data-ng-change="OnSupervisorChange(selectedSupervisor)">
+                        </select>
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-ng-model="control.lesstype.supervisor" data-ng-click="saveState()">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="control-label">Observación</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control"
+                            data-ng-disabled="control.fieldsReadOnly"
+                            data-ng-model="model.Observacion">
+                        </input>
+                        <span class="input-group-addon">
+                        </span>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>

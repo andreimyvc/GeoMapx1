@@ -116,6 +116,24 @@
             });
             return defer.promise;
         };
+        interfaz.getActividadesPrebuildsByPoste = function (id) {
+            var defer = q.defer();  
+            http.get('/api/actividadesPrebuild/GetByPoste', { params: { posteid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.updateActividadPrebuild = function (entity) {
+            var defer = q.defer();
+            http({ method: 'PUT', url: '/api/actividadesPrebuild/put', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
         interfaz.getUniconsByProyecto = function (id) {
             var defer = q.defer();  
             http.get('/api/actividades/getUniconsByProyecto', { params: { proyectoid: id } }).then(function (response) {
@@ -150,6 +168,15 @@
         interfaz.getPostesByProyecto = function (id) {
             var defer = q.defer();  
             http.get('/api/postes/getPostesByProyecto', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };   
+        interfaz.getPostesByPoligono = function (id) {
+            var defer = q.defer();  
+            http.get('/api/postes/getPostesByPoligono', { params: { poligonoid: id } }).then(function (response) {
                 defer.resolve(response.data);
             }, function (response) {
                 defer.reject(response);
@@ -255,6 +282,24 @@
         interfaz.getPoligonosByProyecto = function (id) {
             var defer = q.defer();
             http.get('/api/poligonos/get', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getSupervisoresByProyecto = function (id) {
+            var defer = q.defer();
+            http.get('/api/supervisores/get', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getSupervisorByID = function (id) {
+            var defer = q.defer();
+            http.get('/api/supervisores/getByID', { params: { supervisorid: id } }).then(function (response) {
                 defer.resolve(response.data);
             }, function (response) {
                 defer.reject(response);
