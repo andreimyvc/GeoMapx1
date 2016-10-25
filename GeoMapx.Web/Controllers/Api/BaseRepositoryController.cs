@@ -151,22 +151,61 @@ namespace GeoMapx.Web.Controllers.Api
         }
         public Planilla _UpdatePlanilla(Planilla entity)
         {
+
             /**[Ojo] con  postes que no están en el mismo proyecto***/
             var old = db.Planillas.Single(p => p.PlanillaID == entity.PlanillaID);
-            old.ActividadID = old.ActividadID;
-            old.Cantidad = entity.Cantidad;
-            old.Fecha = entity.Fecha;
-            old.FechaModificacion = entity.FechaModificacion;
-            old.PosteID = entity.PosteID;
-            old.ProyectoID = entity.ProyectoID;
-            old.Verificado = entity.Verificado;
-            old.PosteIDHasta = entity.PosteIDHasta;
-            old.FichaID = entity.FichaID;
-            //old.UserID = entity.UserID;
-            old.UserIDModifica = entity.UserIDModifica;
-            db.SubmitChanges();
+            if (old != null && !old.Verificado || (old != null && old.UserIDVerificador.Value == usuario.UsuarioID))
+            {
+                old.ActividadID = entity.ActividadID;
+                old.Cantidad = entity.Cantidad;
+                if (entity.Fecha != default(DateTime))
+                {
+                    old.Fecha = entity.Fecha;
+                }
+                old.FechaModificacion = DateTime.Now;
+                old.PosteID = entity.PosteID;
+                old.ProyectoID = entity.ProyectoID;
+                old.Verificado = entity.Verificado;
+                old.PosteIDHasta = entity.PosteIDHasta;
+                old.FichaID = entity.FichaID;
+                old.UserIDModifica = usuario.UsuarioID;
+                old.Observacion = entity.Observacion;
+                old.ContratistaID = entity.ContratistaID;
+                old.Observacion = entity.Observacion;
+                old.SupervisorID = entity.SupervisorID;
+                old.SerialTransformador = entity.SerialTransformador;
+                old.ObservacionVerificador = entity.ObservacionVerificador;
+                if (old.Verificado)
+                {  
+                    old.FechaVerificado = DateTime.Now;
+                    old.UserIDVerificador = entity.UserIDVerificador;
+                }
+                else
+                { 
+                    old.FechaVerificado = null;
+                    old.UserIDVerificador = null; 
+                }
+                db.SubmitChanges();
+            }
+            else 
+            {
+                throw new Exception("!Transacción VERIFICADA y no se puede modificar por usted¡");
+            }
             return entity;
             //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
+        }
+        public bool _UpdatePlanillas(List<VW_Planilla> entitys)
+        {
+            foreach (var e in entitys)
+            {
+                var planilla = db.Planillas.First( p => p.PlanillaID == e.PlanillaID);
+                planilla.Verificado = true;
+                planilla.UserIDVerificador = usuario.UsuarioID;
+                planilla.ObservacionVerificador = e.ObservacionVerificador;
+                planilla.FechaVerificado = DateTime.Now;
+            }
+            db.SubmitChanges();
+            return true;
         }
         public IQueryable<VW_ActividadesPoste> _GetActividadesByPoste(int posteid)
         {
@@ -341,8 +380,7 @@ namespace GeoMapx.Web.Controllers.Api
                        orderby p.Mes ascending
                        select p;
             return data;
-        }
-
+        }   
         public IQueryable<VW_MontoEAP> _GetMontosEAP(int proyectoid, string mes)
         {
             var data = from p in db.VW_MontoEAPs
@@ -384,8 +422,7 @@ namespace GeoMapx.Web.Controllers.Api
                        where p.PoligonoID == poligonoid
                        select p;
             return data.FirstOrDefault();
-        }
-
+        }       
         public IQueryable<VW_Planilla> _GetPlanillaToCertificarByProyecto(int proyectoid, int usuarioid)
         {
             var data = from p in db.VW_Planillas

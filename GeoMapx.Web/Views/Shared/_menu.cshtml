@@ -1,66 +1,92 @@
 ﻿<div class="hor-menu  ">
-<ul class="nav navbar-nav">
-    <li class=" ">
-        <a href="/home">
-            Home
-            <span class="arrow"></span>
-        </a>
-    </li>
-    @*@if(User.Identity.IsAuthenticated)*@
+    <ul class="nav navbar-nav">
+        <li class=" ">
+            <a href="/home">Inicio
+           
+                <span class="arrow"></span>
+            </a>
+        </li>
+        @*@if(User.Identity.IsAuthenticated)*@
     @*{*@
-        <li class=" ">
-            <a href="/diarias">
-                Actividades Diarias
-                <span class="arrow"></span>
+       
+        <li class="menu-dropdown classic-menu-dropdown ">
+            <a href="javascript:;">Procesos
+            <span class="arrow"></span>
             </a>
+            <ul class="dropdown-menu pull-left">
+                <li class=" ">
+                    <a href="/diarias">Actividades Diarias
+               
+                <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class=" ">
+                    <a href="/diariasprebuild">Actividades (PreBuild)
+               
+                <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class=" ">
+                    <a href="/certificaciones/verificaciones">Certificaciones
+               
+                <span class="arrow"></span>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class=" ">
-            <a href="/diariasprebuild">
-                Actividades (PreBuild)
-                <span class="arrow"></span>
+
+        <li class="menu-dropdown classic-menu-dropdown ">
+            <a href="javascript:;">Mantenimientos
+            <span class="arrow"></span>
             </a>
+            <ul class="dropdown-menu pull-left">
+                <li class=" ">
+                    <a href="/postes">Postes               
+                        <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class=" ">
+                    <a href="/actividades">Unidades constructivas               
+                     <span class="arrow"></span>
+                    </a>
+                </li>
+                <li class=" ">
+                    <a href="/certificaciones/verificaciones" class="nav-link  ">Materiales x Unidades Consructivas
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class=" ">
-            <a href="/postes">
-                Postes
-                <span class="arrow"></span>
+
+        <li class="menu-dropdown classic-menu-dropdown ">
+            <a href="javascript:;">Almacén
+                                                <span class="arrow"></span>
             </a>
-        </li>
-        <li class=" ">
-            <a href="/actividades">
-                Unidades constructivas
-                <span class="arrow"></span>
-            </a>
-        </li>
-        <li class=" ">
-            <a href="/materiales">
-                Materiales
-                <span class="arrow"></span>
-            </a>
-        </li>
-        <li class=" ">
-            <a href="/certificaciones/verificaciones">
-                Verificar
-                <span class="arrow"></span>
-            </a>
+            <ul class="dropdown-menu pull-left">
+                <li class=" ">
+                    <a href="/certificaciones/verificaciones" class="nav-link  ">Materiales
+                    </a>
+                </li>
+            </ul>
         </li>
         @*<li class=" ">
-            <a href="/account/logoff">
-                Cerrar sesión
+            <a href="/account/logoff">Cerrar sesión
+               
                 <span class="arrow"></span>
             </a>
-        </li>*@
+        </li>
+        *@
     @*}*@
     @*else
     {
+       
         <li class=" ">
-            <a href="/account/login">
-                Iniciar sesión
+            <a href="/account/login">Iniciar sesión
+               
                 <span class="arrow"></span>
             </a>
         </li>
-                                        
-    }*@
+
+        }*@
     @Html.Partial("_LoginPartial")
-</ul>
+    </ul>
 </div>

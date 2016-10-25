@@ -173,7 +173,7 @@
     <Compile Include="Controllers\Api\ActividadesController.cs" />
     <Compile Include="Controllers\Api\BaseRepositoryController.cs" />
     <Compile Include="Controllers\Api\ContratistasController.cs" />
-    <Compile Include="Controllers\Api\CertificacionController.cs" />
+    <Compile Include="Controllers\Api\CertificacionesController.cs" />
     <Compile Include="Controllers\Api\ActividadesPrebuildController.cs" />
     <Compile Include="Controllers\Api\SupervisoresController.cs" />
     <Compile Include="Controllers\Api\FichasController.cs" />

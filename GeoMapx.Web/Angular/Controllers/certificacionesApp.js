@@ -14,7 +14,8 @@ var certificacionesController = function (scope, http, geoDataFactory) {
                     Eliminar: { show: false },  
                     Cancelar: { show: false },
                     Guardar: { show: false }
-                }
+                },
+            index: 0,
         };
     //#region SetVariables
     d.planillasOfDayData = undefined;
@@ -22,6 +23,7 @@ var certificacionesController = function (scope, http, geoDataFactory) {
     d.proyectosData = undefined;
     d.selectedPlanilla = undefined;
     d.selectedProyect = undefined;
+    d.dataforCommit = [];
     d.isWatching = true;
     //#endregion SetVariables
     //#region botones
@@ -131,7 +133,54 @@ var certificacionesController = function (scope, http, geoDataFactory) {
                 d.error = error.data.Message;
             });
         }
-    };   
+    };
+    d.moveRowToCommit = function (planillaid) {  //888
+        var xdata = d.planillasData.filter(function (element) { return element.PlanillaID == planillaid; })[0];
+        d.dataforCommit.push(xdata);
+        d.control.indexRow++;
+        jqgridAddRowData('#jqGridConfirmadas',  d.control.indexRow, { data: xdata }, null);
+    }
+    d.removeFromCommit = function (gridid, rowId, data) { 
+        var xdata = d.planillasData.filter(function (element) { return element.PlanillaID == data; })[0];
+        //alert(data);
+        d.dataforCommit = d.dataforCommit.filter(function (element) { return element.PlanillaID != data; });
+        jqgridDeleteRow(gridid, rowId);
+        d.control.indexRow++;
+        jqgridAddRowData('#jqGridActividadUsuario',  d.control.indexRow, { data: xdata });
+    }
+    d.confirmVerificar = function () {
+        if (d.dataforCommit.length > 0) {
+            var r = confirm("¿Está seguro que desea confirmar estas (" + d.dataforCommit.length + ") transacciones?");
+            if (r) {
+                geoDataFactory.certificacionPlanillas(d.dataforCommit).then(
+                    function (data) {
+                        alert("OK");
+                        d.setGrid("#jqGridConfirmadas", []);
+                    }, function (error) {
+                        d.error = error.data.Message;
+                        alert(d.error);
+                    });
+            }
+        } else {
+            alert("¡No se han seleccionado actividades¡");
+        }
+    }
+    d.undoCert = function (gridid, rowid, id) {
+        if (confirm("¿Está seguro que desea deshacer esta certificación?")) {
+            var xdata = d.planillasData.filter(function (element) { return element.PlanillaID == id; })[0];
+            xdata.Verificado = false;
+            geoDataFactory.updatePlanilla(xdata).then(
+                function (data) {
+                    jqgridDeleteRow(gridid,rowid);
+                    alert("OK");
+                    jqgridAddRowData('#jqGridActividadUsuario', 0, { data: xdata });
+                    jqgridDeleteRow(gridid, rowid);
+                }, function (error) {
+                    d.error = error.data.Message;
+                    alert(d.error);
+                });
+        }
+    }
     //#endregion SetSelected
     d.setDataTableData = function (tableid, data) {
         $(tableid).DataTable({

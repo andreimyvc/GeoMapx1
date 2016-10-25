@@ -23,6 +23,15 @@
                 defer.reject(response);
             });
             return defer.promise;
+        };   
+        interfaz.certificacionPlanillas = function (entity) {
+            var defer = q.defer();
+            http({ method:'PUT', url:'/api/certificaciones/put', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
         };
         interfaz.getPlanillaByID = function (id) {
             var defer = q.defer();

@@ -42,6 +42,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     d.planillasOfDayData = undefined;
     d.proyectosData = undefined;
     d.postesData = undefined;
+    d.oldSelectedPlanilla = undefined;
     d.uniconsData = undefined;
     d.fichasData = undefined;
     d.postesHastaData = undefined;
@@ -73,6 +74,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         d.selectedFicha = undefined;
         d.selectedContratista = undefined;
         d.selectedSupervisor = undefined;
+        d.oldSelectedPlanilla = undefined;
         //d.model.PreBuildID = undefined;
         d.model =
         {
@@ -144,6 +146,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                     geoDataFactory.updateActividadPrebuild(prebuild).then(
                         function (data) {
                             getActividadesPrebuildsByPoste();
+                            var xplanilla = d.planillasOfDayData.filter(function (element) { return element.PlanillaID == aplanilla.PlanillaID; })[0];
                             getPlanillasOfDay();
                             d.control.state = 'view';
                             d.control.btns.Guardar.show = false;
@@ -153,7 +156,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                         }, function (error) {
                             d.error = error.data.Message;
                             alert(d.error);
-                        })
+                        });
                 }, function (error) {
                     d.control.fieldsReadOnly = false;
                     d.control.btns.Nuevo.show = false;
@@ -168,6 +171,27 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                     d.control.btns.Editar.show = true;
                     d.control.fieldsReadOnly = true;
                     d.control.btns.Guardar.show = false;
+                    var prebuild = { PreBuildID: tempPrebuild.PreBuildID, Ejecutado: true };
+                    geoDataFactory.updateActividadPrebuild(prebuild).then(
+                        function (data) {
+                            var aprebuild = { PreBuildID: d.oldSelectedPlanilla.ActividadID, Ejecutado: false };
+                                        geoDataFactory.updateActividadPrebuild(prebuild).then(
+                                    function (data) {
+                                        getActividadesPrebuildsByPoste();
+                                        getPlanillasOfDay();
+                                        d.control.state = 'view';
+                                        d.control.btns.Guardar.show = false;
+                                        d.control.fieldsReadOnly = true;
+                                        alert("OK");
+                                        d.clearFields();
+                                    }, function (error) {
+                                        d.error = error.data.Message;
+                                        alert(d.error);
+                                    });
+                        }, function (error) {
+                            d.error = error.data.Message;
+                            alert(d.error);
+                        });
                     d.control.state = 'view';
                     alert("OK");
                     getPlanillasOfDay();
@@ -422,6 +446,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     //#region SetSelected
     d.setSelectedPlanilla = function (planilla) {//555
         //alert(objToString(planilla));
+        d.oldSelectedPlanilla = planilla;
         if (planilla) {
             d.selectedPlanilla = d.planillasOfDayData.filter(function (element) { return element.PlanillaID == planilla.PlanillaID })[0];
             var tempPlanilla = Object.create(d.selectedPlanilla);

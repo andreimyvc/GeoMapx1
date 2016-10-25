@@ -1,38 +1,58 @@
 ﻿<div>
     <div class="col-md-12 col-sm-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="actions">
+            <div class="btn-group">
+                <button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                    <i class="fa fa-connectdevelop" aria-hidden="true"></i>&nbsp; 
+                    <span class="hidden-sm hidden-xs">Proyectos</span>
+                    <i class="fa fa-angle-down"></i>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-ng-repeat="p in proyectosData">
+                        <a ng-cloak data-ng-click="setSelectedProyect(p.ProyectoID)">
+                            <i class="icon-bar-chart font-green-haze"></i><span ng-cloak data-ng-bind="p.CodigoProyecto"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="" style=" margin-bottom:2px;"> </div>
         <div class="portlet box blue">
             <div class="portlet-title">
-                <div class="caption">
+                @*<div class="caption">
                     <i class="fa fa-check-circle"></i>Table
+                </div>*@
+                <div class="caption">
+                    <i class="fa fa-check-circle "></i>
+                    <span class="caption-subject bold uppercase font-white-haze">&nbsp; Avance de ejecución en el Proyecto:&nbsp;</span>
+                    <span><i class="icon-bar-chart font-white-haze">
+                    &nbsp;</i><span ng-cloak data-ng-bind="selectedProyect.CodigoProyecto"></span></span>
+                    
                 </div>
-                <div class="actions">
-                    <div class="btn-group">
-                        <button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            <i class="fa fa-connectdevelop" aria-hidden="true"></i>&nbsp;
-               
-                            <span class="hidden-sm hidden-xs">Proyectos</span>
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li data-ng-repeat="p in proyectosData">
-                                <a ng-cloak data-ng-click="setSelectedProyect(p.ProyectoID)">
-                                    <i class="icon-bar-chart font-green-haze"></i><span ng-cloak data-ng-bind="p.CodigoProyecto"></span>
-                                </a>
-                            </li>
-                        </ul>
+            </div>
+                <div class="portlet box blue">
+                    <div class="portlet-body">
+                        <div class="table-responsive">
+                            <table id="jqGridActividadUsuario" class="heigth380"></table>
+                            <div id="jqGridActividadUsuarioPager"></div>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-responsive">
+                            <table id="jqGridConfirmadas" class="heigth380"></table>
+                            <div id="jqGridConfirmadasPager"></div>
+                        </div>
+                    </div>
+                </div>
+            <div class="portlet box blue">
+                <div class="portlet-body">
+                    <div class="m-grid-col-middle">
+                        <button data-ng-click="confirmVerificar();" class="btn blue">Confirmar</button>
                     </div>
                 </div>
             </div>
-                
-                    <div class="portlet box blue">
-                        <div class="portlet-body">
-                            <div class="table-responsive">
-                                <table id="jqGridActividadUsuario" class="heigth380"></table>
-                                <div id="jqGridActividadUsuarioPager"></div>
-                            </div>
-                        </div>
-                    </div>
         </div>
         <!-- END EXAMPLE TABLE PORTLET-->
     </div>

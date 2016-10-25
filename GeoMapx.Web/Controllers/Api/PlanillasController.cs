@@ -93,7 +93,8 @@ namespace GeoMapx.Web.Controllers.Api
                                        p.ObservacionVerificador,
                                        p.CodigoPoligono,
                                        p.PoligonoID,
-                                       p.SupervisorID
+                                       p.SupervisorID,
+                                       p.Verificado
                                    };
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
                 }
@@ -141,7 +142,8 @@ namespace GeoMapx.Web.Controllers.Api
                                        p.ObservacionVerificador,
                                        p.CodigoPoligono,
                                        p.PoligonoID,
-                                       p.SupervisorID
+                                       p.SupervisorID,
+                                       p.Verificado
                                    }).ToList();
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
                 }
@@ -190,35 +192,9 @@ namespace GeoMapx.Web.Controllers.Api
         { 
             try
             {
-                /**[Ojo] con  postes que no están en el mismo proyecto***/
-                var old = this._GetPlanilla(entity.PlanillaID).SingleOrDefault();
-                if (old != null && !old.Verificado)
-                {
-                    old.ActividadID = entity.ActividadID;
-                    old.Cantidad = entity.Cantidad;
-                    old.Fecha = entity.Fecha;
-                    old.FechaModificacion = DateTime.Now;
-                    old.PosteID = entity.PosteID;
-                    old.ProyectoID = entity.ProyectoID;
-                    old.Verificado = entity.Verificado;
-                    old.PosteIDHasta = entity.PosteIDHasta;
-                    old.FichaID = entity.FichaID;
-                    //old.UserID = entity.UserID;
-                    old.UserIDModifica = usuario.UsuarioID;
-                    old.Observacion = entity.Observacion;
-                    old.ContratistaID = entity.ContratistaID;
-                    old.Observacion = entity.Observacion;
-                    old.SupervisorID = entity.SupervisorID;
-                    old.SerialTransformador = entity.SerialTransformador;
-                    old.UserIDVerificador = entity.UserIDVerificador;
-                    var data = this._UpdatePlanilla(old);
-                    return Request.CreateResponse<Planilla>(HttpStatusCode.OK, data);  
-                }
-                else
-                {
-                    HttpError err = new HttpError("Transacción VERIFICADA y no se puede modificar.");
-                    return Request.CreateResponse(HttpStatusCode.Conflict, err);
-                }              
+                /**[Ojo] con  postes que no están en el mismo proyecto***/              
+                    var data = this._UpdatePlanilla(entity);
+                    return Request.CreateResponse<Planilla>(HttpStatusCode.OK, data);              
             }
             catch (Exception ex)
             {
