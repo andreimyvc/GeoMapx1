@@ -175,6 +175,8 @@
     <Compile Include="Controllers\Api\ContratistasController.cs" />
     <Compile Include="Controllers\Api\CertificacionesController.cs" />
     <Compile Include="Controllers\Api\ActividadesPrebuildController.cs" />
+    <Compile Include="Controllers\Api\SecuenciaCubicacionesController.cs" />
+    <Compile Include="Controllers\Api\CubicacionesController.cs" />
     <Compile Include="Controllers\Api\SupervisoresController.cs" />
     <Compile Include="Controllers\Api\FichasController.cs" />
     <Compile Include="Controllers\Api\MaterialesController.cs" />
@@ -186,6 +188,7 @@
     <Compile Include="Controllers\Mvc\AccountController.cs" />
     <Compile Include="Controllers\Mvc\ActividadesController.cs" />
     <Compile Include="Controllers\Mvc\CertificacionesController.cs" />
+    <Compile Include="Controllers\Mvc\CubicacionesController.cs" />
     <Compile Include="Controllers\Mvc\DiariasPrebuildController.cs" />
     <Compile Include="Controllers\Mvc\Copia de MaterialesController.cs" />
     <Compile Include="Controllers\Mvc\DiariasController.cs" />
@@ -210,6 +213,7 @@
     <Content Include="Angular\Controllers\App.js" />
     <Content Include="Angular\Controllers\appMap.js" />
     <Content Include="Angular\Controllers\certificacionesApp.js" />
+    <Content Include="Angular\Controllers\cubicacionesApp.js" />
     <Content Include="Angular\Controllers\diariasprebuildApp.js" />
     <Content Include="Angular\Controllers\Copia de uniconsApp.js" />
     <Content Include="Angular\Controllers\diariasApp.js" />
@@ -252,6 +256,14 @@
     <Content Include="Global.asax" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\estructuras\poster_castra2.png" />
+    <Content Include="Images\estructuras\poster1.png" />
+    <Content Include="Images\estructuras\poster2.png" />
+    <Content Include="Images\estructuras\poster2_Easy-Resize.com.jpg" />
+    <Content Include="Images\estructuras\poster3.png" />
+    <Content Include="Images\estructuras\poster4.jpg" />
+    <Content Include="Images\estructuras\poster4.png" />
+    <Content Include="Images\estructuras\postercastrado.png" />
     <Content Include="Images\heroAccent.png" />
     <Content Include="Images\LogoGeo1.png" />
     <Content Include="Images\orderedList0.png" />
@@ -267,6 +279,7 @@
     <Content Include="Js\charts\homeCharts.js" />
     <Content Include="Js\datatables\prebuild_table_managed.js" />
     <Content Include="Js\helpers\actividadesprebuild.js" />
+    <Content Include="Js\jqgrid\jqgridNCubicacionesConfig.js" />
     <Content Include="Js\jqgrid\jqgridCertiConfig.js" />
     <Content Include="Js\jqgrid\jqgridDiariasPrebuildConfig.js" />
     <Content Include="Js\jqgrid\images\ui-icons_0078ae_256x240.png" />
@@ -349,6 +362,9 @@
     <Content Include="Views\DiariasPrebuild\DiariasVista3.old.cshtml" />
     <Content Include="Views\DiariasPrebuild\Index.cshtml" />
     <Content Include="Views\DiariasPrebuild\dattable1.cshtml" />
+    <Content Include="Views\Cubicaciones\cubicaciones1.cshtml" />
+    <Content Include="Views\Cubicaciones\Index.cshtml" />
+    <Content Include="Views\Cubicaciones\numeros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Angular\apps\" />

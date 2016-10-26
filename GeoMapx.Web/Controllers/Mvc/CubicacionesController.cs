@@ -16,12 +16,14 @@ using GeoMapx.Web.Utils;
 namespace GeoMapx.Web.Controllers
 {
     [Authorize]
-    public class DiariasController : Controller
-    { 
-        // GET: /Diarias/
+    public class CubicacionesController : Controller
+    {
         public UsuarioModel usuario = new UsuarioModel { Nombre = "test", UsuarioID = 1, EmpresaID = 1 };
-        [Authorize]
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Numeros()
         {
             return View();
         }

@@ -10,12 +10,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net;
 using System.Configuration;
-using System.Web.Http;
 using System.Text;
 using GeoMapx.Web.Utils;
 
 namespace GeoMapx.Web.Controllers
 {
+    [Authorize]
     public class MaterialesController : Controller
     {
         // GET: /Actividades/

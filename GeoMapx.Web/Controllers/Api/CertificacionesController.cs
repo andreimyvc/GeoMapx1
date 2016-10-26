@@ -21,37 +21,16 @@ namespace GeoMapx.Web.Controllers.Api
         [HttpPost]
         public HttpResponseMessage Post(Materiale entity)
         {
-            try
-            {
-                var result = this._InsertMaterial(entity);
-
-                return Request.CreateResponse<Materiale>(HttpStatusCode.Created, result);
-            }
-            catch (SqlException ex)
-            {
-                HttpError err = new HttpError("No se pudo actualizar.");
-                if (ex.Message.Contains("UNIQUE KEY"))
-                {
-                    return Request.CreateResponse(HttpStatusCode.Conflict, err);
-                }
-                //throw new HttpResponseException(HttpStatusCode.Conflict);
-                err = new HttpError("Error no controlado.");
-                return Request.CreateResponse(HttpStatusCode.Conflict, err);
-            }
-            catch (Exception ex)
-            {
-                HttpError err = new HttpError(ex.Message);
-                return Request.CreateResponse(HttpStatusCode.Conflict, err);
-            }
+            throw new NotImplementedException();
         }
         [HttpPut]
         [RouteAttribute("PUT")]
         [AcceptVerbs("PUT")]
-        public HttpResponseMessage Put(List<VW_Planilla> entity)
+        public HttpResponseMessage Put(VW_Planilla entity)
         {
             try
             {
-                var data = this._UpdatePlanillas(entity);
+                var data = this._UpdatePlanillaCerti(entity);
                 return Request.CreateResponse<bool>(HttpStatusCode.OK, data);
             }
             catch (Exception ex)

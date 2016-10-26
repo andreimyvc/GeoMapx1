@@ -194,16 +194,13 @@ namespace GeoMapx.Web.Controllers.Api
             return entity;
             //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
         }
-        public bool _UpdatePlanillas(List<VW_Planilla> entitys)
+        public bool _UpdatePlanillaCerti(VW_Planilla entitys)
         {
-            foreach (var e in entitys)
-            {
-                var planilla = db.Planillas.First( p => p.PlanillaID == e.PlanillaID);
-                planilla.Verificado = true;
-                planilla.UserIDVerificador = usuario.UsuarioID;
-                planilla.ObservacionVerificador = e.ObservacionVerificador;
-                planilla.FechaVerificado = DateTime.Now;
-            }
+            var planilla = db.Planillas.First(p => p.PlanillaID == entitys.PlanillaID);
+            planilla.Verificado = entitys.Verificado;
+            planilla.UserIDVerificador = usuario.UsuarioID;
+            planilla.ObservacionVerificador = entitys.ObservacionVerificador;
+            planilla.FechaVerificado = DateTime.Now;
             db.SubmitChanges();
             return true;
         }
@@ -327,12 +324,12 @@ namespace GeoMapx.Web.Controllers.Api
         public Materiale _UpdateMaterial(Materiale entity)
         {
             var old = db.Materiales.Single(p => p.MaterialID == entity.MaterialID); 
-            old.ProyectoID = entity.ProyectoID;
-            old.ActividadID = entity.ActividadID; 
+            //old.ProyectoID = entity.ProyectoID;
+            //old.ActividadID = entity.ActividadID; 
             old.CodigoMaterial = entity.CodigoMaterial; 
             old.Descripcion = entity.Descripcion;
-            old.Cantidad = entity.Cantidad;
-            old.PrecioUnitario = entity.PrecioUnitario;
+            //old.Cantidad = entity.Cantidad;
+            //old.PrecioUnitario = entity.PrecioUnitario;
             db.SubmitChanges();
             return entity;
         }
@@ -432,6 +429,49 @@ namespace GeoMapx.Web.Controllers.Api
                        && p.FechaVerificado.Value.Date == DateTime.Now.Date))
                        select p;
             return data;
+        }
+
+        private IQueryable<VW_SecuenciaCubicacione> _GetSecuencias()
+        {
+            var data = from p in db.VW_SecuenciaCubicaciones
+                       select p;
+            return data;
+        }
+
+        internal IQueryable<VW_SecuenciaCubicacione> _GetSecuenciasByProyecto(int proyectoid)
+        {
+            var data = from p in db.VW_SecuenciaCubicaciones
+                       where p.ProyectoID == proyectoid
+                       select p;
+            return data;
+        }
+
+        public SecuenciaCubicacione _InsertSecuenciaCubicacion(SecuenciaCubicacione entity)
+        {
+            entity.Fecha = DateTime.Now;
+            entity.Estado = true;
+            var max = db.SecuenciaCubicaciones.Where(p => p.ProyectoID == entity.ProyectoID);
+            if (max != null && max.Count() > 0)
+            {
+                entity.Numero = (max.Max( p => p.Numero) + 1);
+            }
+            else
+            {
+                entity.Numero = 1;
+            }
+            entity.Fecha = DateTime.Now;
+            entity.Estado = true;
+            db.SecuenciaCubicaciones.InsertOnSubmit(entity);
+            db.SubmitChanges();
+            return entity;
+        }
+
+        public SecuenciaCubicacione _UpdateSecuenciaCubicacion(SecuenciaCubicacione entity)
+        {
+            var old = db.SecuenciaCubicaciones.SingleOrDefault( p => p.SecuenciaID == entity.SecuenciaID);
+            old.Estado = !old.Estado;// entity.Estado;
+            db.SubmitChanges();
+            return entity;
         }
     }
 }

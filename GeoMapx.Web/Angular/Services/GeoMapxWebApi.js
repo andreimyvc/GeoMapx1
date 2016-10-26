@@ -397,6 +397,33 @@
             });
             return defer.promise;
         };
+        interfaz.getCubSecuenciaByProyecto = function (proyectoid) {
+            var defer = q.defer();
+            http.get('/api/secuenciacubicaciones/GetByProyecto', { params: { proyectoid: proyectoid } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.insertCubSecuencia = function (entity) {
+            var defer = q.defer();
+            http({ method: 'POST', url: '/api/secuenciacubicaciones/post', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.updateCubSecuencia = function (entity) {
+            var defer = q.defer();
+            http({ method: 'PUT', url: '/api/secuenciacubicaciones/put', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
 
         //#endregion
         //#endregion Materiales

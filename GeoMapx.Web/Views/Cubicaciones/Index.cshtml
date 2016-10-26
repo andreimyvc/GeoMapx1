@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Actividades diarias";
+    //Layout = "~/Views/Shared/_MetronicWtableLayout.cshtml";
+    //Layout = "~/Views/Shared/_MetronicLayout.cshtml";
+}
+
+<link href="~/Content/mapas.css" rel="stylesheet" />
+<link href="~/Content/home.css" rel="stylesheet" />
+@section scripts {  
+<link href="~/Content/jquery-ui.1.8.16.css" rel="stylesheet" />
+<link href="~/Content/ui.jqgrid.4.3.0.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui-1.8.16.min.js"></script>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/grid.locale-es-4.3.0.js"></script>
+<script src="~/Scripts/jquery.jqGrid.src-4.3.0.js"></script>
+<script src="../assets/global/plugins/angularjs/angular.min.js" type="text/javascript"></script>
+
+
+
+<script src="~/Js/jqgrid/jqgridDiariasPrebuildConfig.js"></script>
+<script src="~/Angular/Services/GeoMapxWebApi.js"></script>
+<script src="~/Js/helpers/actividadesprebuild.js"></script>
+<script src="~/Angular/controllers/cubicacionesApp.js"></script>
+<script>
+    function initialize() {
+        angular.element(document.getElementById('cubicacionesApp')).scope().startApp();
+        //initGridCubicaciones();
+    }
+</script>
+
+}
+<div id="cubicacionesApp" data-ng-app="cubicacionesApp" data-ng-controller="cubicacionesController">
+    <div class="page-content-inner">
+        <div class="row">
+            @Html.Partial("~/views/cubicaciones/cubicaciones1.cshtml")
+        </div>
+        <div class="row">
+        </div>
+    </div>
+</div>

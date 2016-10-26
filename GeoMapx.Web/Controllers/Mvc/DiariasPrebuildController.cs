@@ -15,6 +15,7 @@ using GeoMapx.Web.Utils;
 
 namespace GeoMapx.Web.Controllers
 {
+    [Authorize]
     public class DiariasPrebuildController : Controller
     { 
         // GET: /Diarias/

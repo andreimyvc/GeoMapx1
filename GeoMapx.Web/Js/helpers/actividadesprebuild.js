@@ -23,6 +23,12 @@ function jqgridAddRowData(gridid, index, payload, callback) {
         callback(payload);
     }
 }
+function jqgridAddRowDataLast(gridid, index, payload, callback) {
+    $(gridid).jqGrid('addRowData', index, payload.data, "last");
+    if (callback) {
+        callback(payload);
+    }
+}
 function objToString(obj) {
     var str = '';
     for (var p in obj) {

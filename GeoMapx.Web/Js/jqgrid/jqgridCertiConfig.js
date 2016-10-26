@@ -10,33 +10,34 @@ function initGridActividadUsuario() {
             { label: 'PosteID', name: 'PosteID', key: true, hidden: true },
             { label: 'PosteIDHasta', name: 'PosteIDHasta', key: true, hidden: true },
             { label: 'ActividadID', name: 'ActividadID', key: true, hidden: true },
-            { label: 'UniCons', name: 'UniCons', width: 75 },
-            { label: 'Descripcion Actividad', name: 'DescripcionActividad', width: 175 },
             { label: 'Poligono', name: 'CodigoPoligono', width: 70 },
             { label: 'Poste', name: 'CodigoPoste', width: 70 },
-            { label: 'Hasta', name: 'CodigoPosteHasta', width: 70 },
-            { label: 'Transformador', name: 'SerialTransformador', width: 90 },
+            { label: 'UniCons', name: 'UniCons', width: 75 },
+            { label: 'Descripcion Actividad', name: 'DescripcionActividad', width: 175 },
             { label: 'Cantidad', name: 'Cantidad', width: 60 },
-            { label: 'Fecha', name: 'Fecha', width: 80 },
+            { label: 'Hasta', name: 'CodigoPosteHasta', width: 60 },
+            { label: 'Transformador', name: 'SerialTransformador', width: 90 },
+            { label: 'Fecha', name: 'Fecha', width: 75 },
             {
-                label: 'Estado', name: 'Verificado', search: false, sortable: true, width: 65,
+                label: '', name: ' ', search: false, sortable: true, width: 80,
                 align: 'center', formatter: function (cellValue, option, xdata) {
-                    if (xdata.Verificado) {
-                        return '<i class="fa fa-check-circle" aria-hidden="true"></i>';
-                    } else {
-                        return '<i class="fa fa-circle-o" aria-hidden="true"></i>';
-                    }
+                    var callback = function (data) {
+                        angular.element(document.getElementById('certificacionesApp')).scope().certificate(data);
+                    };//
+                    var cmll = String.fromCharCode(39);
+                    return '<button onclick="ShowObserva(' + xdata.PlanillaID + ')" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i>' +
+                        '&nbsp;Observación</button>';
                 }
             },
             {
-                label: 'Ejecutada', name: 'Ejecutada', search: false, sortable: true, width: 65,
+                label: '', name: ' ', search: false, sortable: true, width: 65,
                 align: 'center', formatter: function (cellValue, option, xdata) {
                     var callback = function (data) {
-                        angular.element(document.getElementById('certificacionesApp')).scope().moveRowToCommit(data);
+                        angular.element(document.getElementById('certificacionesApp')).scope().certificate(data);
                     };
                     var cmll = String.fromCharCode(39);
-                    return '<button onclick="jqgridDeleteRow(' + cmll + '#' + option.gid + cmll + ',' + option.rowId + ',' + xdata.PlanillaID + ',' + callback
-                            + ')"><i class="fa fa-certificate" aria-hidden="true"></i>&nbsp;Verificar</button>';
+                    return '<button onclick="jqgridDeleteRow(' + cmll + '#' + option.gid + cmll + ',' + option.rowId + ','
+                        + xdata.PlanillaID + ',' + callback + ')"><i class="fa fa-certificate" aria-hidden="true"></i>&nbsp;Certificar</button>';
                 }
             }
         ],
@@ -51,7 +52,8 @@ function initGridActividadUsuario() {
         pager: '#jqGridActividadUsuarioPager',
         sortname: 'invdate',
         viewrecords: true,
-        sortorder: "desc"
+        sortorder: "desc",
+        caption: "ACTIVIDADES PENDIENTES DE CERTIFICAR"
     });
 }
 
@@ -67,47 +69,24 @@ function initGridConfirmadas() {
             { label: 'PosteID', name: 'PosteID', key: true, hidden: true },
             { label: 'PosteIDHasta', name: 'PosteIDHasta', key: true, hidden: true },
             { label: 'ActividadID', name: 'ActividadID', key: true, hidden: true },
-            { label: 'UniCons', name: 'UniCons', width: 75 },
-            { label: 'Descripcion Actividad', name: 'DescripcionActividad', width: 175 },
-            { label: 'Poligono', name: 'CodigoPoligono', width: 70 },
-            { label: 'Poste', name: 'CodigoPoste', width: 70 },
-            { label: 'Hasta', name: 'CodigoPosteHasta', width: 70 },
-            { label: 'Transformador', name: 'SerialTransformador', width: 90 },
-            { label: 'Cantidad', name: 'Cantidad', width: 60 },
-            { label: 'Fecha', name: 'Fecha', width: 80 }, {
-                label: 'Opción', name: 'Opcion', search: false, sortable: true, width: 65,
+            { label: 'Poligono', name: 'CodigoPoligono', width: 55 },
+            { label: 'Poste', name: 'CodigoPoste', width: 55 },
+            { label: 'UniCons', name: 'UniCons', width: 55 },
+            { label: 'Descripcion Actividad', name: 'DescripcionActividad', width: 140 },
+            { label: 'Cantidad', name: 'Cantidad', width: 45 },
+            { label: 'Hasta', name: 'CodigoPosteHasta', width: 55 },
+            { label: 'Transformador', name: 'SerialTransformador', width: 70 },
+            { label: 'Observación', name: 'ObservacionVerificador', width: 70 },
+            { label: 'Fecha', name: 'Fecha', width: 80 },  {
+                label: '', name: '', search: false, sortable: true, width: 65,
                 align: 'center', formatter: function (cellValue, option, xdata) {
                     //alert(objToString(xdata));
 
                     var cmll = String.fromCharCode(39);
-                    if (xdata.Verificado) {
-                        return '<button onclick="xUndoCert(' + cmll + '#' + option.gid + cmll + ',' + option.rowId + ',' + xdata.PlanillaID +
-                            ')"><i class="fa fa-undo" aria-hidden="true"></i></button>';
-                    } else {
-                        return '<i class="fa fa-circle-o" aria-hidden="true"></i>';
-                    }
-
-                }
-            }, {
-                label: 'Ejecutada', name: 'Ejecutada', search: false, sortable: true, width: 65,
-                align: 'center', formatter: function (cellValue, option, xdata) {
-                    //alert(objToString(xdata));
-
-                    var cmll = String.fromCharCode(39);
-                        return '<button onclick="xRemoveFromCommit' +
-                            '(' + cmll + '#' + option.gid + cmll + ',' + option.rowId + ',' + xdata.PlanillaID + ')' +
-                                '"><i class="fa fa-times-circle" aria-hidden="true"></i>&nbsp;Cancelar</button>';
+                    return '<button onclick="xUndoCert(' + cmll + '#' + option.gid + cmll + ',' + option.rowId + ',' + xdata.PlanillaID + ')' +
+                                '"><i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Cancelar</button>';
                     }
             }
-            //, {
-            //    label: ' ', search: false, sortable: false, width: 30,
-            //    align: 'center', formatter: function (cellValue, option, xdata) {
-            //        if (xdata.Ejecutado) {
-            //            return '<button onclick="prebuildUndo(' + xdata.PreBuildID + ')"><i class="fa fa-undo" aria-hidden="true"></i></button>';
-            //        }
-            //        return '';
-            //    }
-            //}
         ],
         colMenu: true,
         gridview: true,
@@ -120,7 +99,8 @@ function initGridConfirmadas() {
         pager: '#jqGridConfirmadasPager',
         sortname: 'invdate',
         viewrecords: true,
-        sortorder: "desc"
+        sortorder: "desc",
+        caption: "DETALLE DE ACTIVIDADES CERTIFICADAS"
     });
 }
 

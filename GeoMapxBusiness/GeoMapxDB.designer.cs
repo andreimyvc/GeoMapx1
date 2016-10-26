@@ -30,12 +30,12 @@ namespace GeoMapxBusiness
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void InsertUsuario(Usuario instance);
-    partial void UpdateUsuario(Usuario instance);
-    partial void DeleteUsuario(Usuario instance);
     partial void InsertActividade(Actividade instance);
     partial void UpdateActividade(Actividade instance);
     partial void DeleteActividade(Actividade instance);
+    partial void InsertUsuario(Usuario instance);
+    partial void UpdateUsuario(Usuario instance);
+    partial void DeleteUsuario(Usuario instance);
     partial void InsertActividadesPreBuild(ActividadesPreBuild instance);
     partial void UpdateActividadesPreBuild(ActividadesPreBuild instance);
     partial void DeleteActividadesPreBuild(ActividadesPreBuild instance);
@@ -54,12 +54,21 @@ namespace GeoMapxBusiness
     partial void InsertAspNetUser(AspNetUser instance);
     partial void UpdateAspNetUser(AspNetUser instance);
     partial void DeleteAspNetUser(AspNetUser instance);
+    partial void InsertCategoriaMateriale(CategoriaMateriale instance);
+    partial void UpdateCategoriaMateriale(CategoriaMateriale instance);
+    partial void DeleteCategoriaMateriale(CategoriaMateriale instance);
     partial void InsertContratista(Contratista instance);
     partial void UpdateContratista(Contratista instance);
     partial void DeleteContratista(Contratista instance);
+    partial void InsertCubicacione(Cubicacione instance);
+    partial void UpdateCubicacione(Cubicacione instance);
+    partial void DeleteCubicacione(Cubicacione instance);
     partial void InsertEmpresa(Empresa instance);
     partial void UpdateEmpresa(Empresa instance);
     partial void DeleteEmpresa(Empresa instance);
+    partial void InsertEntradaInventario(EntradaInventario instance);
+    partial void UpdateEntradaInventario(EntradaInventario instance);
+    partial void DeleteEntradaInventario(EntradaInventario instance);
     partial void InsertFicha(Ficha instance);
     partial void UpdateFicha(Ficha instance);
     partial void DeleteFicha(Ficha instance);
@@ -72,6 +81,9 @@ namespace GeoMapxBusiness
     partial void InsertMateriale(Materiale instance);
     partial void UpdateMateriale(Materiale instance);
     partial void DeleteMateriale(Materiale instance);
+    partial void InsertMaterialesPorUnidadConstructiva(MaterialesPorUnidadConstructiva instance);
+    partial void UpdateMaterialesPorUnidadConstructiva(MaterialesPorUnidadConstructiva instance);
+    partial void DeleteMaterialesPorUnidadConstructiva(MaterialesPorUnidadConstructiva instance);
     partial void InsertPlanilla(Planilla instance);
     partial void UpdatePlanilla(Planilla instance);
     partial void DeletePlanilla(Planilla instance);
@@ -87,6 +99,15 @@ namespace GeoMapxBusiness
     partial void InsertProyecto(Proyecto instance);
     partial void UpdateProyecto(Proyecto instance);
     partial void DeleteProyecto(Proyecto instance);
+    partial void InsertSalidaInventario(SalidaInventario instance);
+    partial void UpdateSalidaInventario(SalidaInventario instance);
+    partial void DeleteSalidaInventario(SalidaInventario instance);
+    partial void InsertSalidaInventarioDetail(SalidaInventarioDetail instance);
+    partial void UpdateSalidaInventarioDetail(SalidaInventarioDetail instance);
+    partial void DeleteSalidaInventarioDetail(SalidaInventarioDetail instance);
+    partial void InsertSecuencia(Secuencia instance);
+    partial void UpdateSecuencia(Secuencia instance);
+    partial void DeleteSecuencia(Secuencia instance);
     partial void InsertSupervisore(Supervisore instance);
     partial void UpdateSupervisore(Supervisore instance);
     partial void DeleteSupervisore(Supervisore instance);
@@ -96,6 +117,9 @@ namespace GeoMapxBusiness
     partial void InsertUserProfile(UserProfile instance);
     partial void UpdateUserProfile(UserProfile instance);
     partial void DeleteUserProfile(UserProfile instance);
+    partial void InsertSecuenciaCubicacione(SecuenciaCubicacione instance);
+    partial void UpdateSecuenciaCubicacione(SecuenciaCubicacione instance);
+    partial void DeleteSecuenciaCubicacione(SecuenciaCubicacione instance);
     #endregion
 		
 		public GeoMapxDBDataContext() : 
@@ -128,19 +152,19 @@ namespace GeoMapxBusiness
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<VW_Actividade> VW_Actividades
-		{
-			get
-			{
-				return this.GetTable<VW_Actividade>();
-			}
-		}
-		
 		public System.Data.Linq.Table<VW_Poste> VW_Postes
 		{
 			get
 			{
 				return this.GetTable<VW_Poste>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Actividade> VW_Actividades
+		{
+			get
+			{
+				return this.GetTable<VW_Actividade>();
 			}
 		}
 		
@@ -173,6 +197,38 @@ namespace GeoMapxBusiness
 			get
 			{
 				return this.GetTable<VW_AvanceProyectoByMe>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadME> VW_CantidadMEs
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadME>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadMPPPlanilla> VW_CantidadMPPPlanillas
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadMPPPlanilla>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadMPPPreBuild> VW_CantidadMPPPreBuilds
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadMPPPreBuild>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadMPreBuild> VW_CantidadMPreBuilds
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadMPreBuild>();
 			}
 		}
 		
@@ -240,11 +296,11 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		public System.Data.Linq.Table<Usuario> Usuarios
+		public System.Data.Linq.Table<VW_Cubicacione> VW_Cubicaciones
 		{
 			get
 			{
-				return this.GetTable<Usuario>();
+				return this.GetTable<VW_Cubicacione>();
 			}
 		}
 		
@@ -253,6 +309,14 @@ namespace GeoMapxBusiness
 			get
 			{
 				return this.GetTable<Actividade>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Usuario> Usuarios
+		{
+			get
+			{
+				return this.GetTable<Usuario>();
 			}
 		}
 		
@@ -304,6 +368,14 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<CategoriaMateriale> CategoriaMateriales
+		{
+			get
+			{
+				return this.GetTable<CategoriaMateriale>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Contratista> Contratistas
 		{
 			get
@@ -312,11 +384,27 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<Cubicacione> Cubicaciones
+		{
+			get
+			{
+				return this.GetTable<Cubicacione>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Empresa> Empresas
 		{
 			get
 			{
 				return this.GetTable<Empresa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<EntradaInventario> EntradaInventarios
+		{
+			get
+			{
+				return this.GetTable<EntradaInventario>();
 			}
 		}
 		
@@ -360,6 +448,14 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<MaterialesPorUnidadConstructiva> MaterialesPorUnidadConstructivas
+		{
+			get
+			{
+				return this.GetTable<MaterialesPorUnidadConstructiva>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Planilla> Planillas
 		{
 			get
@@ -400,6 +496,30 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<SalidaInventario> SalidaInventarios
+		{
+			get
+			{
+				return this.GetTable<SalidaInventario>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SalidaInventarioDetail> SalidaInventarioDetails
+		{
+			get
+			{
+				return this.GetTable<SalidaInventarioDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Secuencia> Secuencias
+		{
+			get
+			{
+				return this.GetTable<Secuencia>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Supervisore> Supervisores
 		{
 			get
@@ -424,254 +544,27 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		public System.Data.Linq.Table<VW_SecuenciaCubicacione> VW_SecuenciaCubicaciones
+		{
+			get
+			{
+				return this.GetTable<VW_SecuenciaCubicacione>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SecuenciaCubicacione> SecuenciaCubicaciones
+		{
+			get
+			{
+				return this.GetTable<SecuenciaCubicacione>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetLastDayOfMonth", IsComposable=true)]
 		[return: global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")]
 		public string GetLastDayOfMonth([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Date", DbType="DateTime")] System.Nullable<System.DateTime> date)
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date).ReturnValue));
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Actividades")]
-	public partial class VW_Actividade
-	{
-		
-		private int _ActividadID;
-		
-		private int _EmpresaID;
-		
-		private string _UniCons;
-		
-		private System.Nullable<int> _Cantidad;
-		
-		private string _DescripcionActividad;
-		
-		private string _ActividadPrimaria;
-		
-		private string _ActividadSecundaria;
-		
-		private string _ActividadSGT;
-		
-		private System.DateTime _Fecha;
-		
-		private int _UserID;
-		
-		private System.Nullable<int> _ProyectoID;
-		
-		private System.Nullable<decimal> _PrecioUnitario;
-		
-		private string _CodigoProyecto;
-		
-		public VW_Actividade()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
-		{
-			get
-			{
-				return this._EmpresaID;
-			}
-			set
-			{
-				if ((this._EmpresaID != value))
-				{
-					this._EmpresaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
-		{
-			get
-			{
-				return this._UniCons;
-			}
-			set
-			{
-				if ((this._UniCons != value))
-				{
-					this._UniCons = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
-		public System.Nullable<int> Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this._Cantidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string DescripcionActividad
-		{
-			get
-			{
-				return this._DescripcionActividad;
-			}
-			set
-			{
-				if ((this._DescripcionActividad != value))
-				{
-					this._DescripcionActividad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
-		public string ActividadSGT
-		{
-			get
-			{
-				return this._ActividadSGT;
-			}
-			set
-			{
-				if ((this._ActividadSGT != value))
-				{
-					this._ActividadSGT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
-		public System.DateTime Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
-		public System.Nullable<int> ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> PrecioUnitario
-		{
-			get
-			{
-				return this._PrecioUnitario;
-			}
-			set
-			{
-				if ((this._PrecioUnitario != value))
-				{
-					this._PrecioUnitario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
 		}
 	}
 	
@@ -1057,6 +950,249 @@ namespace GeoMapxBusiness
 				if ((this._CodigoPoligono != value))
 				{
 					this._CodigoPoligono = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Actividades")]
+	public partial class VW_Actividade
+	{
+		
+		private int _ActividadID;
+		
+		private int _EmpresaID;
+		
+		private string _UniCons;
+		
+		private System.Nullable<int> _Cantidad;
+		
+		private string _DescripcionActividad;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private string _ActividadSGT;
+		
+		private System.DateTime _Fecha;
+		
+		private int _UserID;
+		
+		private System.Nullable<int> _ProyectoID;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+		private string _CodigoProyecto;
+		
+		public VW_Actividade()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
+		public string ActividadSGT
+		{
+			get
+			{
+				return this._ActividadSGT;
+			}
+			set
+			{
+				if ((this._ActividadSGT != value))
+				{
+					this._ActividadSGT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
+		public System.Nullable<int> ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
 				}
 			}
 		}
@@ -1957,6 +2093,366 @@ namespace GeoMapxBusiness
 				if ((this._CodigoProyecto != value))
 				{
 					this._CodigoProyecto = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadME")]
+	public partial class VW_CantidadME
+	{
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<int> _PoligonoID;
+		
+		private System.Nullable<int> _LoteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<decimal> _CantidadME;
+		
+		public VW_CantidadME()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
+		public System.Nullable<int> PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this._PoligonoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
+		public System.Nullable<int> LoteID
+		{
+			get
+			{
+				return this._LoteID;
+			}
+			set
+			{
+				if ((this._LoteID != value))
+				{
+					this._LoteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadME", DbType="Decimal(38,5)")]
+		public System.Nullable<decimal> CantidadME
+		{
+			get
+			{
+				return this._CantidadME;
+			}
+			set
+			{
+				if ((this._CantidadME != value))
+				{
+					this._CantidadME = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPPPlanilla")]
+	public partial class VW_CantidadMPPPlanilla
+	{
+		
+		private int _ProyectoID;
+		
+		private int _PosteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<decimal> _CantidadMPPPlanilla;
+		
+		public VW_CantidadMPPPlanilla()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPPPlanilla", DbType="Decimal(38,5)")]
+		public System.Nullable<decimal> CantidadMPPPlanilla
+		{
+			get
+			{
+				return this._CantidadMPPPlanilla;
+			}
+			set
+			{
+				if ((this._CantidadMPPPlanilla != value))
+				{
+					this._CantidadMPPPlanilla = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPPPreBuild")]
+	public partial class VW_CantidadMPPPreBuild
+	{
+		
+		private int _ProyectoID;
+		
+		private int _PosteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<double> _CantidadMPP;
+		
+		public VW_CantidadMPPPreBuild()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPP", DbType="Float")]
+		public System.Nullable<double> CantidadMPP
+		{
+			get
+			{
+				return this._CantidadMPP;
+			}
+			set
+			{
+				if ((this._CantidadMPP != value))
+				{
+					this._CantidadMPP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPreBuild")]
+	public partial class VW_CantidadMPreBuild
+	{
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<int> _PoligonoID;
+		
+		private System.Nullable<int> _LoteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<double> _CantidadMPreBuild;
+		
+		public VW_CantidadMPreBuild()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
+		public System.Nullable<int> PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this._PoligonoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
+		public System.Nullable<int> LoteID
+		{
+			get
+			{
+				return this._LoteID;
+			}
+			set
+			{
+				if ((this._LoteID != value))
+				{
+					this._LoteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPreBuild", DbType="Float")]
+		public System.Nullable<double> CantidadMPreBuild
+		{
+			get
+			{
+				return this._CantidadMPreBuild;
+			}
+			set
+			{
+				if ((this._CantidadMPreBuild != value))
+				{
+					this._CantidadMPreBuild = value;
 				}
 			}
 		}
@@ -3726,65 +4222,50 @@ namespace GeoMapxBusiness
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuarios")]
-	public partial class Usuario : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Cubicaciones")]
+	public partial class VW_Cubicacione
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserID;
+		private string _CodigoProyecto;
 		
 		private int _EmpresaID;
 		
-		private string _UserCode;
+		private int _CubicacionID;
 		
-		private string _UserName;
+		private int _SecuenciaID;
 		
-		private char _Estatus;
+		private System.DateTime _FechaInicio;
 		
-		private EntitySet<Actividade> _Actividades;
+		private System.DateTime _FechaFin;
 		
-		private EntityRef<Empresa> _Empresa;
+		private string _ActividadPrimaria;
 		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnEmpresaIDChanging(int value);
-    partial void OnEmpresaIDChanged();
-    partial void OnUserCodeChanging(string value);
-    partial void OnUserCodeChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnEstatusChanging(char value);
-    partial void OnEstatusChanged();
-    #endregion
+		private string _ActividadSecundaria;
 		
-		public Usuario()
+		private System.Nullable<bool> _EstadoActividades;
+		
+		private int _Numero;
+		
+		private bool _Estado;
+		
+		private System.DateTime _Fecha;
+		
+		public VW_Cubicacione()
 		{
-			this._Actividades = new EntitySet<Actividade>(new Action<Actividade>(this.attach_Actividades), new Action<Actividade>(this.detach_Actividades));
-			this._Empresa = default(EntityRef<Empresa>);
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UserID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
 		{
 			get
 			{
-				return this._UserID;
+				return this._CodigoProyecto;
 			}
 			set
 			{
-				if ((this._UserID != value))
+				if ((this._CodigoProyecto != value))
 				{
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
+					this._CodigoProyecto = value;
 				}
 			}
 		}
@@ -3800,156 +4281,169 @@ namespace GeoMapxBusiness
 			{
 				if ((this._EmpresaID != value))
 				{
-					if (this._Empresa.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEmpresaIDChanging(value);
-					this.SendPropertyChanging();
 					this._EmpresaID = value;
-					this.SendPropertyChanged("EmpresaID");
-					this.OnEmpresaIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string UserCode
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", DbType="Int NOT NULL")]
+		public int CubicacionID
 		{
 			get
 			{
-				return this._UserCode;
+				return this._CubicacionID;
 			}
 			set
 			{
-				if ((this._UserCode != value))
+				if ((this._CubicacionID != value))
 				{
-					this.OnUserCodeChanging(value);
-					this.SendPropertyChanging();
-					this._UserCode = value;
-					this.SendPropertyChanged("UserCode");
-					this.OnUserCodeChanged();
+					this._CubicacionID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string UserName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", DbType="Int NOT NULL")]
+		public int SecuenciaID
 		{
 			get
 			{
-				return this._UserName;
+				return this._SecuenciaID;
 			}
 			set
 			{
-				if ((this._UserName != value))
+				if ((this._SecuenciaID != value))
 				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
+					this._SecuenciaID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estatus", DbType="Char(1) NOT NULL")]
-		public char Estatus
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaInicio", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaInicio
 		{
 			get
 			{
-				return this._Estatus;
+				return this._FechaInicio;
 			}
 			set
 			{
-				if ((this._Estatus != value))
+				if ((this._FechaInicio != value))
 				{
-					this.OnEstatusChanging(value);
-					this.SendPropertyChanging();
-					this._Estatus = value;
-					this.SendPropertyChanged("Estatus");
-					this.OnEstatusChanged();
+					this._FechaInicio = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Actividade", Storage="_Actividades", ThisKey="UserID", OtherKey="UserID")]
-		public EntitySet<Actividade> Actividades
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaFin", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaFin
 		{
 			get
 			{
-				return this._Actividades;
+				return this._FechaFin;
 			}
 			set
 			{
-				this._Actividades.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Usuario", Storage="_Empresa", ThisKey="EmpresaID", OtherKey="EmpresaID", IsForeignKey=true)]
-		public Empresa Empresa
-		{
-			get
-			{
-				return this._Empresa.Entity;
-			}
-			set
-			{
-				Empresa previousValue = this._Empresa.Entity;
-				if (((previousValue != value) 
-							|| (this._Empresa.HasLoadedOrAssignedValue == false)))
+				if ((this._FechaFin != value))
 				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Empresa.Entity = null;
-						previousValue.Usuarios.Remove(this);
-					}
-					this._Empresa.Entity = value;
-					if ((value != null))
-					{
-						value.Usuarios.Add(this);
-						this._EmpresaID = value.EmpresaID;
-					}
-					else
-					{
-						this._EmpresaID = default(int);
-					}
-					this.SendPropertyChanged("Empresa");
+					this._FechaFin = value;
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(120)")]
+		public string ActividadPrimaria
 		{
-			if ((this.PropertyChanging != null))
+			get
 			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
 			}
 		}
 		
-		protected virtual void SendPropertyChanged(String propertyName)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(120)")]
+		public string ActividadSecundaria
 		{
-			if ((this.PropertyChanged != null))
+			get
 			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
 			}
 		}
 		
-		private void attach_Actividades(Actividade entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoActividades", DbType="Bit")]
+		public System.Nullable<bool> EstadoActividades
 		{
-			this.SendPropertyChanging();
-			entity.Usuario = this;
+			get
+			{
+				return this._EstadoActividades;
+			}
+			set
+			{
+				if ((this._EstadoActividades != value))
+				{
+					this._EstadoActividades = value;
+				}
+			}
 		}
 		
-		private void detach_Actividades(Actividade entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
+		public int Numero
 		{
-			this.SendPropertyChanging();
-			entity.Usuario = null;
+			get
+			{
+				return this._Numero;
+			}
+			set
+			{
+				if ((this._Numero != value))
+				{
+					this._Numero = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
+		public bool Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
 		}
 	}
 	
@@ -3982,8 +4476,6 @@ namespace GeoMapxBusiness
 		private System.Nullable<int> _ProyectoID;
 		
 		private System.Nullable<decimal> _PrecioUnitario;
-		
-		private EntitySet<Materiale> _Materiales;
 		
 		private EntitySet<Planilla> _Planillas;
 		
@@ -4025,7 +4517,6 @@ namespace GeoMapxBusiness
 		
 		public Actividade()
 		{
-			this._Materiales = new EntitySet<Materiale>(new Action<Materiale>(this.attach_Materiales), new Action<Materiale>(this.detach_Materiales));
 			this._Planillas = new EntitySet<Planilla>(new Action<Planilla>(this.attach_Planillas), new Action<Planilla>(this.detach_Planillas));
 			this._Precios = new EntitySet<Precio>(new Action<Precio>(this.attach_Precios), new Action<Precio>(this.detach_Precios));
 			this._Usuario = default(EntityRef<Usuario>);
@@ -4281,19 +4772,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Actividade_Materiale", Storage="_Materiales", ThisKey="ActividadID", OtherKey="ActividadID")]
-		public EntitySet<Materiale> Materiales
-		{
-			get
-			{
-				return this._Materiales;
-			}
-			set
-			{
-				this._Materiales.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Actividade_Planilla", Storage="_Planillas", ThisKey="ActividadID", OtherKey="ActividadID")]
 		public EntitySet<Planilla> Planillas
 		{
@@ -4408,18 +4886,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		private void attach_Materiales(Materiale entity)
-		{
-			this.SendPropertyChanging();
-			entity.Actividade = this;
-		}
-		
-		private void detach_Materiales(Materiale entity)
-		{
-			this.SendPropertyChanging();
-			entity.Actividade = null;
-		}
-		
 		private void attach_Planillas(Planilla entity)
 		{
 			this.SendPropertyChanging();
@@ -4442,6 +4908,233 @@ namespace GeoMapxBusiness
 		{
 			this.SendPropertyChanging();
 			entity.Actividade = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Usuarios")]
+	public partial class Usuario : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserID;
+		
+		private int _EmpresaID;
+		
+		private string _UserCode;
+		
+		private string _UserName;
+		
+		private char _Estatus;
+		
+		private EntitySet<Actividade> _Actividades;
+		
+		private EntityRef<Empresa> _Empresa;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnEmpresaIDChanging(int value);
+    partial void OnEmpresaIDChanged();
+    partial void OnUserCodeChanging(string value);
+    partial void OnUserCodeChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnEstatusChanging(char value);
+    partial void OnEstatusChanged();
+    #endregion
+		
+		public Usuario()
+		{
+			this._Actividades = new EntitySet<Actividade>(new Action<Actividade>(this.attach_Actividades), new Action<Actividade>(this.detach_Actividades));
+			this._Empresa = default(EntityRef<Empresa>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					if (this._Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string UserCode
+		{
+			get
+			{
+				return this._UserCode;
+			}
+			set
+			{
+				if ((this._UserCode != value))
+				{
+					this.OnUserCodeChanging(value);
+					this.SendPropertyChanging();
+					this._UserCode = value;
+					this.SendPropertyChanged("UserCode");
+					this.OnUserCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estatus", DbType="Char(1) NOT NULL")]
+		public char Estatus
+		{
+			get
+			{
+				return this._Estatus;
+			}
+			set
+			{
+				if ((this._Estatus != value))
+				{
+					this.OnEstatusChanging(value);
+					this.SendPropertyChanging();
+					this._Estatus = value;
+					this.SendPropertyChanged("Estatus");
+					this.OnEstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Usuario_Actividade", Storage="_Actividades", ThisKey="UserID", OtherKey="UserID")]
+		public EntitySet<Actividade> Actividades
+		{
+			get
+			{
+				return this._Actividades;
+			}
+			set
+			{
+				this._Actividades.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Usuario", Storage="_Empresa", ThisKey="EmpresaID", OtherKey="EmpresaID", IsForeignKey=true)]
+		public Empresa Empresa
+		{
+			get
+			{
+				return this._Empresa.Entity;
+			}
+			set
+			{
+				Empresa previousValue = this._Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Empresa.Entity = null;
+						previousValue.Usuarios.Remove(this);
+					}
+					this._Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Usuarios.Add(this);
+						this._EmpresaID = value.EmpresaID;
+					}
+					else
+					{
+						this._EmpresaID = default(int);
+					}
+					this.SendPropertyChanged("Empresa");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Actividades(Actividade entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = this;
+		}
+		
+		private void detach_Actividades(Actividade entity)
+		{
+			this.SendPropertyChanging();
+			entity.Usuario = null;
 		}
 	}
 	
@@ -5717,6 +6410,116 @@ namespace GeoMapxBusiness
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CategoriaMateriales")]
+	public partial class CategoriaMateriale : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CategoriaMaterialID;
+		
+		private string _CodigoCategoria;
+		
+		private string _Descripcion;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCategoriaMaterialIDChanging(int value);
+    partial void OnCategoriaMaterialIDChanged();
+    partial void OnCodigoCategoriaChanging(string value);
+    partial void OnCodigoCategoriaChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    #endregion
+		
+		public CategoriaMateriale()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoriaMaterialID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CategoriaMaterialID
+		{
+			get
+			{
+				return this._CategoriaMaterialID;
+			}
+			set
+			{
+				if ((this._CategoriaMaterialID != value))
+				{
+					this.OnCategoriaMaterialIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoriaMaterialID = value;
+					this.SendPropertyChanged("CategoriaMaterialID");
+					this.OnCategoriaMaterialIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoCategoria", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoCategoria
+		{
+			get
+			{
+				return this._CodigoCategoria;
+			}
+			set
+			{
+				if ((this._CodigoCategoria != value))
+				{
+					this.OnCodigoCategoriaChanging(value);
+					this.SendPropertyChanging();
+					this._CodigoCategoria = value;
+					this.SendPropertyChanged("CodigoCategoria");
+					this.OnCodigoCategoriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Contratistas")]
 	public partial class Contratista : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6033,6 +6836,342 @@ namespace GeoMapxBusiness
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cubicaciones")]
+	public partial class Cubicacione : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CubicacionID;
+		
+		private int _ProyectoID;
+		
+		private int _SecuenciaID;
+		
+		private System.DateTime _FechaInicio;
+		
+		private System.DateTime _FechaFin;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<bool> _EstadoActividades;
+		
+		private System.DateTime _Fecha;
+		
+		private EntityRef<Proyecto> _Proyecto;
+		
+		private EntityRef<SecuenciaCubicacione> _SecuenciaCubicacione;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCubicacionIDChanging(int value);
+    partial void OnCubicacionIDChanged();
+    partial void OnProyectoIDChanging(int value);
+    partial void OnProyectoIDChanged();
+    partial void OnSecuenciaIDChanging(int value);
+    partial void OnSecuenciaIDChanged();
+    partial void OnFechaInicioChanging(System.DateTime value);
+    partial void OnFechaInicioChanged();
+    partial void OnFechaFinChanging(System.DateTime value);
+    partial void OnFechaFinChanged();
+    partial void OnActividadPrimariaChanging(string value);
+    partial void OnActividadPrimariaChanged();
+    partial void OnActividadSecundariaChanging(string value);
+    partial void OnActividadSecundariaChanged();
+    partial void OnEstadoActividadesChanging(System.Nullable<bool> value);
+    partial void OnEstadoActividadesChanged();
+    partial void OnFechaChanging(System.DateTime value);
+    partial void OnFechaChanged();
+    #endregion
+		
+		public Cubicacione()
+		{
+			this._Proyecto = default(EntityRef<Proyecto>);
+			this._SecuenciaCubicacione = default(EntityRef<SecuenciaCubicacione>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CubicacionID
+		{
+			get
+			{
+				return this._CubicacionID;
+			}
+			set
+			{
+				if ((this._CubicacionID != value))
+				{
+					this.OnCubicacionIDChanging(value);
+					this.SendPropertyChanging();
+					this._CubicacionID = value;
+					this.SendPropertyChanged("CubicacionID");
+					this.OnCubicacionIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					if (this._Proyecto.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProyectoIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProyectoID = value;
+					this.SendPropertyChanged("ProyectoID");
+					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", DbType="Int NOT NULL")]
+		public int SecuenciaID
+		{
+			get
+			{
+				return this._SecuenciaID;
+			}
+			set
+			{
+				if ((this._SecuenciaID != value))
+				{
+					if (this._SecuenciaCubicacione.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSecuenciaIDChanging(value);
+					this.SendPropertyChanging();
+					this._SecuenciaID = value;
+					this.SendPropertyChanged("SecuenciaID");
+					this.OnSecuenciaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaInicio", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaInicio
+		{
+			get
+			{
+				return this._FechaInicio;
+			}
+			set
+			{
+				if ((this._FechaInicio != value))
+				{
+					this.OnFechaInicioChanging(value);
+					this.SendPropertyChanging();
+					this._FechaInicio = value;
+					this.SendPropertyChanged("FechaInicio");
+					this.OnFechaInicioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaFin", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaFin
+		{
+			get
+			{
+				return this._FechaFin;
+			}
+			set
+			{
+				if ((this._FechaFin != value))
+				{
+					this.OnFechaFinChanging(value);
+					this.SendPropertyChanging();
+					this._FechaFin = value;
+					this.SendPropertyChanged("FechaFin");
+					this.OnFechaFinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(120)")]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this.OnActividadPrimariaChanging(value);
+					this.SendPropertyChanging();
+					this._ActividadPrimaria = value;
+					this.SendPropertyChanged("ActividadPrimaria");
+					this.OnActividadPrimariaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(120)")]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this.OnActividadSecundariaChanging(value);
+					this.SendPropertyChanging();
+					this._ActividadSecundaria = value;
+					this.SendPropertyChanged("ActividadSecundaria");
+					this.OnActividadSecundariaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoActividades", DbType="Bit")]
+		public System.Nullable<bool> EstadoActividades
+		{
+			get
+			{
+				return this._EstadoActividades;
+			}
+			set
+			{
+				if ((this._EstadoActividades != value))
+				{
+					this.OnEstadoActividadesChanging(value);
+					this.SendPropertyChanging();
+					this._EstadoActividades = value;
+					this.SendPropertyChanged("EstadoActividades");
+					this.OnEstadoActividadesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_Cubicacione", Storage="_Proyecto", ThisKey="ProyectoID", OtherKey="ProyectoID", IsForeignKey=true)]
+		public Proyecto Proyecto
+		{
+			get
+			{
+				return this._Proyecto.Entity;
+			}
+			set
+			{
+				Proyecto previousValue = this._Proyecto.Entity;
+				if (((previousValue != value) 
+							|| (this._Proyecto.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Proyecto.Entity = null;
+						previousValue.Cubicaciones.Remove(this);
+					}
+					this._Proyecto.Entity = value;
+					if ((value != null))
+					{
+						value.Cubicaciones.Add(this);
+						this._ProyectoID = value.ProyectoID;
+					}
+					else
+					{
+						this._ProyectoID = default(int);
+					}
+					this.SendPropertyChanged("Proyecto");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SecuenciaCubicacione_Cubicacione", Storage="_SecuenciaCubicacione", ThisKey="SecuenciaID", OtherKey="SecuenciaID", IsForeignKey=true)]
+		public SecuenciaCubicacione SecuenciaCubicacione
+		{
+			get
+			{
+				return this._SecuenciaCubicacione.Entity;
+			}
+			set
+			{
+				SecuenciaCubicacione previousValue = this._SecuenciaCubicacione.Entity;
+				if (((previousValue != value) 
+							|| (this._SecuenciaCubicacione.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SecuenciaCubicacione.Entity = null;
+						previousValue.Cubicaciones.Remove(this);
+					}
+					this._SecuenciaCubicacione.Entity = value;
+					if ((value != null))
+					{
+						value.Cubicaciones.Add(this);
+						this._SecuenciaID = value.SecuenciaID;
+					}
+					else
+					{
+						this._SecuenciaID = default(int);
+					}
+					this.SendPropertyChanged("SecuenciaCubicacione");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Empresas")]
 	public partial class Empresa : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6047,11 +7186,13 @@ namespace GeoMapxBusiness
 		
 		private System.DateTime _Fecha;
 		
-		private EntitySet<Usuario> _Usuarios;
-		
 		private EntitySet<Actividade> _Actividades;
 		
+		private EntitySet<Usuario> _Usuarios;
+		
 		private EntitySet<Contratista> _Contratistas;
+		
+		private EntitySet<EntradaInventario> _EntradaInventarios;
 		
 		private EntitySet<Ficha> _Fichas;
 		
@@ -6062,6 +7203,8 @@ namespace GeoMapxBusiness
 		private EntitySet<Poste> _Postes;
 		
 		private EntitySet<Proyecto> _Proyectos;
+		
+		private EntitySet<SalidaInventario> _SalidaInventarios;
 		
 		private EntitySet<Supervisore> _Supervisores;
 		
@@ -6081,14 +7224,16 @@ namespace GeoMapxBusiness
 		
 		public Empresa()
 		{
-			this._Usuarios = new EntitySet<Usuario>(new Action<Usuario>(this.attach_Usuarios), new Action<Usuario>(this.detach_Usuarios));
 			this._Actividades = new EntitySet<Actividade>(new Action<Actividade>(this.attach_Actividades), new Action<Actividade>(this.detach_Actividades));
+			this._Usuarios = new EntitySet<Usuario>(new Action<Usuario>(this.attach_Usuarios), new Action<Usuario>(this.detach_Usuarios));
 			this._Contratistas = new EntitySet<Contratista>(new Action<Contratista>(this.attach_Contratistas), new Action<Contratista>(this.detach_Contratistas));
+			this._EntradaInventarios = new EntitySet<EntradaInventario>(new Action<EntradaInventario>(this.attach_EntradaInventarios), new Action<EntradaInventario>(this.detach_EntradaInventarios));
 			this._Fichas = new EntitySet<Ficha>(new Action<Ficha>(this.attach_Fichas), new Action<Ficha>(this.detach_Fichas));
 			this._Financieras = new EntitySet<Financiera>(new Action<Financiera>(this.attach_Financieras), new Action<Financiera>(this.detach_Financieras));
 			this._Planillas = new EntitySet<Planilla>(new Action<Planilla>(this.attach_Planillas), new Action<Planilla>(this.detach_Planillas));
 			this._Postes = new EntitySet<Poste>(new Action<Poste>(this.attach_Postes), new Action<Poste>(this.detach_Postes));
 			this._Proyectos = new EntitySet<Proyecto>(new Action<Proyecto>(this.attach_Proyectos), new Action<Proyecto>(this.detach_Proyectos));
+			this._SalidaInventarios = new EntitySet<SalidaInventario>(new Action<SalidaInventario>(this.attach_SalidaInventarios), new Action<SalidaInventario>(this.detach_SalidaInventarios));
 			this._Supervisores = new EntitySet<Supervisore>(new Action<Supervisore>(this.attach_Supervisores), new Action<Supervisore>(this.detach_Supervisores));
 			OnCreated();
 		}
@@ -6173,19 +7318,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Usuario", Storage="_Usuarios", ThisKey="EmpresaID", OtherKey="EmpresaID")]
-		public EntitySet<Usuario> Usuarios
-		{
-			get
-			{
-				return this._Usuarios;
-			}
-			set
-			{
-				this._Usuarios.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Actividade", Storage="_Actividades", ThisKey="EmpresaID", OtherKey="EmpresaID")]
 		public EntitySet<Actividade> Actividades
 		{
@@ -6199,6 +7331,19 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Usuario", Storage="_Usuarios", ThisKey="EmpresaID", OtherKey="EmpresaID")]
+		public EntitySet<Usuario> Usuarios
+		{
+			get
+			{
+				return this._Usuarios;
+			}
+			set
+			{
+				this._Usuarios.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Contratista", Storage="_Contratistas", ThisKey="EmpresaID", OtherKey="EmpresaID")]
 		public EntitySet<Contratista> Contratistas
 		{
@@ -6209,6 +7354,19 @@ namespace GeoMapxBusiness
 			set
 			{
 				this._Contratistas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_EntradaInventario", Storage="_EntradaInventarios", ThisKey="EmpresaID", OtherKey="EmpresaID")]
+		public EntitySet<EntradaInventario> EntradaInventarios
+		{
+			get
+			{
+				return this._EntradaInventarios;
+			}
+			set
+			{
+				this._EntradaInventarios.Assign(value);
 			}
 		}
 		
@@ -6277,6 +7435,19 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_SalidaInventario", Storage="_SalidaInventarios", ThisKey="EmpresaID", OtherKey="EmpresaID")]
+		public EntitySet<SalidaInventario> SalidaInventarios
+		{
+			get
+			{
+				return this._SalidaInventarios;
+			}
+			set
+			{
+				this._SalidaInventarios.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_Supervisore", Storage="_Supervisores", ThisKey="EmpresaID", OtherKey="EmpresaID")]
 		public EntitySet<Supervisore> Supervisores
 		{
@@ -6310,18 +7481,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		private void attach_Usuarios(Usuario entity)
-		{
-			this.SendPropertyChanging();
-			entity.Empresa = this;
-		}
-		
-		private void detach_Usuarios(Usuario entity)
-		{
-			this.SendPropertyChanging();
-			entity.Empresa = null;
-		}
-		
 		private void attach_Actividades(Actividade entity)
 		{
 			this.SendPropertyChanging();
@@ -6334,6 +7493,18 @@ namespace GeoMapxBusiness
 			entity.Empresa = null;
 		}
 		
+		private void attach_Usuarios(Usuario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = this;
+		}
+		
+		private void detach_Usuarios(Usuario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = null;
+		}
+		
 		private void attach_Contratistas(Contratista entity)
 		{
 			this.SendPropertyChanging();
@@ -6341,6 +7512,18 @@ namespace GeoMapxBusiness
 		}
 		
 		private void detach_Contratistas(Contratista entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = null;
+		}
+		
+		private void attach_EntradaInventarios(EntradaInventario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = this;
+		}
+		
+		private void detach_EntradaInventarios(EntradaInventario entity)
 		{
 			this.SendPropertyChanging();
 			entity.Empresa = null;
@@ -6406,6 +7589,18 @@ namespace GeoMapxBusiness
 			entity.Empresa = null;
 		}
 		
+		private void attach_SalidaInventarios(SalidaInventario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = this;
+		}
+		
+		private void detach_SalidaInventarios(SalidaInventario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Empresa = null;
+		}
+		
 		private void attach_Supervisores(Supervisore entity)
 		{
 			this.SendPropertyChanging();
@@ -6416,6 +7611,294 @@ namespace GeoMapxBusiness
 		{
 			this.SendPropertyChanging();
 			entity.Empresa = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EntradaInventario")]
+	public partial class EntradaInventario : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EntradaInventarioID;
+		
+		private System.Nullable<int> _MaterialID;
+		
+		private System.Nullable<int> _EmpresaID;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+		private System.DateTime _Fecha;
+		
+		private int _UsuarioID;
+		
+		private EntityRef<Empresa> _Empresa;
+		
+		private EntityRef<Materiale> _Materiale;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEntradaInventarioIDChanging(int value);
+    partial void OnEntradaInventarioIDChanged();
+    partial void OnMaterialIDChanging(System.Nullable<int> value);
+    partial void OnMaterialIDChanged();
+    partial void OnEmpresaIDChanging(System.Nullable<int> value);
+    partial void OnEmpresaIDChanged();
+    partial void OnCantidadChanging(System.Nullable<decimal> value);
+    partial void OnCantidadChanged();
+    partial void OnPrecioUnitarioChanging(System.Nullable<decimal> value);
+    partial void OnPrecioUnitarioChanged();
+    partial void OnFechaChanging(System.DateTime value);
+    partial void OnFechaChanged();
+    partial void OnUsuarioIDChanging(int value);
+    partial void OnUsuarioIDChanged();
+    #endregion
+		
+		public EntradaInventario()
+		{
+			this._Empresa = default(EntityRef<Empresa>);
+			this._Materiale = default(EntityRef<Materiale>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntradaInventarioID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EntradaInventarioID
+		{
+			get
+			{
+				return this._EntradaInventarioID;
+			}
+			set
+			{
+				if ((this._EntradaInventarioID != value))
+				{
+					this.OnEntradaInventarioIDChanging(value);
+					this.SendPropertyChanging();
+					this._EntradaInventarioID = value;
+					this.SendPropertyChanged("EntradaInventarioID");
+					this.OnEntradaInventarioIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int")]
+		public System.Nullable<int> MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					if (this._Materiale.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaterialIDChanging(value);
+					this.SendPropertyChanging();
+					this._MaterialID = value;
+					this.SendPropertyChanged("MaterialID");
+					this.OnMaterialIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int")]
+		public System.Nullable<int> EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					if (this._Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(10,5)")]
+		public System.Nullable<decimal> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this.OnCantidadChanging(value);
+					this.SendPropertyChanging();
+					this._Cantidad = value;
+					this.SendPropertyChanged("Cantidad");
+					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,5)")]
+		public System.Nullable<decimal> PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this.OnPrecioUnitarioChanging(value);
+					this.SendPropertyChanging();
+					this._PrecioUnitario = value;
+					this.SendPropertyChanged("PrecioUnitario");
+					this.OnPrecioUnitarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UsuarioID", DbType="Int NOT NULL")]
+		public int UsuarioID
+		{
+			get
+			{
+				return this._UsuarioID;
+			}
+			set
+			{
+				if ((this._UsuarioID != value))
+				{
+					this.OnUsuarioIDChanging(value);
+					this.SendPropertyChanging();
+					this._UsuarioID = value;
+					this.SendPropertyChanged("UsuarioID");
+					this.OnUsuarioIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_EntradaInventario", Storage="_Empresa", ThisKey="EmpresaID", OtherKey="EmpresaID", IsForeignKey=true)]
+		public Empresa Empresa
+		{
+			get
+			{
+				return this._Empresa.Entity;
+			}
+			set
+			{
+				Empresa previousValue = this._Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Empresa.Entity = null;
+						previousValue.EntradaInventarios.Remove(this);
+					}
+					this._Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.EntradaInventarios.Add(this);
+						this._EmpresaID = value.EmpresaID;
+					}
+					else
+					{
+						this._EmpresaID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Empresa");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Materiale_EntradaInventario", Storage="_Materiale", ThisKey="MaterialID", OtherKey="MaterialID", IsForeignKey=true)]
+		public Materiale Materiale
+		{
+			get
+			{
+				return this._Materiale.Entity;
+			}
+			set
+			{
+				Materiale previousValue = this._Materiale.Entity;
+				if (((previousValue != value) 
+							|| (this._Materiale.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Materiale.Entity = null;
+						previousValue.EntradaInventarios.Remove(this);
+					}
+					this._Materiale.Entity = value;
+					if ((value != null))
+					{
+						value.EntradaInventarios.Add(this);
+						this._MaterialID = value.MaterialID;
+					}
+					else
+					{
+						this._MaterialID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Materiale");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -7043,21 +8526,17 @@ namespace GeoMapxBusiness
 		
 		private int _MaterialID;
 		
-		private System.Nullable<int> _ActividadID;
-		
-		private int _ProyectoID;
+		private System.Nullable<int> _EmpresaID;
 		
 		private string _CodigoMaterial;
 		
 		private string _Descripcion;
 		
-		private System.Nullable<decimal> _Cantidad;
+		private System.Nullable<int> _CategoriaMaterialID;
 		
-		private System.Nullable<decimal> _PrecioUnitario;
+		private EntitySet<EntradaInventario> _EntradaInventarios;
 		
-		private EntityRef<Actividade> _Actividade;
-		
-		private EntityRef<Proyecto> _Proyecto;
+		private EntitySet<SalidaInventarioDetail> _SalidaInventarioDetails;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -7065,24 +8544,20 @@ namespace GeoMapxBusiness
     partial void OnCreated();
     partial void OnMaterialIDChanging(int value);
     partial void OnMaterialIDChanged();
-    partial void OnActividadIDChanging(System.Nullable<int> value);
-    partial void OnActividadIDChanged();
-    partial void OnProyectoIDChanging(int value);
-    partial void OnProyectoIDChanged();
+    partial void OnEmpresaIDChanging(System.Nullable<int> value);
+    partial void OnEmpresaIDChanged();
     partial void OnCodigoMaterialChanging(string value);
     partial void OnCodigoMaterialChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
-    partial void OnCantidadChanging(System.Nullable<decimal> value);
-    partial void OnCantidadChanged();
-    partial void OnPrecioUnitarioChanging(System.Nullable<decimal> value);
-    partial void OnPrecioUnitarioChanged();
+    partial void OnCategoriaMaterialIDChanging(System.Nullable<int> value);
+    partial void OnCategoriaMaterialIDChanged();
     #endregion
 		
 		public Materiale()
 		{
-			this._Actividade = default(EntityRef<Actividade>);
-			this._Proyecto = default(EntityRef<Proyecto>);
+			this._EntradaInventarios = new EntitySet<EntradaInventario>(new Action<EntradaInventario>(this.attach_EntradaInventarios), new Action<EntradaInventario>(this.detach_EntradaInventarios));
+			this._SalidaInventarioDetails = new EntitySet<SalidaInventarioDetail>(new Action<SalidaInventarioDetail>(this.attach_SalidaInventarioDetails), new Action<SalidaInventarioDetail>(this.detach_SalidaInventarioDetails));
 			OnCreated();
 		}
 		
@@ -7106,50 +8581,22 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
-		public System.Nullable<int> ActividadID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int")]
+		public System.Nullable<int> EmpresaID
 		{
 			get
 			{
-				return this._ActividadID;
+				return this._EmpresaID;
 			}
 			set
 			{
-				if ((this._ActividadID != value))
+				if ((this._EmpresaID != value))
 				{
-					if (this._Actividade.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnActividadIDChanging(value);
+					this.OnEmpresaIDChanging(value);
 					this.SendPropertyChanging();
-					this._ActividadID = value;
-					this.SendPropertyChanged("ActividadID");
-					this.OnActividadIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					if (this._Proyecto.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProyectoIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProyectoID = value;
-					this.SendPropertyChanged("ProyectoID");
-					this.OnProyectoIDChanged();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
 				}
 			}
 		}
@@ -7194,6 +8641,218 @@ namespace GeoMapxBusiness
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoriaMaterialID", DbType="Int")]
+		public System.Nullable<int> CategoriaMaterialID
+		{
+			get
+			{
+				return this._CategoriaMaterialID;
+			}
+			set
+			{
+				if ((this._CategoriaMaterialID != value))
+				{
+					this.OnCategoriaMaterialIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoriaMaterialID = value;
+					this.SendPropertyChanged("CategoriaMaterialID");
+					this.OnCategoriaMaterialIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Materiale_EntradaInventario", Storage="_EntradaInventarios", ThisKey="MaterialID", OtherKey="MaterialID")]
+		public EntitySet<EntradaInventario> EntradaInventarios
+		{
+			get
+			{
+				return this._EntradaInventarios;
+			}
+			set
+			{
+				this._EntradaInventarios.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Materiale_SalidaInventarioDetail", Storage="_SalidaInventarioDetails", ThisKey="MaterialID", OtherKey="MaterialID")]
+		public EntitySet<SalidaInventarioDetail> SalidaInventarioDetails
+		{
+			get
+			{
+				return this._SalidaInventarioDetails;
+			}
+			set
+			{
+				this._SalidaInventarioDetails.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_EntradaInventarios(EntradaInventario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Materiale = this;
+		}
+		
+		private void detach_EntradaInventarios(EntradaInventario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Materiale = null;
+		}
+		
+		private void attach_SalidaInventarioDetails(SalidaInventarioDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Materiale = this;
+		}
+		
+		private void detach_SalidaInventarioDetails(SalidaInventarioDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Materiale = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MaterialesPorUnidadConstructiva")]
+	public partial class MaterialesPorUnidadConstructiva : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaterialUniConsID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<int> _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaterialUniConsIDChanging(int value);
+    partial void OnMaterialUniConsIDChanged();
+    partial void OnMaterialIDChanging(int value);
+    partial void OnMaterialIDChanged();
+    partial void OnActividadIDChanging(System.Nullable<int> value);
+    partial void OnActividadIDChanged();
+    partial void OnProyectoIDChanging(int value);
+    partial void OnProyectoIDChanged();
+    partial void OnCantidadChanging(System.Nullable<decimal> value);
+    partial void OnCantidadChanged();
+    partial void OnPrecioUnitarioChanging(System.Nullable<decimal> value);
+    partial void OnPrecioUnitarioChanged();
+    #endregion
+		
+		public MaterialesPorUnidadConstructiva()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialUniConsID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaterialUniConsID
+		{
+			get
+			{
+				return this._MaterialUniConsID;
+			}
+			set
+			{
+				if ((this._MaterialUniConsID != value))
+				{
+					this.OnMaterialUniConsIDChanging(value);
+					this.SendPropertyChanging();
+					this._MaterialUniConsID = value;
+					this.SendPropertyChanged("MaterialUniConsID");
+					this.OnMaterialUniConsIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this.OnMaterialIDChanging(value);
+					this.SendPropertyChanging();
+					this._MaterialID = value;
+					this.SendPropertyChanged("MaterialID");
+					this.OnMaterialIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
+		public System.Nullable<int> ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this.OnActividadIDChanging(value);
+					this.SendPropertyChanging();
+					this._ActividadID = value;
+					this.SendPropertyChanged("ActividadID");
+					this.OnActividadIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this.OnProyectoIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProyectoID = value;
+					this.SendPropertyChanged("ProyectoID");
+					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,5)")]
 		public System.Nullable<decimal> Cantidad
 		{
@@ -7234,74 +8893,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Actividade_Materiale", Storage="_Actividade", ThisKey="ActividadID", OtherKey="ActividadID", IsForeignKey=true)]
-		public Actividade Actividade
-		{
-			get
-			{
-				return this._Actividade.Entity;
-			}
-			set
-			{
-				Actividade previousValue = this._Actividade.Entity;
-				if (((previousValue != value) 
-							|| (this._Actividade.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Actividade.Entity = null;
-						previousValue.Materiales.Remove(this);
-					}
-					this._Actividade.Entity = value;
-					if ((value != null))
-					{
-						value.Materiales.Add(this);
-						this._ActividadID = value.ActividadID;
-					}
-					else
-					{
-						this._ActividadID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Actividade");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_Materiale", Storage="_Proyecto", ThisKey="ProyectoID", OtherKey="ProyectoID", IsForeignKey=true)]
-		public Proyecto Proyecto
-		{
-			get
-			{
-				return this._Proyecto.Entity;
-			}
-			set
-			{
-				Proyecto previousValue = this._Proyecto.Entity;
-				if (((previousValue != value) 
-							|| (this._Proyecto.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Proyecto.Entity = null;
-						previousValue.Materiales.Remove(this);
-					}
-					this._Proyecto.Entity = value;
-					if ((value != null))
-					{
-						value.Materiales.Add(this);
-						this._ProyectoID = value.ProyectoID;
-					}
-					else
-					{
-						this._ProyectoID = default(int);
-					}
-					this.SendPropertyChanged("Proyecto");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -7337,6 +8928,8 @@ namespace GeoMapxBusiness
 		
 		private int _ProyectoID;
 		
+		private System.Nullable<int> _SupervisorID;
+		
 		private int _PosteID;
 		
 		private int _ContratistaID;
@@ -7351,8 +8944,6 @@ namespace GeoMapxBusiness
 		
 		private System.Nullable<System.DateTime> _FechaModificacion;
 		
-		private bool _Verificado;
-		
 		private System.Nullable<System.DateTime> _FechaIngreso;
 		
 		private System.Nullable<int> _FichaID;
@@ -7361,11 +8952,11 @@ namespace GeoMapxBusiness
 		
 		private string _Observacion;
 		
-		private System.Nullable<int> _SupervisorID;
-		
 		private string _SerialTransformador;
 		
 		private System.Nullable<System.DateTime> _FechaVerificado;
+		
+		private bool _Verificado;
 		
 		private System.Nullable<int> _UserIDVerificador;
 		
@@ -7391,6 +8982,8 @@ namespace GeoMapxBusiness
     partial void OnActividadIDChanged();
     partial void OnProyectoIDChanging(int value);
     partial void OnProyectoIDChanged();
+    partial void OnSupervisorIDChanging(System.Nullable<int> value);
+    partial void OnSupervisorIDChanged();
     partial void OnPosteIDChanging(int value);
     partial void OnPosteIDChanged();
     partial void OnContratistaIDChanging(int value);
@@ -7405,8 +8998,6 @@ namespace GeoMapxBusiness
     partial void OnUserIDModificaChanged();
     partial void OnFechaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void OnFechaModificacionChanged();
-    partial void OnVerificadoChanging(bool value);
-    partial void OnVerificadoChanged();
     partial void OnFechaIngresoChanging(System.Nullable<System.DateTime> value);
     partial void OnFechaIngresoChanged();
     partial void OnFichaIDChanging(System.Nullable<int> value);
@@ -7415,12 +9006,12 @@ namespace GeoMapxBusiness
     partial void OnPosteIDHastaChanged();
     partial void OnObservacionChanging(string value);
     partial void OnObservacionChanged();
-    partial void OnSupervisorIDChanging(System.Nullable<int> value);
-    partial void OnSupervisorIDChanged();
     partial void OnSerialTransformadorChanging(string value);
     partial void OnSerialTransformadorChanged();
     partial void OnFechaVerificadoChanging(System.Nullable<System.DateTime> value);
     partial void OnFechaVerificadoChanged();
+    partial void OnVerificadoChanging(bool value);
+    partial void OnVerificadoChanged();
     partial void OnUserIDVerificadorChanging(System.Nullable<int> value);
     partial void OnUserIDVerificadorChanged();
     partial void OnObservacionVerificadorChanging(string value);
@@ -7524,6 +9115,26 @@ namespace GeoMapxBusiness
 					this._ProyectoID = value;
 					this.SendPropertyChanged("ProyectoID");
 					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisorID", DbType="Int")]
+		public System.Nullable<int> SupervisorID
+		{
+			get
+			{
+				return this._SupervisorID;
+			}
+			set
+			{
+				if ((this._SupervisorID != value))
+				{
+					this.OnSupervisorIDChanging(value);
+					this.SendPropertyChanging();
+					this._SupervisorID = value;
+					this.SendPropertyChanged("SupervisorID");
+					this.OnSupervisorIDChanged();
 				}
 			}
 		}
@@ -7672,26 +9283,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Verificado", DbType="Bit NOT NULL")]
-		public bool Verificado
-		{
-			get
-			{
-				return this._Verificado;
-			}
-			set
-			{
-				if ((this._Verificado != value))
-				{
-					this.OnVerificadoChanging(value);
-					this.SendPropertyChanging();
-					this._Verificado = value;
-					this.SendPropertyChanged("Verificado");
-					this.OnVerificadoChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaIngreso", DbType="DateTime")]
 		public System.Nullable<System.DateTime> FechaIngreso
 		{
@@ -7772,26 +9363,6 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisorID", DbType="Int")]
-		public System.Nullable<int> SupervisorID
-		{
-			get
-			{
-				return this._SupervisorID;
-			}
-			set
-			{
-				if ((this._SupervisorID != value))
-				{
-					this.OnSupervisorIDChanging(value);
-					this.SendPropertyChanging();
-					this._SupervisorID = value;
-					this.SendPropertyChanged("SupervisorID");
-					this.OnSupervisorIDChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SerialTransformador", DbType="VarChar(30)")]
 		public string SerialTransformador
 		{
@@ -7828,6 +9399,26 @@ namespace GeoMapxBusiness
 					this._FechaVerificado = value;
 					this.SendPropertyChanged("FechaVerificado");
 					this.OnFechaVerificadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Verificado", DbType="Bit NOT NULL")]
+		public bool Verificado
+		{
+			get
+			{
+				return this._Verificado;
+			}
+			set
+			{
+				if ((this._Verificado != value))
+				{
+					this.OnVerificadoChanging(value);
+					this.SendPropertyChanging();
+					this._Verificado = value;
+					this.SendPropertyChanged("Verificado");
+					this.OnVerificadoChanged();
 				}
 			}
 		}
@@ -9168,7 +10759,7 @@ namespace GeoMapxBusiness
 		
 		private EntitySet<Contratista> _Contratistas;
 		
-		private EntitySet<Materiale> _Materiales;
+		private EntitySet<Cubicacione> _Cubicaciones;
 		
 		private EntitySet<Planilla> _Planillas;
 		
@@ -9177,6 +10768,8 @@ namespace GeoMapxBusiness
 		private EntitySet<Precio> _Precios;
 		
 		private EntitySet<Supervisore> _Supervisores;
+		
+		private EntitySet<SecuenciaCubicacione> _SecuenciaCubicaciones;
 		
 		private EntityRef<Empresa> _Empresa;
 		
@@ -9207,11 +10800,12 @@ namespace GeoMapxBusiness
 		public Proyecto()
 		{
 			this._Contratistas = new EntitySet<Contratista>(new Action<Contratista>(this.attach_Contratistas), new Action<Contratista>(this.detach_Contratistas));
-			this._Materiales = new EntitySet<Materiale>(new Action<Materiale>(this.attach_Materiales), new Action<Materiale>(this.detach_Materiales));
+			this._Cubicaciones = new EntitySet<Cubicacione>(new Action<Cubicacione>(this.attach_Cubicaciones), new Action<Cubicacione>(this.detach_Cubicaciones));
 			this._Planillas = new EntitySet<Planilla>(new Action<Planilla>(this.attach_Planillas), new Action<Planilla>(this.detach_Planillas));
 			this._Postes = new EntitySet<Poste>(new Action<Poste>(this.attach_Postes), new Action<Poste>(this.detach_Postes));
 			this._Precios = new EntitySet<Precio>(new Action<Precio>(this.attach_Precios), new Action<Precio>(this.detach_Precios));
 			this._Supervisores = new EntitySet<Supervisore>(new Action<Supervisore>(this.attach_Supervisores), new Action<Supervisore>(this.detach_Supervisores));
+			this._SecuenciaCubicaciones = new EntitySet<SecuenciaCubicacione>(new Action<SecuenciaCubicacione>(this.attach_SecuenciaCubicaciones), new Action<SecuenciaCubicacione>(this.detach_SecuenciaCubicaciones));
 			this._Empresa = default(EntityRef<Empresa>);
 			this._Financiera = default(EntityRef<Financiera>);
 			OnCreated();
@@ -9398,16 +10992,16 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_Materiale", Storage="_Materiales", ThisKey="ProyectoID", OtherKey="ProyectoID")]
-		public EntitySet<Materiale> Materiales
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_Cubicacione", Storage="_Cubicaciones", ThisKey="ProyectoID", OtherKey="ProyectoID")]
+		public EntitySet<Cubicacione> Cubicaciones
 		{
 			get
 			{
-				return this._Materiales;
+				return this._Cubicaciones;
 			}
 			set
 			{
-				this._Materiales.Assign(value);
+				this._Cubicaciones.Assign(value);
 			}
 		}
 		
@@ -9460,6 +11054,19 @@ namespace GeoMapxBusiness
 			set
 			{
 				this._Supervisores.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_SecuenciaCubicacione", Storage="_SecuenciaCubicaciones", ThisKey="ProyectoID", OtherKey="ProyectoID")]
+		public EntitySet<SecuenciaCubicacione> SecuenciaCubicaciones
+		{
+			get
+			{
+				return this._SecuenciaCubicaciones;
+			}
+			set
+			{
+				this._SecuenciaCubicaciones.Assign(value);
 			}
 		}
 		
@@ -9563,13 +11170,13 @@ namespace GeoMapxBusiness
 			entity.Proyecto = null;
 		}
 		
-		private void attach_Materiales(Materiale entity)
+		private void attach_Cubicaciones(Cubicacione entity)
 		{
 			this.SendPropertyChanging();
 			entity.Proyecto = this;
 		}
 		
-		private void detach_Materiales(Materiale entity)
+		private void detach_Cubicaciones(Cubicacione entity)
 		{
 			this.SendPropertyChanging();
 			entity.Proyecto = null;
@@ -9621,6 +11228,671 @@ namespace GeoMapxBusiness
 		{
 			this.SendPropertyChanging();
 			entity.Proyecto = null;
+		}
+		
+		private void attach_SecuenciaCubicaciones(SecuenciaCubicacione entity)
+		{
+			this.SendPropertyChanging();
+			entity.Proyecto = this;
+		}
+		
+		private void detach_SecuenciaCubicaciones(SecuenciaCubicacione entity)
+		{
+			this.SendPropertyChanging();
+			entity.Proyecto = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SalidaInventario")]
+	public partial class SalidaInventario : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SalidaInventarioID;
+		
+		private int _EmpresaID;
+		
+		private int _ProyectoID;
+		
+		private int _PoligonoID;
+		
+		private System.Nullable<int> _LoteID;
+		
+		private int _ContratistaID;
+		
+		private string _EntregadoA;
+		
+		private System.DateTime _Fecha;
+		
+		private int _UsuarioID;
+		
+		private EntityRef<SalidaInventarioDetail> _SalidaInventarioDetail;
+		
+		private EntityRef<Empresa> _Empresa;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSalidaInventarioIDChanging(int value);
+    partial void OnSalidaInventarioIDChanged();
+    partial void OnEmpresaIDChanging(int value);
+    partial void OnEmpresaIDChanged();
+    partial void OnProyectoIDChanging(int value);
+    partial void OnProyectoIDChanged();
+    partial void OnPoligonoIDChanging(int value);
+    partial void OnPoligonoIDChanged();
+    partial void OnLoteIDChanging(System.Nullable<int> value);
+    partial void OnLoteIDChanged();
+    partial void OnContratistaIDChanging(int value);
+    partial void OnContratistaIDChanged();
+    partial void OnEntregadoAChanging(string value);
+    partial void OnEntregadoAChanged();
+    partial void OnFechaChanging(System.DateTime value);
+    partial void OnFechaChanged();
+    partial void OnUsuarioIDChanging(int value);
+    partial void OnUsuarioIDChanged();
+    #endregion
+		
+		public SalidaInventario()
+		{
+			this._SalidaInventarioDetail = default(EntityRef<SalidaInventarioDetail>);
+			this._Empresa = default(EntityRef<Empresa>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalidaInventarioID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SalidaInventarioID
+		{
+			get
+			{
+				return this._SalidaInventarioID;
+			}
+			set
+			{
+				if ((this._SalidaInventarioID != value))
+				{
+					this.OnSalidaInventarioIDChanging(value);
+					this.SendPropertyChanging();
+					this._SalidaInventarioID = value;
+					this.SendPropertyChanged("SalidaInventarioID");
+					this.OnSalidaInventarioIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					if (this._Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this.OnProyectoIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProyectoID = value;
+					this.SendPropertyChanged("ProyectoID");
+					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int NOT NULL")]
+		public int PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this.OnPoligonoIDChanging(value);
+					this.SendPropertyChanging();
+					this._PoligonoID = value;
+					this.SendPropertyChanged("PoligonoID");
+					this.OnPoligonoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
+		public System.Nullable<int> LoteID
+		{
+			get
+			{
+				return this._LoteID;
+			}
+			set
+			{
+				if ((this._LoteID != value))
+				{
+					this.OnLoteIDChanging(value);
+					this.SendPropertyChanging();
+					this._LoteID = value;
+					this.SendPropertyChanged("LoteID");
+					this.OnLoteIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContratistaID", DbType="Int NOT NULL")]
+		public int ContratistaID
+		{
+			get
+			{
+				return this._ContratistaID;
+			}
+			set
+			{
+				if ((this._ContratistaID != value))
+				{
+					this.OnContratistaIDChanging(value);
+					this.SendPropertyChanging();
+					this._ContratistaID = value;
+					this.SendPropertyChanged("ContratistaID");
+					this.OnContratistaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntregadoA", DbType="VarChar(60) NOT NULL", CanBeNull=false)]
+		public string EntregadoA
+		{
+			get
+			{
+				return this._EntregadoA;
+			}
+			set
+			{
+				if ((this._EntregadoA != value))
+				{
+					this.OnEntregadoAChanging(value);
+					this.SendPropertyChanging();
+					this._EntregadoA = value;
+					this.SendPropertyChanged("EntregadoA");
+					this.OnEntregadoAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UsuarioID", DbType="Int NOT NULL")]
+		public int UsuarioID
+		{
+			get
+			{
+				return this._UsuarioID;
+			}
+			set
+			{
+				if ((this._UsuarioID != value))
+				{
+					this.OnUsuarioIDChanging(value);
+					this.SendPropertyChanging();
+					this._UsuarioID = value;
+					this.SendPropertyChanged("UsuarioID");
+					this.OnUsuarioIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SalidaInventario_SalidaInventarioDetail", Storage="_SalidaInventarioDetail", ThisKey="SalidaInventarioID", OtherKey="SalidaInventarioDetailID", IsUnique=true, IsForeignKey=false)]
+		public SalidaInventarioDetail SalidaInventarioDetail
+		{
+			get
+			{
+				return this._SalidaInventarioDetail.Entity;
+			}
+			set
+			{
+				SalidaInventarioDetail previousValue = this._SalidaInventarioDetail.Entity;
+				if (((previousValue != value) 
+							|| (this._SalidaInventarioDetail.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SalidaInventarioDetail.Entity = null;
+						previousValue.SalidaInventario = null;
+					}
+					this._SalidaInventarioDetail.Entity = value;
+					if ((value != null))
+					{
+						value.SalidaInventario = this;
+					}
+					this.SendPropertyChanged("SalidaInventarioDetail");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Empresa_SalidaInventario", Storage="_Empresa", ThisKey="EmpresaID", OtherKey="EmpresaID", IsForeignKey=true)]
+		public Empresa Empresa
+		{
+			get
+			{
+				return this._Empresa.Entity;
+			}
+			set
+			{
+				Empresa previousValue = this._Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Empresa.Entity = null;
+						previousValue.SalidaInventarios.Remove(this);
+					}
+					this._Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.SalidaInventarios.Add(this);
+						this._EmpresaID = value.EmpresaID;
+					}
+					else
+					{
+						this._EmpresaID = default(int);
+					}
+					this.SendPropertyChanged("Empresa");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SalidaInventarioDetail")]
+	public partial class SalidaInventarioDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SalidaInventarioDetailID;
+		
+		private int _SalidaInventarioID;
+		
+		private int _MaterialID;
+		
+		private decimal _Cantidad;
+		
+		private EntityRef<Materiale> _Materiale;
+		
+		private EntityRef<SalidaInventario> _SalidaInventario;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSalidaInventarioDetailIDChanging(int value);
+    partial void OnSalidaInventarioDetailIDChanged();
+    partial void OnSalidaInventarioIDChanging(int value);
+    partial void OnSalidaInventarioIDChanged();
+    partial void OnMaterialIDChanging(int value);
+    partial void OnMaterialIDChanged();
+    partial void OnCantidadChanging(decimal value);
+    partial void OnCantidadChanged();
+    #endregion
+		
+		public SalidaInventarioDetail()
+		{
+			this._Materiale = default(EntityRef<Materiale>);
+			this._SalidaInventario = default(EntityRef<SalidaInventario>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalidaInventarioDetailID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SalidaInventarioDetailID
+		{
+			get
+			{
+				return this._SalidaInventarioDetailID;
+			}
+			set
+			{
+				if ((this._SalidaInventarioDetailID != value))
+				{
+					if (this._SalidaInventario.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSalidaInventarioDetailIDChanging(value);
+					this.SendPropertyChanging();
+					this._SalidaInventarioDetailID = value;
+					this.SendPropertyChanged("SalidaInventarioDetailID");
+					this.OnSalidaInventarioDetailIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalidaInventarioID", DbType="Int NOT NULL")]
+		public int SalidaInventarioID
+		{
+			get
+			{
+				return this._SalidaInventarioID;
+			}
+			set
+			{
+				if ((this._SalidaInventarioID != value))
+				{
+					this.OnSalidaInventarioIDChanging(value);
+					this.SendPropertyChanging();
+					this._SalidaInventarioID = value;
+					this.SendPropertyChanged("SalidaInventarioID");
+					this.OnSalidaInventarioIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					if (this._Materiale.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaterialIDChanging(value);
+					this.SendPropertyChanging();
+					this._MaterialID = value;
+					this.SendPropertyChanged("MaterialID");
+					this.OnMaterialIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(10,5) NOT NULL")]
+		public decimal Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this.OnCantidadChanging(value);
+					this.SendPropertyChanging();
+					this._Cantidad = value;
+					this.SendPropertyChanged("Cantidad");
+					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Materiale_SalidaInventarioDetail", Storage="_Materiale", ThisKey="MaterialID", OtherKey="MaterialID", IsForeignKey=true)]
+		public Materiale Materiale
+		{
+			get
+			{
+				return this._Materiale.Entity;
+			}
+			set
+			{
+				Materiale previousValue = this._Materiale.Entity;
+				if (((previousValue != value) 
+							|| (this._Materiale.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Materiale.Entity = null;
+						previousValue.SalidaInventarioDetails.Remove(this);
+					}
+					this._Materiale.Entity = value;
+					if ((value != null))
+					{
+						value.SalidaInventarioDetails.Add(this);
+						this._MaterialID = value.MaterialID;
+					}
+					else
+					{
+						this._MaterialID = default(int);
+					}
+					this.SendPropertyChanged("Materiale");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SalidaInventario_SalidaInventarioDetail", Storage="_SalidaInventario", ThisKey="SalidaInventarioDetailID", OtherKey="SalidaInventarioID", IsForeignKey=true)]
+		public SalidaInventario SalidaInventario
+		{
+			get
+			{
+				return this._SalidaInventario.Entity;
+			}
+			set
+			{
+				SalidaInventario previousValue = this._SalidaInventario.Entity;
+				if (((previousValue != value) 
+							|| (this._SalidaInventario.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SalidaInventario.Entity = null;
+						previousValue.SalidaInventarioDetail = null;
+					}
+					this._SalidaInventario.Entity = value;
+					if ((value != null))
+					{
+						value.SalidaInventarioDetail = this;
+						this._SalidaInventarioDetailID = value.SalidaInventarioID;
+					}
+					else
+					{
+						this._SalidaInventarioDetailID = default(int);
+					}
+					this.SendPropertyChanged("SalidaInventario");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Secuencias")]
+	public partial class Secuencia : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SecuenciaID;
+		
+		private int _Numero;
+		
+		private string _CodigoSecuencia;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSecuenciaIDChanging(int value);
+    partial void OnSecuenciaIDChanged();
+    partial void OnNumeroChanging(int value);
+    partial void OnNumeroChanged();
+    partial void OnCodigoSecuenciaChanging(string value);
+    partial void OnCodigoSecuenciaChanged();
+    #endregion
+		
+		public Secuencia()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SecuenciaID
+		{
+			get
+			{
+				return this._SecuenciaID;
+			}
+			set
+			{
+				if ((this._SecuenciaID != value))
+				{
+					this.OnSecuenciaIDChanging(value);
+					this.SendPropertyChanging();
+					this._SecuenciaID = value;
+					this.SendPropertyChanged("SecuenciaID");
+					this.OnSecuenciaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
+		public int Numero
+		{
+			get
+			{
+				return this._Numero;
+			}
+			set
+			{
+				if ((this._Numero != value))
+				{
+					this.OnNumeroChanging(value);
+					this.SendPropertyChanging();
+					this._Numero = value;
+					this.SendPropertyChanged("Numero");
+					this.OnNumeroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoSecuencia", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoSecuencia
+		{
+			get
+			{
+				return this._CodigoSecuencia;
+			}
+			set
+			{
+				if ((this._CodigoSecuencia != value))
+				{
+					this.OnCodigoSecuenciaChanging(value);
+					this.SendPropertyChanging();
+					this._CodigoSecuencia = value;
+					this.SendPropertyChanged("CodigoSecuencia");
+					this.OnCodigoSecuenciaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -10085,6 +12357,368 @@ namespace GeoMapxBusiness
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_SecuenciaCubicaciones")]
+	public partial class VW_SecuenciaCubicacione
+	{
+		
+		private string _CodigoProyecto;
+		
+		private int _EmpresaID;
+		
+		private int _SecuenciaID;
+		
+		private int _ProyectoID;
+		
+		private int _Numero;
+		
+		private bool _Estado;
+		
+		private System.DateTime _Fecha;
+		
+		public VW_SecuenciaCubicacione()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", DbType="Int NOT NULL")]
+		public int SecuenciaID
+		{
+			get
+			{
+				return this._SecuenciaID;
+			}
+			set
+			{
+				if ((this._SecuenciaID != value))
+				{
+					this._SecuenciaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
+		public int Numero
+		{
+			get
+			{
+				return this._Numero;
+			}
+			set
+			{
+				if ((this._Numero != value))
+				{
+					this._Numero = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
+		public bool Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SecuenciaCubicaciones")]
+	public partial class SecuenciaCubicacione : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SecuenciaID;
+		
+		private int _ProyectoID;
+		
+		private int _Numero;
+		
+		private bool _Estado;
+		
+		private System.DateTime _Fecha;
+		
+		private EntitySet<Cubicacione> _Cubicaciones;
+		
+		private EntityRef<Proyecto> _Proyecto;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSecuenciaIDChanging(int value);
+    partial void OnSecuenciaIDChanged();
+    partial void OnProyectoIDChanging(int value);
+    partial void OnProyectoIDChanged();
+    partial void OnNumeroChanging(int value);
+    partial void OnNumeroChanged();
+    partial void OnEstadoChanging(bool value);
+    partial void OnEstadoChanged();
+    partial void OnFechaChanging(System.DateTime value);
+    partial void OnFechaChanged();
+    #endregion
+		
+		public SecuenciaCubicacione()
+		{
+			this._Cubicaciones = new EntitySet<Cubicacione>(new Action<Cubicacione>(this.attach_Cubicaciones), new Action<Cubicacione>(this.detach_Cubicaciones));
+			this._Proyecto = default(EntityRef<Proyecto>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SecuenciaID
+		{
+			get
+			{
+				return this._SecuenciaID;
+			}
+			set
+			{
+				if ((this._SecuenciaID != value))
+				{
+					this.OnSecuenciaIDChanging(value);
+					this.SendPropertyChanging();
+					this._SecuenciaID = value;
+					this.SendPropertyChanged("SecuenciaID");
+					this.OnSecuenciaIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					if (this._Proyecto.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProyectoIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProyectoID = value;
+					this.SendPropertyChanged("ProyectoID");
+					this.OnProyectoIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
+		public int Numero
+		{
+			get
+			{
+				return this._Numero;
+			}
+			set
+			{
+				if ((this._Numero != value))
+				{
+					this.OnNumeroChanging(value);
+					this.SendPropertyChanging();
+					this._Numero = value;
+					this.SendPropertyChanged("Numero");
+					this.OnNumeroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
+		public bool Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SecuenciaCubicacione_Cubicacione", Storage="_Cubicaciones", ThisKey="SecuenciaID", OtherKey="SecuenciaID")]
+		public EntitySet<Cubicacione> Cubicaciones
+		{
+			get
+			{
+				return this._Cubicaciones;
+			}
+			set
+			{
+				this._Cubicaciones.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Proyecto_SecuenciaCubicacione", Storage="_Proyecto", ThisKey="ProyectoID", OtherKey="ProyectoID", IsForeignKey=true)]
+		public Proyecto Proyecto
+		{
+			get
+			{
+				return this._Proyecto.Entity;
+			}
+			set
+			{
+				Proyecto previousValue = this._Proyecto.Entity;
+				if (((previousValue != value) 
+							|| (this._Proyecto.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Proyecto.Entity = null;
+						previousValue.SecuenciaCubicaciones.Remove(this);
+					}
+					this._Proyecto.Entity = value;
+					if ((value != null))
+					{
+						value.SecuenciaCubicaciones.Add(this);
+						this._ProyectoID = value.ProyectoID;
+					}
+					else
+					{
+						this._ProyectoID = default(int);
+					}
+					this.SendPropertyChanged("Proyecto");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Cubicaciones(Cubicacione entity)
+		{
+			this.SendPropertyChanging();
+			entity.SecuenciaCubicacione = this;
+		}
+		
+		private void detach_Cubicaciones(Cubicacione entity)
+		{
+			this.SendPropertyChanging();
+			entity.SecuenciaCubicacione = null;
 		}
 	}
 }

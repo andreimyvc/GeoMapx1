@@ -15,11 +15,13 @@ var certificacionesController = function (scope, http, geoDataFactory) {
                     Cancelar: { show: false },
                     Guardar: { show: false }
                 },
-            index: 0,
+            indexRow: 0,
         };
     //#region SetVariables
     d.planillasOfDayData = undefined;
     d.planillasData = undefined;
+    d.planillasNoCData = undefined;
+    d.planillasSiCData = undefined;
     d.proyectosData = undefined;
     d.selectedPlanilla = undefined;
     d.selectedProyect = undefined;
@@ -53,13 +55,7 @@ var certificacionesController = function (scope, http, geoDataFactory) {
     };
 //#endregion Botones
 //#region watches
-        
-    //d.$watch('selectedProyect', function () {
-    //    if (d.diarias.state === 'add') {
-    //        getPlanillaToCertByProyecto(d.selectedProyect.ProyectoID);
-    //    }
-    //}); 
-   
+
 //#endregion watches
     d.initMapAndMarker = function (poste) {
         if (poste) {
@@ -90,10 +86,12 @@ var certificacionesController = function (scope, http, geoDataFactory) {
     };
     var getPlanillaToCertByProyecto = function (proyectoid) {
         geoDataFactory.getPlanillaToCertByProyecto(proyectoid).then(
-            function (data) {
+            function (data) {  //787
                 d.planillasData = data;
-                d.setGrid("#jqGridActividadUsuario", data);
-                //d.setDataTableData('#tblplanilla', d.planillasData);
+                d.planillasNoCData = data.filter(function (element) { return element.Verificado == false; });
+                d.planillasSiCData = data.filter(function (element) { return element.Verificado == true; });
+                d.setGrid("#jqGridActividadUsuario", d.planillasNoCData);
+                d.setGrid("#jqGridConfirmadas", d.planillasSiCData);
             }, function (error) {
                 scope.error = error.data.Message;
             });
@@ -134,14 +132,28 @@ var certificacionesController = function (scope, http, geoDataFactory) {
             });
         }
     };
-    d.moveRowToCommit = function (planillaid) {  //888
+    d.certificate = function (planillaid) {  //888
         var xdata = d.planillasData.filter(function (element) { return element.PlanillaID == planillaid; })[0];
-        d.dataforCommit.push(xdata);
+        xdata.Verificado = true;
+        geoDataFactory.certificacionPlanillas(xdata).then(null, function (error) {
+            d.error = error.data.Message;
+            alert(d.error);
+            jqgridDeleteRow('#jqGridConfirmadas', d.control.indexRow);
+            d.control.indexRow++;
+            xdata.Verificado = false;
+            jqgridAddRowData('#jqGridActividadUsuario', d.control.indexRow, { data: xdata }, null);
+        });
+        //d.planillasNoCData.push(xdata);
+        //d.planillasSiCData = d.planillasSiCData.filter(function (element) { return element.PlanillaID != planillaid; });
+        xdata.Verificado = true;
+        //Update
         d.control.indexRow++;
         jqgridAddRowData('#jqGridConfirmadas',  d.control.indexRow, { data: xdata }, null);
     }
     d.removeFromCommit = function (gridid, rowId, data) { 
         var xdata = d.planillasData.filter(function (element) { return element.PlanillaID == data; })[0];
+        xdata.Verificado = false;
+        //Update
         //alert(data);
         d.dataforCommit = d.dataforCommit.filter(function (element) { return element.PlanillaID != data; });
         jqgridDeleteRow(gridid, rowId);
@@ -150,7 +162,7 @@ var certificacionesController = function (scope, http, geoDataFactory) {
     }
     d.confirmVerificar = function () {
         if (d.dataforCommit.length > 0) {
-            var r = confirm("¿Está seguro que desea confirmar estas (" + d.dataforCommit.length + ") transacciones?");
+            var r = confirm("¿Está seguro que desea confirmar estas transacciones?");
             if (r) {
                 geoDataFactory.certificacionPlanillas(d.dataforCommit).then(
                     function (data) {
@@ -180,6 +192,10 @@ var certificacionesController = function (scope, http, geoDataFactory) {
                     alert(d.error);
                 });
         }
+    }
+    d.setObserva = function (id, observa) {
+        var xdata = d.planillasData.filter(function (element) { return element.PlanillaID == id; })[0];
+        xdata.ObservacionVerificador = observa;
     }
     //#endregion SetSelected
     d.setDataTableData = function (tableid, data) {

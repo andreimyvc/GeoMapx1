@@ -11,7 +11,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <li data-ng-repeat="p in proyectosData">
                         <a ng-cloak data-ng-click="setSelectedProyect(p.ProyectoID)">
-                            <i class="icon-bar-chart font-green-haze"></i><span ng-cloak data-ng-bind="p.CodigoProyecto"></span>
+                            <i class="icon-bar-chart font-green-haze"></i>&nbsp;<span ng-cloak data-ng-bind="p.CodigoProyecto"></span>
                         </a>
                     </li>
                 </ul>
@@ -46,15 +46,21 @@
                         </div>
                     </div>
                 </div>
-            <div class="portlet box blue">
-                <div class="portlet-body">
-                    <div class="m-grid-col-middle">
-                        <button data-ng-click="confirmVerificar();" class="btn blue">Confirmar</button>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
 
+<!-- sometime later, probably inside your on load event callback -->
+<script>
+    function ShowObserva(data) {
+        bootbox.prompt(
+            "Digite la observación",
+            function (result) {
+                if (result) {
+                    var d = angular.element(document.getElementById('certificacionesApp')).scope().setObserva(data, result);
+                }
+                ///alert(data+": "+result);
+            });
+    }
+</script>
