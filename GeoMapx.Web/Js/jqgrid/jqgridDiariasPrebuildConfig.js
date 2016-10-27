@@ -8,30 +8,28 @@ function initGridPrebuild() {
             { label: 'ActividadID', name: 'ActividadID', hidden: true },
             { label: 'PosteID', name: 'PosteID', hidden: true },
             { label: 'Unidad Cons.', name: 'UniCons', search: false, width: 90 },
-            { label: 'Cantidad', name: 'Cantidad', search: false, width: 70 },
+            {
+                label: 'CP', name: 'CantidadPendiente', key:true, search: false, width: 30, editable: true, edittype: "text",
+                //formatter: 'integer',
+                //editoptions: {
+                //    size: 25, maxlengh: 30,
+                //    dataInit: function (element) {
+                //        $(element).keypress(function (e) {
+                //            if (e.which == 13 || e.which == 10) { return false;}
+                //            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                //                return false;
+                //            }
+                //        });
+                //    }
+                //}
+            },
             { label: 'Hasta', name: 'CodigoPosteHasta', classes: "CodigoProyecto", search: false, width: 80 },
             { label: 'Descripción', name: 'DescripcionActividad', search: false, width: 185 },
-            {
-                label: 'Ejecutada', name: 'Ejecutada', search: false, sortable: true, width: 65,
-                align: 'center', formatter: function (cellValue, option, xdata) {
-                    if (xdata.Ejecutado) {
-                        return '<input type="checkbox" name="radio_" disabled checked="checked", value="true" />';
-                    }
-                    else {
-                        return '<input type="radio"   onclick="sendPrebuild(' + xdata.PreBuildID + ')" name="radio_' + '"  />';
-                    }
-                }
-            }, {
-                label: ' ', search: false,  sortable: false, width:30,
-                align: 'center', formatter: function (cellValue, option, xdata) {
-                    if (xdata.Ejecutado) {
-                        return '<button onclick="prebuildUndo(' + xdata.PreBuildID + ')"><i class="fa fa-undo" aria-hidden="true"></i></button>';
-                    }
-                    return '';
-                }
-            }
+            { label: 'CL', name: 'CantidadLicitada', search: false, width: 30 },
+            { label: 'CE', name: 'CantidadEjecutada', search: false, width: 30   },
         ],
         //multiselect: true,
+        loadonce:true,
         colMenu: true,
         gridview: true,
         rowNum: 6,
@@ -40,22 +38,71 @@ function initGridPrebuild() {
         shrinkToFit: false,
         rowList: [10, 20, 30],
         pager: '#tblPrebuildPager',
-        sortname: 'invdate',
         viewrecords: true,
         sortorder: "desc",
-        beforeSelectRow: function (rowid, e) {
-            var $radio = $(e.target).closest('tr').find('input[type="radio"]');
-            $radio.attr('checked', 'checked');
-            return true; // allow row selection
-        },
+        onSelectRow: editRow,
+        //beforeSelectRow: beforeSelRow,
     });
+
+
+    var lastSelection;
+
+    function editRow(id) {
+        if (id && id !== lastSelection) {
+            var grid = $(tableid);
+            grid.jqGrid('restoreRow', lastSelection);
+            grid.jqGrid('editRow', id, {
+                keys: false, focusField: 4,
+            });
+
+            //$(tableid).saveRow(id, false);
+            //$(tableid).jqGrid('saveRow',id, false);
+            lastSelection = id;
+        }
+    }
+
+    //function editRow(id) {
+    //    if (id && id !== lastSelection) {
+    //        var grid = $(tableid);
+    //        grid.restoreRow(lastSelection);
+
+    //        var editParameters = {
+    //            keys: true,
+    //            successfunc: editSuccessful,
+    //            errorfunc: editFailed,
+    //            restoreAfterError: false
+    //        };
+    //        grid.jqGrid('editRow', id, editParameters);
+    //        lastSelection = id;
+    //    }
+    //}
+
+    function editSuccessful(data, stat) {
+        var response = data.responseJSON;
+        if (response.hasOwnProperty("error")) {
+            if (response.error.length) {
+                return [false, response.error];
+            }
+        }
+        return [true, "", ""];
+    }
+
+    function editFailed(rowID, response) {
+        $.jgrid.info_dialog($.jgrid.errors.errcap, '<div class="ui-state-error">RowID:' + rowID + ' :  ' + response.responseJSON.error + '</div>', $.jgrid.edit.bClose, { buttonalign: 'right' })
+        //alert(response.responseJSON.error);
+    }
+    function beforeSelRow(rowid, e) {
+        var $radio = $(e.target).closest('tr').find('input[type="radio"]');
+        $radio.attr('checked', 'checked');
+        return true; // allow row selection
+    }
    
 
 
 
 
     //jQuery("#cb_tblPrebuild").css("display:none;");
-    jQuery(tableid).jqGrid('navGrid', '#tblPrebuildPager', { edit: false, add: false, del: false });
+    //$(tableid).jqGrid('navGrid', '#tblPrebuildPager', { edit: false, add: false, del: false });
 }
 function initGridActividadesByPoste() {
     $("#jqGridPostes").jqGrid({

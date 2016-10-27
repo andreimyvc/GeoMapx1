@@ -1,8 +1,12 @@
-﻿<div class="col-md-12 heigth380">
+﻿
+<div data-ng-cloak data-ng-show="false">
+{{ d.control.app = "cubicaciones" }}
+</div>
+
+<div class="col-md-12 heigth380">
     <div class="portlet box blue">
         <div class="portlet-title">
-            <div class="caption">
-                <i class="fa fa-gift"></i>ASIGNACIÓN NÚMERO DE CUBICACIÓN
+            <div class="caption"> &nbsp; ASIGNACIÓN NÚMERO DE CUBICACIÓN
            
             </div>
             <div class="tools">
@@ -18,7 +22,7 @@
                     <label class="control-label">Proyecto</label>
                     <div>
                         <select class="form-control"
-                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.proyecto"
+                            data-ng-disabled="control.fieldsReadOnly"
                             data-ng-model="selectedProyect"
                             data-ng-options="proyecto.CodigoProyecto for proyecto in proyectosData"
                             data-ng-change="onProyectChange(selectedProyect)">
@@ -29,9 +33,9 @@
                     <label class="control-label">No. Cubicación</label>
                     <div>
                         <select class="form-control"
-                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.poligono"
-                            data-ng-options="p.CodigoPoligono for p in poligonosData" data-ng-model="selectedPoligono"
-                            data-ng-change="onPoligonoChange(selectedPoligono)">
+                            data-ng-disabled="control.fieldsReadOnly"
+                            data-ng-options="p.Numero for p in secuenciasData" data-ng-model="selectedSecuencia"
+                            data-ng-change="onSecuenciaChange(selectedSecuencia)">
                         </select>
                     </div>
                 </div>
@@ -39,8 +43,8 @@
                     <label class="control-label">Fecha Inicio</label>
                     <div>
                         <input type="date" class="form-control"
-                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.fecha"
-                            data-ng-model="model.Fecha">
+                            data-ng-disabled="control.fieldsReadOnly"
+                            data-ng-model="model.FechaInicio">
                         </input>
                     </div>
                 </div>
@@ -48,8 +52,8 @@
                     <label class="control-label">Fecha Fin</label>
                     <div>
                         <input type="date" class="form-control"
-                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.fecha"
-                            data-ng-model="model.Fecha">
+                            data-ng-disabled="control.fieldsReadOnly"
+                            data-ng-model="model.FechaFin">
                         </input>
                     </div>
                 </div>
@@ -59,9 +63,8 @@
                     <label class="control-label">Estado de Actividad</label>
                     <div>
                         <select class="form-control"
-                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.poligono"
-                            data-ng-options="p.CodigoPoligono for p in poligonosData" data-ng-model="selectedPoligono"
-                            data-ng-change="onPoligonoChange(selectedPoligono)">
+                            data-ng-disabled="control.fieldsReadOnly"
+                            data-ng-options="p for p in estadosActividadData" data-ng-model="model.Estado" >
                         </select>
                     </div>
                 </div>
@@ -69,9 +72,8 @@
                     <label class="control-label">Actividad Primaria</label>
                     <div>
                         <select class="form-control"
-                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.poligono"
-                            data-ng-options="p.CodigoPoligono for p in poligonosData" data-ng-model="selectedPoligono"
-                            data-ng-change="onPoligonoChange(selectedPoligono)">
+                            data-ng-disabled="control.fieldsReadOnly "
+                            data-ng-options="p for p in actividadesPrimariasData" data-ng-model="model.ActividadPrimaria">
                         </select>
                     </div>
                 </div>
@@ -79,9 +81,8 @@
                     <label class="control-label">Actividad Secundaria</label>
                     <div>
                         <select class="form-control"
-                            data-ng-disabled="control.fieldsReadOnly || control.lesstype.poligono"
-                            data-ng-options="p.CodigoPoligono for p in poligonosData" data-ng-model="selectedPoligono"
-                            data-ng-change="onPoligonoChange(selectedPoligono)">
+                            data-ng-disabled="control.fieldsReadOnly"
+                            data-ng-options="p for p in actividadesSecundariasData" data-ng-model="model.ActividadSecundaria">
                         </select>
                     </div>
                 </div>
@@ -94,10 +95,10 @@
                                     <i class="fa fa-plus"></i>&nbsp; Nuevo
                                 </a>
                             </div>
-                            <a data-ng-click="cancelEntrada()" data-ng-show="control.btns.Cancelar.show" class="btn default btn-sm">
+                            <a data-ng-click="cancelEntrada()" data-ng-show=" control.btns.Cancelar.show || false " class="btn default btn-sm">
                                 <i class="fa fa-undo"></i>&nbsp; Cancelar
                             </a>
-                            <a data-ng-show="control.btns.Guardar.show" data-ng-click="guardarEntrada()" class="btn blue btn-sm">
+                            <a  data-ng-show=" control.btns.Guardar.show || false " data-ng-click="guardarEntrada()" class="btn blue btn-sm">
                                 <i class="fa fa-save"></i>&nbsp; Guardar
                             </a>
                         </div>

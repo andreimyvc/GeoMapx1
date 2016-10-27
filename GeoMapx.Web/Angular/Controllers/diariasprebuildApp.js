@@ -118,11 +118,14 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         d.control.btns.Guardar.show = true;
     };
     d.guardarEntrada = function () {
+        //d.postesData = undefined;
+        d.model.Cantidad = jqgridGetEdeitingCellValue('#tblPrebuild', 'CantidadPendiente');
+        d.model.PreBuildID = jqgridGetSelectRowColumnValue('#tblPrebuild', 'PreBuildID');
+        if (!d.ValidaModel()) { return; }
         d.control.fieldsReadOnly = false;
         d.control.btns.Nuevo.show = true;
         d.control.btns.Cancelar.show = false;
         d.control.btns.Guardar.show = true;
-        //d.postesData = undefined;
         if (d.model.PreBuildID) {
         var tempPrebuild = Object.create(d.actividadesPrebuildsData.filter(function (element) { return element.PreBuildID == d.model.PreBuildID; })[0]);
             var aplanilla = {
@@ -130,7 +133,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                 PoligonoID: d.selectedPoligono ? d.selectedPoligono.PoligonoID : undefined,
                 PosteID: d.selectedPoste ? d.selectedPoste.PosteID : undefined,
                 ActividadID: tempPrebuild.ActividadID,
-                Cantidad: tempPrebuild.Cantidad,
+                Cantidad: d.model.Cantidad,
                 Fecha: d.model.Fecha || undefined,
                 Observacion: d.model.Observacion || undefined,
                 PosteIDHasta: tempPrebuild.PosteIDHasta,
@@ -218,9 +221,34 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         //d.postesData = undefined;
     };
     //#endregion Botones
+    d.ValidaModel = function () {
+        if (!d.selectedProyect) {
+            alert("Debe seleccionar un proyecto");
+            return false;
+        }
+        if (!d.selectedPoligono) {
+            alert("Debe seleccionar un polígono");
+            return false;
+        }
+        if (!d.selectedPoste) {
+            alert("Seleccione un poste");
+            return false;
+        }
+        if (!d.selectedContratista) {
+            alert("Debe seleccionar un contratista");
+            return false;
+        }
+        if (!d.model.Fecha) {
+            alert("Debe seleccionar una fecha válida");
+            return false;
+        }
+        if (!d.model.Cantidad) {
+            alert("Debe ingresar una cantidad válida");
+            return false;
+        }
+        return true;
+    };
     //#region watches
-    //d.$watch('selectedProyect', function () {
-    //});
     d.$watch('selectedPoste2', function () {
         if (d.selectedPoste2) {
             d.initMapAndMarker(d.selectedPoste2);
@@ -231,12 +259,6 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
             d.setGrid("#jqGridPostes", []);
         }
     });
-    //d.$watch('planillasOfDayData', function () {
-    //    if (d.planillasOfDayData)
-    //    {
-    //        d.setGrid("#jqGridActividadUsuario", d.planillasOfDayData);           
-    //    }
-    //});
    
 //#endregion watches
     d.initMapAndMarker = function (poste) {
@@ -446,6 +468,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
     //#region SetSelected
     d.setSelectedPlanilla = function (planilla) {//555
         //alert(objToString(planilla));
+        //d.setGridReadOnly("#tblPrebuild");
         d.oldSelectedPlanilla = planilla;
         if (planilla) {
             d.selectedPlanilla = d.planillasOfDayData.filter(function (element) { return element.PlanillaID == planilla.PlanillaID })[0];
@@ -609,6 +632,10 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
 
             $(idGrid).jqGrid("setFrozenColumns");
         };
+    }
+    d.setGridReadOnly = function (idGrid) {
+            $(idGrid) 
+                .jqGrid('editoptions', { readonly: "readonly" }).trigger('reloadGrid');
     }
     d.setDataTableData = function (tableid, data) {
         //$(tableid).DataTable({

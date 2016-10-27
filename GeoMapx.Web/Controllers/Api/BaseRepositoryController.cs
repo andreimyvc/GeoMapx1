@@ -8,6 +8,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
+using System.Data.Linq.SqlClient;
+using System.Transactions;
 
 namespace GeoMapx.Web.Controllers.Api
 {
@@ -96,6 +98,18 @@ namespace GeoMapx.Web.Controllers.Api
         {
             var data = from p in db.VW_Actividades
                        select p;
+            return data;
+        }
+        public IQueryable<string> _GetActividadesPrimarias(int proyectoid)
+        {
+            var data = db.Actividades.Where(p => p.ProyectoID == proyectoid)
+                .Select(p => p.ActividadPrimaria).Distinct();
+            return data;
+        }
+        public IQueryable<string> _GetActividadesSecundarias(int proyectoid)
+        {
+            var data = db.Actividades.Where(p => p.ProyectoID == proyectoid)
+                .Select(p => p.ActividadSecundaria).Distinct();
             return data;
         }
         public IQueryable<VW_ActividadesPreBuild> _GetActividadesPrebuild()
@@ -472,6 +486,41 @@ namespace GeoMapx.Web.Controllers.Api
             old.Estado = !old.Estado;// entity.Estado;
             db.SubmitChanges();
             return entity;
+        }
+        public void _InsertCubicaciones(List<Cubicacione> entity)
+        {//[Ojo] Hacer un store procedure
+            //db.ObjectTrackingEnabled = true;
+            //using (TransactionScope trans = new TransactionScope())
+            //{
+            //        try
+            //        {
+            //            //do some insert
+            //            db.SubmitChanges();
+
+            //            //do some updates
+            //            db.SubmitChanges();
+
+            //            trans.Complete();
+            //        }
+            //        catch (Exception ex) {}
+            //}
+            foreach (var cub in entity)
+            {
+                //cub.EstadoActividades
+                cub.Fecha = DateTime.Now;
+                var planillas = db.Planillas.Where( p =>  p.ProyectoID == cub.ProyectoID && p.CubicacionID == null &&
+                    p.Fecha <= cub.FechaFin && p.Fecha >= cub.FechaInicio 
+                    && (cub.ActividadPrimaria == "Todos" ||  p.Actividade.ActividadPrimaria == cub.ActividadPrimaria)
+                    && (cub.ActividadSecundaria == "Todos" || p.Actividade.ActividadSecundaria == cub.ActividadSecundaria)
+                    && (cub.EstadoActividades == null || p.Verificado == cub.EstadoActividades));
+                db.Cubicaciones.InsertOnSubmit(cub);
+                foreach(var p in planillas)
+                {
+                    cub.Planillas.Add(p);
+                }
+            } 
+            db.SubmitChanges();
+            //return db.VW_Planillas.SingleOrDefault(p => p.PlanillaID == entity.PlanillaID);
         }
     }
 }

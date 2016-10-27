@@ -1,12 +1,12 @@
 ﻿var map = null;
 var mapIncon1 = '/Images/estructuras/poster_castra2.png';
 var xicon = mapIncon1;
-var xicon2 = {
-    url: mapIncon1, // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-    origin: new google.maps.Point(0, 0), // origin
-    anchor: new google.maps.Point(0, 0) // anchor
-};
+//var xicon2 = {
+//    url: mapIncon1, // url
+//    scaledSize: new google.maps.Size(50, 50), // scaled size
+//    origin: new google.maps.Point(0, 0), // origin
+//    anchor: new google.maps.Point(0, 0) // anchor
+//};
     function initMap() {
         var myLatLng = { lat: -25.363, lng: 131.044 };
         map = new google.maps.Map(document.getElementById('map'), {

@@ -97,7 +97,7 @@ function initGridCodigoPostes() {
             { label: 'Poste', name: 'CodigoPoste', width: 175, stype: 'select', searchoptions: { sopt: ["in", "bw", "cn", "eq", "in"], value: [] } },
             { label: 'Observación', name: 'ObservacionPoste', width: 150, search: true },
             //{ label: 'Cantidad Ejecutadas', name: 'CantidadEjecutadas', width: 150, search: false },
-            //{ label: 'Cantidad Faltantes', name: 'CantidadFaltantes', width: 150, search: false },
+            //{ label: 'Cantidad Faltantes', name: 'CantidadPendientes', width: 150, search: false },
             { label: 'Tipo Poste Descripcion', name: 'TipoPosteDescripcion', width: 200, search: false },
             { label: 'Latitud', name: 'Lat', width: 150, search: false },
             { label: 'Longitud', name: 'Lon', width: 150, search: false },

@@ -98,6 +98,24 @@
             });
             return defer.promise;
         };
+        interfaz.getActividadesPrimariasByProyecto = function (id) {
+            var defer = q.defer();
+            http.get('/api/actividades/getprimarias', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.getActividadesSecundariasByProyecto = function (id) {
+            var defer = q.defer();
+            http.get('/api/actividades/getsecundarias', { params: { proyectoid: id } }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
         interfaz.getUnicons = function () {
             var defer = q.defer();  
             http.get('/api/actividades/get').then(function (response) {
@@ -409,6 +427,15 @@
         interfaz.insertCubSecuencia = function (entity) {
             var defer = q.defer();
             http({ method: 'POST', url: '/api/secuenciacubicaciones/post', data: entity }).then(function (response) {
+                defer.resolve(response.data);
+            }, function (response) {
+                defer.reject(response);
+            });
+            return defer.promise;
+        };
+        interfaz.insertCubicacion = function (entity) {
+            var defer = q.defer();
+            http({ method: 'POST', url: '/api/cubicaciones/post', data: entity }).then(function (response) {
                 defer.resolve(response.data);
             }, function (response) {
                 defer.reject(response);

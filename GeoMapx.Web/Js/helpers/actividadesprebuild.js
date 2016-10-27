@@ -17,6 +17,23 @@ function jqgridDeleteRow(gridid, rowId, data, callback) {
         callback(data);
     }
 }
+function jqgridGetEdeitingCellValue(gridid, cellId) {
+    var rowId = $(gridid).jqGrid('getGridParam', 'selrow');
+    var cell = $('#' + rowId + '_' + cellId);
+    var val = cell.val();
+    return val;
+}
+function jqgridGetSelectRowValue(gridid)
+{
+    var rowId = $(gridid).jqGrid('getGridParam', 'selrow');
+    return $(gridid).getRowData(rowId);
+}
+function jqgridGetSelectRowColumnValue(gridid,columName)
+{
+    var rowId = $(gridid).jqGrid('getGridParam', 'selrow');
+    var rowData= $(gridid).getRowData(rowId);
+    return rowData[columName];
+}
 function jqgridAddRowData(gridid, index, payload, callback) {
     $(gridid).jqGrid('addRowData', index, payload.data, "first");
     if (callback) {

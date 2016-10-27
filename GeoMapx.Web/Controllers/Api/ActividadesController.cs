@@ -48,6 +48,32 @@ namespace GeoMapx.Web.Controllers.Api
                 return Request.CreateResponse(HttpStatusCode.Conflict, err);
             }
         }
+        public HttpResponseMessage GetPrimarias(int proyectoid)
+        {
+            try
+            {
+                var lista = base._GetActividadesPrimarias(proyectoid);
+                return Request.CreateResponse<IEnumerable<string>>(HttpStatusCode.OK, lista);
+            }
+            catch (Exception ex)
+            {
+                HttpError err = new HttpError(ex.Message);
+                return Request.CreateResponse(HttpStatusCode.Conflict, err);
+            }
+        }
+        public HttpResponseMessage GetSecundarias(int proyectoid)
+        {
+            try
+            {
+                var lista = base._GetActividadesSecundarias(proyectoid);
+                return Request.CreateResponse<IEnumerable<string>>(HttpStatusCode.OK, lista);
+            }
+            catch (Exception ex)
+            {
+                HttpError err = new HttpError(ex.Message);
+                return Request.CreateResponse(HttpStatusCode.Conflict, err);
+            }
+        }
         public HttpResponseMessage GetPrebuilds(bool allField = false)
         {
             try
@@ -70,8 +96,11 @@ namespace GeoMapx.Web.Controllers.Api
                                    p.CodigoProyecto,
                                    p.UniCons,
                                    p.DescripcionActividad,
-                                   p.Cantidad,
-                                   p.CodigoPosteHasta
+                                   p.CodigoPosteHasta,
+                                   p.CantidadEjecutada,
+                                   p.CantidadLicitada,
+                                   p.Ejecutado,
+                                   CantidadPendiente = p.CantidadLicitada - p.CantidadEjecutada
                                };
                     //var x = lista.ToList();
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
@@ -105,8 +134,11 @@ namespace GeoMapx.Web.Controllers.Api
                                    p.CodigoProyecto,
                                    p.UniCons,
                                    p.DescripcionActividad,
-                                   p.Cantidad,
-                                   p.CodigoPosteHasta
+                                   p.CodigoPosteHasta,
+                                   p.CantidadEjecutada,
+                                   p.CantidadLicitada,
+                                   p.Ejecutado,
+                                   CantidadPendiente = p.CantidadLicitada - p.CantidadEjecutada
                                };
                     //var x = lista.ToList();
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
@@ -140,9 +172,11 @@ namespace GeoMapx.Web.Controllers.Api
                                    p.CodigoProyecto,
                                    p.UniCons,
                                    p.DescripcionActividad,
-                                   p.Cantidad,
+                                   p.CantidadEjecutada,
+                                   p.CantidadLicitada,
                                    p.CodigoPosteHasta,
-                                   p.Ejecutado
+                                   p.Ejecutado,
+                                   CantidadPendiente = p.CantidadLicitada - p.CantidadEjecutada,
                                };
                     //var x = lista.ToList();
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);

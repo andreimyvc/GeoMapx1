@@ -33,8 +33,11 @@ namespace GeoMapx.Web.Controllers.Api
                                    p.CodigoProyecto,
                                    p.UniCons,
                                    p.DescripcionActividad,
-                                   p.Cantidad,
-                                   p.CodigoPosteHasta
+                                   p.CantidadEjecutada,
+                                   p.CantidadLicitada,
+                                   p.CodigoPosteHasta,
+                                   p.Ejecutado,
+                                   CantidadPendiente = p.CantidadLicitada - p.CantidadEjecutada,
                                };
                     //var x = lista.ToList();
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
@@ -68,8 +71,11 @@ namespace GeoMapx.Web.Controllers.Api
                                    p.CodigoProyecto,
                                    p.UniCons,
                                    p.DescripcionActividad,
-                                   p.Cantidad,
-                                   p.CodigoPosteHasta
+                                   p.CantidadEjecutada,
+                                   p.CantidadLicitada,
+                                   p.CodigoPosteHasta,
+                                   p.Ejecutado,
+                                   CantidadPendiente = p.CantidadLicitada - p.CantidadEjecutada
                                };
                     //var x = lista.ToList();
                     return Request.CreateResponse<IEnumerable<object>>(HttpStatusCode.OK, data);
@@ -103,8 +109,10 @@ namespace GeoMapx.Web.Controllers.Api
                                    p.CodigoProyecto,
                                    p.UniCons,
                                    p.DescripcionActividad,
-                                   p.Cantidad,
+                                   p.CantidadEjecutada,
+                                   p.CantidadLicitada,
                                    p.CodigoPosteHasta,
+                                   CantidadPendiente = p.CantidadLicitada - p.CantidadEjecutada,
                                    p.Ejecutado
                                };
                     //var x = lista.ToList();
