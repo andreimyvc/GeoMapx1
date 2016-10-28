@@ -7,9 +7,9 @@ function initGridPrebuild() {
             { label: 'PreBuildID', name: 'PreBuildID', key: true, hidden: true },
             { label: 'ActividadID', name: 'ActividadID', hidden: true },
             { label: 'PosteID', name: 'PosteID', hidden: true },
-            { label: 'Unidad Cons.', name: 'UniCons', search: false, width: 90 },
+            { label: 'Unidad Constructiva', name: 'UniCons', search: false, width: 130 },
             {
-                label: 'CP', name: 'CantidadPendiente', key:true, search: false, width: 30, editable: true, edittype: "text",
+                label: 'Cantidad', name: 'CantidadPendiente', key:true, search: false, width: 65, editable: true, edittype: "text",
                 //formatter: 'integer',
                 //editoptions: {
                 //    size: 25, maxlengh: 30,
@@ -48,16 +48,18 @@ function initGridPrebuild() {
     var lastSelection;
 
     function editRow(id) {
-        if (id && id !== lastSelection) {
-            var grid = $(tableid);
-            grid.jqGrid('restoreRow', lastSelection);
-            grid.jqGrid('editRow', id, {
-                keys: false, focusField: 4,
-            });
+        if (document.editing) {
+            if (id && id !== lastSelection) {
+                var grid = $(tableid);
+                grid.jqGrid('restoreRow', lastSelection);
+                grid.jqGrid('editRow', id, {
+                    keys: false, focusField: 4,
+                });
 
-            //$(tableid).saveRow(id, false);
-            //$(tableid).jqGrid('saveRow',id, false);
-            lastSelection = id;
+                //$(tableid).saveRow(id, false);
+                //$(tableid).jqGrid('saveRow',id, false);
+                lastSelection = id;
+            }
         }
     }
 

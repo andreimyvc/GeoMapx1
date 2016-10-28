@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GeoMapxDBDataSet" targetNamespace="http://tempuri.org/GeoMapxDBDataSet.xsd" xmlns:mstns="http://tempuri.org/GeoMapxDBDataSet.xsd" xmlns="http://tempuri.org/GeoMapxDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GeoMapxDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GeoMapxDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GeoMapx.FormTest.Properties.Settings.GlobalReference.Default.GeoMapxDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_DetalleManoDeObraTableAdapter" GeneratorDataComponentClassName="VW_DetalleManoDeObraTableAdapter" Name="VW_DetalleManoDeObra" UserDataComponentName="VW_DetalleManoDeObraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GeoMapxDBConnectionString (Settings)" DbObjectName="GeoMapxDB.dbo.VW_DetalleManoDeObra" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ActividadPrimaria, ActividadSecundaria, CodigoPoste, UniCons, DescripcionActividad, Unidad, SumaDeCANTIDAD, Fecha, ProyectoID, CubicacionID, ContratistaID, SumaDePrecioTotalManoObra, SumaDePrecioTotalMateriales, Observacion, PrecioUnitario, CodigoEmpresa, CodigoProyecto, Cubicacion, CodigoContratista, DescripcionContratista FROM dbo.VW_DetalleManoDeObra</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ActividadPrimaria" DataSetColumn="ActividadPrimaria" />
+              <Mapping SourceColumn="ActividadSecundaria" DataSetColumn="ActividadSecundaria" />
+              <Mapping SourceColumn="CodigoPoste" DataSetColumn="CodigoPoste" />
+              <Mapping SourceColumn="UniCons" DataSetColumn="UniCons" />
+              <Mapping SourceColumn="DescripcionActividad" DataSetColumn="DescripcionActividad" />
+              <Mapping SourceColumn="Unidad" DataSetColumn="Unidad" />
+              <Mapping SourceColumn="SumaDeCANTIDAD" DataSetColumn="SumaDeCANTIDAD" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="ProyectoID" DataSetColumn="ProyectoID" />
+              <Mapping SourceColumn="CubicacionID" DataSetColumn="CubicacionID" />
+              <Mapping SourceColumn="ContratistaID" DataSetColumn="ContratistaID" />
+              <Mapping SourceColumn="SumaDePrecioTotalManoObra" DataSetColumn="SumaDePrecioTotalManoObra" />
+              <Mapping SourceColumn="SumaDePrecioTotalMateriales" DataSetColumn="SumaDePrecioTotalMateriales" />
+              <Mapping SourceColumn="Observacion" DataSetColumn="Observacion" />
+              <Mapping SourceColumn="PrecioUnitario" DataSetColumn="PrecioUnitario" />
+              <Mapping SourceColumn="CodigoEmpresa" DataSetColumn="CodigoEmpresa" />
+              <Mapping SourceColumn="CodigoProyecto" DataSetColumn="CodigoProyecto" />
+              <Mapping SourceColumn="Cubicacion" DataSetColumn="Cubicacion" />
+              <Mapping SourceColumn="CodigoContratista" DataSetColumn="CodigoContratista" />
+              <Mapping SourceColumn="DescripcionContratista" DataSetColumn="DescripcionContratista" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GeoMapxDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="GeoMapxDBDataSet" msprop:Generator_UserDSName="GeoMapxDBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VW_DetalleManoDeObra" msprop:Generator_TableClassName="VW_DetalleManoDeObraDataTable" msprop:Generator_TableVarName="tableVW_DetalleManoDeObra" msprop:Generator_TablePropName="VW_DetalleManoDeObra" msprop:Generator_RowDeletingName="VW_DetalleManoDeObraRowDeleting" msprop:Generator_RowChangingName="VW_DetalleManoDeObraRowChanging" msprop:Generator_RowEvHandlerName="VW_DetalleManoDeObraRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_DetalleManoDeObraRowDeleted" msprop:Generator_UserTableName="VW_DetalleManoDeObra" msprop:Generator_RowChangedName="VW_DetalleManoDeObraRowChanged" msprop:Generator_RowEvArgName="VW_DetalleManoDeObraRowChangeEvent" msprop:Generator_RowClassName="VW_DetalleManoDeObraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ActividadPrimaria" msprop:Generator_ColumnVarNameInTable="columnActividadPrimaria" msprop:Generator_ColumnPropNameInRow="ActividadPrimaria" msprop:Generator_ColumnPropNameInTable="ActividadPrimariaColumn" msprop:Generator_UserColumnName="ActividadPrimaria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActividadSecundaria" msprop:Generator_ColumnVarNameInTable="columnActividadSecundaria" msprop:Generator_ColumnPropNameInRow="ActividadSecundaria" msprop:Generator_ColumnPropNameInTable="ActividadSecundariaColumn" msprop:Generator_UserColumnName="ActividadSecundaria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoPoste" msprop:Generator_ColumnVarNameInTable="columnCodigoPoste" msprop:Generator_ColumnPropNameInRow="CodigoPoste" msprop:Generator_ColumnPropNameInTable="CodigoPosteColumn" msprop:Generator_UserColumnName="CodigoPoste">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UniCons" msprop:Generator_ColumnVarNameInTable="columnUniCons" msprop:Generator_ColumnPropNameInRow="UniCons" msprop:Generator_ColumnPropNameInTable="UniConsColumn" msprop:Generator_UserColumnName="UniCons">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionActividad" msprop:Generator_ColumnVarNameInTable="columnDescripcionActividad" msprop:Generator_ColumnPropNameInRow="DescripcionActividad" msprop:Generator_ColumnPropNameInTable="DescripcionActividadColumn" msprop:Generator_UserColumnName="DescripcionActividad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unidad" msprop:Generator_ColumnVarNameInTable="columnUnidad" msprop:Generator_ColumnPropNameInRow="Unidad" msprop:Generator_ColumnPropNameInTable="UnidadColumn" msprop:Generator_UserColumnName="Unidad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SumaDeCANTIDAD" msprop:Generator_ColumnVarNameInTable="columnSumaDeCANTIDAD" msprop:Generator_ColumnPropNameInRow="SumaDeCANTIDAD" msprop:Generator_ColumnPropNameInTable="SumaDeCANTIDADColumn" msprop:Generator_UserColumnName="SumaDeCANTIDAD" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" />
+              <xs:element name="ProyectoID" msprop:Generator_ColumnVarNameInTable="columnProyectoID" msprop:Generator_ColumnPropNameInRow="ProyectoID" msprop:Generator_ColumnPropNameInTable="ProyectoIDColumn" msprop:Generator_UserColumnName="ProyectoID" type="xs:int" />
+              <xs:element name="CubicacionID" msprop:Generator_ColumnVarNameInTable="columnCubicacionID" msprop:Generator_ColumnPropNameInRow="CubicacionID" msprop:Generator_ColumnPropNameInTable="CubicacionIDColumn" msprop:Generator_UserColumnName="CubicacionID" type="xs:int" minOccurs="0" />
+              <xs:element name="ContratistaID" msprop:Generator_ColumnVarNameInTable="columnContratistaID" msprop:Generator_ColumnPropNameInRow="ContratistaID" msprop:Generator_ColumnPropNameInTable="ContratistaIDColumn" msprop:Generator_UserColumnName="ContratistaID" type="xs:int" minOccurs="0" />
+              <xs:element name="SumaDePrecioTotalManoObra" msprop:Generator_ColumnVarNameInTable="columnSumaDePrecioTotalManoObra" msprop:Generator_ColumnPropNameInRow="SumaDePrecioTotalManoObra" msprop:Generator_ColumnPropNameInTable="SumaDePrecioTotalManoObraColumn" msprop:Generator_UserColumnName="SumaDePrecioTotalManoObra" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SumaDePrecioTotalMateriales" msprop:Generator_ColumnVarNameInTable="columnSumaDePrecioTotalMateriales" msprop:Generator_ColumnPropNameInRow="SumaDePrecioTotalMateriales" msprop:Generator_ColumnPropNameInTable="SumaDePrecioTotalMaterialesColumn" msprop:Generator_UserColumnName="SumaDePrecioTotalMateriales" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" msprop:Generator_UserColumnName="Observacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrecioUnitario" msprop:Generator_ColumnVarNameInTable="columnPrecioUnitario" msprop:Generator_ColumnPropNameInRow="PrecioUnitario" msprop:Generator_ColumnPropNameInTable="PrecioUnitarioColumn" msprop:Generator_UserColumnName="PrecioUnitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CodigoEmpresa" msprop:Generator_ColumnVarNameInTable="columnCodigoEmpresa" msprop:Generator_ColumnPropNameInRow="CodigoEmpresa" msprop:Generator_ColumnPropNameInTable="CodigoEmpresaColumn" msprop:Generator_UserColumnName="CodigoEmpresa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoProyecto" msprop:Generator_ColumnVarNameInTable="columnCodigoProyecto" msprop:Generator_ColumnPropNameInRow="CodigoProyecto" msprop:Generator_ColumnPropNameInTable="CodigoProyectoColumn" msprop:Generator_UserColumnName="CodigoProyecto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cubicacion" msprop:Generator_ColumnVarNameInTable="columnCubicacion" msprop:Generator_ColumnPropNameInRow="Cubicacion" msprop:Generator_ColumnPropNameInTable="CubicacionColumn" msprop:Generator_UserColumnName="Cubicacion" type="xs:int" />
+              <xs:element name="CodigoContratista" msprop:Generator_ColumnVarNameInTable="columnCodigoContratista" msprop:Generator_ColumnPropNameInRow="CodigoContratista" msprop:Generator_ColumnPropNameInTable="CodigoContratistaColumn" msprop:Generator_UserColumnName="CodigoContratista" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionContratista" msprop:Generator_ColumnVarNameInTable="columnDescripcionContratista" msprop:Generator_ColumnPropNameInRow="DescripcionContratista" msprop:Generator_ColumnPropNameInTable="DescripcionContratistaColumn" msprop:Generator_UserColumnName="DescripcionContratista" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:VW_DetalleManoDeObra" />
+      <xs:field xpath="mstns:ContratistaID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

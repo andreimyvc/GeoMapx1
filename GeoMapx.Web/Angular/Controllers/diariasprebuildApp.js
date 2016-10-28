@@ -88,6 +88,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         d.setGrid("#tblPrebuild", []);
     };
     d.newEntrada = function () {
+        document.editing = true;
         d.selectedPlanilla = null;
         d.control.fieldsReadOnly = false;
         d.control.btns.Nuevo.show = false;
@@ -100,7 +101,8 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         d.restoreState();
     };
     d.cancelEntrada = function () {
-        d.control.state = 'view'
+        d.control.state = 'view';
+        document.editing = false;
         d.control.fieldsReadOnly = true;
         d.control.btns.Nuevo.show = true;
         d.control.btns.Cancelar.show = false;
@@ -110,7 +112,8 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         //d.postesData = undefined;
     };
     d.editarEntrada = function () {
-        d.control.state = 'edit'
+        d.control.state = 'edit';
+        document.editing = true;
         d.control.fieldsReadOnly = false;
         d.control.btns.Nuevo.show = false;
         d.control.btns.Cancelar.show = true;
@@ -121,6 +124,8 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         //d.postesData = undefined;
         d.model.Cantidad = jqgridGetEdeitingCellValue('#tblPrebuild', 'CantidadPendiente');
         d.model.PreBuildID = jqgridGetSelectRowColumnValue('#tblPrebuild', 'PreBuildID');
+        d.model.CantidadEjecutada = jqgridGetSelectRowColumnValue('#tblPrebuild', 'CantidadEjecutada');
+        d.model.CantidadLicitada = jqgridGetSelectRowColumnValue('#tblPrebuild', 'CantidadLicitada');
         if (!d.ValidaModel()) { return; }
         d.control.fieldsReadOnly = false;
         d.control.btns.Nuevo.show = true;
@@ -185,6 +190,7 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                                         d.control.state = 'view';
                                         d.control.btns.Guardar.show = false;
                                         d.control.fieldsReadOnly = true;
+                                        document.editing = false;
                                         alert("OK");
                                         d.clearFields();
                                     }, function (error) {
@@ -221,7 +227,11 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         //d.postesData = undefined;
     };
     //#endregion Botones
-    d.ValidaModel = function () {
+    d.ValidaModel = function () { 
+        if (!d.model.PreBuildID) {
+            alert("Debe seleccionar una actividad");
+            return false;
+        }
         if (!d.selectedProyect) {
             alert("Debe seleccionar un proyecto");
             return false;
@@ -244,6 +254,10 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         }
         if (!d.model.Cantidad) {
             alert("Debe ingresar una cantidad válida");
+            return false;
+        }
+        if ((d.model.Cantidad > (d.model.CantidadLicitada - d.model.CantidadEjecutada))) { 
+            alert("Debe ingresar una cantidad menor");
             return false;
         }
         return true;
@@ -405,9 +419,9 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
             d.contratistasData = undefined;
         }
     };
-    var getSupervisoresByProyecto = function (supervisor) {
-        if (supervisor) {
-            geoDataFactory.getSupervisoresByProyecto(supervisor.ProyectoID).then(
+    var getSupervisoresByProyecto = function (proyecto) {
+        if (proyecto) {
+            geoDataFactory.getSupervisoresByProyecto(proyecto.ProyectoID).then(
                 function (data) {
                 d.supervisoresData = data;
             },function (error) {
@@ -503,14 +517,14 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
             }
         }
     };
-    d.setSelectedProyect = function (proyectid) {
+    d.setSelectedProyect = function (proyectid, onSuccess, onError) {
         d.selectedProyect = null;
         if (d.proyectosData) {
             d.selectedProyect = d.proyectosData.filter(function (elemento) { return elemento.ProyectoID == proyectid; })[0];
             if (!d.selectedProyect) {
                 getProyect(proyectid);
             } else {
-               //- getContratistasByProyecto();
+                if (onSuccess) { onSuccess(d.selectedProyect); }
             }
         } else {
             getProyect(proyectid);
@@ -520,16 +534,19 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                 d.proyectosData = data;
                 d.selectedProyect = d.proyectosData.filter(function (elemento) { return elemento.ProyectoID == proyectid; })[0];
                 //-getContratistasByProyecto();
+                if (onSuccess) { onSuccess(d.selectedProyect); }
             }, function (error) {
                 d.error = error.data.Message;
+                if (onError) { onError(data); }
             });
         }
     };
-    d.setSelectedPoligono = function (poligono) {
+    d.setSelectedPoligono = function (poligono, onSuccess, onError) {
         d.selectedPoligono = null;
         if (d.poligonosData && poligono) {
             d.selectedPoligono = d.poligonosData.filter(function (elemento) { return elemento.PoligonoID == poligono.PoligonoID; })[0];
             if (!d.selectedPoligono) { internalGet(); }
+            else { if (onSuccess) { onSuccess(d.selectedPoligono) }; }
         } else if(poligono) {
             internalGet();
         }
@@ -538,17 +555,21 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                     function (data) {
                         d.poligonosData = data;
                         d.selectedPoligono = d.poligonosData.filter(function (elemento) { return elemento.PoligonoID == poligono.PoligonoID; })[0];
+                        if (onSuccess) { onSuccess(d.selectedPoligono) };
                     }, function (error) {
                         d.error = error.data.Message;
+                        if (onError) { onSuccess(data) };
                     });
         };
     };
-    d.setSelectedPoste = function (poste) {
+    d.setSelectedPoste = function (poste, onSuccess, onError) {
         d.selectedPoste = null;
         if (d.postesData && poste) {
             d.selectedPoste = d.postesData.filter(function (elemento) { return elemento.PosteID == poste.PosteID; })[0];
-            if (d.selectedPoste) {
-                getActividadesPrebuildsByPoste();
+            if (d.selectedPoste) { 
+                if (onSuccess) { onSuccess(d.selectedPoste) } else {
+                    getActividadesPrebuildsByPoste();
+                }
             }else {
                 geInternal();
             }
@@ -561,20 +582,25 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
                     d.postesData = data;
                     d.selectedPoste = d.postesData.filter(function (elemento) { return elemento.PosteID == poste.PosteID; })[0];
                     if (d.selectedPoste) {
-                        getActividadesPrebuildsByPoste();
+                        if (onSuccess) { onSuccess(d.selectedPoste) } else {
+                            getActividadesPrebuildsByPoste();
+                        }
                     }
                 }, function (error) {
                     scope.error = error.data.Message;
+                    if (onError) { onSuccess(data) };
                 });
         }
     }
-    d.setSelectedContratista = function (contratista) {
+    d.setSelectedContratista = function (contratista, onSuccess, onError) {
         d.selectedContratista = null;
         if (d.contratistasData && contratista) {
             d.selectedContratista = d.contratistasData.filter(function (elemento) { return elemento.ContratistaID == contratista.ContratistaID; })[0];
             if (!d.selectedContratista) {
                 geInternal();
-            } 
+            } else {
+                if (onSuccess) { onSuccess(d.selectedContratista) };
+            }
         } else if (contratista) {
             geInternal();
         }
@@ -583,8 +609,10 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
               function (data) {
                   d.contratistasData = data;
                   d.selectedContratista = d.contratistasData.filter(function (elemento) { return elemento.ContratistaID == contratista.ContratistaID; })[0];
+                  if (onSuccess) { onSuccess(d.selectedContratista) };
               }, function (error) {
                   d.error = error.data.Message;
+                  if (onError) { onSuccess(data) };
               });
         }
     };
@@ -715,26 +743,34 @@ var diariasprebuildController = function (scope, http, geoDataFactory) {
         var config = d.config;
         if (config && config.lesstype) {
             d.control.lesstype = config.lesstype;
-            if (d.control.lesstype.proyecto) {
-                d.setSelectedProyect(config.data.proyecto.ProyectoID);
+            if (d.control.lesstype.proyecto) {    //888
+                d.setSelectedProyect(config.data.proyecto.ProyectoID,
+                    function (proyecto) {
+                        if (d.control.lesstype.poligono) {
+                            d.setSelectedPoligono(config.data.poligono, function (poligono) {
+                                if (d.control.lesstype.poste) {
+                                    d.setSelectedPoste(config.data.poste, function (poste) { 
+                                        getActividadesPrebuildsByPoste();
+                                        d.initMapAndMarker(poste);
+                                        d.initGridActividadesByPoste(poste.PosteID);
+                                    });
+                                } else { getPostesByPoligono(poligono) }
+                            });
+                        }
+                        else { getPoligonosByProyecto(proyecto); };
+                        if (d.control.lesstype.contratista) {
+                            d.setSelectedContratista(config.data.contratista, function (data) {
+                                if (d.control.lesstype.ficha) {
+                                    d.setSelectedFicha(config.data.ficha);
+                                }
+                            });
+                        } else { getContratistasByProyecto(); }
+                        if (d.control.lesstype.supervisor) {
+                            d.setSelectedSupervisor(config.data.supervisor)
+                        } else { getSupervisoresByProyecto(proyecto);}
+                    }
+                    );
                 //d.selectedProyect = config.data.proyecto;
-            }
-            if (d.control.lesstype.poligono) {
-                //d.selectedPoligono = config.data.poligono;
-                d.setSelectedPoligono(config.data.poligono);
-            }
-            if (d.control.lesstype.poste) {
-                d.setSelectedPoste(config.data.poste);
-                d.initGridActividadesByPoste(config.data.poste.PosteID);
-            }
-            if (d.control.lesstype.contratista) {
-                d.setSelectedContratista(config.data.contratista);
-            }
-            if (d.control.lesstype.ficha) {
-                d.setSelectedFicha(config.data.ficha);
-            }
-            if (d.control.lesstype.supervisor) {
-                d.setSelectedSupervisor(config.data.supervisor)
             }
             if (d.control.lesstype.fecha) {
                 var fecha = config.data.fecha;

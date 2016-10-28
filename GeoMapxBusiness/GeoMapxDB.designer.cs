@@ -152,6 +152,190 @@ namespace GeoMapxBusiness
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<VW_Actividade> VW_Actividades
+		{
+			get
+			{
+				return this.GetTable<VW_Actividade>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_SecuenciaCubicacione> VW_SecuenciaCubicaciones
+		{
+			get
+			{
+				return this.GetTable<VW_SecuenciaCubicacione>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_ActividadesEjecutada> VW_ActividadesEjecutadas
+		{
+			get
+			{
+				return this.GetTable<VW_ActividadesEjecutada>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_ActividadesPoste> VW_ActividadesPostes
+		{
+			get
+			{
+				return this.GetTable<VW_ActividadesPoste>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_ActividadesPreBuild> VW_ActividadesPreBuilds
+		{
+			get
+			{
+				return this.GetTable<VW_ActividadesPreBuild>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_AvanceProyectoByMe> VW_AvanceProyectoByMes
+		{
+			get
+			{
+				return this.GetTable<VW_AvanceProyectoByMe>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadME> VW_CantidadMEs
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadME>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadMPPPlanilla> VW_CantidadMPPPlanillas
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadMPPPlanilla>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadMPPPreBuild> VW_CantidadMPPPreBuilds
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadMPPPreBuild>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_CantidadMPreBuild> VW_CantidadMPreBuilds
+		{
+			get
+			{
+				return this.GetTable<VW_CantidadMPreBuild>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Cubicacione> VW_Cubicaciones
+		{
+			get
+			{
+				return this.GetTable<VW_Cubicacione>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_DetalleManoDeObra> VW_DetalleManoDeObras
+		{
+			get
+			{
+				return this.GetTable<VW_DetalleManoDeObra>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_LicitacionesEjecutada> VW_LicitacionesEjecutadas
+		{
+			get
+			{
+				return this.GetTable<VW_LicitacionesEjecutada>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Materiale> VW_Materiales
+		{
+			get
+			{
+				return this.GetTable<VW_Materiale>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_MontoCantidadEA> VW_MontoCantidadEAs
+		{
+			get
+			{
+				return this.GetTable<VW_MontoCantidadEA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_MontoEAP> VW_MontoEAPs
+		{
+			get
+			{
+				return this.GetTable<VW_MontoEAP>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_MontoEA> VW_MontoEAs
+		{
+			get
+			{
+				return this.GetTable<VW_MontoEA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_MontosByActividad> VW_MontosByActividads
+		{
+			get
+			{
+				return this.GetTable<VW_MontosByActividad>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_MontosEjecutado> VW_MontosEjecutados
+		{
+			get
+			{
+				return this.GetTable<VW_MontosEjecutado>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Planilla> VW_Planillas
+		{
+			get
+			{
+				return this.GetTable<VW_Planilla>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_Poste> VW_Postes
+		{
+			get
+			{
+				return this.GetTable<VW_Poste>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_PrebuildEjecutada> VW_PrebuildEjecutadas
+		{
+			get
+			{
+				return this.GetTable<VW_PrebuildEjecutada>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VW_PrecioMPUC> VW_PrecioMPUCs
+		{
+			get
+			{
+				return this.GetTable<VW_PrecioMPUC>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Actividade> Actividades
 		{
 			get
@@ -400,171 +584,19 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		public System.Data.Linq.Table<VW_Actividade> VW_Actividades
+		public System.Data.Linq.Table<Rpt_ManoObraCubicada> Rpt_ManoObraCubicadas
 		{
 			get
 			{
-				return this.GetTable<VW_Actividade>();
+				return this.GetTable<Rpt_ManoObraCubicada>();
 			}
 		}
 		
-		public System.Data.Linq.Table<VW_SecuenciaCubicacione> VW_SecuenciaCubicaciones
+		public System.Data.Linq.Table<VW_DetalleManoDeObraPorUniCon> VW_DetalleManoDeObraPorUniCons
 		{
 			get
 			{
-				return this.GetTable<VW_SecuenciaCubicacione>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_ActividadesEjecutada> VW_ActividadesEjecutadas
-		{
-			get
-			{
-				return this.GetTable<VW_ActividadesEjecutada>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_ActividadesPoste> VW_ActividadesPostes
-		{
-			get
-			{
-				return this.GetTable<VW_ActividadesPoste>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_ActividadesPreBuild> VW_ActividadesPreBuilds
-		{
-			get
-			{
-				return this.GetTable<VW_ActividadesPreBuild>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_AvanceProyectoByMe> VW_AvanceProyectoByMes
-		{
-			get
-			{
-				return this.GetTable<VW_AvanceProyectoByMe>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_CantidadME> VW_CantidadMEs
-		{
-			get
-			{
-				return this.GetTable<VW_CantidadME>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_CantidadMPPPlanilla> VW_CantidadMPPPlanillas
-		{
-			get
-			{
-				return this.GetTable<VW_CantidadMPPPlanilla>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_CantidadMPPPreBuild> VW_CantidadMPPPreBuilds
-		{
-			get
-			{
-				return this.GetTable<VW_CantidadMPPPreBuild>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_CantidadMPreBuild> VW_CantidadMPreBuilds
-		{
-			get
-			{
-				return this.GetTable<VW_CantidadMPreBuild>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_Cubicacione> VW_Cubicaciones
-		{
-			get
-			{
-				return this.GetTable<VW_Cubicacione>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_LicitacionesEjecutada> VW_LicitacionesEjecutadas
-		{
-			get
-			{
-				return this.GetTable<VW_LicitacionesEjecutada>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_Materiale> VW_Materiales
-		{
-			get
-			{
-				return this.GetTable<VW_Materiale>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_MontoCantidadEA> VW_MontoCantidadEAs
-		{
-			get
-			{
-				return this.GetTable<VW_MontoCantidadEA>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_MontoEAP> VW_MontoEAPs
-		{
-			get
-			{
-				return this.GetTable<VW_MontoEAP>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_MontoEA> VW_MontoEAs
-		{
-			get
-			{
-				return this.GetTable<VW_MontoEA>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_MontosByActividad> VW_MontosByActividads
-		{
-			get
-			{
-				return this.GetTable<VW_MontosByActividad>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_MontosEjecutado> VW_MontosEjecutados
-		{
-			get
-			{
-				return this.GetTable<VW_MontosEjecutado>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_Planilla> VW_Planillas
-		{
-			get
-			{
-				return this.GetTable<VW_Planilla>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_Poste> VW_Postes
-		{
-			get
-			{
-				return this.GetTable<VW_Poste>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VW_PrebuildEjecutada> VW_PrebuildEjecutadas
-		{
-			get
-			{
-				return this.GetTable<VW_PrebuildEjecutada>();
+				return this.GetTable<VW_DetalleManoDeObraPorUniCon>();
 			}
 		}
 		
@@ -573,6 +605,4587 @@ namespace GeoMapxBusiness
 		public string GetLastDayOfMonth([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Date", DbType="DateTime")] System.Nullable<System.DateTime> date)
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date).ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Actividades")]
+	public partial class VW_Actividade
+	{
+		
+		private int _ActividadID;
+		
+		private int _EmpresaID;
+		
+		private string _UniCons;
+		
+		private System.Nullable<int> _Cantidad;
+		
+		private string _DescripcionActividad;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private string _ActividadSGT;
+		
+		private System.DateTime _Fecha;
+		
+		private int _UserID;
+		
+		private System.Nullable<int> _ProyectoID;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+		private string _CodigoProyecto;
+		
+		public VW_Actividade()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
+		public string ActividadSGT
+		{
+			get
+			{
+				return this._ActividadSGT;
+			}
+			set
+			{
+				if ((this._ActividadSGT != value))
+				{
+					this._ActividadSGT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
+		public System.Nullable<int> ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_SecuenciaCubicaciones")]
+	public partial class VW_SecuenciaCubicacione
+	{
+		
+		private string _CodigoProyecto;
+		
+		private int _EmpresaID;
+		
+		private int _SecuenciaID;
+		
+		private int _ProyectoID;
+		
+		private int _Numero;
+		
+		private bool _Estado;
+		
+		private System.DateTime _Fecha;
+		
+		public VW_SecuenciaCubicacione()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", DbType="Int NOT NULL")]
+		public int SecuenciaID
+		{
+			get
+			{
+				return this._SecuenciaID;
+			}
+			set
+			{
+				if ((this._SecuenciaID != value))
+				{
+					this._SecuenciaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
+		public int Numero
+		{
+			get
+			{
+				return this._Numero;
+			}
+			set
+			{
+				if ((this._Numero != value))
+				{
+					this._Numero = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
+		public bool Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesEjecutadas")]
+	public partial class VW_ActividadesEjecutada
+	{
+		
+		private int _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private string _Mes;
+		
+		private System.Nullable<int> _CantidadEjecutada;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<int> _CantidadLicitada;
+		
+		private System.Nullable<double> _PorcentajeEjecutado;
+		
+		public VW_ActividadesEjecutada()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
+		public System.Nullable<int> CantidadEjecutada
+		{
+			get
+			{
+				return this._CantidadEjecutada;
+			}
+			set
+			{
+				if ((this._CantidadEjecutada != value))
+				{
+					this._CantidadEjecutada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadLicitada", DbType="Int")]
+		public System.Nullable<int> CantidadLicitada
+		{
+			get
+			{
+				return this._CantidadLicitada;
+			}
+			set
+			{
+				if ((this._CantidadLicitada != value))
+				{
+					this._CantidadLicitada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PorcentajeEjecutado", DbType="Float")]
+		public System.Nullable<double> PorcentajeEjecutado
+		{
+			get
+			{
+				return this._PorcentajeEjecutado;
+			}
+			set
+			{
+				if ((this._PorcentajeEjecutado != value))
+				{
+					this._PorcentajeEjecutado = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesPostes")]
+	public partial class VW_ActividadesPoste
+	{
+		
+		private int _ActividadID;
+		
+		private string _CodigoPoste;
+		
+		private string _UniCons;
+		
+		private string _DescripcionActividad;
+		
+		private int _Cantidad;
+		
+		private string _Hasta;
+		
+		private int _ProyectoID;
+		
+		private int _EmpresaID;
+		
+		private int _PosteID;
+		
+		private System.DateTime _Fecha;
+		
+		private int _PlanillaID;
+		
+		private int _UserID;
+		
+		private bool _Verificado;
+		
+		private System.Nullable<int> _UserIDModifica;
+		
+		private string _CodigoProyecto;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private string _ActividadSGT;
+		
+		private System.Nullable<int> _PosteIDHasta;
+		
+		private string _CodigoContratista;
+		
+		private string _CodigoFicha;
+		
+		public VW_ActividadesPoste()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
+		{
+			get
+			{
+				return this._CodigoPoste;
+			}
+			set
+			{
+				if ((this._CodigoPoste != value))
+				{
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
+		public int Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="VarChar(15)")]
+		public string Hasta
+		{
+			get
+			{
+				return this._Hasta;
+			}
+			set
+			{
+				if ((this._Hasta != value))
+				{
+					this._Hasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Int NOT NULL")]
+		public int PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Verificado", DbType="Bit NOT NULL")]
+		public bool Verificado
+		{
+			get
+			{
+				return this._Verificado;
+			}
+			set
+			{
+				if ((this._Verificado != value))
+				{
+					this._Verificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
+		public System.Nullable<int> UserIDModifica
+		{
+			get
+			{
+				return this._UserIDModifica;
+			}
+			set
+			{
+				if ((this._UserIDModifica != value))
+				{
+					this._UserIDModifica = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
+		public string ActividadSGT
+		{
+			get
+			{
+				return this._ActividadSGT;
+			}
+			set
+			{
+				if ((this._ActividadSGT != value))
+				{
+					this._ActividadSGT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
+		public System.Nullable<int> PosteIDHasta
+		{
+			get
+			{
+				return this._PosteIDHasta;
+			}
+			set
+			{
+				if ((this._PosteIDHasta != value))
+				{
+					this._PosteIDHasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
+		public string CodigoContratista
+		{
+			get
+			{
+				return this._CodigoContratista;
+			}
+			set
+			{
+				if ((this._CodigoContratista != value))
+				{
+					this._CodigoContratista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoFicha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CodigoFicha
+		{
+			get
+			{
+				return this._CodigoFicha;
+			}
+			set
+			{
+				if ((this._CodigoFicha != value))
+				{
+					this._CodigoFicha = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesPreBuild")]
+	public partial class VW_ActividadesPreBuild
+	{
+		
+		private int _PreBuildID;
+		
+		private int _ProyectoID;
+		
+		private int _PosteID;
+		
+		private int _ActividadID;
+		
+		private double _CantidadLicitada;
+		
+		private System.Nullable<int> _PosteIDHasta;
+		
+		private System.Nullable<bool> _Ejecutado;
+		
+		private System.Nullable<System.DateTime> _FechaEjecutado;
+		
+		private string _UniCons;
+		
+		private string _CodigoProyecto;
+		
+		private string _CodigoPoste;
+		
+		private string _CodigoPosteHasta;
+		
+		private System.Nullable<double> _CantidadOrgPreBuild;
+		
+		private string _DescripcionActividad;
+		
+		private int _CantidadEjecutada;
+		
+		public VW_ActividadesPreBuild()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreBuildID", DbType="Int NOT NULL")]
+		public int PreBuildID
+		{
+			get
+			{
+				return this._PreBuildID;
+			}
+			set
+			{
+				if ((this._PreBuildID != value))
+				{
+					this._PreBuildID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadLicitada", DbType="Float NOT NULL")]
+		public double CantidadLicitada
+		{
+			get
+			{
+				return this._CantidadLicitada;
+			}
+			set
+			{
+				if ((this._CantidadLicitada != value))
+				{
+					this._CantidadLicitada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
+		public System.Nullable<int> PosteIDHasta
+		{
+			get
+			{
+				return this._PosteIDHasta;
+			}
+			set
+			{
+				if ((this._PosteIDHasta != value))
+				{
+					this._PosteIDHasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ejecutado", DbType="Bit")]
+		public System.Nullable<bool> Ejecutado
+		{
+			get
+			{
+				return this._Ejecutado;
+			}
+			set
+			{
+				if ((this._Ejecutado != value))
+				{
+					this._Ejecutado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaEjecutado", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaEjecutado
+		{
+			get
+			{
+				return this._FechaEjecutado;
+			}
+			set
+			{
+				if ((this._FechaEjecutado != value))
+				{
+					this._FechaEjecutado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
+		{
+			get
+			{
+				return this._CodigoPoste;
+			}
+			set
+			{
+				if ((this._CodigoPoste != value))
+				{
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPosteHasta", DbType="VarChar(15)")]
+		public string CodigoPosteHasta
+		{
+			get
+			{
+				return this._CodigoPosteHasta;
+			}
+			set
+			{
+				if ((this._CodigoPosteHasta != value))
+				{
+					this._CodigoPosteHasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadOrgPreBuild", DbType="Float")]
+		public System.Nullable<double> CantidadOrgPreBuild
+		{
+			get
+			{
+				return this._CantidadOrgPreBuild;
+			}
+			set
+			{
+				if ((this._CantidadOrgPreBuild != value))
+				{
+					this._CantidadOrgPreBuild = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int NOT NULL")]
+		public int CantidadEjecutada
+		{
+			get
+			{
+				return this._CantidadEjecutada;
+			}
+			set
+			{
+				if ((this._CantidadEjecutada != value))
+				{
+					this._CantidadEjecutada = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_AvanceProyectoByMes")]
+	public partial class VW_AvanceProyectoByMe
+	{
+		
+		private System.Nullable<decimal> _Porcentaje;
+		
+		private System.Nullable<int> _ProyectoID;
+		
+		private string _Mes;
+		
+		private System.Nullable<decimal> _MontoEjecutado;
+		
+		private string _CodigoProyecto;
+		
+		public VW_AvanceProyectoByMe()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Porcentaje", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Porcentaje
+		{
+			get
+			{
+				return this._Porcentaje;
+			}
+			set
+			{
+				if ((this._Porcentaje != value))
+				{
+					this._Porcentaje = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
+		public System.Nullable<int> ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEjecutado", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoEjecutado
+		{
+			get
+			{
+				return this._MontoEjecutado;
+			}
+			set
+			{
+				if ((this._MontoEjecutado != value))
+				{
+					this._MontoEjecutado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadME")]
+	public partial class VW_CantidadME
+	{
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<int> _PoligonoID;
+		
+		private System.Nullable<int> _LoteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<decimal> _CantidadME;
+		
+		public VW_CantidadME()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
+		public System.Nullable<int> PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this._PoligonoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
+		public System.Nullable<int> LoteID
+		{
+			get
+			{
+				return this._LoteID;
+			}
+			set
+			{
+				if ((this._LoteID != value))
+				{
+					this._LoteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadME", DbType="Decimal(38,5)")]
+		public System.Nullable<decimal> CantidadME
+		{
+			get
+			{
+				return this._CantidadME;
+			}
+			set
+			{
+				if ((this._CantidadME != value))
+				{
+					this._CantidadME = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPPPlanilla")]
+	public partial class VW_CantidadMPPPlanilla
+	{
+		
+		private int _ProyectoID;
+		
+		private int _PosteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<decimal> _CantidadMPPPlanilla;
+		
+		public VW_CantidadMPPPlanilla()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPPPlanilla", DbType="Decimal(38,5)")]
+		public System.Nullable<decimal> CantidadMPPPlanilla
+		{
+			get
+			{
+				return this._CantidadMPPPlanilla;
+			}
+			set
+			{
+				if ((this._CantidadMPPPlanilla != value))
+				{
+					this._CantidadMPPPlanilla = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPPPreBuild")]
+	public partial class VW_CantidadMPPPreBuild
+	{
+		
+		private int _ProyectoID;
+		
+		private int _PosteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<double> _CantidadMPP;
+		
+		public VW_CantidadMPPPreBuild()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPP", DbType="Float")]
+		public System.Nullable<double> CantidadMPP
+		{
+			get
+			{
+				return this._CantidadMPP;
+			}
+			set
+			{
+				if ((this._CantidadMPP != value))
+				{
+					this._CantidadMPP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPreBuild")]
+	public partial class VW_CantidadMPreBuild
+	{
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<int> _PoligonoID;
+		
+		private System.Nullable<int> _LoteID;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<double> _CantidadMPreBuild;
+		
+		public VW_CantidadMPreBuild()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
+		public System.Nullable<int> PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this._PoligonoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
+		public System.Nullable<int> LoteID
+		{
+			get
+			{
+				return this._LoteID;
+			}
+			set
+			{
+				if ((this._LoteID != value))
+				{
+					this._LoteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPreBuild", DbType="Float")]
+		public System.Nullable<double> CantidadMPreBuild
+		{
+			get
+			{
+				return this._CantidadMPreBuild;
+			}
+			set
+			{
+				if ((this._CantidadMPreBuild != value))
+				{
+					this._CantidadMPreBuild = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Cubicaciones")]
+	public partial class VW_Cubicacione
+	{
+		
+		private string _CodigoProyecto;
+		
+		private int _EmpresaID;
+		
+		private int _CubicacionID;
+		
+		private int _SecuenciaID;
+		
+		private System.DateTime _FechaInicio;
+		
+		private System.DateTime _FechaFin;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<bool> _EstadoActividades;
+		
+		private int _Numero;
+		
+		private bool _Estado;
+		
+		private System.DateTime _Fecha;
+		
+		public VW_Cubicacione()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", DbType="Int NOT NULL")]
+		public int CubicacionID
+		{
+			get
+			{
+				return this._CubicacionID;
+			}
+			set
+			{
+				if ((this._CubicacionID != value))
+				{
+					this._CubicacionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", DbType="Int NOT NULL")]
+		public int SecuenciaID
+		{
+			get
+			{
+				return this._SecuenciaID;
+			}
+			set
+			{
+				if ((this._SecuenciaID != value))
+				{
+					this._SecuenciaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaInicio", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaInicio
+		{
+			get
+			{
+				return this._FechaInicio;
+			}
+			set
+			{
+				if ((this._FechaInicio != value))
+				{
+					this._FechaInicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaFin", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaFin
+		{
+			get
+			{
+				return this._FechaFin;
+			}
+			set
+			{
+				if ((this._FechaFin != value))
+				{
+					this._FechaFin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(120)")]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(120)")]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoActividades", DbType="Bit")]
+		public System.Nullable<bool> EstadoActividades
+		{
+			get
+			{
+				return this._EstadoActividades;
+			}
+			set
+			{
+				if ((this._EstadoActividades != value))
+				{
+					this._EstadoActividades = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
+		public int Numero
+		{
+			get
+			{
+				return this._Numero;
+			}
+			set
+			{
+				if ((this._Numero != value))
+				{
+					this._Numero = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
+		public bool Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_DetalleManoDeObra")]
+	public partial class VW_DetalleManoDeObra
+	{
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private string _CodigoPoste;
+		
+		private string _UniCons;
+		
+		private string _DescripcionActividad;
+		
+		private string _Unidad;
+		
+		private System.Nullable<int> _SumaDeCANTIDAD;
+		
+		private System.DateTime _Fecha;
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<int> _CubicacionID;
+		
+		private System.Nullable<int> _ContratistaID;
+		
+		private System.Nullable<decimal> _SumaDePrecioTotalManoObra;
+		
+		private System.Nullable<decimal> _SumaDePrecioTotalMateriales;
+		
+		private string _Observacion;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+		private string _CodigoEmpresa;
+		
+		private string _CodigoProyecto;
+		
+		private int _Cubicacion;
+		
+		private string _CodigoContratista;
+		
+		private string _DescripcionContratista;
+		
+		public VW_DetalleManoDeObra()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
+		{
+			get
+			{
+				return this._CodigoPoste;
+			}
+			set
+			{
+				if ((this._CodigoPoste != value))
+				{
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unidad", DbType="VarChar(10)")]
+		public string Unidad
+		{
+			get
+			{
+				return this._Unidad;
+			}
+			set
+			{
+				if ((this._Unidad != value))
+				{
+					this._Unidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDeCANTIDAD", DbType="Int")]
+		public System.Nullable<int> SumaDeCANTIDAD
+		{
+			get
+			{
+				return this._SumaDeCANTIDAD;
+			}
+			set
+			{
+				if ((this._SumaDeCANTIDAD != value))
+				{
+					this._SumaDeCANTIDAD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", DbType="Int")]
+		public System.Nullable<int> CubicacionID
+		{
+			get
+			{
+				return this._CubicacionID;
+			}
+			set
+			{
+				if ((this._CubicacionID != value))
+				{
+					this._CubicacionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContratistaID", DbType="Int")]
+		public System.Nullable<int> ContratistaID
+		{
+			get
+			{
+				return this._ContratistaID;
+			}
+			set
+			{
+				if ((this._ContratistaID != value))
+				{
+					this._ContratistaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDePrecioTotalManoObra", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> SumaDePrecioTotalManoObra
+		{
+			get
+			{
+				return this._SumaDePrecioTotalManoObra;
+			}
+			set
+			{
+				if ((this._SumaDePrecioTotalManoObra != value))
+				{
+					this._SumaDePrecioTotalManoObra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDePrecioTotalMateriales", DbType="Decimal(38,10)")]
+		public System.Nullable<decimal> SumaDePrecioTotalMateriales
+		{
+			get
+			{
+				return this._SumaDePrecioTotalMateriales;
+			}
+			set
+			{
+				if ((this._SumaDePrecioTotalMateriales != value))
+				{
+					this._SumaDePrecioTotalMateriales = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(500)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEmpresa", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoEmpresa
+		{
+			get
+			{
+				return this._CodigoEmpresa;
+			}
+			set
+			{
+				if ((this._CodigoEmpresa != value))
+				{
+					this._CodigoEmpresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cubicacion", DbType="Int NOT NULL")]
+		public int Cubicacion
+		{
+			get
+			{
+				return this._Cubicacion;
+			}
+			set
+			{
+				if ((this._Cubicacion != value))
+				{
+					this._Cubicacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
+		public string CodigoContratista
+		{
+			get
+			{
+				return this._CodigoContratista;
+			}
+			set
+			{
+				if ((this._CodigoContratista != value))
+				{
+					this._CodigoContratista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionContratista", DbType="VarChar(50)")]
+		public string DescripcionContratista
+		{
+			get
+			{
+				return this._DescripcionContratista;
+			}
+			set
+			{
+				if ((this._DescripcionContratista != value))
+				{
+					this._DescripcionContratista = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_LicitacionesEjecutadas")]
+	public partial class VW_LicitacionesEjecutada
+	{
+		
+		private int _CantidadEjecutadas;
+		
+		private System.Nullable<int> _CantidadPendiente;
+		
+		private int _PrecioID;
+		
+		private int _ProyectoID;
+		
+		private System.Nullable<int> _ActividadID;
+		
+		private string _Descripcion;
+		
+		private int _Cantidad;
+		
+		private decimal _PrecioUnitario;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+		private string _CodigoProyecto;
+		
+		private string _UniCons;
+		
+		public VW_LicitacionesEjecutada()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutadas", DbType="Int NOT NULL")]
+		public int CantidadEjecutadas
+		{
+			get
+			{
+				return this._CantidadEjecutadas;
+			}
+			set
+			{
+				if ((this._CantidadEjecutadas != value))
+				{
+					this._CantidadEjecutadas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadPendiente", DbType="Int")]
+		public System.Nullable<int> CantidadPendiente
+		{
+			get
+			{
+				return this._CantidadPendiente;
+			}
+			set
+			{
+				if ((this._CantidadPendiente != value))
+				{
+					this._CantidadPendiente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioID", DbType="Int NOT NULL")]
+		public int PrecioID
+		{
+			get
+			{
+				return this._PrecioID;
+			}
+			set
+			{
+				if ((this._PrecioID != value))
+				{
+					this._PrecioID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
+		public System.Nullable<int> ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
+		public int Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(18,2) NOT NULL")]
+		public decimal PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Materiales")]
+	public partial class VW_Materiale
+	{
+		
+		private string _CodigoProyecto;
+		
+		private string _UniCons;
+		
+		private string _DescripcionActividad;
+		
+		private int _MaterialID;
+		
+		private System.Nullable<int> _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private string _CodigoMaterial;
+		
+		private string _Descripcion;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+		public VW_Materiale()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
+		public int MaterialID
+		{
+			get
+			{
+				return this._MaterialID;
+			}
+			set
+			{
+				if ((this._MaterialID != value))
+				{
+					this._MaterialID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
+		public System.Nullable<int> ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoMaterial", DbType="VarChar(10)")]
+		public string CodigoMaterial
+		{
+			get
+			{
+				return this._CodigoMaterial;
+			}
+			set
+			{
+				if ((this._CodigoMaterial != value))
+				{
+					this._CodigoMaterial = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoCantidadEAS")]
+	public partial class VW_MontoCantidadEA
+	{
+		
+		private int _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private string _Mes;
+		
+		private System.Nullable<int> _CantidadEjecutada;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<int> _CantidadLicitada;
+		
+		private System.Nullable<double> _PorcentajeEjecutado;
+		
+		private System.Nullable<decimal> _MontoEAP;
+		
+		public VW_MontoCantidadEA()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
+		public System.Nullable<int> CantidadEjecutada
+		{
+			get
+			{
+				return this._CantidadEjecutada;
+			}
+			set
+			{
+				if ((this._CantidadEjecutada != value))
+				{
+					this._CantidadEjecutada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadLicitada", DbType="Int")]
+		public System.Nullable<int> CantidadLicitada
+		{
+			get
+			{
+				return this._CantidadLicitada;
+			}
+			set
+			{
+				if ((this._CantidadLicitada != value))
+				{
+					this._CantidadLicitada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PorcentajeEjecutado", DbType="Float")]
+		public System.Nullable<double> PorcentajeEjecutado
+		{
+			get
+			{
+				return this._PorcentajeEjecutado;
+			}
+			set
+			{
+				if ((this._PorcentajeEjecutado != value))
+				{
+					this._PorcentajeEjecutado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoEAP
+		{
+			get
+			{
+				return this._MontoEAP;
+			}
+			set
+			{
+				if ((this._MontoEAP != value))
+				{
+					this._MontoEAP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoEAP")]
+	public partial class VW_MontoEAP
+	{
+		
+		private int _ProyectoID;
+		
+		private string _Mes;
+		
+		private string _ActividadPrimaria;
+		
+		private System.Nullable<decimal> _MontoEAP;
+		
+		public VW_MontoEAP()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoEAP
+		{
+			get
+			{
+				return this._MontoEAP;
+			}
+			set
+			{
+				if ((this._MontoEAP != value))
+				{
+					this._MontoEAP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoEAS")]
+	public partial class VW_MontoEA
+	{
+		
+		private int _ProyectoID;
+		
+		private string _Mes;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<decimal> _MontoEAP;
+		
+		public VW_MontoEA()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoEAP
+		{
+			get
+			{
+				return this._MontoEAP;
+			}
+			set
+			{
+				if ((this._MontoEAP != value))
+				{
+					this._MontoEAP = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontosByActividad")]
+	public partial class VW_MontosByActividad
+	{
+		
+		private string _CodigoProyecto;
+		
+		private string _UniCons;
+		
+		private System.Nullable<decimal> _MontoLicitadoMO;
+		
+		private System.Nullable<int> _Cantidad;
+		
+		private int _ActividadID;
+		
+		private System.Nullable<int> _ProyectoID;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<decimal> _MontoLicitadoMA;
+		
+		private System.Nullable<decimal> _MontoLicitadoTotal;
+		
+		public VW_MontosByActividad()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoLicitadoMO", DbType="Decimal(21,2)")]
+		public System.Nullable<decimal> MontoLicitadoMO
+		{
+			get
+			{
+				return this._MontoLicitadoMO;
+			}
+			set
+			{
+				if ((this._MontoLicitadoMO != value))
+				{
+					this._MontoLicitadoMO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
+		public System.Nullable<int> ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoLicitadoMA", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoLicitadoMA
+		{
+			get
+			{
+				return this._MontoLicitadoMA;
+			}
+			set
+			{
+				if ((this._MontoLicitadoMA != value))
+				{
+					this._MontoLicitadoMA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoLicitadoTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoLicitadoTotal
+		{
+			get
+			{
+				return this._MontoLicitadoTotal;
+			}
+			set
+			{
+				if ((this._MontoLicitadoTotal != value))
+				{
+					this._MontoLicitadoTotal = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontosEjecutados")]
+	public partial class VW_MontosEjecutado
+	{
+		
+		private System.Nullable<decimal> _MontoEjecutado;
+		
+		private int _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private string _Mes;
+		
+		private string _ActividadSecundaria;
+		
+		private string _ActividadPrimaria;
+		
+		public VW_MontosEjecutado()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEjecutado", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MontoEjecutado
+		{
+			get
+			{
+				return this._MontoEjecutado;
+			}
+			set
+			{
+				if ((this._MontoEjecutado != value))
+				{
+					this._MontoEjecutado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
+		public string Mes
+		{
+			get
+			{
+				return this._Mes;
+			}
+			set
+			{
+				if ((this._Mes != value))
+				{
+					this._Mes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Planilla")]
+	public partial class VW_Planilla
+	{
+		
+		private string _NombreEmpresa;
+		
+		private string _CodigoProyecto;
+		
+		private string _UniCons;
+		
+		private int _PlanillaID;
+		
+		private int _EmpresaID;
+		
+		private int _ActividadID;
+		
+		private int _ProyectoID;
+		
+		private int _PosteID;
+		
+		private int _Cantidad;
+		
+		private System.DateTime _Fecha;
+		
+		private int _UserID;
+		
+		private System.Nullable<int> _UserIDModifica;
+		
+		private System.Nullable<System.DateTime> _FechaModificacion;
+		
+		private string _UserName;
+		
+		private string _UserCode;
+		
+		private string _CodigoEmpresa;
+		
+		private string _CodigoPoste;
+		
+		private string _CodigoPosteHasta;
+		
+		private string _DescripcionFinanciera;
+		
+		private string _CodioFinanciera;
+		
+		private string _DescripcionContratista;
+		
+		private string _DescripcionActividad;
+		
+		private string _DescripcionProyecto;
+		
+		private string _CodigoContratista;
+		
+		private System.Nullable<int> _ContratistaID;
+		
+		private string _CodigoFicha;
+		
+		private System.Nullable<int> _PosteIDHasta;
+		
+		private System.Nullable<System.DateTime> _FechaIngreso;
+		
+		private System.Nullable<int> _FichaID;
+		
+		private string _Observacion;
+		
+		private string _ObservacionVerificador;
+		
+		private System.Nullable<int> _UserIDVerificador;
+		
+		private System.Nullable<System.DateTime> _FechaVerificado;
+		
+		private bool _Verificado;
+		
+		private System.Nullable<int> _SupervisorID;
+		
+		private string _SerialTransformador;
+		
+		private string _NombreCompletoSupervisor;
+		
+		private int _CodigoPoligono;
+		
+		private int _PoligonoID;
+		
+		private string _ActividadPrimaria;
+		
+		private string _ActividadSecundaria;
+		
+		private System.Nullable<int> _CubicacionID;
+		
+		public VW_Planilla()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreEmpresa", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string NombreEmpresa
+		{
+			get
+			{
+				return this._NombreEmpresa;
+			}
+			set
+			{
+				if ((this._NombreEmpresa != value))
+				{
+					this._NombreEmpresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
+		{
+			get
+			{
+				return this._UniCons;
+			}
+			set
+			{
+				if ((this._UniCons != value))
+				{
+					this._UniCons = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Int NOT NULL")]
+		public int PlanillaID
+		{
+			get
+			{
+				return this._PlanillaID;
+			}
+			set
+			{
+				if ((this._PlanillaID != value))
+				{
+					this._PlanillaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
+		public int Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
+		public System.Nullable<int> UserIDModifica
+		{
+			get
+			{
+				return this._UserIDModifica;
+			}
+			set
+			{
+				if ((this._UserIDModifica != value))
+				{
+					this._UserIDModifica = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaModificacion
+		{
+			get
+			{
+				return this._FechaModificacion;
+			}
+			set
+			{
+				if ((this._FechaModificacion != value))
+				{
+					this._FechaModificacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string UserCode
+		{
+			get
+			{
+				return this._UserCode;
+			}
+			set
+			{
+				if ((this._UserCode != value))
+				{
+					this._UserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEmpresa", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoEmpresa
+		{
+			get
+			{
+				return this._CodigoEmpresa;
+			}
+			set
+			{
+				if ((this._CodigoEmpresa != value))
+				{
+					this._CodigoEmpresa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
+		{
+			get
+			{
+				return this._CodigoPoste;
+			}
+			set
+			{
+				if ((this._CodigoPoste != value))
+				{
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPosteHasta", DbType="VarChar(15)")]
+		public string CodigoPosteHasta
+		{
+			get
+			{
+				return this._CodigoPosteHasta;
+			}
+			set
+			{
+				if ((this._CodigoPosteHasta != value))
+				{
+					this._CodigoPosteHasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionFinanciera", DbType="VarChar(300) NOT NULL", CanBeNull=false)]
+		public string DescripcionFinanciera
+		{
+			get
+			{
+				return this._DescripcionFinanciera;
+			}
+			set
+			{
+				if ((this._DescripcionFinanciera != value))
+				{
+					this._DescripcionFinanciera = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodioFinanciera", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CodioFinanciera
+		{
+			get
+			{
+				return this._CodioFinanciera;
+			}
+			set
+			{
+				if ((this._CodioFinanciera != value))
+				{
+					this._CodioFinanciera = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionContratista", DbType="VarChar(50)")]
+		public string DescripcionContratista
+		{
+			get
+			{
+				return this._DescripcionContratista;
+			}
+			set
+			{
+				if ((this._DescripcionContratista != value))
+				{
+					this._DescripcionContratista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
+		{
+			get
+			{
+				return this._DescripcionActividad;
+			}
+			set
+			{
+				if ((this._DescripcionActividad != value))
+				{
+					this._DescripcionActividad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionProyecto", DbType="VarChar(300)")]
+		public string DescripcionProyecto
+		{
+			get
+			{
+				return this._DescripcionProyecto;
+			}
+			set
+			{
+				if ((this._DescripcionProyecto != value))
+				{
+					this._DescripcionProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
+		public string CodigoContratista
+		{
+			get
+			{
+				return this._CodigoContratista;
+			}
+			set
+			{
+				if ((this._CodigoContratista != value))
+				{
+					this._CodigoContratista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContratistaID", DbType="Int")]
+		public System.Nullable<int> ContratistaID
+		{
+			get
+			{
+				return this._ContratistaID;
+			}
+			set
+			{
+				if ((this._ContratistaID != value))
+				{
+					this._ContratistaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoFicha", DbType="VarChar(50)")]
+		public string CodigoFicha
+		{
+			get
+			{
+				return this._CodigoFicha;
+			}
+			set
+			{
+				if ((this._CodigoFicha != value))
+				{
+					this._CodigoFicha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
+		public System.Nullable<int> PosteIDHasta
+		{
+			get
+			{
+				return this._PosteIDHasta;
+			}
+			set
+			{
+				if ((this._PosteIDHasta != value))
+				{
+					this._PosteIDHasta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaIngreso", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaIngreso
+		{
+			get
+			{
+				return this._FechaIngreso;
+			}
+			set
+			{
+				if ((this._FechaIngreso != value))
+				{
+					this._FechaIngreso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FichaID", DbType="Int")]
+		public System.Nullable<int> FichaID
+		{
+			get
+			{
+				return this._FichaID;
+			}
+			set
+			{
+				if ((this._FichaID != value))
+				{
+					this._FichaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(500)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ObservacionVerificador", DbType="VarChar(500)")]
+		public string ObservacionVerificador
+		{
+			get
+			{
+				return this._ObservacionVerificador;
+			}
+			set
+			{
+				if ((this._ObservacionVerificador != value))
+				{
+					this._ObservacionVerificador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDVerificador", DbType="Int")]
+		public System.Nullable<int> UserIDVerificador
+		{
+			get
+			{
+				return this._UserIDVerificador;
+			}
+			set
+			{
+				if ((this._UserIDVerificador != value))
+				{
+					this._UserIDVerificador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaVerificado", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaVerificado
+		{
+			get
+			{
+				return this._FechaVerificado;
+			}
+			set
+			{
+				if ((this._FechaVerificado != value))
+				{
+					this._FechaVerificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Verificado", DbType="Bit NOT NULL")]
+		public bool Verificado
+		{
+			get
+			{
+				return this._Verificado;
+			}
+			set
+			{
+				if ((this._Verificado != value))
+				{
+					this._Verificado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisorID", DbType="Int")]
+		public System.Nullable<int> SupervisorID
+		{
+			get
+			{
+				return this._SupervisorID;
+			}
+			set
+			{
+				if ((this._SupervisorID != value))
+				{
+					this._SupervisorID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SerialTransformador", DbType="VarChar(30)")]
+		public string SerialTransformador
+		{
+			get
+			{
+				return this._SerialTransformador;
+			}
+			set
+			{
+				if ((this._SerialTransformador != value))
+				{
+					this._SerialTransformador = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCompletoSupervisor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NombreCompletoSupervisor
+		{
+			get
+			{
+				return this._NombreCompletoSupervisor;
+			}
+			set
+			{
+				if ((this._NombreCompletoSupervisor != value))
+				{
+					this._NombreCompletoSupervisor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoligono", DbType="Int NOT NULL")]
+		public int CodigoPoligono
+		{
+			get
+			{
+				return this._CodigoPoligono;
+			}
+			set
+			{
+				if ((this._CodigoPoligono != value))
+				{
+					this._CodigoPoligono = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int NOT NULL")]
+		public int PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this._PoligonoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
+		{
+			get
+			{
+				return this._ActividadPrimaria;
+			}
+			set
+			{
+				if ((this._ActividadPrimaria != value))
+				{
+					this._ActividadPrimaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
+		{
+			get
+			{
+				return this._ActividadSecundaria;
+			}
+			set
+			{
+				if ((this._ActividadSecundaria != value))
+				{
+					this._ActividadSecundaria = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", DbType="Int")]
+		public System.Nullable<int> CubicacionID
+		{
+			get
+			{
+				return this._CubicacionID;
+			}
+			set
+			{
+				if ((this._CubicacionID != value))
+				{
+					this._CubicacionID = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Postes")]
+	public partial class VW_Poste
+	{
+		
+		private int _PosteID;
+		
+		private int _EmpresaID;
+		
+		private int _ProyectoID;
+		
+		private int _TipoPosteID;
+		
+		private System.Nullable<int> _PoligonoID;
+		
+		private System.Nullable<int> _LoteID;
+		
+		private string _CodigoPoste;
+		
+		private decimal _X;
+		
+		private decimal _Y;
+		
+		private System.Nullable<decimal> _Z;
+		
+		private string _ObservacionPoste;
+		
+		private int _UserID;
+		
+		private System.DateTime _Fecha;
+		
+		private System.Nullable<int> _UserIDModifica;
+		
+		private System.Nullable<System.DateTime> _FechaModificacion;
+		
+		private System.Nullable<decimal> _Lat;
+		
+		private System.Nullable<decimal> _Lon;
+		
+		private string _CodigoProyecto;
+		
+		private string _TipoPosteDescripcion;
+		
+		private string _CodigoLote;
+		
+		private int _CodigoPoligono;
+		
+		public VW_Poste()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
+		public int PosteID
+		{
+			get
+			{
+				return this._PosteID;
+			}
+			set
+			{
+				if ((this._PosteID != value))
+				{
+					this._PosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
+		public int EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this._EmpresaID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPosteID", DbType="Int NOT NULL")]
+		public int TipoPosteID
+		{
+			get
+			{
+				return this._TipoPosteID;
+			}
+			set
+			{
+				if ((this._TipoPosteID != value))
+				{
+					this._TipoPosteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
+		public System.Nullable<int> PoligonoID
+		{
+			get
+			{
+				return this._PoligonoID;
+			}
+			set
+			{
+				if ((this._PoligonoID != value))
+				{
+					this._PoligonoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
+		public System.Nullable<int> LoteID
+		{
+			get
+			{
+				return this._LoteID;
+			}
+			set
+			{
+				if ((this._LoteID != value))
+				{
+					this._LoteID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CodigoPoste
+		{
+			get
+			{
+				return this._CodigoPoste;
+			}
+			set
+			{
+				if ((this._CodigoPoste != value))
+				{
+					this._CodigoPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_X", DbType="Decimal(18,10) NOT NULL")]
+		public decimal X
+		{
+			get
+			{
+				return this._X;
+			}
+			set
+			{
+				if ((this._X != value))
+				{
+					this._X = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Y", DbType="Decimal(18,10) NOT NULL")]
+		public decimal Y
+		{
+			get
+			{
+				return this._Y;
+			}
+			set
+			{
+				if ((this._Y != value))
+				{
+					this._Y = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Z", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Z
+		{
+			get
+			{
+				return this._Z;
+			}
+			set
+			{
+				if ((this._Z != value))
+				{
+					this._Z = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ObservacionPoste", DbType="VarChar(200)")]
+		public string ObservacionPoste
+		{
+			get
+			{
+				return this._ObservacionPoste;
+			}
+			set
+			{
+				if ((this._ObservacionPoste != value))
+				{
+					this._ObservacionPoste = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
+		public System.Nullable<int> UserIDModifica
+		{
+			get
+			{
+				return this._UserIDModifica;
+			}
+			set
+			{
+				if ((this._UserIDModifica != value))
+				{
+					this._UserIDModifica = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaModificacion
+		{
+			get
+			{
+				return this._FechaModificacion;
+			}
+			set
+			{
+				if ((this._FechaModificacion != value))
+				{
+					this._FechaModificacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Lat
+		{
+			get
+			{
+				return this._Lat;
+			}
+			set
+			{
+				if ((this._Lat != value))
+				{
+					this._Lat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lon", DbType="Decimal(18,10)")]
+		public System.Nullable<decimal> Lon
+		{
+			get
+			{
+				return this._Lon;
+			}
+			set
+			{
+				if ((this._Lon != value))
+				{
+					this._Lon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoProyecto
+		{
+			get
+			{
+				return this._CodigoProyecto;
+			}
+			set
+			{
+				if ((this._CodigoProyecto != value))
+				{
+					this._CodigoProyecto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPosteDescripcion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string TipoPosteDescripcion
+		{
+			get
+			{
+				return this._TipoPosteDescripcion;
+			}
+			set
+			{
+				if ((this._TipoPosteDescripcion != value))
+				{
+					this._TipoPosteDescripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoLote", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string CodigoLote
+		{
+			get
+			{
+				return this._CodigoLote;
+			}
+			set
+			{
+				if ((this._CodigoLote != value))
+				{
+					this._CodigoLote = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoligono", DbType="Int NOT NULL")]
+		public int CodigoPoligono
+		{
+			get
+			{
+				return this._CodigoPoligono;
+			}
+			set
+			{
+				if ((this._CodigoPoligono != value))
+				{
+					this._CodigoPoligono = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_PrebuildEjecutadas")]
+	public partial class VW_PrebuildEjecutada
+	{
+		
+		private int _ProyectoID;
+		
+		private int _ActividadID;
+		
+		private System.Nullable<int> _CantidadEjecutada;
+		
+		public VW_PrebuildEjecutada()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
+		{
+			get
+			{
+				return this._ProyectoID;
+			}
+			set
+			{
+				if ((this._ProyectoID != value))
+				{
+					this._ProyectoID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
+		public int ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
+		public System.Nullable<int> CantidadEjecutada
+		{
+			get
+			{
+				return this._CantidadEjecutada;
+			}
+			set
+			{
+				if ((this._CantidadEjecutada != value))
+				{
+					this._CantidadEjecutada = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_PrecioMPUC")]
+	public partial class VW_PrecioMPUC
+	{
+		
+		private int _ProyectoId;
+		
+		private System.Nullable<int> _ActividadID;
+		
+		private System.Nullable<decimal> _PrecioMPUC;
+		
+		public VW_PrecioMPUC()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoId", DbType="Int NOT NULL")]
+		public int ProyectoId
+		{
+			get
+			{
+				return this._ProyectoId;
+			}
+			set
+			{
+				if ((this._ProyectoId != value))
+				{
+					this._ProyectoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
+		public System.Nullable<int> ActividadID
+		{
+			get
+			{
+				return this._ActividadID;
+			}
+			set
+			{
+				if ((this._ActividadID != value))
+				{
+					this._ActividadID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioMPUC", DbType="Decimal(38,10)")]
+		public System.Nullable<decimal> PrecioMPUC
+		{
+			get
+			{
+				return this._PrecioMPUC;
+			}
+			set
+			{
+				if ((this._PrecioMPUC != value))
+				{
+					this._PrecioMPUC = value;
+				}
+			}
 		}
 	}
 	
@@ -605,6 +5218,8 @@ namespace GeoMapxBusiness
 		private System.Nullable<int> _ProyectoID;
 		
 		private System.Nullable<decimal> _PrecioUnitario;
+		
+		private string _Unidad;
 		
 		private EntitySet<Planilla> _Planillas;
 		
@@ -642,6 +5257,8 @@ namespace GeoMapxBusiness
     partial void OnProyectoIDChanged();
     partial void OnPrecioUnitarioChanging(System.Nullable<decimal> value);
     partial void OnPrecioUnitarioChanged();
+    partial void OnUnidadChanging(string value);
+    partial void OnUnidadChanged();
     #endregion
 		
 		public Actividade()
@@ -897,6 +5514,26 @@ namespace GeoMapxBusiness
 					this._PrecioUnitario = value;
 					this.SendPropertyChanged("PrecioUnitario");
 					this.OnPrecioUnitarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unidad", DbType="VarChar(10)")]
+		public string Unidad
+		{
+			get
+			{
+				return this._Unidad;
+			}
+			set
+			{
+				if ((this._Unidad != value))
+				{
+					this.OnUnidadChanging(value);
+					this.SendPropertyChanging();
+					this._Unidad = value;
+					this.SendPropertyChanged("Unidad");
+					this.OnUnidadChanged();
 				}
 			}
 		}
@@ -8882,974 +13519,178 @@ namespace GeoMapxBusiness
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Actividades")]
-	public partial class VW_Actividade
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Rpt_ManoObraCubicada")]
+	public partial class Rpt_ManoObraCubicada
 	{
 		
-		private int _ActividadID;
+		private string _ACTIVIDAD_PRIMARIA;
 		
-		private int _EmpresaID;
+		private string _ACTIVIDAD_SECUNDARIA;
 		
-		private string _UniCons;
+		private string _CODIGO_POSTE;
 		
-		private System.Nullable<int> _Cantidad;
+		private string _UNIDAD_CONSTRUCTIVA;
 		
-		private string _DescripcionActividad;
+		private string _DESCRIPCION;
 		
-		private string _ActividadPrimaria;
+		private string _UNIDAD;
 		
-		private string _ActividadSecundaria;
+		private System.Nullable<int> _SumaDeCANTIDAD;
 		
-		private string _ActividadSGT;
+		private System.DateTime _FECHA;
 		
-		private System.DateTime _Fecha;
+		private int _ProyectoID;
 		
-		private int _UserID;
+		private System.Nullable<int> _CubicacionID;
 		
-		private System.Nullable<int> _ProyectoID;
+		private System.Nullable<int> _ContratistaID;
+		
+		private System.Nullable<decimal> _SumaDePrecioTotalManoObra;
+		
+		private System.Nullable<decimal> _SumaDePrecioTotalMateriales;
+		
+		private string _OBSERVACIONES;
 		
 		private System.Nullable<decimal> _PrecioUnitario;
 		
-		private string _CodigoProyecto;
+		private string _EMPRESA;
 		
-		public VW_Actividade()
-		{
-		}
+		private string _PROYECTO;
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
-		{
-			get
-			{
-				return this._EmpresaID;
-			}
-			set
-			{
-				if ((this._EmpresaID != value))
-				{
-					this._EmpresaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
-		{
-			get
-			{
-				return this._UniCons;
-			}
-			set
-			{
-				if ((this._UniCons != value))
-				{
-					this._UniCons = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
-		public System.Nullable<int> Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this._Cantidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string DescripcionActividad
-		{
-			get
-			{
-				return this._DescripcionActividad;
-			}
-			set
-			{
-				if ((this._DescripcionActividad != value))
-				{
-					this._DescripcionActividad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
-		public string ActividadSGT
-		{
-			get
-			{
-				return this._ActividadSGT;
-			}
-			set
-			{
-				if ((this._ActividadSGT != value))
-				{
-					this._ActividadSGT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
-		public System.DateTime Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
-		public System.Nullable<int> ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> PrecioUnitario
-		{
-			get
-			{
-				return this._PrecioUnitario;
-			}
-			set
-			{
-				if ((this._PrecioUnitario != value))
-				{
-					this._PrecioUnitario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_SecuenciaCubicaciones")]
-	public partial class VW_SecuenciaCubicacione
-	{
-		
-		private string _CodigoProyecto;
-		
-		private int _EmpresaID;
-		
-		private int _SecuenciaID;
-		
-		private int _ProyectoID;
-		
-		private int _Numero;
-		
-		private bool _Estado;
-		
-		private System.DateTime _Fecha;
-		
-		public VW_SecuenciaCubicacione()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
-		{
-			get
-			{
-				return this._EmpresaID;
-			}
-			set
-			{
-				if ((this._EmpresaID != value))
-				{
-					this._EmpresaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", DbType="Int NOT NULL")]
-		public int SecuenciaID
-		{
-			get
-			{
-				return this._SecuenciaID;
-			}
-			set
-			{
-				if ((this._SecuenciaID != value))
-				{
-					this._SecuenciaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
-		public int Numero
-		{
-			get
-			{
-				return this._Numero;
-			}
-			set
-			{
-				if ((this._Numero != value))
-				{
-					this._Numero = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
-		public bool Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
-		public System.DateTime Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesEjecutadas")]
-	public partial class VW_ActividadesEjecutada
-	{
-		
-		private int _ActividadID;
-		
-		private int _ProyectoID;
-		
-		private string _Mes;
-		
-		private System.Nullable<int> _CantidadEjecutada;
-		
-		private string _ActividadPrimaria;
-		
-		private string _ActividadSecundaria;
-		
-		private System.Nullable<int> _CantidadLicitada;
-		
-		private System.Nullable<double> _PorcentajeEjecutado;
-		
-		public VW_ActividadesEjecutada()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
-		public string Mes
-		{
-			get
-			{
-				return this._Mes;
-			}
-			set
-			{
-				if ((this._Mes != value))
-				{
-					this._Mes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
-		public System.Nullable<int> CantidadEjecutada
-		{
-			get
-			{
-				return this._CantidadEjecutada;
-			}
-			set
-			{
-				if ((this._CantidadEjecutada != value))
-				{
-					this._CantidadEjecutada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadLicitada", DbType="Int")]
-		public System.Nullable<int> CantidadLicitada
-		{
-			get
-			{
-				return this._CantidadLicitada;
-			}
-			set
-			{
-				if ((this._CantidadLicitada != value))
-				{
-					this._CantidadLicitada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PorcentajeEjecutado", DbType="Float")]
-		public System.Nullable<double> PorcentajeEjecutado
-		{
-			get
-			{
-				return this._PorcentajeEjecutado;
-			}
-			set
-			{
-				if ((this._PorcentajeEjecutado != value))
-				{
-					this._PorcentajeEjecutado = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesPostes")]
-	public partial class VW_ActividadesPoste
-	{
-		
-		private int _ActividadID;
-		
-		private string _CodigoPoste;
-		
-		private string _UniCons;
-		
-		private string _DescripcionActividad;
-		
-		private int _Cantidad;
-		
-		private string _Hasta;
-		
-		private int _ProyectoID;
-		
-		private int _EmpresaID;
-		
-		private int _PosteID;
-		
-		private System.DateTime _Fecha;
-		
-		private int _PlanillaID;
-		
-		private int _UserID;
-		
-		private bool _Verificado;
-		
-		private System.Nullable<int> _UserIDModifica;
-		
-		private string _CodigoProyecto;
-		
-		private string _ActividadPrimaria;
-		
-		private string _ActividadSecundaria;
-		
-		private string _ActividadSGT;
-		
-		private System.Nullable<int> _PosteIDHasta;
+		private int _NO_CUBICACION;
 		
 		private string _CodigoContratista;
 		
-		private string _CodigoFicha;
+		private string _DescripcionContratista;
 		
-		public VW_ActividadesPoste()
+		public Rpt_ManoObraCubicada()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ACTIVIDAD PRIMARIA]", Storage="_ACTIVIDAD_PRIMARIA", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ACTIVIDAD_PRIMARIA
 		{
 			get
 			{
-				return this._ActividadID;
+				return this._ACTIVIDAD_PRIMARIA;
 			}
 			set
 			{
-				if ((this._ActividadID != value))
+				if ((this._ACTIVIDAD_PRIMARIA != value))
 				{
-					this._ActividadID = value;
+					this._ACTIVIDAD_PRIMARIA = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string CodigoPoste
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[ACTIVIDAD SECUNDARIA]", Storage="_ACTIVIDAD_SECUNDARIA", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ACTIVIDAD_SECUNDARIA
 		{
 			get
 			{
-				return this._CodigoPoste;
+				return this._ACTIVIDAD_SECUNDARIA;
 			}
 			set
 			{
-				if ((this._CodigoPoste != value))
+				if ((this._ACTIVIDAD_SECUNDARIA != value))
 				{
-					this._CodigoPoste = value;
+					this._ACTIVIDAD_SECUNDARIA = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[CODIGO POSTE]", Storage="_CODIGO_POSTE", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CODIGO_POSTE
 		{
 			get
 			{
-				return this._UniCons;
+				return this._CODIGO_POSTE;
 			}
 			set
 			{
-				if ((this._UniCons != value))
+				if ((this._CODIGO_POSTE != value))
 				{
-					this._UniCons = value;
+					this._CODIGO_POSTE = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string DescripcionActividad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[UNIDAD CONSTRUCTIVA]", Storage="_UNIDAD_CONSTRUCTIVA", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UNIDAD_CONSTRUCTIVA
 		{
 			get
 			{
-				return this._DescripcionActividad;
+				return this._UNIDAD_CONSTRUCTIVA;
 			}
 			set
 			{
-				if ((this._DescripcionActividad != value))
+				if ((this._UNIDAD_CONSTRUCTIVA != value))
 				{
-					this._DescripcionActividad = value;
+					this._UNIDAD_CONSTRUCTIVA = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
-		public int Cantidad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCION", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DESCRIPCION
 		{
 			get
 			{
-				return this._Cantidad;
+				return this._DESCRIPCION;
 			}
 			set
 			{
-				if ((this._Cantidad != value))
+				if ((this._DESCRIPCION != value))
 				{
-					this._Cantidad = value;
+					this._DESCRIPCION = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hasta", DbType="VarChar(15)")]
-		public string Hasta
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UNIDAD", DbType="VarChar(10)")]
+		public string UNIDAD
 		{
 			get
 			{
-				return this._Hasta;
+				return this._UNIDAD;
 			}
 			set
 			{
-				if ((this._Hasta != value))
+				if ((this._UNIDAD != value))
 				{
-					this._Hasta = value;
+					this._UNIDAD = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDeCANTIDAD", DbType="Int")]
+		public System.Nullable<int> SumaDeCANTIDAD
 		{
 			get
 			{
-				return this._ProyectoID;
+				return this._SumaDeCANTIDAD;
 			}
 			set
 			{
-				if ((this._ProyectoID != value))
+				if ((this._SumaDeCANTIDAD != value))
 				{
-					this._ProyectoID = value;
+					this._SumaDeCANTIDAD = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime FECHA
 		{
 			get
 			{
-				return this._EmpresaID;
+				return this._FECHA;
 			}
 			set
 			{
-				if ((this._EmpresaID != value))
+				if ((this._FECHA != value))
 				{
-					this._EmpresaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
-		public int PosteID
-		{
-			get
-			{
-				return this._PosteID;
-			}
-			set
-			{
-				if ((this._PosteID != value))
-				{
-					this._PosteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
-		public System.DateTime Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Int NOT NULL")]
-		public int PlanillaID
-		{
-			get
-			{
-				return this._PlanillaID;
-			}
-			set
-			{
-				if ((this._PlanillaID != value))
-				{
-					this._PlanillaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Verificado", DbType="Bit NOT NULL")]
-		public bool Verificado
-		{
-			get
-			{
-				return this._Verificado;
-			}
-			set
-			{
-				if ((this._Verificado != value))
-				{
-					this._Verificado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
-		public System.Nullable<int> UserIDModifica
-		{
-			get
-			{
-				return this._UserIDModifica;
-			}
-			set
-			{
-				if ((this._UserIDModifica != value))
-				{
-					this._UserIDModifica = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSGT", DbType="VarChar(200)")]
-		public string ActividadSGT
-		{
-			get
-			{
-				return this._ActividadSGT;
-			}
-			set
-			{
-				if ((this._ActividadSGT != value))
-				{
-					this._ActividadSGT = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
-		public System.Nullable<int> PosteIDHasta
-		{
-			get
-			{
-				return this._PosteIDHasta;
-			}
-			set
-			{
-				if ((this._PosteIDHasta != value))
-				{
-					this._PosteIDHasta = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
-		public string CodigoContratista
-		{
-			get
-			{
-				return this._CodigoContratista;
-			}
-			set
-			{
-				if ((this._CodigoContratista != value))
-				{
-					this._CodigoContratista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoFicha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CodigoFicha
-		{
-			get
-			{
-				return this._CodigoFicha;
-			}
-			set
-			{
-				if ((this._CodigoFicha != value))
-				{
-					this._CodigoFicha = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_ActividadesPreBuild")]
-	public partial class VW_ActividadesPreBuild
-	{
-		
-		private int _PreBuildID;
-		
-		private int _ProyectoID;
-		
-		private int _PosteID;
-		
-		private int _ActividadID;
-		
-		private double _CantidadLicitada;
-		
-		private System.Nullable<int> _PosteIDHasta;
-		
-		private System.Nullable<bool> _Ejecutado;
-		
-		private System.Nullable<System.DateTime> _FechaEjecutado;
-		
-		private string _UniCons;
-		
-		private string _CodigoProyecto;
-		
-		private string _CodigoPoste;
-		
-		private string _CodigoPosteHasta;
-		
-		private System.Nullable<double> _CantidadOrgPreBuild;
-		
-		private string _DescripcionActividad;
-		
-		private System.Nullable<int> _CantidadEjecutada;
-		
-		public VW_ActividadesPreBuild()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreBuildID", DbType="Int NOT NULL")]
-		public int PreBuildID
-		{
-			get
-			{
-				return this._PreBuildID;
-			}
-			set
-			{
-				if ((this._PreBuildID != value))
-				{
-					this._PreBuildID = value;
+					this._FECHA = value;
 				}
 			}
 		}
@@ -9870,740 +13711,8 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
-		public int PosteID
-		{
-			get
-			{
-				return this._PosteID;
-			}
-			set
-			{
-				if ((this._PosteID != value))
-				{
-					this._PosteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadLicitada", DbType="Float NOT NULL")]
-		public double CantidadLicitada
-		{
-			get
-			{
-				return this._CantidadLicitada;
-			}
-			set
-			{
-				if ((this._CantidadLicitada != value))
-				{
-					this._CantidadLicitada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
-		public System.Nullable<int> PosteIDHasta
-		{
-			get
-			{
-				return this._PosteIDHasta;
-			}
-			set
-			{
-				if ((this._PosteIDHasta != value))
-				{
-					this._PosteIDHasta = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ejecutado", DbType="Bit")]
-		public System.Nullable<bool> Ejecutado
-		{
-			get
-			{
-				return this._Ejecutado;
-			}
-			set
-			{
-				if ((this._Ejecutado != value))
-				{
-					this._Ejecutado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaEjecutado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaEjecutado
-		{
-			get
-			{
-				return this._FechaEjecutado;
-			}
-			set
-			{
-				if ((this._FechaEjecutado != value))
-				{
-					this._FechaEjecutado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
-		{
-			get
-			{
-				return this._UniCons;
-			}
-			set
-			{
-				if ((this._UniCons != value))
-				{
-					this._UniCons = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string CodigoPoste
-		{
-			get
-			{
-				return this._CodigoPoste;
-			}
-			set
-			{
-				if ((this._CodigoPoste != value))
-				{
-					this._CodigoPoste = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPosteHasta", DbType="VarChar(15)")]
-		public string CodigoPosteHasta
-		{
-			get
-			{
-				return this._CodigoPosteHasta;
-			}
-			set
-			{
-				if ((this._CodigoPosteHasta != value))
-				{
-					this._CodigoPosteHasta = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadOrgPreBuild", DbType="Float")]
-		public System.Nullable<double> CantidadOrgPreBuild
-		{
-			get
-			{
-				return this._CantidadOrgPreBuild;
-			}
-			set
-			{
-				if ((this._CantidadOrgPreBuild != value))
-				{
-					this._CantidadOrgPreBuild = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string DescripcionActividad
-		{
-			get
-			{
-				return this._DescripcionActividad;
-			}
-			set
-			{
-				if ((this._DescripcionActividad != value))
-				{
-					this._DescripcionActividad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
-		public System.Nullable<int> CantidadEjecutada
-		{
-			get
-			{
-				return this._CantidadEjecutada;
-			}
-			set
-			{
-				if ((this._CantidadEjecutada != value))
-				{
-					this._CantidadEjecutada = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_AvanceProyectoByMes")]
-	public partial class VW_AvanceProyectoByMe
-	{
-		
-		private System.Nullable<decimal> _Porcentaje;
-		
-		private System.Nullable<int> _ProyectoID;
-		
-		private string _Mes;
-		
-		private System.Nullable<decimal> _MontoEjecutado;
-		
-		private string _CodigoProyecto;
-		
-		public VW_AvanceProyectoByMe()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Porcentaje", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> Porcentaje
-		{
-			get
-			{
-				return this._Porcentaje;
-			}
-			set
-			{
-				if ((this._Porcentaje != value))
-				{
-					this._Porcentaje = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
-		public System.Nullable<int> ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
-		public string Mes
-		{
-			get
-			{
-				return this._Mes;
-			}
-			set
-			{
-				if ((this._Mes != value))
-				{
-					this._Mes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEjecutado", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> MontoEjecutado
-		{
-			get
-			{
-				return this._MontoEjecutado;
-			}
-			set
-			{
-				if ((this._MontoEjecutado != value))
-				{
-					this._MontoEjecutado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadME")]
-	public partial class VW_CantidadME
-	{
-		
-		private int _ProyectoID;
-		
-		private System.Nullable<int> _PoligonoID;
-		
-		private System.Nullable<int> _LoteID;
-		
-		private int _MaterialID;
-		
-		private System.Nullable<decimal> _CantidadME;
-		
-		public VW_CantidadME()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
-		public System.Nullable<int> PoligonoID
-		{
-			get
-			{
-				return this._PoligonoID;
-			}
-			set
-			{
-				if ((this._PoligonoID != value))
-				{
-					this._PoligonoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
-		public System.Nullable<int> LoteID
-		{
-			get
-			{
-				return this._LoteID;
-			}
-			set
-			{
-				if ((this._LoteID != value))
-				{
-					this._LoteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
-		public int MaterialID
-		{
-			get
-			{
-				return this._MaterialID;
-			}
-			set
-			{
-				if ((this._MaterialID != value))
-				{
-					this._MaterialID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadME", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> CantidadME
-		{
-			get
-			{
-				return this._CantidadME;
-			}
-			set
-			{
-				if ((this._CantidadME != value))
-				{
-					this._CantidadME = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPPPlanilla")]
-	public partial class VW_CantidadMPPPlanilla
-	{
-		
-		private int _ProyectoID;
-		
-		private int _PosteID;
-		
-		private int _MaterialID;
-		
-		private System.Nullable<decimal> _CantidadMPPPlanilla;
-		
-		public VW_CantidadMPPPlanilla()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
-		public int PosteID
-		{
-			get
-			{
-				return this._PosteID;
-			}
-			set
-			{
-				if ((this._PosteID != value))
-				{
-					this._PosteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
-		public int MaterialID
-		{
-			get
-			{
-				return this._MaterialID;
-			}
-			set
-			{
-				if ((this._MaterialID != value))
-				{
-					this._MaterialID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPPPlanilla", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> CantidadMPPPlanilla
-		{
-			get
-			{
-				return this._CantidadMPPPlanilla;
-			}
-			set
-			{
-				if ((this._CantidadMPPPlanilla != value))
-				{
-					this._CantidadMPPPlanilla = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPPPreBuild")]
-	public partial class VW_CantidadMPPPreBuild
-	{
-		
-		private int _ProyectoID;
-		
-		private int _PosteID;
-		
-		private int _MaterialID;
-		
-		private System.Nullable<double> _CantidadMPP;
-		
-		public VW_CantidadMPPPreBuild()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
-		public int PosteID
-		{
-			get
-			{
-				return this._PosteID;
-			}
-			set
-			{
-				if ((this._PosteID != value))
-				{
-					this._PosteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
-		public int MaterialID
-		{
-			get
-			{
-				return this._MaterialID;
-			}
-			set
-			{
-				if ((this._MaterialID != value))
-				{
-					this._MaterialID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPP", DbType="Float")]
-		public System.Nullable<double> CantidadMPP
-		{
-			get
-			{
-				return this._CantidadMPP;
-			}
-			set
-			{
-				if ((this._CantidadMPP != value))
-				{
-					this._CantidadMPP = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_CantidadMPreBuild")]
-	public partial class VW_CantidadMPreBuild
-	{
-		
-		private int _ProyectoID;
-		
-		private System.Nullable<int> _PoligonoID;
-		
-		private System.Nullable<int> _LoteID;
-		
-		private int _MaterialID;
-		
-		private System.Nullable<double> _CantidadMPreBuild;
-		
-		public VW_CantidadMPreBuild()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
-		public System.Nullable<int> PoligonoID
-		{
-			get
-			{
-				return this._PoligonoID;
-			}
-			set
-			{
-				if ((this._PoligonoID != value))
-				{
-					this._PoligonoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
-		public System.Nullable<int> LoteID
-		{
-			get
-			{
-				return this._LoteID;
-			}
-			set
-			{
-				if ((this._LoteID != value))
-				{
-					this._LoteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
-		public int MaterialID
-		{
-			get
-			{
-				return this._MaterialID;
-			}
-			set
-			{
-				if ((this._MaterialID != value))
-				{
-					this._MaterialID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadMPreBuild", DbType="Float")]
-		public System.Nullable<double> CantidadMPreBuild
-		{
-			get
-			{
-				return this._CantidadMPreBuild;
-			}
-			set
-			{
-				if ((this._CantidadMPreBuild != value))
-				{
-					this._CantidadMPreBuild = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Cubicaciones")]
-	public partial class VW_Cubicacione
-	{
-		
-		private string _CodigoProyecto;
-		
-		private int _EmpresaID;
-		
-		private int _CubicacionID;
-		
-		private int _SecuenciaID;
-		
-		private System.DateTime _FechaInicio;
-		
-		private System.DateTime _FechaFin;
-		
-		private string _ActividadPrimaria;
-		
-		private string _ActividadSecundaria;
-		
-		private System.Nullable<bool> _EstadoActividades;
-		
-		private int _Numero;
-		
-		private bool _Estado;
-		
-		private System.DateTime _Fecha;
-		
-		public VW_Cubicacione()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
-		{
-			get
-			{
-				return this._EmpresaID;
-			}
-			set
-			{
-				if ((this._EmpresaID != value))
-				{
-					this._EmpresaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", DbType="Int NOT NULL")]
-		public int CubicacionID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", DbType="Int")]
+		public System.Nullable<int> CubicacionID
 		{
 			get
 			{
@@ -10614,1674 +13723,6 @@ namespace GeoMapxBusiness
 				if ((this._CubicacionID != value))
 				{
 					this._CubicacionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecuenciaID", DbType="Int NOT NULL")]
-		public int SecuenciaID
-		{
-			get
-			{
-				return this._SecuenciaID;
-			}
-			set
-			{
-				if ((this._SecuenciaID != value))
-				{
-					this._SecuenciaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaInicio", DbType="DateTime NOT NULL")]
-		public System.DateTime FechaInicio
-		{
-			get
-			{
-				return this._FechaInicio;
-			}
-			set
-			{
-				if ((this._FechaInicio != value))
-				{
-					this._FechaInicio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaFin", DbType="DateTime NOT NULL")]
-		public System.DateTime FechaFin
-		{
-			get
-			{
-				return this._FechaFin;
-			}
-			set
-			{
-				if ((this._FechaFin != value))
-				{
-					this._FechaFin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(120)")]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(120)")]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoActividades", DbType="Bit")]
-		public System.Nullable<bool> EstadoActividades
-		{
-			get
-			{
-				return this._EstadoActividades;
-			}
-			set
-			{
-				if ((this._EstadoActividades != value))
-				{
-					this._EstadoActividades = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero", DbType="Int NOT NULL")]
-		public int Numero
-		{
-			get
-			{
-				return this._Numero;
-			}
-			set
-			{
-				if ((this._Numero != value))
-				{
-					this._Numero = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Bit NOT NULL")]
-		public bool Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this._Estado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
-		public System.DateTime Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_LicitacionesEjecutadas")]
-	public partial class VW_LicitacionesEjecutada
-	{
-		
-		private int _CantidadEjecutadas;
-		
-		private System.Nullable<int> _CantidadFaltantes;
-		
-		private int _PrecioID;
-		
-		private int _ProyectoID;
-		
-		private System.Nullable<int> _ActividadID;
-		
-		private string _Descripcion;
-		
-		private int _Cantidad;
-		
-		private decimal _PrecioUnitario;
-		
-		private System.Nullable<System.DateTime> _Fecha;
-		
-		private string _CodigoProyecto;
-		
-		private string _UniCons;
-		
-		public VW_LicitacionesEjecutada()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutadas", DbType="Int NOT NULL")]
-		public int CantidadEjecutadas
-		{
-			get
-			{
-				return this._CantidadEjecutadas;
-			}
-			set
-			{
-				if ((this._CantidadEjecutadas != value))
-				{
-					this._CantidadEjecutadas = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadFaltantes", DbType="Int")]
-		public System.Nullable<int> CantidadFaltantes
-		{
-			get
-			{
-				return this._CantidadFaltantes;
-			}
-			set
-			{
-				if ((this._CantidadFaltantes != value))
-				{
-					this._CantidadFaltantes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioID", DbType="Int NOT NULL")]
-		public int PrecioID
-		{
-			get
-			{
-				return this._PrecioID;
-			}
-			set
-			{
-				if ((this._PrecioID != value))
-				{
-					this._PrecioID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
-		public System.Nullable<int> ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
-		public int Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this._Cantidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(18,2) NOT NULL")]
-		public decimal PrecioUnitario
-		{
-			get
-			{
-				return this._PrecioUnitario;
-			}
-			set
-			{
-				if ((this._PrecioUnitario != value))
-				{
-					this._PrecioUnitario = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
-		{
-			get
-			{
-				return this._UniCons;
-			}
-			set
-			{
-				if ((this._UniCons != value))
-				{
-					this._UniCons = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Materiales")]
-	public partial class VW_Materiale
-	{
-		
-		private string _CodigoProyecto;
-		
-		private string _UniCons;
-		
-		private string _DescripcionActividad;
-		
-		private int _MaterialID;
-		
-		private System.Nullable<int> _ActividadID;
-		
-		private int _ProyectoID;
-		
-		private string _CodigoMaterial;
-		
-		private string _Descripcion;
-		
-		private System.Nullable<decimal> _Cantidad;
-		
-		private System.Nullable<decimal> _PrecioUnitario;
-		
-		public VW_Materiale()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
-		{
-			get
-			{
-				return this._UniCons;
-			}
-			set
-			{
-				if ((this._UniCons != value))
-				{
-					this._UniCons = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string DescripcionActividad
-		{
-			get
-			{
-				return this._DescripcionActividad;
-			}
-			set
-			{
-				if ((this._DescripcionActividad != value))
-				{
-					this._DescripcionActividad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaterialID", DbType="Int NOT NULL")]
-		public int MaterialID
-		{
-			get
-			{
-				return this._MaterialID;
-			}
-			set
-			{
-				if ((this._MaterialID != value))
-				{
-					this._MaterialID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int")]
-		public System.Nullable<int> ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoMaterial", DbType="VarChar(10)")]
-		public string CodigoMaterial
-		{
-			get
-			{
-				return this._CodigoMaterial;
-			}
-			set
-			{
-				if ((this._CodigoMaterial != value))
-				{
-					this._CodigoMaterial = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Decimal(18,5)")]
-		public System.Nullable<decimal> Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this._Cantidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(18,5)")]
-		public System.Nullable<decimal> PrecioUnitario
-		{
-			get
-			{
-				return this._PrecioUnitario;
-			}
-			set
-			{
-				if ((this._PrecioUnitario != value))
-				{
-					this._PrecioUnitario = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoCantidadEAS")]
-	public partial class VW_MontoCantidadEA
-	{
-		
-		private int _ActividadID;
-		
-		private int _ProyectoID;
-		
-		private string _Mes;
-		
-		private System.Nullable<int> _CantidadEjecutada;
-		
-		private string _ActividadPrimaria;
-		
-		private string _ActividadSecundaria;
-		
-		private System.Nullable<int> _CantidadLicitada;
-		
-		private System.Nullable<double> _PorcentajeEjecutado;
-		
-		private System.Nullable<decimal> _MontoEAP;
-		
-		public VW_MontoCantidadEA()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
-		public string Mes
-		{
-			get
-			{
-				return this._Mes;
-			}
-			set
-			{
-				if ((this._Mes != value))
-				{
-					this._Mes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
-		public System.Nullable<int> CantidadEjecutada
-		{
-			get
-			{
-				return this._CantidadEjecutada;
-			}
-			set
-			{
-				if ((this._CantidadEjecutada != value))
-				{
-					this._CantidadEjecutada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadLicitada", DbType="Int")]
-		public System.Nullable<int> CantidadLicitada
-		{
-			get
-			{
-				return this._CantidadLicitada;
-			}
-			set
-			{
-				if ((this._CantidadLicitada != value))
-				{
-					this._CantidadLicitada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PorcentajeEjecutado", DbType="Float")]
-		public System.Nullable<double> PorcentajeEjecutado
-		{
-			get
-			{
-				return this._PorcentajeEjecutado;
-			}
-			set
-			{
-				if ((this._PorcentajeEjecutado != value))
-				{
-					this._PorcentajeEjecutado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> MontoEAP
-		{
-			get
-			{
-				return this._MontoEAP;
-			}
-			set
-			{
-				if ((this._MontoEAP != value))
-				{
-					this._MontoEAP = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoEAP")]
-	public partial class VW_MontoEAP
-	{
-		
-		private int _ProyectoID;
-		
-		private string _Mes;
-		
-		private string _ActividadPrimaria;
-		
-		private System.Nullable<decimal> _MontoEAP;
-		
-		public VW_MontoEAP()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
-		public string Mes
-		{
-			get
-			{
-				return this._Mes;
-			}
-			set
-			{
-				if ((this._Mes != value))
-				{
-					this._Mes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> MontoEAP
-		{
-			get
-			{
-				return this._MontoEAP;
-			}
-			set
-			{
-				if ((this._MontoEAP != value))
-				{
-					this._MontoEAP = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontoEAS")]
-	public partial class VW_MontoEA
-	{
-		
-		private int _ProyectoID;
-		
-		private string _Mes;
-		
-		private string _ActividadPrimaria;
-		
-		private string _ActividadSecundaria;
-		
-		private System.Nullable<decimal> _MontoEAP;
-		
-		public VW_MontoEA()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
-		public string Mes
-		{
-			get
-			{
-				return this._Mes;
-			}
-			set
-			{
-				if ((this._Mes != value))
-				{
-					this._Mes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEAP", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> MontoEAP
-		{
-			get
-			{
-				return this._MontoEAP;
-			}
-			set
-			{
-				if ((this._MontoEAP != value))
-				{
-					this._MontoEAP = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontosByActividad")]
-	public partial class VW_MontosByActividad
-	{
-		
-		private string _CodigoProyecto;
-		
-		private string _UniCons;
-		
-		private System.Nullable<decimal> _MontoLicitadoMO;
-		
-		private System.Nullable<int> _Cantidad;
-		
-		private int _ActividadID;
-		
-		private System.Nullable<int> _ProyectoID;
-		
-		private string _ActividadPrimaria;
-		
-		private string _ActividadSecundaria;
-		
-		private System.Nullable<decimal> _MontoLicitadoMA;
-		
-		private System.Nullable<decimal> _MontoLicitadoTotal;
-		
-		public VW_MontosByActividad()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
-		{
-			get
-			{
-				return this._UniCons;
-			}
-			set
-			{
-				if ((this._UniCons != value))
-				{
-					this._UniCons = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoLicitadoMO", DbType="Decimal(21,2)")]
-		public System.Nullable<decimal> MontoLicitadoMO
-		{
-			get
-			{
-				return this._MontoLicitadoMO;
-			}
-			set
-			{
-				if ((this._MontoLicitadoMO != value))
-				{
-					this._MontoLicitadoMO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
-		public System.Nullable<int> Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this._Cantidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int")]
-		public System.Nullable<int> ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoLicitadoMA", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> MontoLicitadoMA
-		{
-			get
-			{
-				return this._MontoLicitadoMA;
-			}
-			set
-			{
-				if ((this._MontoLicitadoMA != value))
-				{
-					this._MontoLicitadoMA = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoLicitadoTotal", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> MontoLicitadoTotal
-		{
-			get
-			{
-				return this._MontoLicitadoTotal;
-			}
-			set
-			{
-				if ((this._MontoLicitadoTotal != value))
-				{
-					this._MontoLicitadoTotal = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_MontosEjecutados")]
-	public partial class VW_MontosEjecutado
-	{
-		
-		private System.Nullable<decimal> _MontoEjecutado;
-		
-		private int _ActividadID;
-		
-		private int _ProyectoID;
-		
-		private string _Mes;
-		
-		private string _ActividadSecundaria;
-		
-		private string _ActividadPrimaria;
-		
-		public VW_MontosEjecutado()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MontoEjecutado", DbType="Decimal(38,6)")]
-		public System.Nullable<decimal> MontoEjecutado
-		{
-			get
-			{
-				return this._MontoEjecutado;
-			}
-			set
-			{
-				if ((this._MontoEjecutado != value))
-				{
-					this._MontoEjecutado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mes", DbType="VarChar(10)")]
-		public string Mes
-		{
-			get
-			{
-				return this._Mes;
-			}
-			set
-			{
-				if ((this._Mes != value))
-				{
-					this._Mes = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadSecundaria
-		{
-			get
-			{
-				return this._ActividadSecundaria;
-			}
-			set
-			{
-				if ((this._ActividadSecundaria != value))
-				{
-					this._ActividadSecundaria = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ActividadPrimaria
-		{
-			get
-			{
-				return this._ActividadPrimaria;
-			}
-			set
-			{
-				if ((this._ActividadPrimaria != value))
-				{
-					this._ActividadPrimaria = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Planilla")]
-	public partial class VW_Planilla
-	{
-		
-		private string _NombreEmpresa;
-		
-		private string _CodigoProyecto;
-		
-		private string _UniCons;
-		
-		private int _PlanillaID;
-		
-		private int _EmpresaID;
-		
-		private int _ActividadID;
-		
-		private int _ProyectoID;
-		
-		private int _PosteID;
-		
-		private int _Cantidad;
-		
-		private System.DateTime _Fecha;
-		
-		private int _UserID;
-		
-		private System.Nullable<int> _UserIDModifica;
-		
-		private System.Nullable<System.DateTime> _FechaModificacion;
-		
-		private string _UserName;
-		
-		private string _UserCode;
-		
-		private string _CodigoEmpresa;
-		
-		private string _CodigoPoste;
-		
-		private string _CodigoPosteHasta;
-		
-		private string _DescripcionFinanciera;
-		
-		private string _CodioFinanciera;
-		
-		private string _DescripcionContratista;
-		
-		private string _DescripcionActividad;
-		
-		private string _DescripcionProyecto;
-		
-		private string _CodigoContratista;
-		
-		private System.Nullable<int> _ContratistaID;
-		
-		private string _CodigoFicha;
-		
-		private System.Nullable<int> _PosteIDHasta;
-		
-		private System.Nullable<System.DateTime> _FechaIngreso;
-		
-		private System.Nullable<int> _FichaID;
-		
-		private string _Observacion;
-		
-		private string _ObservacionVerificador;
-		
-		private System.Nullable<int> _UserIDVerificador;
-		
-		private System.Nullable<System.DateTime> _FechaVerificado;
-		
-		private bool _Verificado;
-		
-		private System.Nullable<int> _SupervisorID;
-		
-		private string _SerialTransformador;
-		
-		private string _NombreCompletoSupervisor;
-		
-		private int _CodigoPoligono;
-		
-		private int _PoligonoID;
-		
-		public VW_Planilla()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreEmpresa", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string NombreEmpresa
-		{
-			get
-			{
-				return this._NombreEmpresa;
-			}
-			set
-			{
-				if ((this._NombreEmpresa != value))
-				{
-					this._NombreEmpresa = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoProyecto", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoProyecto
-		{
-			get
-			{
-				return this._CodigoProyecto;
-			}
-			set
-			{
-				if ((this._CodigoProyecto != value))
-				{
-					this._CodigoProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string UniCons
-		{
-			get
-			{
-				return this._UniCons;
-			}
-			set
-			{
-				if ((this._UniCons != value))
-				{
-					this._UniCons = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanillaID", DbType="Int NOT NULL")]
-		public int PlanillaID
-		{
-			get
-			{
-				return this._PlanillaID;
-			}
-			set
-			{
-				if ((this._PlanillaID != value))
-				{
-					this._PlanillaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
-		{
-			get
-			{
-				return this._EmpresaID;
-			}
-			set
-			{
-				if ((this._EmpresaID != value))
-				{
-					this._EmpresaID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
-		public int PosteID
-		{
-			get
-			{
-				return this._PosteID;
-			}
-			set
-			{
-				if ((this._PosteID != value))
-				{
-					this._PosteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int NOT NULL")]
-		public int Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this._Cantidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
-		public System.DateTime Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
-		public System.Nullable<int> UserIDModifica
-		{
-			get
-			{
-				return this._UserIDModifica;
-			}
-			set
-			{
-				if ((this._UserIDModifica != value))
-				{
-					this._UserIDModifica = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaModificacion
-		{
-			get
-			{
-				return this._FechaModificacion;
-			}
-			set
-			{
-				if ((this._FechaModificacion != value))
-				{
-					this._FechaModificacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this._UserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string UserCode
-		{
-			get
-			{
-				return this._UserCode;
-			}
-			set
-			{
-				if ((this._UserCode != value))
-				{
-					this._UserCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEmpresa", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CodigoEmpresa
-		{
-			get
-			{
-				return this._CodigoEmpresa;
-			}
-			set
-			{
-				if ((this._CodigoEmpresa != value))
-				{
-					this._CodigoEmpresa = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string CodigoPoste
-		{
-			get
-			{
-				return this._CodigoPoste;
-			}
-			set
-			{
-				if ((this._CodigoPoste != value))
-				{
-					this._CodigoPoste = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPosteHasta", DbType="VarChar(15)")]
-		public string CodigoPosteHasta
-		{
-			get
-			{
-				return this._CodigoPosteHasta;
-			}
-			set
-			{
-				if ((this._CodigoPosteHasta != value))
-				{
-					this._CodigoPosteHasta = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionFinanciera", DbType="VarChar(300) NOT NULL", CanBeNull=false)]
-		public string DescripcionFinanciera
-		{
-			get
-			{
-				return this._DescripcionFinanciera;
-			}
-			set
-			{
-				if ((this._DescripcionFinanciera != value))
-				{
-					this._DescripcionFinanciera = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodioFinanciera", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CodioFinanciera
-		{
-			get
-			{
-				return this._CodioFinanciera;
-			}
-			set
-			{
-				if ((this._CodioFinanciera != value))
-				{
-					this._CodioFinanciera = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionContratista", DbType="VarChar(50)")]
-		public string DescripcionContratista
-		{
-			get
-			{
-				return this._DescripcionContratista;
-			}
-			set
-			{
-				if ((this._DescripcionContratista != value))
-				{
-					this._DescripcionContratista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string DescripcionActividad
-		{
-			get
-			{
-				return this._DescripcionActividad;
-			}
-			set
-			{
-				if ((this._DescripcionActividad != value))
-				{
-					this._DescripcionActividad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionProyecto", DbType="VarChar(300)")]
-		public string DescripcionProyecto
-		{
-			get
-			{
-				return this._DescripcionProyecto;
-			}
-			set
-			{
-				if ((this._DescripcionProyecto != value))
-				{
-					this._DescripcionProyecto = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
-		public string CodigoContratista
-		{
-			get
-			{
-				return this._CodigoContratista;
-			}
-			set
-			{
-				if ((this._CodigoContratista != value))
-				{
-					this._CodigoContratista = value;
 				}
 			}
 		}
@@ -12302,469 +13743,289 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoFicha", DbType="VarChar(50)")]
-		public string CodigoFicha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDePrecioTotalManoObra", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> SumaDePrecioTotalManoObra
 		{
 			get
 			{
-				return this._CodigoFicha;
+				return this._SumaDePrecioTotalManoObra;
 			}
 			set
 			{
-				if ((this._CodigoFicha != value))
+				if ((this._SumaDePrecioTotalManoObra != value))
 				{
-					this._CodigoFicha = value;
+					this._SumaDePrecioTotalManoObra = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteIDHasta", DbType="Int")]
-		public System.Nullable<int> PosteIDHasta
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDePrecioTotalMateriales", DbType="Decimal(38,10)")]
+		public System.Nullable<decimal> SumaDePrecioTotalMateriales
 		{
 			get
 			{
-				return this._PosteIDHasta;
+				return this._SumaDePrecioTotalMateriales;
 			}
 			set
 			{
-				if ((this._PosteIDHasta != value))
+				if ((this._SumaDePrecioTotalMateriales != value))
 				{
-					this._PosteIDHasta = value;
+					this._SumaDePrecioTotalMateriales = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaIngreso", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaIngreso
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACIONES", DbType="VarChar(500)")]
+		public string OBSERVACIONES
 		{
 			get
 			{
-				return this._FechaIngreso;
+				return this._OBSERVACIONES;
 			}
 			set
 			{
-				if ((this._FechaIngreso != value))
+				if ((this._OBSERVACIONES != value))
 				{
-					this._FechaIngreso = value;
+					this._OBSERVACIONES = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FichaID", DbType="Int")]
-		public System.Nullable<int> FichaID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> PrecioUnitario
 		{
 			get
 			{
-				return this._FichaID;
+				return this._PrecioUnitario;
 			}
 			set
 			{
-				if ((this._FichaID != value))
+				if ((this._PrecioUnitario != value))
 				{
-					this._FichaID = value;
+					this._PrecioUnitario = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(500)")]
-		public string Observacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMPRESA", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string EMPRESA
 		{
 			get
 			{
-				return this._Observacion;
+				return this._EMPRESA;
 			}
 			set
 			{
-				if ((this._Observacion != value))
+				if ((this._EMPRESA != value))
 				{
-					this._Observacion = value;
+					this._EMPRESA = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ObservacionVerificador", DbType="VarChar(500)")]
-		public string ObservacionVerificador
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PROYECTO", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string PROYECTO
 		{
 			get
 			{
-				return this._ObservacionVerificador;
+				return this._PROYECTO;
 			}
 			set
 			{
-				if ((this._ObservacionVerificador != value))
+				if ((this._PROYECTO != value))
 				{
-					this._ObservacionVerificador = value;
+					this._PROYECTO = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDVerificador", DbType="Int")]
-		public System.Nullable<int> UserIDVerificador
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NO_CUBICACION", DbType="Int NOT NULL")]
+		public int NO_CUBICACION
 		{
 			get
 			{
-				return this._UserIDVerificador;
+				return this._NO_CUBICACION;
 			}
 			set
 			{
-				if ((this._UserIDVerificador != value))
+				if ((this._NO_CUBICACION != value))
 				{
-					this._UserIDVerificador = value;
+					this._NO_CUBICACION = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaVerificado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaVerificado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
+		public string CodigoContratista
 		{
 			get
 			{
-				return this._FechaVerificado;
+				return this._CodigoContratista;
 			}
 			set
 			{
-				if ((this._FechaVerificado != value))
+				if ((this._CodigoContratista != value))
 				{
-					this._FechaVerificado = value;
+					this._CodigoContratista = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Verificado", DbType="Bit NOT NULL")]
-		public bool Verificado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionContratista", DbType="VarChar(50)")]
+		public string DescripcionContratista
 		{
 			get
 			{
-				return this._Verificado;
+				return this._DescripcionContratista;
 			}
 			set
 			{
-				if ((this._Verificado != value))
+				if ((this._DescripcionContratista != value))
 				{
-					this._Verificado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupervisorID", DbType="Int")]
-		public System.Nullable<int> SupervisorID
-		{
-			get
-			{
-				return this._SupervisorID;
-			}
-			set
-			{
-				if ((this._SupervisorID != value))
-				{
-					this._SupervisorID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SerialTransformador", DbType="VarChar(30)")]
-		public string SerialTransformador
-		{
-			get
-			{
-				return this._SerialTransformador;
-			}
-			set
-			{
-				if ((this._SerialTransformador != value))
-				{
-					this._SerialTransformador = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCompletoSupervisor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string NombreCompletoSupervisor
-		{
-			get
-			{
-				return this._NombreCompletoSupervisor;
-			}
-			set
-			{
-				if ((this._NombreCompletoSupervisor != value))
-				{
-					this._NombreCompletoSupervisor = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoligono", DbType="Int NOT NULL")]
-		public int CodigoPoligono
-		{
-			get
-			{
-				return this._CodigoPoligono;
-			}
-			set
-			{
-				if ((this._CodigoPoligono != value))
-				{
-					this._CodigoPoligono = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int NOT NULL")]
-		public int PoligonoID
-		{
-			get
-			{
-				return this._PoligonoID;
-			}
-			set
-			{
-				if ((this._PoligonoID != value))
-				{
-					this._PoligonoID = value;
+					this._DescripcionContratista = value;
 				}
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_Postes")]
-	public partial class VW_Poste
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_DetalleManoDeObraPorUniCons")]
+	public partial class VW_DetalleManoDeObraPorUniCon
 	{
 		
-		private int _PosteID;
+		private string _ActividadPrimaria;
 		
-		private int _EmpresaID;
+		private string _ActividadSecundaria;
 		
-		private int _ProyectoID;
+		private string _UniCons;
 		
-		private int _TipoPosteID;
+		private string _DescripcionActividad;
 		
-		private System.Nullable<int> _PoligonoID;
+		private string _Unidad;
 		
-		private System.Nullable<int> _LoteID;
-		
-		private string _CodigoPoste;
-		
-		private decimal _X;
-		
-		private decimal _Y;
-		
-		private System.Nullable<decimal> _Z;
-		
-		private string _ObservacionPoste;
-		
-		private int _UserID;
+		private System.Nullable<int> _SumaDeCANTIDAD;
 		
 		private System.DateTime _Fecha;
 		
-		private System.Nullable<int> _UserIDModifica;
+		private int _ProyectoID;
 		
-		private System.Nullable<System.DateTime> _FechaModificacion;
+		private System.Nullable<int> _CubicacionID;
 		
-		private System.Nullable<decimal> _Lat;
+		private System.Nullable<int> _ContratistaID;
 		
-		private System.Nullable<decimal> _Lon;
+		private System.Nullable<decimal> _SumaDePrecioTotalManoObra;
+		
+		private System.Nullable<decimal> _SumaDePrecioTotalMateriales;
+		
+		private string _Observacion;
+		
+		private System.Nullable<decimal> _PrecioUnitario;
+		
+		private string _CodigoEmpresa;
 		
 		private string _CodigoProyecto;
 		
-		private string _TipoPosteDescripcion;
+		private int _Cubicacion;
 		
-		private string _CodigoLote;
+		private string _CodigoContratista;
 		
-		private int _CodigoPoligono;
+		private string _DescripcionContratista;
 		
-		public VW_Poste()
+		public VW_DetalleManoDeObraPorUniCon()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PosteID", DbType="Int NOT NULL")]
-		public int PosteID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadPrimaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadPrimaria
 		{
 			get
 			{
-				return this._PosteID;
+				return this._ActividadPrimaria;
 			}
 			set
 			{
-				if ((this._PosteID != value))
+				if ((this._ActividadPrimaria != value))
 				{
-					this._PosteID = value;
+					this._ActividadPrimaria = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Int NOT NULL")]
-		public int EmpresaID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadSecundaria", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ActividadSecundaria
 		{
 			get
 			{
-				return this._EmpresaID;
+				return this._ActividadSecundaria;
 			}
 			set
 			{
-				if ((this._EmpresaID != value))
+				if ((this._ActividadSecundaria != value))
 				{
-					this._EmpresaID = value;
+					this._ActividadSecundaria = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniCons", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string UniCons
 		{
 			get
 			{
-				return this._ProyectoID;
+				return this._UniCons;
 			}
 			set
 			{
-				if ((this._ProyectoID != value))
+				if ((this._UniCons != value))
 				{
-					this._ProyectoID = value;
+					this._UniCons = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPosteID", DbType="Int NOT NULL")]
-		public int TipoPosteID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionActividad", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string DescripcionActividad
 		{
 			get
 			{
-				return this._TipoPosteID;
+				return this._DescripcionActividad;
 			}
 			set
 			{
-				if ((this._TipoPosteID != value))
+				if ((this._DescripcionActividad != value))
 				{
-					this._TipoPosteID = value;
+					this._DescripcionActividad = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PoligonoID", DbType="Int")]
-		public System.Nullable<int> PoligonoID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unidad", DbType="VarChar(10)")]
+		public string Unidad
 		{
 			get
 			{
-				return this._PoligonoID;
+				return this._Unidad;
 			}
 			set
 			{
-				if ((this._PoligonoID != value))
+				if ((this._Unidad != value))
 				{
-					this._PoligonoID = value;
+					this._Unidad = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoteID", DbType="Int")]
-		public System.Nullable<int> LoteID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDeCANTIDAD", DbType="Int")]
+		public System.Nullable<int> SumaDeCANTIDAD
 		{
 			get
 			{
-				return this._LoteID;
+				return this._SumaDeCANTIDAD;
 			}
 			set
 			{
-				if ((this._LoteID != value))
+				if ((this._SumaDeCANTIDAD != value))
 				{
-					this._LoteID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoste", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string CodigoPoste
-		{
-			get
-			{
-				return this._CodigoPoste;
-			}
-			set
-			{
-				if ((this._CodigoPoste != value))
-				{
-					this._CodigoPoste = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_X", DbType="Decimal(18,10) NOT NULL")]
-		public decimal X
-		{
-			get
-			{
-				return this._X;
-			}
-			set
-			{
-				if ((this._X != value))
-				{
-					this._X = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Y", DbType="Decimal(18,10) NOT NULL")]
-		public decimal Y
-		{
-			get
-			{
-				return this._Y;
-			}
-			set
-			{
-				if ((this._Y != value))
-				{
-					this._Y = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Z", DbType="Decimal(18,10)")]
-		public System.Nullable<decimal> Z
-		{
-			get
-			{
-				return this._Z;
-			}
-			set
-			{
-				if ((this._Z != value))
-				{
-					this._Z = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ObservacionPoste", DbType="VarChar(200)")]
-		public string ObservacionPoste
-		{
-			get
-			{
-				return this._ObservacionPoste;
-			}
-			set
-			{
-				if ((this._ObservacionPoste != value))
-				{
-					this._ObservacionPoste = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
+					this._SumaDeCANTIDAD = value;
 				}
 			}
 		}
@@ -12785,66 +14046,130 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIDModifica", DbType="Int")]
-		public System.Nullable<int> UserIDModifica
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
+		public int ProyectoID
 		{
 			get
 			{
-				return this._UserIDModifica;
+				return this._ProyectoID;
 			}
 			set
 			{
-				if ((this._UserIDModifica != value))
+				if ((this._ProyectoID != value))
 				{
-					this._UserIDModifica = value;
+					this._ProyectoID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaModificacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaModificacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CubicacionID", DbType="Int")]
+		public System.Nullable<int> CubicacionID
 		{
 			get
 			{
-				return this._FechaModificacion;
+				return this._CubicacionID;
 			}
 			set
 			{
-				if ((this._FechaModificacion != value))
+				if ((this._CubicacionID != value))
 				{
-					this._FechaModificacion = value;
+					this._CubicacionID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lat", DbType="Decimal(18,10)")]
-		public System.Nullable<decimal> Lat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContratistaID", DbType="Int")]
+		public System.Nullable<int> ContratistaID
 		{
 			get
 			{
-				return this._Lat;
+				return this._ContratistaID;
 			}
 			set
 			{
-				if ((this._Lat != value))
+				if ((this._ContratistaID != value))
 				{
-					this._Lat = value;
+					this._ContratistaID = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lon", DbType="Decimal(18,10)")]
-		public System.Nullable<decimal> Lon
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDePrecioTotalManoObra", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> SumaDePrecioTotalManoObra
 		{
 			get
 			{
-				return this._Lon;
+				return this._SumaDePrecioTotalManoObra;
 			}
 			set
 			{
-				if ((this._Lon != value))
+				if ((this._SumaDePrecioTotalManoObra != value))
 				{
-					this._Lon = value;
+					this._SumaDePrecioTotalManoObra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumaDePrecioTotalMateriales", DbType="Decimal(38,10)")]
+		public System.Nullable<decimal> SumaDePrecioTotalMateriales
+		{
+			get
+			{
+				return this._SumaDePrecioTotalMateriales;
+			}
+			set
+			{
+				if ((this._SumaDePrecioTotalMateriales != value))
+				{
+					this._SumaDePrecioTotalMateriales = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observacion", DbType="VarChar(500)")]
+		public string Observacion
+		{
+			get
+			{
+				return this._Observacion;
+			}
+			set
+			{
+				if ((this._Observacion != value))
+				{
+					this._Observacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrecioUnitario", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> PrecioUnitario
+		{
+			get
+			{
+				return this._PrecioUnitario;
+			}
+			set
+			{
+				if ((this._PrecioUnitario != value))
+				{
+					this._PrecioUnitario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEmpresa", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoEmpresa
+		{
+			get
+			{
+				return this._CodigoEmpresa;
+			}
+			set
+			{
+				if ((this._CodigoEmpresa != value))
+				{
+					this._CodigoEmpresa = value;
 				}
 			}
 		}
@@ -12865,113 +14190,50 @@ namespace GeoMapxBusiness
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPosteDescripcion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string TipoPosteDescripcion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cubicacion", DbType="Int NOT NULL")]
+		public int Cubicacion
 		{
 			get
 			{
-				return this._TipoPosteDescripcion;
+				return this._Cubicacion;
 			}
 			set
 			{
-				if ((this._TipoPosteDescripcion != value))
+				if ((this._Cubicacion != value))
 				{
-					this._TipoPosteDescripcion = value;
+					this._Cubicacion = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoLote", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string CodigoLote
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoContratista", DbType="VarChar(50)")]
+		public string CodigoContratista
 		{
 			get
 			{
-				return this._CodigoLote;
+				return this._CodigoContratista;
 			}
 			set
 			{
-				if ((this._CodigoLote != value))
+				if ((this._CodigoContratista != value))
 				{
-					this._CodigoLote = value;
+					this._CodigoContratista = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoPoligono", DbType="Int NOT NULL")]
-		public int CodigoPoligono
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DescripcionContratista", DbType="VarChar(50)")]
+		public string DescripcionContratista
 		{
 			get
 			{
-				return this._CodigoPoligono;
+				return this._DescripcionContratista;
 			}
 			set
 			{
-				if ((this._CodigoPoligono != value))
+				if ((this._DescripcionContratista != value))
 				{
-					this._CodigoPoligono = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VW_PrebuildEjecutadas")]
-	public partial class VW_PrebuildEjecutada
-	{
-		
-		private int _ProyectoID;
-		
-		private int _ActividadID;
-		
-		private System.Nullable<int> _CantidadEjecutada;
-		
-		public VW_PrebuildEjecutada()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProyectoID", DbType="Int NOT NULL")]
-		public int ProyectoID
-		{
-			get
-			{
-				return this._ProyectoID;
-			}
-			set
-			{
-				if ((this._ProyectoID != value))
-				{
-					this._ProyectoID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActividadID", DbType="Int NOT NULL")]
-		public int ActividadID
-		{
-			get
-			{
-				return this._ActividadID;
-			}
-			set
-			{
-				if ((this._ActividadID != value))
-				{
-					this._ActividadID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantidadEjecutada", DbType="Int")]
-		public System.Nullable<int> CantidadEjecutada
-		{
-			get
-			{
-				return this._CantidadEjecutada;
-			}
-			set
-			{
-				if ((this._CantidadEjecutada != value))
-				{
-					this._CantidadEjecutada = value;
+					this._DescripcionContratista = value;
 				}
 			}
 		}
